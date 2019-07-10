@@ -9,7 +9,7 @@ import java.util.List;
  * @author christelle_jeanberne
  */
 @SuppressWarnings("serial")
-public final class Constants {
+public final class Constant {
 
 	public static final String SENT_NAMESPACE = "ers";
 

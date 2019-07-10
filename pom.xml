@@ -4,7 +4,7 @@
     <groupId>fr.ird</groupId>
     <artifactId>ers-dropper-fra</artifactId>
     <packaging>jar</packaging>
-    <version>0.1</version>
+    <version>0.2</version>
     <name>ERS :: Dropper for FRA</name>
     <inceptionYear>2017</inceptionYear>
     <organization>
@@ -13,7 +13,42 @@
     </organization>
     <url>http://maven.apache.org</url>
     <dependencies>
-      
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.11.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.2</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>fr.ird</groupId>
+            <artifactId>ird-common</artifactId>
+            <version>1.4</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>fr.ird</groupId>
+            <artifactId>driver-eva</artifactId>
+            <version>2.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>

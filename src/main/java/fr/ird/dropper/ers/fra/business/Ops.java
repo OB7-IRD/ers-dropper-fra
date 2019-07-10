@@ -14,10 +14,9 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import fr.ird.common.log.LogService;
+import fr.ird.dropper.ers.fra.common.ErsUtils;
 
-import fr.gouv.agriculture.adage.ers.service.GenerationService;
-import fr.gouv.agriculture.adage.ers.service.SessionProviderService;
-import fr.gouv.agriculture.adage.ers.service.utils.ErsUtils;
 import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
@@ -35,7 +34,7 @@ public class Ops implements Serializable {
 	@SuppressWarnings("unused")
 	@XStreamAsAttribute
 	@XStreamAlias("xmlns:xsi")
-	private String xmlns_xsi = Constants.XMLNS_XSI;
+	private String xmlns_xsi = Constant.XMLNS_XSI;
 
 	/** identifier field */
 	@XStreamOmitField
@@ -545,90 +544,93 @@ public class Ops implements Serializable {
 	 * @return this
 	 */
 	private Object readResolve() {
-		// On crée l'attribut opsOdotDt (date/heure) qui est une concaténation
-		// des attributs opsOdDt (date) et opsOtLb (heure)
-		DateConverter converter = new DateConverter();
-		String dateHeure = converter.toString(getOpsOdDt()) + " " + getOpsOtLb();
-		Date opsOdotDt = (Date) converter.fromDateTimeString(dateHeure);
-		setOpsOdotDt(opsOdotDt);
+        LogService.getService(this.getClass()).logApplicationDebug("readResolve ");
+        // On crée l'attribut opsOdotDt (date/heure) qui est une concaténation
+        // des attributs opsOdDt (date) et opsOtLb (heure)
+        DateConverter converter = new DateConverter();
+        String dateHeure = converter.toString(getOpsOdDt()) + " " + getOpsOtLb();
+        Date opsOdotDt = (Date) converter.fromDateTimeString(dateHeure);
+        setOpsOdotDt(opsOdotDt);
 
-		// On met la date/heure courante pour le champs creationDt
-		setOpsCreationDt(new Date());
+        // On met la date/heure courante pour le champs creationDt
+        setOpsCreationDt(new Date());
 
-		// On met un type de message suivant la balise fille du fichier XML
-		if (getDat() != null) {
-			setOpsTypeMesLb("DAT");
-		} else if (getCor() != null) {
-			setOpsTypeMesLb("COR");
-		} else if (getDel() != null) {
-			setOpsTypeMesLb("DEL");
-		} else if (getQue() != null) {
-			setOpsTypeMesLb("QUE");
-		} else if (getRsp() != null) {
-			setOpsTypeMesLb("RSP");
-		} else if (getRet() != null) {
-			setOpsTypeMesLb("RET");
-		} else if (getEmav() != null) {
-			setOpsTypeMesLb("EMAV");
-		} else if (getEvzo() != null) {
-			setOpsTypeMesLb("EVZO");
-		}
+        // On met un type de message suivant la balise fille du fichier XML
+        if (getDat() != null) {
+            setOpsTypeMesLb("DAT");
+        } else if (getCor() != null) {
+            setOpsTypeMesLb("COR");
+        } else if (getDel() != null) {
+            setOpsTypeMesLb("DEL");
+        } else if (getQue() != null) {
+            setOpsTypeMesLb("QUE");
+        } else if (getRsp() != null) {
+            setOpsTypeMesLb("RSP");
+        } else if (getRet() != null) {
+            setOpsTypeMesLb("RET");
+        } else if (getEmav() != null) {
+            setOpsTypeMesLb("EMAV");
+        } else if (getEvzo() != null) {
+            setOpsTypeMesLb("EVZO");
+        }
 
-		// ERS04 : si l'émetteur est la France, on renseigne ERS_RN_LB et
-		// ERS_FR_RN_LB
-		if (getDats() != null && !getDats().isEmpty()) {
-			for (Dat dat : getDats()) {
-				if (SessionProviderService.getService().getSession() != null && ErsUtils.isEmetteurFrancais(this)) {
-					dat.getErs().setErsFrRnLb(getDat().getErs().getErsRnLb());
-					dat.getErs().setErsRnLb(
-							GenerationService.getService().getNextRecordNumber(
-									SessionProviderService.getService().getSession()));
+        // ERS04 : si l'émetteur est la France, on renseigne ERS_RN_LB et
+        // ERS_FR_RN_LB
+        if (getDats() != null && !getDats().isEmpty()) {
+            for (Dat dat : getDats()) {
+                if (ErsUtils.isEmetteurFrancais(this)) {
+                    dat.getErs().setErsFrRnLb(getDat().getErs().getErsRnLb());
+//                    dat.getErs().setErsRnLb(
+//                            GenerationService.getService().getNextRecordNumber(
+//                                    SessionProviderService.getService().getSession()));
+//
+                }
+                if (dat.getErs() != null && dat.getErs().getLog() != null) {
+                    if (dat.getErs().getLog().getPno() != null) {
+                        dat.getErs().getLog().getPno().setNonPersistedOps(this);
+                    }
 
-				}
-				if (dat.getErs() != null && dat.getErs().getLog() != null) {
-					if (dat.getErs().getLog().getPno() != null) {
-						dat.getErs().getLog().getPno().setNonPersistedOps(this);
-					}
+                    if (dat.getErs().getLog().getPnt() != null) {
+                        dat.getErs().getLog().getPnt().setNonPersistedOps(this);
+                    }
+                }
+                dat.setOps(this);
+            }
+        } else if (getCors() != null && !getCors().isEmpty()) {
+            for (Cor cor : getCors()) {
+                if (ErsUtils.isEmetteurFrancais(this)) {
+                    cor.getErs().setErsFrRnLb(getCor().getErs().getErsRnLb());
+//                    cor.getErs().setErsRnLb(
+//                            GenerationService.getService().getNextRecordNumber(
+//                                    SessionProviderService.getService().getSession()));
+                }
+                if (cor.getErs() != null && cor.getErs().getLog() != null) {
+                    if (cor.getErs().getLog().getPno() != null) {
+                        cor.getErs().getLog().getPno().setNonPersistedOps(this);
+                    }
 
-					if (dat.getErs().getLog().getPnt() != null) {
-						dat.getErs().getLog().getPnt().setNonPersistedOps(this);
-					}
-				}
-			}
-		} else if (getCors() != null && !getCors().isEmpty()) {
-			for (Cor cor : getCors()) {
-				if (SessionProviderService.getService().getSession() != null && ErsUtils.isEmetteurFrancais(this)) {
-					cor.getErs().setErsFrRnLb(getCor().getErs().getErsRnLb());
-					cor.getErs().setErsRnLb(
-							GenerationService.getService().getNextRecordNumber(
-									SessionProviderService.getService().getSession()));
-				}
-				if (cor.getErs() != null && cor.getErs().getLog() != null) {
-					if (cor.getErs().getLog().getPno() != null) {
-						cor.getErs().getLog().getPno().setNonPersistedOps(this);
-					}
+                    if (cor.getErs().getLog().getPnt() != null) {
+                        cor.getErs().getLog().getPnt().setNonPersistedOps(this);
+                    }
+                }
+                cor.setOps(this);
+            }
+        } else if (getDels() != null && !getDels().isEmpty()) {
+            for (Del del : getDels()) {
+                if (del.getErs() != null && del.getErs().getLog() != null) {
+                    if (del.getErs().getLog().getPno() != null) {
+                        del.getErs().getLog().getPno().setNonPersistedOps(this);
+                    }
 
-					if (cor.getErs().getLog().getPnt() != null) {
-						cor.getErs().getLog().getPnt().setNonPersistedOps(this);
-					}
-				}
-			}
-		} else if (getDels() != null && !getDels().isEmpty()) {
-			for (Del del : getDels()) {
-				if (del.getErs() != null && del.getErs().getLog() != null) {
-					if (del.getErs().getLog().getPno() != null) {
-						del.getErs().getLog().getPno().setNonPersistedOps(this);
-					}
-
-					if (del.getErs().getLog().getPnt() != null) {
-						del.getErs().getLog().getPnt().setNonPersistedOps(this);
-					}
-				}
-			}
-		}
-		return this;
-	}
-
+                    if (del.getErs().getLog().getPnt() != null) {
+                        del.getErs().getLog().getPnt().setNonPersistedOps(this);
+                    }
+                }
+                del.setOps(this);
+            }
+        }
+        return this;
+    }
 	/**
 	 * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
 	 * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce

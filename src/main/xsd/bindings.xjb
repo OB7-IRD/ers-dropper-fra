@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<jaxb:bindings version="1.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" schemaLocation="ers-operations-3.xsd">
-        <jaxb:bindings>
-            <jaxb:globalBindings typesafeEnumMaxMembers="4096"/>
-        </jaxb:bindings>
-</jaxb:bindings>

@@ -12,8 +12,9 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import fr.ird.dropper.ers.fra.common.ErsUtils;
 
-import fr.gouv.agriculture.adage.ers.service.utils.ErsUtils;
+
 
 /**
  * Message de réponse.
@@ -127,27 +128,27 @@ public class Rsp implements Serializable {
 		this.opsByOpsCdnQue = opsByOpsCdnQue;
 	}
 
-	public void setDataFromOpsByOpsCdnQue(Ops opsByOpsCdnQue) {
-		// CRSP02: on stocke les informations navires de la question
-		setRspIrQueLb(null);
-		setRspXrQueLb(null);
-		setRspRcQueLb(null);
-		setRspNaQueLb(null);
-
-		if (opsByOpsCdnQue != null && opsByOpsCdnQue.getQue() != null) {
-			Que que = opsByOpsCdnQue.getQue();
-			String idValue = que.getQueIvLb();
-			if (!StringUtils.isEmpty(idValue)) {
-				Navire navire = ErsUtils.findNavireByQue(que);
-				if (navire != null) {
-					setRspIrQueLb(navire.getNavireCfrRfa());
-					setRspXrQueLb(navire.getNavireMarqextLb());
-					setRspRcQueLb(navire.getNavireIrcscodLb());
-					setRspNaQueLb(navire.getNavireNomLb());
-				}
-			}
-		}
-	}
+//	public void setDataFromOpsByOpsCdnQue(Ops opsByOpsCdnQue) {
+//		// CRSP02: on stocke les informations navires de la question
+//		setRspIrQueLb(null);
+//		setRspXrQueLb(null);
+//		setRspRcQueLb(null);
+//		setRspNaQueLb(null);
+//
+//		if (opsByOpsCdnQue != null && opsByOpsCdnQue.getQue() != null) {
+//			Que que = opsByOpsCdnQue.getQue();
+//			String idValue = que.getQueIvLb();
+//			if (!StringUtils.isEmpty(idValue)) {
+//				Navire navire = ErsUtils.findNavireByQue(que);
+//				if (navire != null) {
+//					setRspIrQueLb(navire.getNavireCfrRfa());
+//					setRspXrQueLb(navire.getNavireMarqextLb());
+//					setRspRcQueLb(navire.getNavireIrcscodLb());
+//					setRspNaQueLb(navire.getNavireNomLb());
+//				}
+//			}
+//		}
+//	}
 
 	public Ops getOps() {
 		return this.ops;

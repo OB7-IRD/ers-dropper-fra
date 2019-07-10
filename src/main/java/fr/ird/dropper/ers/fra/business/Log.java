@@ -663,7 +663,7 @@ public class Log implements Serializable {
 		// par rapport au xsd
 		if (exportConfiguration.isExtensionsFrancaises() && getElog() != null
 				&& getElog().getElogTnLb() != null 
-				&& getElog().getElogTnOrigLb().length() == Constants.ELOG_TN_LB_LENGTH ) {
+				&& getElog().getElogTnOrigLb().length() == Constant.ELOG_TN_LB_LENGTH ) {
 			clone.setElog(getElog().cloneExportedFields(exportConfiguration));
 		} else {
 			clone.setElog(null);

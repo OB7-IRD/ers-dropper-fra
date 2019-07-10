@@ -13,8 +13,9 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import fr.ird.dropper.ers.fra.common.ErsUtils;
 
-import fr.gouv.agriculture.adage.ers.service.utils.ErsUtils;
+
 import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
