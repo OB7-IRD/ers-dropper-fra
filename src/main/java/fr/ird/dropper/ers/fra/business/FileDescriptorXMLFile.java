@@ -1,42 +1,40 @@
 package fr.ird.dropper.ers.fra.business;
 
-
 /**
  * Relation File Descriptor XML File.
- * 
+ *
  * @author conor.morgan
  */
 public class FileDescriptorXMLFile {
 
-	Integer id;
+    Integer id;
 
-	Integer idXmlf;
-	
-	Integer idFdn;
+    Integer idXmlf;
 
-	public Integer getId() {
-		return id;
-	}
+    Integer idFdn;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
-	public Integer getIdXmlf() {
-		return idXmlf;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setIdXmlf(Integer idXmlf) {
-		this.idXmlf = idXmlf;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Integer getIdFdn() {
-		return idFdn;
-	}
+    public Integer getIdXmlf() {
+        return idXmlf;
+    }
 
-	public void setIdFdn(Integer idFdn) {
-		this.idFdn = idFdn;
-	}
+    public void setIdXmlf(Integer idXmlf) {
+        this.idXmlf = idXmlf;
+    }
 
+    public Integer getIdFdn() {
+        return idFdn;
+    }
+
+    public void setIdFdn(Integer idFdn) {
+        this.idFdn = idFdn;
+    }
 
 }

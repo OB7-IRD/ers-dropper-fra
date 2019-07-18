@@ -4,93 +4,102 @@ import java.util.Date;
 
 /**
  * Classe des messages ERSW.
- * 
+ *
  * @author conor.morgan
  */
 public class MessageERSW {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/** identifier field */
-	private Long mescdn;
+    /**
+     * identifier field
+     */
+    private Long mescdn;
 
-	/** persistent field */
-	private Boolean opChanged;
-	
-	/** persistent field */
-	private Boolean transfert;
-        
-        /** persistent field */
-	private Boolean treated;
+    /**
+     * persistent field
+     */
+    private Boolean opChanged;
 
+    /**
+     * persistent field
+     */
+    private Boolean transfert;
 
+    /**
+     * persistent field
+     */
+    private Boolean treated;
 
+    /**
+     * persistent field
+     */
+    private Long navcdn;
 
-	/** persistent field */
-	private Long navcdn;
-	
-	/** persistent field */
-	private Date creation;
-	
-	public Date getCreation() {
-		return creation;
-	}
+    /**
+     * persistent field
+     */
+    private Date creation;
 
-	public void setCreation(Date creation) {
-		this.creation = creation;
-	}
+    public Date getCreation() {
+        return creation;
+    }
 
-	public Date getModification() {
-		return modification;
-	}
+    public void setCreation(Date creation) {
+        this.creation = creation;
+    }
 
-	public void setModification(Date modification) {
-		this.modification = modification;
-	}
+    public Date getModification() {
+        return modification;
+    }
 
-	/** persistent field */
-	private Date modification;
+    public void setModification(Date modification) {
+        this.modification = modification;
+    }
 
+    /**
+     * persistent field
+     */
+    private Date modification;
 
-	public Long getNavcdn() {
-		return navcdn;
-	}
+    public Long getNavcdn() {
+        return navcdn;
+    }
 
-	public void setNavcdn(Long navcdn) {
-		this.navcdn = navcdn;
-	}
+    public void setNavcdn(Long navcdn) {
+        this.navcdn = navcdn;
+    }
 
-	public Long getMescdn() {
-		return mescdn;
-	}
+    public Long getMescdn() {
+        return mescdn;
+    }
 
-	public void setMescdn(Long mescdn) {
-		this.mescdn = mescdn;
-	}
+    public void setMescdn(Long mescdn) {
+        this.mescdn = mescdn;
+    }
 
-	public Boolean getOpChanged() {
-		return opChanged;
-	}
+    public Boolean getOpChanged() {
+        return opChanged;
+    }
 
-	public void setOpChanged(Boolean opChanged) {
-		this.opChanged = opChanged;
-	}
-	
-	
-	public Boolean getTransfert() {
-		return transfert;
-	}
+    public void setOpChanged(Boolean opChanged) {
+        this.opChanged = opChanged;
+    }
 
-	public void setTransfert(Boolean transfert) {
-		this.transfert = transfert;
-	}
-        
-        public Boolean getTreated() {
-            return treated;
-        }
+    public Boolean getTransfert() {
+        return transfert;
+    }
 
-        public void setTreated(Boolean treated) {
-            this.treated = treated;
-        }
+    public void setTransfert(Boolean transfert) {
+        this.transfert = transfert;
+    }
+
+    public Boolean getTreated() {
+        return treated;
+    }
+
+    public void setTreated(Boolean treated) {
+        this.treated = treated;
+    }
 
 }

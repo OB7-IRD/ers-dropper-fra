@@ -176,6 +176,9 @@ public class Pnt extends EvenementDePecheImpl {
     }
 
     public List<Spe> getListSpe() {
+        if (listSpe == null) {
+            listSpe = new ArrayList<>();
+        }
         return this.listSpe;
     }
 

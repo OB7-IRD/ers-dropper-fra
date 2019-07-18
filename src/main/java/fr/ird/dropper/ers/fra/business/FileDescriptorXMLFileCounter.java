@@ -1,42 +1,40 @@
 package fr.ird.dropper.ers.fra.business;
 
-
-
 /**
  * Relation File Descriptor XML File.
- * 
+ *
  * @author conor.morgan
  */
 public class FileDescriptorXMLFileCounter {
 
-	Integer id;
+    Integer id;
 
-	Long idMin;
-	
-	Long idMax;
+    Long idMin;
 
-	public Integer getId() {
-		return id;
-	}
+    Long idMax;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public Long getIdMin() {
-		return idMin;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setIdMin(Long idMin) {
-		this.idMin = idMin;
-	}
+    public Long getIdMin() {
+        return idMin;
+    }
 
-	public Long getIdMax() {
-		return idMax;
-	}
+    public void setIdMin(Long idMin) {
+        this.idMin = idMin;
+    }
 
-	public void setIdMax(Long idMax) {
-		this.idMax = idMax;
-	}
+    public Long getIdMax() {
+        return idMax;
+    }
+
+    public void setIdMax(Long idMax) {
+        this.idMax = idMax;
+    }
 
 }

@@ -4,69 +4,79 @@ import java.io.Serializable;
 
 /**
  * Opérateur du navire.
- * 
+ *
  * @author christelle.jeanberne
  */
 public class OperateurNavire implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	/** identifier field */
-	private Long opnCdn;
+    /**
+     * identifier field
+     */
+    private Long opnCdn;
 
-	/** persistent field */
-	private String opnCfr;
+    /**
+     * persistent field
+     */
+    private String opnCfr;
 
-	/** persistent field */
-	private String opnVersionLb;
-	
-	/** persistent field */
-	private String operateurRfa;
+    /**
+     * persistent field
+     */
+    private String opnVersionLb;
 
-	private Operateur operateur;
+    /**
+     * persistent field
+     */
+    private String operateurRfa;
 
-	/** Empty constructor */
-	public OperateurNavire() {
-		super();
-	}
+    private Operateur operateur;
 
-	public Long getOpnCdn() {
-		return this.opnCdn;
-	}
+    /**
+     * Empty constructor
+     */
+    public OperateurNavire() {
+        super();
+    }
 
-	public void setOpnCdn(Long opnCdn) {
-		this.opnCdn = opnCdn;
-	}
+    public Long getOpnCdn() {
+        return this.opnCdn;
+    }
 
-	public String getOpnCfr() {
-		return this.opnCfr;
-	}
+    public void setOpnCdn(Long opnCdn) {
+        this.opnCdn = opnCdn;
+    }
 
-	public void setOpnCfr(String opnCfr) {
-		this.opnCfr = opnCfr;
-	}
+    public String getOpnCfr() {
+        return this.opnCfr;
+    }
 
-	public String getOpnVersionLb() {
-		return this.opnVersionLb;
-	}
+    public void setOpnCfr(String opnCfr) {
+        this.opnCfr = opnCfr;
+    }
 
-	public void setOpnVersionLb(String opnVersionLb) {
-		this.opnVersionLb = opnVersionLb;
-	}
+    public String getOpnVersionLb() {
+        return this.opnVersionLb;
+    }
 
-	public String getOperateurRfa() {
-		return operateurRfa;
-	}
+    public void setOpnVersionLb(String opnVersionLb) {
+        this.opnVersionLb = opnVersionLb;
+    }
 
-	public void setOperateurRfa(String operateurRfa) {
-		this.operateurRfa = operateurRfa;
-	}
+    public String getOperateurRfa() {
+        return operateurRfa;
+    }
 
-	public Operateur getOperateur() {
-		return this.operateur;
-	}
+    public void setOperateurRfa(String operateurRfa) {
+        this.operateurRfa = operateurRfa;
+    }
 
-	public void setOperateur(Operateur operateur) {
-		this.operateur = operateur;
-	}
+    public Operateur getOperateur() {
+        return this.operateur;
+    }
+
+    public void setOperateur(Operateur operateur) {
+        this.operateur = operateur;
+    }
 }
