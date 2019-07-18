@@ -1,7 +1,7 @@
 package fr.ird.dropper.ers.fra.service;
 
 import fr.ird.common.log.LogService;
-import fr.ird.driver.eva.service.EvaService;
+import fr.ird.driver.eva.service.EvaDriverService;
 import fr.ird.dropper.ers.fra.config.ERSDropperProperties;
 
 import java.util.Properties;
@@ -22,7 +22,7 @@ public class ErsMainService {
         properties.put("javax.persistence.jdbc.password", ERSDropperProperties.JDBC_PASSWORD);
         properties.put("javax.persistence.jdbc.driver", ERSDropperProperties.JDBC_DRIVER_CLASS);
         properties.put("javax.persistence.jdbc.user", ERSDropperProperties.JDBC_USERNAME);
-        EvaService.getService().init("eva", properties);
+        EvaDriverService.getService().init("eva", properties);
 
         // Initialisation du parser XML
         XmlReader.initXstreamParser();
