@@ -175,7 +175,8 @@ public class Cox extends EvenementDePecheImpl {
         this.listCro = listCro;
     }
 
-    public List<Spe> getListSpe() {if (listSpe == null) {
+    public List<Spe> getListSpe() {
+        if (listSpe == null) {
             listSpe = new ArrayList<>();
         }
         return this.listSpe;
