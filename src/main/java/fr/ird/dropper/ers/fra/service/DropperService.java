@@ -103,7 +103,6 @@ public class DropperService extends ErsMainService {
 
     private void traiteFichiers() throws Exception {
         integreFichiersDeRepertoire(ERSDropperProperties.MESSAGE_DIRECTORY);
-
     }
 
     /**
@@ -203,7 +202,7 @@ public class DropperService extends ErsMainService {
                         LogService.getService(DropperService.class)
                                 .logApplicationError("Le fichier est non conforme avec le schéma XSD.");
                         exitCode = 4;
-                        moveFileToTreatedDirectory(fichier);
+                        moveFileToErrorDirectory(receivedOps, fichier);
                         continue;
                     } // Conformité
                     else {
@@ -227,7 +226,7 @@ public class DropperService extends ErsMainService {
                             exitCode = 4;
                             // On laisse le fichier pour qu'il soit traité
                             // de nouveau
-
+                            moveFileToErrorDirectory(ops, fichier);
                             continue;
                         }
                         LogService.getService(DropperService.class)
@@ -245,6 +244,9 @@ public class DropperService extends ErsMainService {
                                 LogService.getService(DropperService.class)
                                         .logApplicationError(
                                                 "L'objet Trip n'a pas pu être sauvegardé en base.");
+                                moveFileToErrorDirectory(ops, fichier);
+                            } else {
+                                moveFileToTreatedDirectory(ops, fichier);
                             }
                         }
 
@@ -296,6 +298,7 @@ public class DropperService extends ErsMainService {
             } catch (Exception e) {
 
 //                moveFileToErrors(e, opsForException, fichier, journalService);
+                moveFileToErrorDirectory(receivedOps, fichier);
                 LogService.getService(DropperService.class)
                         .logApplicationError(
                                 "Une exception a été levée pendant le traitement du fichier ="
