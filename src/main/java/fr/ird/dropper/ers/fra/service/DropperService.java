@@ -719,7 +719,7 @@ public class DropperService extends ErsMainService {
 
             trip.setLandings(factoryLandings(trip, ers.getLog().getListLan()));
             trip.setDiscards(factoryDiscards(trip, ers.getLog().getListDis()));
-            LogService.getService(this.getClass()).logApplicationDebug("SAVE -> " + trip.toString());
+            LogService.getService(this.getClass()).logApplicationDebug("SAVE -> TRIP ");// + trip.toString());
 
         } else {
             throw new DropperException("Erreur dans les valeurs du numéro de marée (" + longTripNumber + ") ou de l'identifant du navire (" + vesselNumber + ").");
@@ -1011,7 +1011,7 @@ public class DropperService extends ErsMainService {
 //                    }
                     fishingEventSet.addAll(factoryFADActivity(trip, far, rnMessageERS, dateMessage, rnMessageERSToCorrect));
 //                    activityNumber += fishingEventSet.size();
-                } else if (far.getGea() != null || (far.getRas() != null && far.getGea() == null && far.getGls() == null)) {
+                } else {//if (far.getGea() != null || (far.getRas() != null && far.getGea() == null && far.getGls() == null)) {
                     /**
                      * Traite une calée, si il y a présence de DCP, elle sera
                      * traitée de manière interne.
@@ -1021,10 +1021,11 @@ public class DropperService extends ErsMainService {
                     }
                     fishingEventSet.addAll(factoryFishingActivity(trip, far, rnMessageERS, dateMessage, rnMessageERSToCorrect));
 //                    activityNumber += fishingEventSet.size();
-                } else {
-                    LogService.getService(DropperService.class).logApplicationError("L'activité n'a pas été traitée!!! FAR=" + far);
-                    throw new DropperException("L'activité n'a pas été traitée!!! FAR =" + far);
-                }
+                } 
+//                else {
+//                    LogService.getService(DropperService.class).logApplicationError("L'activité n'a pas été traitée!!! FAR=" + far);
+//                    throw new DropperException("L'activité n'a pas été traitée!!! FAR =" + far);
+//                }
 //                fishingEventOfDay.addAll(fishingEventSet);
 
                 if (far.getFarTiLb() == null) {
@@ -1065,7 +1066,9 @@ public class DropperService extends ErsMainService {
         LogService.getService(DropperService.class).logApplicationDebug("AA " + dep.getDepAaLb());
         activityDepartureToPort.setAnticipatedActivity(dep.getDepAaLb());
 
+        LogService.getService(DropperService.class).logApplicationDebug("Gear...");
         for (Gea gea : dep.getListGea()) {
+            LogService.getService(DropperService.class).logApplicationDebug("... " + gea);
             Gear gear = new Gear();
             gear.setType(gea.getGeaGeLb());
             gear.setMeshSize(gea.getGeaMeNb());
@@ -1084,15 +1087,22 @@ public class DropperService extends ErsMainService {
 //            activityDepartureToPort.addGearOnBoard(gear);
         }
 
+        LogService.getService(DropperService.class).logApplicationDebug("PartialLanding...");
         trip.setPartialLanding(!dep.getListSpe().isEmpty());
+        LogService.getService(DropperService.class).logApplicationDebug("Spe...");
         for (Spe spe : dep.getListSpe()) {
             Specie specie = new Specie();
-
+            LogService.getService(DropperService.class).logApplicationDebug("... " + spe);
             specie.setNameOfSpecies(spe.getSpeSnLb());
-            specie.setSizeCategory(Integer.valueOf(spe.getEspe().getEspeZoLb().substring(3, 5)));
+            LogService.getService(DropperService.class).logApplicationDebug("... " + spe.getEspe());
+            if (spe.getEspe() != null) {
+                specie.setSizeCategory(Integer.valueOf(spe.getEspe().getEspeZoLb().substring(3, 5)));
+            }
             specie.setNumberOfFishedToBeLanded(spe.getSpeFlNb());
             specie.setNumberOfFished(spe.getSpeNfNb());
-            specie.setSizeComposition(spe.getEspe().getEspeZoLb());
+            if (spe.getEspe() != null) {
+                specie.setSizeComposition(spe.getEspe().getEspeZoLb());
+            }
             specie.setGearType(spe.getSpeGeLb());
             specie.setWeightOfFish(spe.getSpeWtNb());
             specie.setNumberHeldInNets(spe.getSpeNbNb());
@@ -1101,8 +1111,9 @@ public class DropperService extends ErsMainService {
 
             activityDepartureToPort.addSpecieOnBoard(specie);
         }
-
+        LogService.getService(DropperService.class).logApplicationDebug("setRnMessageERS...");
         activityDepartureToPort.setRnMessageERS(rnMessageERS);
+        LogService.getService(DropperService.class).logApplicationDebug("setDateMessageERS...");
         activityDepartureToPort.setDateMessageERS(dateMessage);
         if (rnMessageERSToCorrect != null) {
             activityDepartureToPort.setRnMessageERSToCorrect(rnMessageERSToCorrect);
@@ -1259,7 +1270,9 @@ public class DropperService extends ErsMainService {
         if (activity.getOperation() != null && activity.getOperation().equals("COUP INCONNU")) {
             LogService.getService(DropperService.class).logApplicationDebug("COUP INCONNU");
             if (far != null && far.getEfar() != null && far.getEfar().getEpfa() != null && far.getEfar().getEpfa().getListEfad() != null) {
-                activity.setOperation(far.getEfar().getEpfa().getListEfad().get(0).getEfadIfLb());
+                if (!far.getEfar().getEpfa().getListEfad().isEmpty()) {
+                    activity.setOperation(far.getEfar().getEpfa().getListEfad().get(0).getEfadIfLb());
+                }
                 if (activity.getOperation().equals("")) {
                     activity.setOperation("COUP INCONNU");
                 }
@@ -1679,6 +1692,7 @@ public class DropperService extends ErsMainService {
      * @return la liste des rejets
      */
     private List<Discard> factoryDiscards(Trip trip, List<Dis> diss) {
+        LogService.getService(DropperService.class).logApplicationDebug("factoryDiscards" + diss);
         if (diss == null || diss.isEmpty()) {
             return null;
         }

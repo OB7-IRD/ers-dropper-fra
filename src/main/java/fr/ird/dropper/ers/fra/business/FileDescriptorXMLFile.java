@@ -1,5 +1,7 @@
 package fr.ird.dropper.ers.fra.business;
 
+import fr.ird.dropper.ers.fra.business.*;
+
 /**
  * Relation File Descriptor XML File.
  *

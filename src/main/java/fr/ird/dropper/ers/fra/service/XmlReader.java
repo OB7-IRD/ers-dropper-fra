@@ -109,7 +109,6 @@ public class XmlReader {
         UnicodeReader ins = null;
 
         ins = new UnicodeReader(fileStream, "UTF-8");
-
         return (Ops) xstream.fromXML(ins);
     }
 
@@ -120,6 +119,7 @@ public class XmlReader {
      * @return Ops
      */
     public static Ops parse(String fileName) {
+        LogService.getService().logApplicationDebug("Parse...");
         try {
             FileInputStream stream = new FileInputStream(new File(fileName));
             Ops ops = parse(stream);

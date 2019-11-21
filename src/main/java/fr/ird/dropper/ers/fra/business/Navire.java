@@ -1,5 +1,6 @@
 package fr.ird.dropper.ers.fra.business;
 
+import fr.ird.dropper.ers.fra.business.*;
 import java.math.BigDecimal;
 import java.util.Date;
 

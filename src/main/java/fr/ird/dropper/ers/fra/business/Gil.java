@@ -1,5 +1,6 @@
 package fr.ird.dropper.ers.fra.business;
 
+import fr.ird.dropper.ers.fra.business.*;
 import java.io.Serializable;
 
 import org.apache.commons.lang.builder.EqualsBuilder;

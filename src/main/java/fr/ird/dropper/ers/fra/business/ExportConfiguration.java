@@ -1,5 +1,7 @@
 package fr.ird.dropper.ers.fra.business;
 
+import fr.ird.dropper.ers.fra.business.*;
+
 /**
  * Configuration pour l'export d'un OPS. Indique si les balises françaises
  * doivent être exportées ou non.

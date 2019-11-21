@@ -1,5 +1,6 @@
 package fr.ird.dropper.ers.fra.business;
 
+import fr.ird.dropper.ers.fra.business.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,6 +14,7 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import fr.ird.common.log.LogService;
 
 import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
@@ -23,6 +25,10 @@ import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
  */
 @XStreamAlias("DEP")
 public class Dep extends EvenementDePecheImpl {
+
+    public Dep() {
+        LogService.getService().logApplicationDebug("Lecture DEP");
+    }
 
     private static final long serialVersionUID = 4876282444792431924L;
 
@@ -188,7 +194,7 @@ public class Dep extends EvenementDePecheImpl {
      */
     @Override
     public String toString() {
-        return "Dep{" + "depDaDt=" + depDaDt + ", depTiLb=" + depTiLb + ", depPoLb=" + depPoLb + ", depAaLb=" + depAaLb + ", depDatiDt=" + depDatiDt + '}';
+        return "Dep{" + "depCdn=" + depCdn + ", depDaDt=" + depDaDt + ", depTiLb=" + depTiLb + ", depPoLb=" + depPoLb + ", depAaLb=" + depAaLb + ", depDatiDt=" + depDatiDt + ", log=" + log + ", listGea=" + listGea + ", listSpe=" + listSpe + ", edep=" + edep + '}';
     }
 
 
@@ -236,6 +242,9 @@ public class Dep extends EvenementDePecheImpl {
     private Object readResolve() {
         // On crée l'attribut depDatiDt (date/heure) qui est une concaténation
         // des attributs depDaDt (date) et depTiLb (heure)
+
+        LogService.getService().logApplicationDebug("DEP " + this);
+
         DateConverter converter = new DateConverter();
         String dateHeure = converter.toString(getDepDaDt()) + " "
                 + getDepTiLb();

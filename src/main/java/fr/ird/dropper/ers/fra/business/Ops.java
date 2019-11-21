@@ -1,5 +1,6 @@
 package fr.ird.dropper.ers.fra.business;
 
+import fr.ird.dropper.ers.fra.business.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -582,6 +583,7 @@ public class Ops implements Serializable {
 	 * 
 	 * @see java.lang.Object#hashCode()
      */
+    @Override
     public int hashCode() {
         return new HashCodeBuilder().append(getOpsCdn()).toHashCode();
     }

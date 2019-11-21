@@ -1,5 +1,6 @@
 package fr.ird.dropper.ers.fra.business;
 
+import fr.ird.dropper.ers.fra.business.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import fr.ird.common.log.LogService;
 import java.util.ArrayList;
 
 /**
@@ -19,6 +21,12 @@ import java.util.ArrayList;
 @XStreamAlias("SPE")
 public class Spe implements Serializable {
 
+    public Spe() {
+        LogService.getService().logApplicationDebug("Lecture SPE");
+    }
+
+    
+    
     private static final long serialVersionUID = 2555914717716514057L;
 
     /**
@@ -404,6 +412,9 @@ public class Spe implements Serializable {
     }
 
     public List<Dep> getListDep() {
+        if (listDep == null) {
+            listDep = new ArrayList<>();
+        }
         return this.listDep;
     }
 
@@ -595,7 +606,12 @@ public class Spe implements Serializable {
             clone.setSiz(null);
         }
 
-        clone.setRas(getRas() == null ? null : getRas().cloneExportedFields(exportConfiguration));
+        Ras ras = getRas();
+        if (ras != null) {
+            clone.setRas(ras.cloneExportedFields(exportConfiguration));
+        } else {
+            clone.setRas(null);
+        }
 
         // La balise PRO est facultative dans SPE - il faut gérer les valeurs nulles
         Pro pro = getPro();
