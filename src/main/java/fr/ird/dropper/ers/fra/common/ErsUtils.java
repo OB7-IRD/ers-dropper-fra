@@ -1,14 +1,9 @@
 package fr.ird.dropper.ers.fra.common;
 
 import fr.ird.dropper.ers.fra.business.*;
-import java.io.File;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 
@@ -21,7 +16,7 @@ import org.apache.commons.lang.StringUtils;
 public class ErsUtils {
 
     private static List<String> listeCodesOperateurs = null;
-    private static Map<String, Operateur> operateursMap = new HashMap<String, Operateur>();
+//    private static Map<String, Operateur> operateursMap = new HashMap<String, Operateur>();
 
     /**
      * Constructeur.
@@ -36,13 +31,13 @@ public class ErsUtils {
      * @param ops l'opération
      * @return le journal de bord électronique
      */
-    public static Ers getErs(Ops ops) {
+    public static Ers getERS(Ops ops) {
         Ers ers = null;
         if (ops != null) {
-            if (ops.getDat() != null) {
-                ers = ops.getDat().getErs();
-            } else if (ops.getCor() != null) {
-                ers = ops.getCor().getErs();
+            if (ops.getDAT() != null) {
+                ers = ops.getDAT().getERS();
+            } else if (ops.getCOR() != null) {
+                ers = ops.getCOR().getERS();
             }
         }
 
@@ -55,52 +50,50 @@ public class ErsUtils {
      * @param ers le journal de bord électronique
      * @return l'opération (OPS)
      */
-    public static Ops getOps(Ers ers) {
-        Ops ops = null;
-        List<Ops> opsPossibles = new ArrayList<Ops>();
-
-        if (ers.getDats() != null && !ers.getDats().isEmpty()) {
-            for (Dat dat : ers.getDats()) {
-                opsPossibles.add(dat.getOps());
-            }
-        } else if (ers.getCors() != null && !ers.getCors().isEmpty()) {
-            for (Cor cor : ers.getCors()) {
-                opsPossibles.add(cor.getOps());
-            }
-        } else if (ers.getDels() != null && !ers.getDels().isEmpty()) {
-            for (Del del : ers.getDels()) {
-                opsPossibles.add(del.getOps());
-            }
-        }
-
-        Date datePremierOps = null;
-        // On prend le premier des ops pour être sûr de prendre l'OPS du message
-        // reçu
-        // et pas l'un des OPS transférés contenant le même ers
-        for (Ops opsTeste : opsPossibles) {
-            if (datePremierOps == null || opsTeste.getOpsOdotDt().before(datePremierOps)) {
-                datePremierOps = opsTeste.getOpsOdotDt();
-                ops = opsTeste;
-            }
-        }
-
-        return ops;
-    }
-
+//    public static Ops getOps(Ers ers) {
+//        Ops ops = null;
+//        List<Ops> opsPossibles = new ArrayList<Ops>();
+//
+//        if (ers.getDAT() != null && !ers.getDats().isEmpty()) {
+//            for (Dat dat : ers.getDats()) {
+//                opsPossibles.add(dat.getOps());
+//            }
+//        } else if (ers.getCors() != null && !ers.getCors().isEmpty()) {
+//            for (Cor cor : ers.getCors()) {
+//                opsPossibles.add(cor.getOps());
+//            }
+//        } else if (ers.getDels() != null && !ers.getDels().isEmpty()) {
+//            for (Del del : ers.getDels()) {
+//                opsPossibles.add(del.getOps());
+//            }
+//        }
+//
+//        Date datePremierOps = null;
+//        // On prend le premier des ops pour être sûr de prendre l'OPS du message
+//        // reçu
+//        // et pas l'un des OPS transférés contenant le même ers
+//        for (Ops opsTeste : opsPossibles) {
+//            if (datePremierOps == null || opsTeste.getOpsOdotDt().before(datePremierOps)) {
+//                datePremierOps = opsTeste.getOpsOdotDt();
+//                ops = opsTeste;
+//            }
+//        }
+//
+//        return ops;
+//    }
     /**
      * Retourne l'Ops d'un évènement présent en base.
      *
      * @param evt évènement de pêche
      * @return l'Ops d'un évènement présent en base.
      */
-    public static Ops getOps(EvenementDePeche evt) {
-        if (evt.getLog() != null && evt.getLog().getErs() != null) {
-            return getOps(evt.getLog().getErs());
-        } else {
-            return null;
-        }
-    }
-
+//    public static Ops getOps(EvenementDePeche evt) {
+//        if (evt.getLog() != null && evt.getLog().getERS() != null) {
+//            return getOps(evt.getLog().getERS());
+//        } else {
+//            return null;
+//        }
+//    }
     /**
      * Permet de récupérer la liste des journaux de bord (ERS) à partir de
      * l'opération si elle est de type DAT/COR/RSP.
@@ -108,18 +101,17 @@ public class ErsUtils {
      * @param ops l'opération
      * @return
      */
-    public static List<Ers> getErsList(Ops ops) {
-        List<Ers> ersList = new ArrayList<Ers>();
-        if (ops.getCor() != null) {
-            ersList.add(ops.getCor().getErs());
-        } else if (ops.getDat() != null) {
-            ersList.add(ops.getDat().getErs());
-        } else if (ops.getRsp() != null && ops.getRsp().getListErs() != null && !ops.getRsp().getListErs().isEmpty()) {
-            ersList.addAll(ops.getRsp().getListErs());
-        }
-        return ersList;
-    }
-
+//    public static List<Ers> getErsList(Ops ops) {
+//        List<Ers> ersList = new ArrayList<Ers>();
+//        if (ops.getCOR() != null) {
+//            ersList.add(ops.getCOR().getERS());
+//        } else if (ops.getDat() != null) {
+//            ersList.add(ops.getDat().getERS());
+//        } else if (ops.getRsp() != null && ops.getRsp().getListErs() != null && !ops.getRsp().getListErs().isEmpty()) {
+//            ersList.addAll(ops.getRsp().getListErs());
+//        }
+//        return ersList;
+//    }
     /**
      * Retourne l'ELOG lié au journal de bord électronique (ERS) passé en
      * paramètre.
@@ -130,8 +122,8 @@ public class ErsUtils {
      */
     public static Elog getElog(Ers ers) {
         Elog elog = null;
-        if (ers.getLog() != null && ers.getLog().getElog() != null) {
-            elog = ers.getLog().getElog();
+        if (ers.getLOG() != null && ers.getLOG().getELOG() != null) {
+            elog = ers.getLOG().getELOG();
         }
         return elog;
     }
@@ -144,7 +136,7 @@ public class ErsUtils {
      * trouvé
      */
     public static Elog getElog(Ops ops) {
-        Ers ers = getErs(ops);
+        Ers ers = getERS(ops);
         if (ers == null) {
             return null;
         }
@@ -162,8 +154,8 @@ public class ErsUtils {
      */
     public static String getElogTn(Ers ers) {
         String elogTn = null;
-        if (getElog(ers) != null && getElog(ers).getElogTnLb() != null) {
-            elogTn = getElog(ers).getElogTnLb();
+        if (getElog(ers) != null && getElog(ers).getTN() != null) {
+            elogTn = getElog(ers).getTN();
         }
         return elogTn;
     }
@@ -176,14 +168,13 @@ public class ErsUtils {
      * @return null s'il n'y a pas de LOG, pas d'ELOG, sinon renvoie l'ELOG
      * trouvé
      */
-    public static Elog getElog(EvenementDePeche evenementDePeche) {
-        Elog elog = null;
-        if (evenementDePeche != null && evenementDePeche.getLog() != null && evenementDePeche.getLog().getElog() != null) {
-            elog = evenementDePeche.getLog().getElog();
-        }
-        return elog;
-    }
-
+//    public static Elog getElog(EvenementDePeche evenementDePeche) {
+//        Elog elog = null;
+//        if (evenementDePeche != null && evenementDePeche.getLog() != null && evenementDePeche.getLog().getElog() != null) {
+//            elog = evenementDePeche.getLog().getElog();
+//        }
+//        return elog;
+//    }
     /**
      * Retourne l'attribut TN de l'ELOG lié à l'événement de pêche passé en
      * paramètre.
@@ -191,14 +182,13 @@ public class ErsUtils {
      * @param evenementDePeche : l'événement de pêche
      * @return
      */
-    public static String getElogTn(EvenementDePeche evenementDePeche) {
-        String elogTn = null;
-        if (getElog(evenementDePeche) != null && getElog(evenementDePeche).getElogTnLb() != null) {
-            elogTn = getElog(evenementDePeche).getElogTnLb();
-        }
-        return elogTn;
-    }
-
+//    public static String getElogTn(EvenementDePeche evenementDePeche) {
+//        String elogTn = null;
+//        if (getElog(evenementDePeche) != null && getElog(evenementDePeche).getElogTnLb() != null) {
+//            elogTn = getElog(evenementDePeche).getElogTnLb();
+//        }
+//        return elogTn;
+//    }
     /**
      * Permet de savoir si un message de type LOG contient un ELOG avec TN
      * renseigné.
@@ -206,11 +196,10 @@ public class ErsUtils {
      * @param ers le journal de bord
      * @return
      */
-    public static boolean isMessageSansElogTn(Ers ers) {
-        // ELOG_TN_LB est-il renseigné ?
-        return (getElogTn(ers) == null);
-    }
-
+//    public static boolean isMessageSansElogTn(Ers ers) {
+//        // ELOG_TN_LB est-il renseigné ?
+//        return (getElogTn(ers) == null);
+//    }
     /**
      * Retourne l'identifiant du navire NAVIRE_CFR_RFA à partir de l'identifiant
      * renseigné dans le LOG (IR, XR ou RC).
@@ -219,7 +208,7 @@ public class ErsUtils {
      * @return le CFR_RFA du navire
      */
     public static String getCfrRfaDuNavire(Log log) {
-        String noCfr = log.getLogIrLb();
+        String noCfr = log.getIR();
         // Inutile car l'attribut IR de la balise LOG est obligatoire. J'ai
         // laissé l'algorithme au cas où l'attribut LOG_IR_LB deviendrait
         // facultatif dans une version ultérieure à la XSD V3.
@@ -251,19 +240,20 @@ public class ErsUtils {
 //        return false;
 //    }
 //
+
     /**
      * Permet de savoir si l'émetteur du message est français.
      *
      * @param ops l'opération (OPS)
      * @return
      */
-    public static boolean isEmetteurFrancais(Ops ops) {
-        // Un message provient d'un émetteur français si son attribut FR est
-        // égal au code iso 3 de la France ou s'il s'agit d'un opérateur
-        // français
-//        return (isOperateurFrancais(ops) || Constants.FRENCH_3CHARACTERS.equals(ops.getOpsFrLb()));
-        return  Constant.FRENCH_3CHARACTERS.equals(ops.getOpsFrLb());
-    }
+//    public static boolean isEmetteurFrancais(Ops ops) {
+//        // Un message provient d'un émetteur français si son attribut FR est
+//        // égal au code iso 3 de la France ou s'il s'agit d'un opérateur
+//        // français
+////        return (isOperateurFrancais(ops) || Constants.FRENCH_3CHARACTERS.equals(ops.getOpsFrLb()));
+//        return Constant.FRENCH_3CHARACTERS.equals(ops.getOpsFrLb());
+//    }
 //
 //    /**
 //     * Permet de savoir si l'émetteur du message est français.
@@ -327,17 +317,15 @@ public class ErsUtils {
 //
 //        return (operateur != null) && (!operateur.isOprCauBl());
 //    }
-
     /**
      * Permet de récupérer l'opération (OPS) du retour au port (RTP).
      *
      * @param rtp le retour au port
      * @return l'opération (OPS)
      */
-    public static Ops getOpsDuRtpEnBase(Rtp rtp) {
-        return getOps(rtp);
-    }
-
+//    public static Ops getOpsDuRtpEnBase(Rtp rtp) {
+//        return getOps(rtp);
+//    }
     /**
      * Règle GENR07.
      *
@@ -347,32 +335,31 @@ public class ErsUtils {
      * @param far la capture
      * @return
      */
-    public static boolean isCaptureNulle(Far far) {
-        boolean isCaptureNulle = true;
-        // Si un engin de pêche a été lancé en mer => capture non nulle
-        if (far.getGea() != null && far.getGea().getGes() != null) {
-            isCaptureNulle = false;
-        } else if (far.getListSpe() != null && !far.getListSpe().isEmpty()) {
-            for (Spe spe : far.getListSpe()) {
-                // Si le poids (WT) d'une espèce (SPE) de poisson est
-                // différente de 0 => capture non nulle
-                if (spe.getSpeWtNb() != null && spe.getSpeWtNb().compareTo(0D) != 0) {
-                    isCaptureNulle = false;
-                    break;
-                }
-            }
-        } else {
-            // S'il s'agit d'une capture conjointe de thon rouge et que
-            // l'espèce (SPE) a un de ses attributs WT (poids) ou
-            // NF (nombre) différent de 0 => capture non nulle
-            Spe spe = getCaptureConjointeThonRouge(far);
-            if (spe != null && ((spe.getSpeWtNb() != null && spe.getSpeWtNb().compareTo(0D) != 0) || (spe.getSpeNfNb() != null && spe.getSpeNfNb() != 0))) {
-                isCaptureNulle = false;
-            }
-        }
-        return isCaptureNulle;
-    }
-
+//    public static boolean isCaptureNulle(Far far) {
+//        boolean isCaptureNulle = true;
+//        // Si un engin de pêche a été lancé en mer => capture non nulle
+//        if (far.getGea() != null && far.getGea().getGes() != null) {
+//            isCaptureNulle = false;
+//        } else if (far.getListSpe() != null && !far.getListSpe().isEmpty()) {
+//            for (Spe spe : far.getListSpe()) {
+//                // Si le poids (WT) d'une espèce (SPE) de poisson est
+//                // différente de 0 => capture non nulle
+//                if (spe.getSpeWtNb() != null && spe.getSpeWtNb().compareTo(0D) != 0) {
+//                    isCaptureNulle = false;
+//                    break;
+//                }
+//            }
+//        } else {
+//            // S'il s'agit d'une capture conjointe de thon rouge et que
+//            // l'espèce (SPE) a un de ses attributs WT (poids) ou
+//            // NF (nombre) différent de 0 => capture non nulle
+//            Spe spe = getCaptureConjointeThonRouge(far);
+//            if (spe != null && ((spe.getSpeWtNb() != null && spe.getSpeWtNb().compareTo(0D) != 0) || (spe.getSpeNfNb() != null && spe.getSpeNfNb() != 0))) {
+//                isCaptureNulle = false;
+//            }
+//        }
+//        return isCaptureNulle;
+//    }
     /**
      * Retourne la capture conjointe de thon rouge s'il s'agit de ce type de
      * capture.
@@ -380,30 +367,28 @@ public class ErsUtils {
      * @param far la capture
      * @return null si aucune capture de thon rouge
      */
-    public static Spe getCaptureConjointeThonRouge(Far far) {
-        Spe captureConjointeThonRouge = null;
-        // Vérifie qu'il s'agit d'une pêche conjointe de thon rouge
-        if (far.getJci() != null && far.getJci().getListSpe() != null && !far.getJci().getListSpe().isEmpty()) {
-            for (Spe spe : far.getJci().getListSpe()) {
-                // Vérifie que l'espèce est le thon rouge
-                if (spe.getSpeSnLb() != null && "BFT".equals(spe.getSpeSnLb())) {
-                    captureConjointeThonRouge = spe;
-                }
-            }
-        }
-        return captureConjointeThonRouge;
-    }
-
+//    public static Spe getCaptureConjointeThonRouge(Far far) {
+//        Spe captureConjointeThonRouge = null;
+//        // Vérifie qu'il s'agit d'une pêche conjointe de thon rouge
+//        if (far.getJci() != null && far.getJci().getListSpe() != null && !far.getJci().getListSpe().isEmpty()) {
+//            for (Spe spe : far.getJci().getListSpe()) {
+//                // Vérifie que l'espèce est le thon rouge
+//                if (spe.getSpeSnLb() != null && "BFT".equals(spe.getSpeSnLb())) {
+//                    captureConjointeThonRouge = spe;
+//                }
+//            }
+//        }
+//        return captureConjointeThonRouge;
+//    }
     /**
      * Permet de savoir s'il s'agit d'une capture conjointe de thon rouge.
      *
      * @param far la capture
      * @return
      */
-    public static boolean isCaptureConjointeThonRouge(Far far) {
-        return getCaptureConjointeThonRouge(far) != null;
-    }
-
+//    public static boolean isCaptureConjointeThonRouge(Far far) {
+//        return getCaptureConjointeThonRouge(far) != null;
+//    }
     /**
      * Permet de savoir s'il s'agit d'une capture conjointe de thon rouge non
      * nulle.
@@ -411,31 +396,29 @@ public class ErsUtils {
      * @param far la capture
      * @return
      */
-    public static boolean isCaptureConjointeThonRougeNonNulle(Far far) {
-        boolean isCaptureConjointeThonRougeNonNulle = false;
-        Spe spe = getCaptureConjointeThonRouge(far);
-
-        if (spe != null && (spe.getSpeWtNb().compareTo(0D) != 0 || spe.getSpeNfNb() != 0)) {
-            isCaptureConjointeThonRougeNonNulle = true;
-        }
-
-        return isCaptureConjointeThonRougeNonNulle;
-    }
-
+//    public static boolean isCaptureConjointeThonRougeNonNulle(Far far) {
+//        boolean isCaptureConjointeThonRougeNonNulle = false;
+//        Spe spe = getCaptureConjointeThonRouge(far);
+//
+//        if (spe != null && (spe.getSpeWtNb().compareTo(0D) != 0 || spe.getSpeNfNb() != 0)) {
+//            isCaptureConjointeThonRougeNonNulle = true;
+//        }
+//
+//        return isCaptureConjointeThonRougeNonNulle;
+//    }
     /**
      * Permet de savoir si on doit transférer le message au pays.
      *
      * @param paysZoneEffort le pays de zone d'effort
      * @return
      */
-    public static boolean isPaysZoneEffortEligibleAuTransfert(Pays paysZoneEffort) {
-        List<String> paysEligibles = Constant.PAYS_TRANSFERT_COE_COX;
-
-        // On doit envoyer le message au pays s'il est membre de la communauté
-        // européenne ou dans la liste des autres pays autorisés
-        return !Constant.FRENCH_3CHARACTERS.equals(paysZoneEffort.getPaysIso3Rfa()) && (paysZoneEffort.isPaysCeOn() || paysEligibles.contains(paysZoneEffort.getPaysIso3Rfa()));
-    }
-
+//    public static boolean isPaysZoneEffortEligibleAuTransfert(Pays paysZoneEffort) {
+//        List<String> paysEligibles = Constant.PAYS_TRANSFERT_COE_COX;
+//
+//        // On doit envoyer le message au pays s'il est membre de la communauté
+//        // européenne ou dans la liste des autres pays autorisés
+//        return !Constant.FRENCH_3CHARACTERS.equals(paysZoneEffort.getPaysIso3Rfa()) && (paysZoneEffort.isPaysCeOn() || paysEligibles.contains(paysZoneEffort.getPaysIso3Rfa()));
+//    }
     /**
      * Méthode permettant de mettre à zéro l'heure d'une date.
      *
@@ -461,7 +444,6 @@ public class ErsUtils {
 //        WebdavService webdavService = new WebdavService(SessionProviderService.getService().getSession());
 //        return webdavService.copyFile(fichier, opsFileValidatorReport);
 //    }
-
     /**
      * Retourne la date d'un évènement de pêche.
      *
@@ -490,7 +472,6 @@ public class ErsUtils {
 //
 //        return getAllEventsOfErsList(ersDeLaMaree);
 //    }
-
     /**
      * Récupère tous les évènements de pêche correspondant à une marée
      * identifiée par sont ersGroupeLb, et en excluant les évènements de l'ERS à
@@ -516,7 +497,6 @@ public class ErsUtils {
 //
 //        return getAllEventsOfErsList(ersDeLaMaree);
 //    }
-
     /**
      * Récupère tous les évènements de pêche correspondant à une marée
      * identifiée par sont ersGroupeLb, et en excluant les évènements d'un ERS
@@ -539,7 +519,6 @@ public class ErsUtils {
 //
 //        return getAllEventsOfErsList(ersDeLaMaree);
 //    }
-
     /**
      * Trouve l'événement de pêche le plus récent
      *
@@ -556,7 +535,6 @@ public class ErsUtils {
 //        }
 //        return dernierEvtMaree;
 //    }
-
     /**
      * Récupère tous les évènements de pêche correspondant appartenant à une
      * liste d'ERS. Les évènements ne sont pas triés.
@@ -565,18 +543,17 @@ public class ErsUtils {
      * @return tous les évènements de pêche correspondant appartenant à une
      * liste d'ERS. Les évènements ne sont pas triés.
      */
-    public static List<EvenementDePeche> getAllEventsOfErsList(List<Ers> ersList) {
-        List<EvenementDePeche> result = new ArrayList<EvenementDePeche>();
-
-        // On parcourt la liste des messages de la marée
-        // pour trouver tous les événenements de pêche.
-        for (Ers messageDeLaMaree : ersList) {
-            result.addAll(getAllEventsOfErs(messageDeLaMaree));
-        }
-
-        return result;
-    }
-
+//    public static List<EvenementDePeche> getAllEventsOfErsList(List<Ers> ersList) {
+//        List<EvenementDePeche> result = new ArrayList<EvenementDePeche>();
+//
+//        // On parcourt la liste des messages de la marée
+//        // pour trouver tous les événenements de pêche.
+//        for (Ers messageDeLaMaree : ersList) {
+//            result.addAll(getAllEventsOfErs(messageDeLaMaree));
+//        }
+//
+//        return result;
+//    }
     /**
      * Récupère tous les évènements de pêche correspondant appartenant à un ERS.
      * Les évènements ne sont pas triés.
@@ -584,32 +561,30 @@ public class ErsUtils {
      * @param ers le journal de bord
      * @return
      */
-    public static List<EvenementDePeche> getAllEventsOfErs(Ers ers) {
-        List<EvenementDePeche> result = new ArrayList<EvenementDePeche>();
-
-        if (ers != null && ers.getLog() != null && ers.getLog().getEvts() != null) {
-            result.addAll(ers.getLog().getEvts());
-        }
-
-        return result;
-    }
-
+//    public static List<EvenementDePeche> getAllEventsOfErs(Ers ers) {
+//        List<EvenementDePeche> result = new ArrayList<EvenementDePeche>();
+//
+//        if (ers != null && ers.getLog() != null && ers.getLog().getEvts() != null) {
+//            result.addAll(ers.getLog().getEvts());
+//        }
+//
+//        return result;
+//    }
     /**
      * Permet de savoir si l'ERS contient un événement de pêche PNO ou PNT.
      *
      * @param ers le journal de bord
      * @return
      */
-    public static boolean isErsContainingPnoOrPnt(Ers ers) {
-        boolean isErsContainingPnoOrPnt = false;
-
-        if (ers != null && ers.getLog() != null && (ers.getLog().getPno() != null || ers.getLog().getPnt() != null)) {
-            isErsContainingPnoOrPnt = true;
-        }
-
-        return isErsContainingPnoOrPnt;
-    }
-
+//    public static boolean isErsContainingPnoOrPnt(Ers ers) {
+//        boolean isErsContainingPnoOrPnt = false;
+//
+//        if (ers != null && ers.getLog() != null && (ers.getLog().getPno() != null || ers.getLog().getPnt() != null)) {
+//            isErsContainingPnoOrPnt = true;
+//        }
+//
+//        return isErsContainingPnoOrPnt;
+//    }
     /**
      * Retourne :<br/>
      * - une chaîne vide si pas de balise ERS<br/>
@@ -621,26 +596,25 @@ public class ErsUtils {
      * @param ops l'opération reçue
      * @return
      */
-    public static String getTypeEvenement(Ops ops) {
-        String typeEvenement = "";
-        List<Ers> ersList = new ArrayList<Ers>();
-        if (ops.getDat() != null && ops.getDat().getErs() != null) {
-            ersList.add(ops.getDat().getErs());
-        } else if (ops.getCor() != null && ops.getCor().getErs() != null) {
-            ersList.add(ops.getCor().getErs());
-        } else if (ops.getRet() != null && ops.getRet().getErs() != null) {
-            ersList.add(ops.getRet().getErs());
-        } else if (ops.getRsp() != null && ops.getRsp().getListErs() != null) {
-            ersList.addAll(ops.getRsp().getListErs());
-        }
-
-        if (ersList != null && !ersList.isEmpty()) {
-            typeEvenement = getTypeEvenement(ersList.get(0));
-        }
-
-        return typeEvenement;
-    }
-
+//    public static String getTypeEvenement(Ops ops) {
+//        String typeEvenement = "";
+//        List<Ers> ersList = new ArrayList<Ers>();
+//        if (ops.getDat() != null && ops.getDat().getERS() != null) {
+//            ersList.add(ops.getDat().getERS());
+//        } else if (ops.getCOR() != null && ops.getCOR().getERS() != null) {
+//            ersList.add(ops.getCOR().getERS());
+//        } else if (ops.getRet() != null && ops.getRet().getERS() != null) {
+//            ersList.add(ops.getRet().getERS());
+//        } else if (ops.getRsp() != null && ops.getRsp().getListErs() != null) {
+//            ersList.addAll(ops.getRsp().getListErs());
+//        }
+//
+//        if (ersList != null && !ersList.isEmpty()) {
+//            typeEvenement = getTypeEvenement(ersList.get(0));
+//        }
+//
+//        return typeEvenement;
+//    }
     /**
      * Retourne :<br/>
      * - une chaîne vide si pas de balise ERS<br/>
@@ -652,48 +626,45 @@ public class ErsUtils {
      * @param ers le journal de bord électronique
      * @return
      */
-    public static String getTypeEvenement(Ers ers) {
-        String typeEvenement = "";
-        if (ers.getSal() != null) {
-            typeEvenement = "SAL";
-        } else if (ers.getTrn() != null) {
-            typeEvenement = "TRN";
-        } else {
-            List<? extends EvenementDePeche> evts = ers.getLog().getEvts();
-            if (evts == null || evts.isEmpty()) {
-                typeEvenement = "LOG";
-            } else {
-                typeEvenement = evts.get(0).getType();
-            }
-        }
-
-        return typeEvenement;
-    }
-
+//    public static String getTypeEvenement(Ers ers) {
+//        String typeEvenement = "";
+//        if (ers.getSal() != null) {
+//            typeEvenement = "SAL";
+//        } else if (ers.getTrn() != null) {
+//            typeEvenement = "TRN";
+//        } else {
+//            List<? extends EvenementDePeche> evts = ers.getLog().getEvts();
+//            if (evts == null || evts.isEmpty()) {
+//                typeEvenement = "LOG";
+//            } else {
+//                typeEvenement = evts.get(0).getType();
+//            }
+//        }
+//
+//        return typeEvenement;
+//    }
     /**
      * Permet de savoir si le transbordement a eu lieu en mer (pas de port).
      *
      * @param tra le transbordement
      * @return
      */
-    public static boolean isTransbordementEnMer(Tra tra) {
-        // S'il n'y a pas de port (attribut PO de la balise TRA) => la
-        // transbordement est en mer
-        return StringUtils.isBlank(tra.getTraPoLb());
-    }
-
+//    public static boolean isTransbordementEnMer(Tra tra) {
+//        // S'il n'y a pas de port (attribut PO de la balise TRA) => la
+//        // transbordement est en mer
+//        return StringUtils.isBlank(tra.getTraPoLb());
+//    }
     /**
      * Permet de savoir si le transbordement a eu dans un port.
      *
      * @param tra le transbordement
      * @return
      */
-    public static boolean isTransbordementAuPort(Tra tra) {
-        // S'il y a un port (attribut PO de la balise TRA) => la transbordement
-        // est au port
-        return StringUtils.isNotBlank(tra.getTraPoLb());
-    }
-
+//    public static boolean isTransbordementAuPort(Tra tra) {
+//        // S'il y a un port (attribut PO de la balise TRA) => la transbordement
+//        // est au port
+//        return StringUtils.isNotBlank(tra.getTraPoLb());
+//    }
     /**
      * Retourne la dernière opération non modifiée de la marée et du navire.
      *
@@ -709,7 +680,6 @@ public class ErsUtils {
 //        }
 //        return dernierOpsDeMaree;
 //    }
-
     /**
      * Retourne le départ du navire après la date indiquée.
      *
@@ -725,7 +695,6 @@ public class ErsUtils {
 //        }
 //        return departSuivantEnBase;
 //    }
-
     /**
      * Permet de savoir si le débarquement (LAN) est autorisé avant le dernier
      * événément de pêche déjà intégré pour la marée.
@@ -737,29 +706,28 @@ public class ErsUtils {
      * en cours d'analyse
      * @return
      */
-    public static boolean isLanAuthorizedBeforeLastEventForDatAndCor(EvenementDePeche dernierEvenementDePeche) {
-        boolean authorized = false;
-        // L'inspection (INS) est autorisée après le débarquement(LAN)
-        if ("INS".equals(dernierEvenementDePeche.getType())) {
-            authorized = true;
-        } // La capture (FAR) n'est autorisée après le retour au port
-        // (RTP) que si elle est nulle
-        else if ("FAR".equals(dernierEvenementDePeche.getType())) {
-            Far far = (Far) dernierEvenementDePeche;
-            if (ErsUtils.isCaptureNulle(far)) {
-                authorized = true;
-            }
-        } // Le transbordement (TRA) n'est autorisé après le débarquement(LAN)
-        // que s'il a lieu au port
-        else if ("TRA".equals(dernierEvenementDePeche.getType())) {
-            Tra tra = (Tra) dernierEvenementDePeche;
-            if (ErsUtils.isTransbordementAuPort(tra)) {
-                authorized = true;
-            }
-        }
-        return authorized;
-    }
-
+//    public static boolean isLanAuthorizedBeforeLastEventForDatAndCor(EvenementDePeche dernierEvenementDePeche) {
+//        boolean authorized = false;
+//        // L'inspection (INS) est autorisée après le débarquement(LAN)
+//        if ("INS".equals(dernierEvenementDePeche.getType())) {
+//            authorized = true;
+//        } // La capture (FAR) n'est autorisée après le retour au port
+//        // (RTP) que si elle est nulle
+//        else if ("FAR".equals(dernierEvenementDePeche.getType())) {
+//            Far far = (Far) dernierEvenementDePeche;
+//            if (ErsUtils.isCaptureNulle(far)) {
+//                authorized = true;
+//            }
+//        } // Le transbordement (TRA) n'est autorisé après le débarquement(LAN)
+//        // que s'il a lieu au port
+//        else if ("TRA".equals(dernierEvenementDePeche.getType())) {
+//            Tra tra = (Tra) dernierEvenementDePeche;
+//            if (ErsUtils.isTransbordementAuPort(tra)) {
+//                authorized = true;
+//            }
+//        }
+//        return authorized;
+//    }
     /**
      * Retourne le dernier événement de pêche de la dernière opération non
      * modifiée de la marée et du navire.
@@ -770,7 +738,7 @@ public class ErsUtils {
      */
 //    public static EvenementDePeche findDernierEvtDernierOpsDeMaree(Ers ers, EvenementDePeche evt, String elogTnLb, String idNavire) {
 //        Ops opsPrecedentDeMaree = findDernierOpsDeMaree(elogTnLb, idNavire);
-//        List<EvenementDePeche> evtsOpsPrecedentDeMaree = ErsUtils.getAllEventsOfErs(ErsUtils.getErs(opsPrecedentDeMaree));
+//        List<EvenementDePeche> evtsOpsPrecedentDeMaree = ErsUtils.getAllEventsOfErs(ErsUtils.getERS(opsPrecedentDeMaree));
 //        evtsOpsPrecedentDeMaree.addAll(ErsUtils.getAllEventsOfErs(ers));
 //        evtsOpsPrecedentDeMaree.remove(evt);
 //        EvenementDePeche dernierEvtMaree = null;
@@ -780,7 +748,6 @@ public class ErsUtils {
 //        }
 //        return dernierEvtMaree;
 //    }
-
     /**
      * Permet de récupérer le dernier evenement qui n'est pas un INS, FAR avec
      * capture null, TRA (avec PO)
@@ -788,39 +755,38 @@ public class ErsUtils {
      * @param listEvenement
      * @return
      */
-    public static EvenementDePeche getLastMsgDernier(List<? extends EvenementDePeche> listEvenement) {
-        Collections.sort(listEvenement, DateComparator.ORDER_DATI_DESC);
-        EvenementDePeche dernierEvtMaree = null;
-        if (listEvenement != null && !listEvenement.isEmpty()) {
-            // on boucle sur tous les évènements
-            for (EvenementDePeche evenementDePeche : listEvenement) {
-                // si c'est un INS, on continue la boucle
-                if (evenementDePeche instanceof Ins) {
-                    continue;
-                } else if (evenementDePeche instanceof Far) {
-                    Far far = (Far) evenementDePeche;
-                    // si c'est un FAR sans capture, on continue la boucle
-                    if (ErsUtils.isCaptureNulle(far)) {
-                        continue;
-                    }
-                } else if (evenementDePeche instanceof Tra) {
-                    Tra tra = (Tra) evenementDePeche;
-                    // si c'est un TRA avec PO, on continue la boucle
-                    if (ErsUtils.isTransbordementAuPort(tra)) {
-                        continue;
-                    }
-                }
-
-                // si on arrive jusque ici, c'est que ce n'est ni un INS, Far
-                // sans capture, TRA avec PO, on a du coup notre dernier Evt
-                dernierEvtMaree = evenementDePeche;
-                break;
-            }
-        }
-
-        return dernierEvtMaree;
-    }
-
+//    public static EvenementDePeche getLastMsgDernier(List<? extends EvenementDePeche> listEvenement) {
+//        Collections.sort(listEvenement, DateComparator.ORDER_DATI_DESC);
+//        EvenementDePeche dernierEvtMaree = null;
+//        if (listEvenement != null && !listEvenement.isEmpty()) {
+//            // on boucle sur tous les évènements
+//            for (EvenementDePeche evenementDePeche : listEvenement) {
+//                // si c'est un INS, on continue la boucle
+//                if (evenementDePeche instanceof Ins) {
+//                    continue;
+//                } else if (evenementDePeche instanceof Far) {
+//                    Far far = (Far) evenementDePeche;
+//                    // si c'est un FAR sans capture, on continue la boucle
+//                    if (ErsUtils.isCaptureNulle(far)) {
+//                        continue;
+//                    }
+//                } else if (evenementDePeche instanceof Tra) {
+//                    Tra tra = (Tra) evenementDePeche;
+//                    // si c'est un TRA avec PO, on continue la boucle
+//                    if (ErsUtils.isTransbordementAuPort(tra)) {
+//                        continue;
+//                    }
+//                }
+//
+//                // si on arrive jusque ici, c'est que ce n'est ni un INS, Far
+//                // sans capture, TRA avec PO, on a du coup notre dernier Evt
+//                dernierEvtMaree = evenementDePeche;
+//                break;
+//            }
+//        }
+//
+//        return dernierEvtMaree;
+//    }
     /**
      * Permet de savoir si l'événément de pêche est autorisé après le retour au
      * port (RTP) que l'on supprime.
@@ -832,30 +798,29 @@ public class ErsUtils {
      * en cours d'analyse
      * @return
      */
-    public static boolean isEventAuthorizedAfterRtpWhenDeletingRtp(EvenementDePeche evenementDePeche, Rtp rtp, int nbEvents, int nbEventsAnalyzed) {
-        boolean authorized = false;
-        // L'inspection (INS) n'est autorisée après le retour au port
-        // (RTP) que si c'est le dernier événement de pêche
-        if ("INS".equals(evenementDePeche.getType()) && nbEvents == nbEventsAnalyzed) {
-            authorized = true;
-        } // La capture (FAR) n'est autorisée après le retour au port
-        // (RTP) que si elle est nulle
-        else if ("FAR".equals(evenementDePeche.getType())) {
-            Far far = (Far) evenementDePeche;
-            if (ErsUtils.isCaptureNulle(far)) {
-                authorized = true;
-            }
-        } // Le transbordement (TRA) n'est autorisé après le retour au
-        // port (RTP) que s'il a lieu en mer
-        else if ("TRA".equals(evenementDePeche.getType())) {
-            Tra tra = (Tra) evenementDePeche;
-            if (ErsUtils.isTransbordementEnMer(tra)) {
-                authorized = true;
-            }
-        }
-        return authorized;
-    }
-
+//    public static boolean isEventAuthorizedAfterRtpWhenDeletingRtp(EvenementDePeche evenementDePeche, Rtp rtp, int nbEvents, int nbEventsAnalyzed) {
+//        boolean authorized = false;
+//        // L'inspection (INS) n'est autorisée après le retour au port
+//        // (RTP) que si c'est le dernier événement de pêche
+//        if ("INS".equals(evenementDePeche.getType()) && nbEvents == nbEventsAnalyzed) {
+//            authorized = true;
+//        } // La capture (FAR) n'est autorisée après le retour au port
+//        // (RTP) que si elle est nulle
+//        else if ("FAR".equals(evenementDePeche.getType())) {
+//            Far far = (Far) evenementDePeche;
+//            if (ErsUtils.isCaptureNulle(far)) {
+//                authorized = true;
+//            }
+//        } // Le transbordement (TRA) n'est autorisé après le retour au
+//        // port (RTP) que s'il a lieu en mer
+//        else if ("TRA".equals(evenementDePeche.getType())) {
+//            Tra tra = (Tra) evenementDePeche;
+//            if (ErsUtils.isTransbordementEnMer(tra)) {
+//                authorized = true;
+//            }
+//        }
+//        return authorized;
+//    }
     /**
      * Vérifie la présence des attributs FE dans RAS du COE et du COX.
      *
@@ -863,18 +828,17 @@ public class ErsUtils {
      * @param cox la sortie de zone
      * @return
      */
-    public static boolean isCroOrTrzValide(Coe coe, Cox cox) {
-        boolean isCroOrTrzValide = true;
-        if (coe == null || coe.getRas() == null || StringUtils.isBlank(coe.getRas().getRasFeLb())) {
-            isCroOrTrzValide = false;
-        }
-        if (cox == null || cox.getRas() == null || StringUtils.isBlank(cox.getRas().getRasFeLb())) {
-            isCroOrTrzValide = false;
-        }
-
-        return isCroOrTrzValide;
-    }
-
+//    public static boolean isCroOrTrzValide(Coe coe, Cox cox) {
+//        boolean isCroOrTrzValide = true;
+//        if (coe == null || coe.getRas() == null || StringUtils.isBlank(coe.getRas().getRasFeLb())) {
+//            isCroOrTrzValide = false;
+//        }
+//        if (cox == null || cox.getRas() == null || StringUtils.isBlank(cox.getRas().getRasFeLb())) {
+//            isCroOrTrzValide = false;
+//        }
+//
+//        return isCroOrTrzValide;
+//    }
     /**
      * Vérifie la présence que le RAS du COE ou COX existe et que l'un des
      * attributs FE ou EZ est renseigné.
@@ -882,15 +846,14 @@ public class ErsUtils {
      * @param ras la zone maritime
      * @return
      */
-    public static boolean isRasInCoeOrCoxValide(Ras ras) {
-        boolean isRasInCoeOrCoxValide = true;
-        if (ras == null || (StringUtils.isBlank(ras.getRasFeLb()) && StringUtils.isBlank(ras.getRasEzLb()))) {
-            isRasInCoeOrCoxValide = false;
-        }
-
-        return isRasInCoeOrCoxValide;
-    }
-
+//    public static boolean isRasInCoeOrCoxValide(Ras ras) {
+//        boolean isRasInCoeOrCoxValide = true;
+//        if (ras == null || (StringUtils.isBlank(ras.getRasFeLb()) && StringUtils.isBlank(ras.getRasEzLb()))) {
+//            isRasInCoeOrCoxValide = false;
+//        }
+//
+//        return isRasInCoeOrCoxValide;
+//    }
     /**
      * Vérifie qu'il y ait le même type d'événement de pêche dans l'ERS fourni.
      *
@@ -899,23 +862,22 @@ public class ErsUtils {
      * pêche de même type
      * @return <code>true</code> si un événement de même type a été trouvé
      */
-    public static boolean containsSameTypeOfEvent(EvenementDePeche evt, Ers ers) {
-        // Si l'ERS à corriger n'a pas été trouvé ou s'il ne contient pas de
-        // LOG ou s'il ne contient pas d'événement de pêche de même type
-        // (ex: FAR, TRA, LAN...) alors il n'y a pas d'événement de même type
-        boolean containsSameTypeOfEvent = false;
-        List<EvenementDePeche> evtsErs = getAllEventsOfErs(ers);
-        if (evtsErs != null && !evtsErs.isEmpty()) {
-            for (EvenementDePeche evenementDePeche : evtsErs) {
-                if (evt.getType().equals(evenementDePeche.getType())) {
-                    containsSameTypeOfEvent = true;
-                    break;
-                }
-            }
-        }
-        return containsSameTypeOfEvent;
-    }
-
+//    public static boolean containsSameTypeOfEvent(EvenementDePeche evt, Ers ers) {
+//        // Si l'ERS à corriger n'a pas été trouvé ou s'il ne contient pas de
+//        // LOG ou s'il ne contient pas d'événement de pêche de même type
+//        // (ex: FAR, TRA, LAN...) alors il n'y a pas d'événement de même type
+//        boolean containsSameTypeOfEvent = false;
+//        List<EvenementDePeche> evtsErs = getAllEventsOfErs(ers);
+//        if (evtsErs != null && !evtsErs.isEmpty()) {
+//            for (EvenementDePeche evenementDePeche : evtsErs) {
+//                if (evt.getType().equals(evenementDePeche.getType())) {
+//                    containsSameTypeOfEvent = true;
+//                    break;
+//                }
+//            }
+//        }
+//        return containsSameTypeOfEvent;
+//    }
     /**
      * Renvoie les informations du navire du message si DAT/COR, du message à
      * supprimer si DEL.
@@ -935,7 +897,7 @@ public class ErsUtils {
 //                ers = ersDAO.findByRecordNumber(ops.getDel().getDelRnLb());
 //            }
 //        } else {
-//            ers = getErs(ops);
+//            ers = getERS(ops);
 //        }
 //
 //        // Si l'ERS n'est pas null on poursuit la recherche des informations
@@ -995,7 +957,6 @@ public class ErsUtils {
 //
 //        return properties;
 //    }
-
 //    public static Navire findNavireByQue(Que que) {
 //        Navire navire = null;
 //        String idValue = que.getQueIvLb();

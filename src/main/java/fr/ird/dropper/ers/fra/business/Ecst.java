@@ -1,171 +1,131 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import java.math.BigInteger;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Extension(précision) des envois repris.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour ECstType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Ecst"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="EF" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="VC" type="{http://ec.europa.eu/fisheries/schema/ers/v3}fish_valorisation" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ECST")
-public class Ecst implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ECstType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Ecst {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long ecstCdn;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("EF")
-    private String ecstEfLb;
+    @XmlAttribute(name = "type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "EF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer ef;
+    @XmlAttribute(name = "VC")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected FishValorisation vc;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("VC")
-    private String ecstVcLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("type")
-    private String ecstTypeLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Cst> listCst;
-
-    public Long getEcstCdn() {
-        return this.ecstCdn;
-    }
-
-    public void setEcstCdn(Long ecstCdn) {
-        this.ecstCdn = ecstCdn;
-    }
-
-    public String getEcstEfLb() {
-        return this.ecstEfLb;
-    }
-
-    public void setEcstEfLb(String ecstEfLb) {
-        this.ecstEfLb = ecstEfLb;
-    }
-
-    public String getEcstVcLb() {
-        return this.ecstVcLb;
-    }
-
-    public void setEcstVcLb(String ecstVcLb) {
-        this.ecstVcLb = ecstVcLb;
-    }
-
-    public String getEcstTypeLb() {
-        return this.ecstTypeLb;
-    }
-
-    public void setEcstTypeLb(String ecstTypeLb) {
-        this.ecstTypeLb = ecstTypeLb;
-    }
-
-    public List<Cst> getListCst() {
-        if (listCst == null) {
-            listCst = new ArrayList<>();
-        }
-        return this.listCst;
-    }
-
-    public void setListCst(List<Cst> listCst) {
-        this.listCst = listCst;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEcstCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Ecst)) {
-            return false;
-        }
-        Ecst castOther = (Ecst) other;
-        return new EqualsBuilder().append(this.getEcstCdn(),
-                castOther.getEcstCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEcstCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return ecstCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ECST).
-     *
-     * @return this
+     * Obtient la valeur de la propriété ef.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getEF() {
+        return ef;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété ef.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public Ecst cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Ecst clone = new Ecst();
-
-        clone.setEcstTypeLb(getEcstTypeLb());
-        clone.setEcstEfLb(getEcstEfLb());
-        clone.setEcstVcLb(getEcstVcLb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setEF(Integer value) {
+        this.ef = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété vc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FishValorisation }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public FishValorisation getVC() {
+        return vc;
+    }
+
+    /**
+     * Définit la valeur de la propriété vc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FishValorisation }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setVC(FishValorisation value) {
+        this.vc = value;
+    }
+
 }

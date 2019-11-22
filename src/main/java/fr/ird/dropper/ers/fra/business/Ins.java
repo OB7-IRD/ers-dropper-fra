@@ -1,319 +1,258 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
- * Inspection.
- *
- * @author christelle.jeanberne
+ * Inspection declaration, to be provided by the authorities, not the master. Not the same as 1224/2009 Art 76.
+ * 
+ * <p>Classe Java pour Ins complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Ins"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence minOccurs="0"&gt;
+ *         &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="IC" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CountryType" /&gt;
+ *       &lt;attribute name="IA" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="SC" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CountryType" /&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="PO" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("INS")
-public class Ins extends EvenementDePecheImpl {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "InsDeclarationType", propOrder = {
+    "pos"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Ins {
 
-    private static final long serialVersionUID = -7122727994538218835L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long insCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IC")
-    private String insIcLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IA")
-    private String insIaLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("SC")
-    private String insScLb;
+    @XmlElement(name = "POS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pos pos;
+    @XmlAttribute(name = "IC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ic;
+    @XmlAttribute(name = "IA")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ia;
+    @XmlAttribute(name = "SC")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String sc;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "PO")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String po;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété pos.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Pos }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date insDaDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String insTiLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PO")
-    private String insPoLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamOmitField
-    private Date insDatiDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("POS")
-    private Pos pos;
-
-    public Long getInsCdn() {
-        return this.insCdn;
-    }
-
-    public void setInsCdn(Long insCdn) {
-        this.insCdn = insCdn;
-    }
-
-    public String getInsIcLb() {
-        return this.insIcLb;
-    }
-
-    public void setInsIcLb(String insIcLb) {
-        this.insIcLb = insIcLb;
-    }
-
-    public String getInsIaLb() {
-        return this.insIaLb;
-    }
-
-    public void setInsIaLb(String insIaLb) {
-        this.insIaLb = insIaLb;
-    }
-
-    public String getInsScLb() {
-        return this.insScLb;
-    }
-
-    public void setInsScLb(String insScLb) {
-        this.insScLb = insScLb;
-    }
-
-    public Date getInsDaDt() {
-        return this.insDaDt;
-    }
-
-    public void setInsDaDt(Date insDaDt) {
-        this.insDaDt = insDaDt;
-    }
-
-    public String getInsTiLb() {
-        return this.insTiLb;
-    }
-
-    public void setInsTiLb(String insTiLb) {
-        this.insTiLb = insTiLb;
-    }
-
-    public String getInsPoLb() {
-        return this.insPoLb;
-    }
-
-    public void setInsPoLb(String insPoLb) {
-        this.insPoLb = insPoLb;
-    }
-
-    public Date getInsDatiDt() {
-        return this.insDatiDt;
-    }
-
-    public void setInsDatiDt(Date insDatiDt) {
-        this.insDatiDt = insDatiDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
-     */
-    @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public Pos getPos() {
-        return this.pos;
-    }
-
-    public void setPos(Pos pos) {
-        this.pos = pos;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getInsCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Ins)) {
-            return false;
-        }
-        Ins castOther = (Ins) other;
-        return new EqualsBuilder().append(this.getInsCdn(),
-                castOther.getInsCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getInsCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pos getPOS() {
+        return pos;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété pos.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Pos }
+     *     
      */
-    public Serializable getIdentifier() {
-        return insCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPOS(Pos value) {
+        this.pos = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (INS)
-     *
-     * @return this
+     * Obtient la valeur de la propriété ic.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    private Object readResolve() {
-        // On crée l'attribut insDatiDt (date/heure) qui est une concaténation
-        // des attributs insDaDt (date) et insTiLb (heure)
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getInsDaDt()) + " "
-                + getInsTiLb();
-        Date insDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setInsDatiDt(insDatiDt);
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIC() {
+        return ic;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peur être exporté par XStream
+     * Définit la valeur de la propriété ic.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Ins cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Ins clone = new Ins();
-
-        clone.setInsIcLb(getInsIcLb());
-        clone.setInsIaLb(getInsIaLb());
-        clone.setInsDaDt(getInsDaDt());
-        clone.setInsTiLb(getInsTiLb());
-        clone.setInsPoLb(getInsPoLb());
-
-        Pos pos = getPos();
-        if (pos != null) {
-            clone.setPos(pos.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setPos(null);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIC(String value) {
+        this.ic = value;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
+    /**
+     * Obtient la valeur de la propriété ia.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getType() {
-        return "INS";
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIA() {
+        return ia;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
+    /**
+     * Définit la valeur de la propriété ia.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Date getDatiDt() {
-        return getInsDatiDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIA(String value) {
+        this.ia = value;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
+    /**
+     * Obtient la valeur de la propriété sc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Date getDaDt() {
-        return getInsDaDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getSC() {
+        return sc;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
+    /**
+     * Définit la valeur de la propriété sc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public String getTiLb() {
-        return getInsTiLb();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setSC(String value) {
+        this.sc = value;
     }
 
-    public void addToLog(Log log) {
-        if (log.getListIns() == null) {
-            log.setListIns(new ArrayList<Ins>());
-        }
-        log.getListIns().add(this);
+    /**
+     * Obtient la valeur de la propriété da.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
     }
 
-    public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
-        /**
-         * listRas.add(getRas()); for(Spe spe : getListSpe()){
-         * listRas.add(spe.getRas());
-		}*
-         */
-        return listRas;
+    /**
+     * Définit la valeur de la propriété da.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété ti.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
+    }
+
+    /**
+     * Définit la valeur de la propriété ti.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété po.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPO() {
+        return po;
+    }
+
+    /**
+     * Définit la valeur de la propriété po.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPO(String value) {
+        this.po = value;
+    }
+
 }

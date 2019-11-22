@@ -1,258 +1,170 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Extension (précision) sur le registre des événements de pêche.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour ELogType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Elog"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="OS" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="CH" type="{http://ec.europa.eu/fisheries/schema/ers/v3}flag_iso3" /&gt;
+ *       &lt;attribute name="TN" use="required"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;length value="8"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ELOG")
-public class Elog implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ELogType")
+@XmlSeeAlso({
+    fr.ird.dropper.ers.fra.business.Log.ELOG.class
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Elog {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long elogCdn;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("OS")
-    private String elogOsLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("CH")
-    private String elogChLb;
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "OS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String os;
+    @XmlAttribute(name = "CH")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected FlagIso3 ch;
+    @XmlAttribute(name = "TN", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String tn;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("TN")
-    private String elogTnLb;
-
-    @XStreamOmitField
-    private String elogTnOrigLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String elogTypeLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Log> logs;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "ECPS")
-    private List<Ecps> listEcps;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "ETRC")
-    private List<Etrc> listEtrc;
-
-    public Long getElogCdn() {
-        return elogCdn;
-    }
-
-    public void setElogCdn(Long elogCdn) {
-        this.elogCdn = elogCdn;
-    }
-
-    public String getElogOsLb() {
-        return elogOsLb;
-    }
-
-    public void setElogOsLb(String elogOsLb) {
-        this.elogOsLb = elogOsLb;
-    }
-
-    public String getElogChLb() {
-        return elogChLb;
-    }
-
-    public void setElogChLb(String elogChLb) {
-        this.elogChLb = elogChLb;
-    }
-
-    public String getElogTnLb() {
-        return elogTnLb;
-    }
-
-    public void setElogTnLb(String elogTnLb) {
-        this.elogTnLb = elogTnLb;
-    }
-
-    public String getElogTypeLb() {
-        return elogTypeLb;
-    }
-
-    public void setElogTypeLb(String elogTypeLb) {
-        this.elogTypeLb = elogTypeLb;
-    }
-
-    public List<Ecps> getListEcps() {
-        if (listEcps == null) {
-            listEcps = new ArrayList<>();
-        }
-        return listEcps;
-    }
-
-    public List<Log> getLogs() {
-        if (logs == null) {
-            logs = new ArrayList<>();
-        }
-        return logs;
-    }
-
-    public void setLogs(List<Log> logs) {
-        this.logs = logs;
-    }
-
-    public void setListEcps(List<Ecps> listEcps) {
-        this.listEcps = listEcps;
-    }
-
-    public List<Etrc> getListEtrc() {
-        if (listEtrc == null) {
-            listEtrc = new ArrayList<>();
-        }
-        return listEtrc;
-    }
-
-    public void setListEtrc(List<Etrc> listEtrc) {
-        this.listEtrc = listEtrc;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getElogCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Elog)) {
-            return false;
-        }
-        Elog castOther = (Elog) other;
-        return new EqualsBuilder().append(this.getElogCdn(),
-                castOther.getElogCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getElogCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return elogCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ELOG).
-     *
-     * @return this
+     * Obtient la valeur de la propriété os.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getOS() {
+        return os;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété os.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Elog cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Elog clone = new Elog();
-
-        clone.setElogTypeLb(getElogTypeLb());
-        clone.setElogOsLb(getElogOsLb());
-        clone.setElogChLb(getElogChLb());
-        clone.setElogTnLb(getElogTnOrigLb());
-        clone.setElogTnOrigLb(getElogTnOrigLb());
-
-        // Clone des ECPS
-        if (getListEcps() != null && !getListEcps().isEmpty()) {
-            ArrayList<Ecps> cloneEcpss = new ArrayList<Ecps>();
-            for (Ecps ecps : getListEcps()) {
-                cloneEcpss.add(ecps.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListEcps(cloneEcpss);
-        }
-
-        // Clone des ETRC
-        if (getListEtrc() != null && !getListEtrc().isEmpty()) {
-            ArrayList<Etrc> cloneEtrcs = new ArrayList<Etrc>();
-            for (Etrc etrc : getListEtrc()) {
-                cloneEtrcs.add(etrc.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListEtrc(cloneEtrcs);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setOS(String value) {
+        this.os = value;
     }
 
     /**
-     * @param elogTnOrigLb the elogTnOrigLb to set
+     * Obtient la valeur de la propriété ch.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FlagIso3 }
+     *     
      */
-    public void setElogTnOrigLb(String elogTnOrigLb) {
-        this.elogTnOrigLb = elogTnOrigLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public FlagIso3 getCH() {
+        return ch;
     }
 
     /**
-     * @return the elogTnOrigLb
+     * Définit la valeur de la propriété ch.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FlagIso3 }
+     *     
      */
-    public String getElogTnOrigLb() {
-        return elogTnOrigLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setCH(FlagIso3 value) {
+        this.ch = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété tn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTN() {
+        return tn;
+    }
+
+    /**
+     * Définit la valeur de la propriété tn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTN(String value) {
+        this.tn = value;
+    }
+
 }

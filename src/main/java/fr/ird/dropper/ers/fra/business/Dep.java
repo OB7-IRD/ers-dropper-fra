@@ -1,160 +1,98 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import fr.ird.common.DateTimeUtils;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import fr.ird.common.log.LogService;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
- * Départ du port.
+ * Departure from port declaration.
  *
- * @author christelle.jeanberne
+ * <p>
+ * Classe Java pour Dep complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
+ * <pre>
+ * &lt;complexType name="Dep"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="GEA" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Gea" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="EDEP" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Edep" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="PO" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *       &lt;attribute name="AA" type="{http://ec.europa.eu/fisheries/schema/ers/v3}AnticipatedActivityType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ *
+ *
  */
-@XStreamAlias("DEP")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "DepDeclarationType", propOrder = {
+    "gea",
+    "spe",
+    "edep"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
 public class Dep extends EvenementDePecheImpl {
 
-    public Dep() {
-        LogService.getService().logApplicationDebug("Lecture DEP");
+    @XmlElement(name = "GEA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Gea> gea;
+    @XmlElement(name = "SPE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Spe> spe;
+    @XmlElement(name = "EDEP")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Edep edep;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "PO", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String po;
+    @XmlAttribute(name = "AA")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String aa;
+
+    public List<Gea> getGea() {
+        return gea;
     }
 
-    private static final long serialVersionUID = 4876282444792431924L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long depCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date depDaDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String depTiLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PO")
-    private String depPoLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("AA")
-    private String depAaLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamOmitField
-    private Date depDatiDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "GEA")
-    private List<Gea> listGea;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> listSpe;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("EDEP")
-    private Edep edep;
-
-    public Long getDepCdn() {
-        return this.depCdn;
+    public void setGea(List<Gea> gea) {
+        this.gea = gea;
     }
 
-    public void setDepCdn(Long depCdn) {
-        this.depCdn = depCdn;
+    public List<Spe> getSpe() {
+        return spe;
     }
 
-    public Date getDepDaDt() {
-        return this.depDaDt;
-    }
-
-    public void setDepDaDt(Date depDaDt) {
-        this.depDaDt = depDaDt;
-    }
-
-    public String getDepTiLb() {
-        return this.depTiLb;
-    }
-
-    public void setDepTiLb(String depTiLb) {
-        this.depTiLb = depTiLb;
-    }
-
-    public String getDepPoLb() {
-        return this.depPoLb;
-    }
-
-    public void setDepPoLb(String depPoLb) {
-        this.depPoLb = depPoLb;
-    }
-
-    public String getDepAaLb() {
-        return this.depAaLb;
-    }
-
-    public void setDepAaLb(String depAaLb) {
-        this.depAaLb = depAaLb;
-    }
-
-    public Date getDepDatiDt() {
-        return this.depDatiDt;
-    }
-
-    public void setDepDatiDt(Date depDatiDt) {
-        this.depDatiDt = depDatiDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
-     */
-    @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
+    public void setSpe(List<Spe> spe) {
+        this.spe = spe;
     }
 
     public Edep getEdep() {
@@ -165,189 +103,236 @@ public class Dep extends EvenementDePecheImpl {
         this.edep = edep;
     }
 
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
-        }
-        return this.listSpe;
+    public XMLGregorianCalendar getDa() {
+        return da;
     }
 
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
+    public void setDa(XMLGregorianCalendar da) {
+        this.da = da;
     }
 
-    public List<Gea> getListGea() {
-        if (listGea == null) {
-            listGea = new ArrayList<>();
-        }
-        return this.listGea;
+    public String getTi() {
+        return ti;
     }
 
-    public void setListGea(List<Gea> listGea) {
-        this.listGea = listGea;
+    public void setTi(String ti) {
+        this.ti = ti;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
+    public String getPo() {
+        return po;
+    }
+
+    public void setPo(String po) {
+        this.po = po;
+    }
+
+    public String getAa() {
+        return aa;
+    }
+
+    public void setAa(String aa) {
+        this.aa = aa;
+    }
+
+    /**
+     * Gets the value of the gea property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the gea property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getGEA().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Gea }
+     *
+     *
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Gea> getGEA() {
+        if (gea == null) {
+            gea = new ArrayList<Gea>();
+        }
+        return this.gea;
+    }
+
+    /**
+     * Gets the value of the spe property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the spe property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Spe }
+     *
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Spe> getSPE() {
+        if (spe == null) {
+            spe = new ArrayList<Spe>();
+        }
+        return this.spe;
+    }
+
+    /**
+     * Obtient la valeur de la propriété edep.
+     *
+     * @return possible object is {@link Edep }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Edep getEDEP() {
+        return edep;
+    }
+
+    /**
+     * Définit la valeur de la propriété edep.
+     *
+     * @param value allowed object is {@link Edep }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setEDEP(Edep value) {
+        this.edep = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété da.
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
+    }
+
+    /**
+     * Définit la valeur de la propriété da.
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ti.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
+    }
+
+    /**
+     * Définit la valeur de la propriété ti.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété po.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPO() {
+        return po;
+    }
+
+    /**
+     * Définit la valeur de la propriété po.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPO(String value) {
+        this.po = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété aa.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getAA() {
+        return aa;
+    }
+
+    /**
+     * Définit la valeur de la propriété aa.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setAA(String value) {
+        this.aa = value;
+    }
+
     @Override
-    public String toString() {
-        return "Dep{" + "depCdn=" + depCdn + ", depDaDt=" + depDaDt + ", depTiLb=" + depTiLb + ", depPoLb=" + depPoLb + ", depAaLb=" + depAaLb + ", depDatiDt=" + depDatiDt + ", log=" + log + ", listGea=" + listGea + ", listSpe=" + listSpe + ", edep=" + edep + '}';
-    }
-
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Dep)) {
-            return false;
-        }
-        Dep castOther = (Dep) other;
-        return new EqualsBuilder().append(this.getDepCdn(),
-                castOther.getDepCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getDepCdn()).toHashCode();
-    }
-
-    /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
-     */
-    public Serializable getIdentifier() {
-        return depCdn;
-    }
-
-    /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (DEP).
-     *
-     * @return this
-     */
-    private Object readResolve() {
-        // On crée l'attribut depDatiDt (date/heure) qui est une concaténation
-        // des attributs depDaDt (date) et depTiLb (heure)
-
-        LogService.getService().logApplicationDebug("DEP " + this);
-
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getDepDaDt()) + " "
-                + getDepTiLb();
-        Date depDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setDepDatiDt(depDatiDt);
-        return this;
-    }
-
-    /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
-     */
-    public Dep cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Dep clone = new Dep();
-
-        clone.setDepDaDt(getDepDaDt());
-        clone.setDepTiLb(getDepTiLb());
-        clone.setDepPoLb(getDepPoLb());
-        clone.setDepAaLb(getDepAaLb());
-
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-
-        // Clone des GEA
-        if (getListGea() != null && !getListGea().isEmpty()) {
-            ArrayList<Gea> cloneGeas = new ArrayList<Gea>();
-            for (Gea gea : getListGea()) {
-                cloneGeas.add(gea.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListGea(cloneGeas);
-        }
-
-        Edep edep = getEdep();
-        if (exportConfiguration.isExtensionsFrancaises() && edep != null) {
-            clone.setEdep(edep.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setEdep(null);
-        }
-
-        return clone;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
-     */
-    public String getType() {
-        return "DEP";
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
-     */
-    public Date getDatiDt() {
-        return getDepDatiDt();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
-     */
-    public Date getDaDt() {
-        return getDepDaDt();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
-     */
-    public String getTiLb() {
-        return getDepTiLb();
-    }
-
     public void addToLog(Log log) {
-        if (log.getListDep() == null) {
-            log.setListDep(new ArrayList<Dep>());
-        }
-        log.getListDep().add(this);
+        log.getDEP().add(this);
     }
 
+    @Override
     public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
+        List<Ras> listRas = new ArrayList<>();
         //listRas.add(getRas());
-        if (getListSpe() == null) {
+        if (getSPE() == null) {
             return listRas;
         }
-        for (Spe spe : getListSpe()) {
-            listRas.add(spe.getRas());
+        for (Spe spe : getSPE()) {
+            listRas.add(spe.getRAS());
         }
         return listRas;
+    }
+
+    @Override
+    public Date getDaDt() {
+        return da.toGregorianCalendar().getTime();
+    }
+
+    @Override
+    public Date getDatiDt() {
+        return DateTimeUtils.createDateTime(getDaDt(), getTiLb()).toDate();
+    }
+
+    @Override
+    public String getTiLb() {
+        return ti;
     }
 }

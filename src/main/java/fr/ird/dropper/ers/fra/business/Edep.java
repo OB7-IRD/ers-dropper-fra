@@ -1,155 +1,107 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Extension (précision) du départ du port.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour EDepType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Edep"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="ND"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal"&gt;
+ *             &lt;totalDigits value="6"/&gt;
+ *             &lt;fractionDigits value="1"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("EDEP")
-public class Edep implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "EDepType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Edep {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long edepCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String edepTypeLb;
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "ND")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Double nd;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("ND")
-    private Double edepNdNb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Dep> listDep;
-
-    public Long getEdepCdn() {
-        return this.edepCdn;
-    }
-
-    public void setEdepCdn(Long edepCdn) {
-        this.edepCdn = edepCdn;
-    }
-
-    public String getEdepTypeLb() {
-        return this.edepTypeLb;
-    }
-
-    public void setEdepTypeLb(String edepTypeLb) {
-        this.edepTypeLb = edepTypeLb;
-    }
-
-    public Double getEdepNdNb() {
-        return this.edepNdNb;
-    }
-
-    public void setEdepNdNb(Double edepNdNb) {
-        this.edepNdNb = edepNdNb;
-    }
-
-    public List<Dep> getListDep() {
-        if (listDep == null) {
-            listDep = new ArrayList<>();
-        }
-        return this.listDep;
-    }
-
-    public void setListDep(List<Dep> listDep) {
-        this.listDep = listDep;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEdepCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Edep)) {
-            return false;
-        }
-        Edep castOther = (Edep) other;
-        return new EqualsBuilder().append(this.getEdepCdn(),
-                castOther.getEdepCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEdepCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return edepCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ECSS).
-     *
-     * @return this
+     * Obtient la valeur de la propriété nd.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Double getND() {
+        return nd;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété nd.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
-    public Edep cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Edep clone = new Edep();
-
-        clone.setEdepTypeLb(getEdepTypeLb());
-        clone.setEdepNdNb(getEdepNdNb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setND(Double value) {
+        this.nd = value;
     }
+
 }

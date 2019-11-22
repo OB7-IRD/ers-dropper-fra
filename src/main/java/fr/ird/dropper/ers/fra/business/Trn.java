@@ -1,331 +1,386 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
- * Transport.
- *
- * @author christelle.jeanberne
+ * Transport Sub-declaration: Transport document may be transmitted electronically before the transport of fish begins.
+ *  1.1-2.0: added.
+ * 
+ * <p>Classe Java pour Trn complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Trn"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="ETRN" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Etrn" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DC" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *       &lt;attribute name="LP" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="XR" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}HullRegistrationType" /&gt;
+ *       &lt;attribute name="NA" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="PL" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *       &lt;attribute name="DL" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="NC" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="AC" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="TR" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("TRN")
-public class Trn implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TrnDeclarationType", propOrder = {
+    "spe",
+    "etrn"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Trn {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long trnCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DC")
-    private String trnDcLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("LP")
-    private String trnLpLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("XR")
-    private String trnXrLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NA")
-    private String trnNaLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PL")
-    private String trnPlLb;
+    @XmlElement(name = "SPE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Spe> spe;
+    @XmlElement(name = "ETRN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Etrn etrn;
+    @XmlAttribute(name = "DC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String dc;
+    @XmlAttribute(name = "LP", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String lp;
+    @XmlAttribute(name = "XR", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String xr;
+    @XmlAttribute(name = "NA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String na;
+    @XmlAttribute(name = "PL", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String pl;
+    @XmlAttribute(name = "DL", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar dl;
+    @XmlAttribute(name = "NC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String nc;
+    @XmlAttribute(name = "AC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ac;
+    @XmlAttribute(name = "TR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String tr;
 
     /**
-     * persistent field
+     * Gets the value of the spe property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spe property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Spe }
+     * 
+     * 
      */
-    @XStreamAsAttribute
-    @XStreamAlias("DL")
-    @XStreamConverter(DateConverter.class)
-    private Date trnDlDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NC")
-    private String trnNcLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("AC")
-    private String trnAcLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TR")
-    private String trnTrLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Ers> listErs;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> listSpe;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("ETRN")
-    private Etrn etrn;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Lan> listLan;
-
-    public Long getTrnCdn() {
-        return this.trnCdn;
-    }
-
-    public void setTrnCdn(Long trnCdn) {
-        this.trnCdn = trnCdn;
-    }
-
-    public String getTrnDcLb() {
-        return this.trnDcLb;
-    }
-
-    public void setTrnDcLb(String trnDcLb) {
-        this.trnDcLb = trnDcLb;
-    }
-
-    public String getTrnLpLb() {
-        return this.trnLpLb;
-    }
-
-    public void setTrnLpLb(String trnLpLb) {
-        this.trnLpLb = trnLpLb;
-    }
-
-    public String getTrnXrLb() {
-        return this.trnXrLb;
-    }
-
-    public void setTrnXrLb(String trnXrLb) {
-        this.trnXrLb = trnXrLb;
-    }
-
-    public String getTrnNaLb() {
-        return this.trnNaLb;
-    }
-
-    public void setTrnNaLb(String trnNaLb) {
-        this.trnNaLb = trnNaLb;
-    }
-
-    public String getTrnPlLb() {
-        return this.trnPlLb;
-    }
-
-    public void setTrnPlLb(String trnPlLb) {
-        this.trnPlLb = trnPlLb;
-    }
-
-    public Date getTrnDlDt() {
-        return this.trnDlDt;
-    }
-
-    public void setTrnDlDt(Date trnDlDt) {
-        this.trnDlDt = trnDlDt;
-    }
-
-    public String getTrnNcLb() {
-        return this.trnNcLb;
-    }
-
-    public void setTrnNcLb(String trnNcLb) {
-        this.trnNcLb = trnNcLb;
-    }
-
-    public String getTrnAcLb() {
-        return this.trnAcLb;
-    }
-
-    public void setTrnAcLb(String trnAcLb) {
-        this.trnAcLb = trnAcLb;
-    }
-
-    public String getTrnTrLb() {
-        return this.trnTrLb;
-    }
-
-    public void setTrnTrLb(String trnTrLb) {
-        this.trnTrLb = trnTrLb;
-    }
-
-    public List<Ers> getListErs() {
-        return listErs;
-    }
-
-    public void setListErs(List<Ers> listErs) {
-        this.listErs = listErs;
-    }
-
-    public Etrn getEtrn() {
-        return this.etrn;
-    }
-
-    public void setEtrn(Etrn etrn) {
-        this.etrn = etrn;
-    }
-
-    public List<Lan> getListLan() {
-        return this.listLan;
-    }
-
-    public void setListLan(List<Lan> listLan) {
-        this.listLan = listLan;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Spe> getSPE() {
+        if (spe == null) {
+            spe = new ArrayList<Spe>();
         }
-        return this.listSpe;
-    }
-
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getTrnCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Trn)) {
-            return false;
-        }
-        Trn castOther = (Trn) other;
-        return new EqualsBuilder().append(this.getTrnCdn(),
-                castOther.getTrnCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getTrnCdn()).toHashCode();
+        return this.spe;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Obtient la valeur de la propriété etrn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Etrn }
+     *     
      */
-    public Serializable getIdentifier() {
-        return trnCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Etrn getETRN() {
+        return etrn;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (TRN).
-     *
-     * @return this
+     * Définit la valeur de la propriété etrn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Etrn }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setETRN(Etrn value) {
+        this.etrn = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Obtient la valeur de la propriété dc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Trn cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Trn clone = new Trn();
-
-        clone.setTrnDcLb(getTrnDcLb());
-        clone.setTrnLpLb(getTrnLpLb());
-        clone.setTrnXrLb(getTrnXrLb());
-        clone.setTrnNaLb(getTrnNaLb());
-        clone.setTrnPlLb(getTrnPlLb());
-        clone.setTrnDlDt(getTrnDlDt());
-        clone.setTrnNcLb(getTrnNcLb());
-        clone.setTrnAcLb(getTrnAcLb());
-        clone.setTrnTrLb(getTrnTrLb());
-
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-
-        Etrn etrn = getEtrn();
-        if (exportConfiguration.isExtensionsFrancaises() && etrn != null) {
-            clone.setEtrn(etrn.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setEtrn(null);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getDC() {
+        return dc;
     }
+
+    /**
+     * Définit la valeur de la propriété dc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDC(String value) {
+        this.dc = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété lp.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getLP() {
+        return lp;
+    }
+
+    /**
+     * Définit la valeur de la propriété lp.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setLP(String value) {
+        this.lp = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété xr.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getXR() {
+        return xr;
+    }
+
+    /**
+     * Définit la valeur de la propriété xr.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setXR(String value) {
+        this.xr = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété na.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNA() {
+        return na;
+    }
+
+    /**
+     * Définit la valeur de la propriété na.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNA(String value) {
+        this.na = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété pl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPL() {
+        return pl;
+    }
+
+    /**
+     * Définit la valeur de la propriété pl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPL(String value) {
+        this.pl = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété dl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDL() {
+        return dl;
+    }
+
+    /**
+     * Définit la valeur de la propriété dl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDL(XMLGregorianCalendar value) {
+        this.dl = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété nc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNC() {
+        return nc;
+    }
+
+    /**
+     * Définit la valeur de la propriété nc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNC(String value) {
+        this.nc = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ac.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getAC() {
+        return ac;
+    }
+
+    /**
+     * Définit la valeur de la propriété ac.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setAC(String value) {
+        this.ac = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété tr.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTR() {
+        return tr;
+    }
+
+    /**
+     * Définit la valeur de la propriété tr.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTR(String value) {
+        this.tr = value;
+    }
+
 }

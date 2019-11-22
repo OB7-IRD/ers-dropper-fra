@@ -1,284 +1,176 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import fr.ird.common.DateTimeUtils;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
- * Rejet de poisson.
+ * Discard declaration: Contains details of fish discarded.
  *
- * @author christelle.jeanberne
+ * <p>
+ * Classe Java pour Dis complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
+ * <pre>
+ * &lt;complexType name="Dis"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos" minOccurs="0"/&gt;
+ *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe" maxOccurs="unbounded"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ *
+ *
  */
-@XStreamAlias("DIS")
-public class Dis extends EvenementDePecheImpl {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "DisDeclarationType", propOrder = {
+    "pos",
+    "spe"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Dis {
 
-    private static final long serialVersionUID = 6105683871093069689L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long disCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date disDaDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String disTiLb;
+    @XmlElement(name = "POS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pos pos;
+    @XmlElement(name = "SPE", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Spe> spe;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
 
     /**
-     * nullable persistent field
-     */
-    @XStreamOmitField
-    private Date disDatiDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("POS")
-    private Pos pos;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> spes;
-
-    public Long getDisCdn() {
-        return this.disCdn;
-    }
-
-    public void setDisCdn(Long disCdn) {
-        this.disCdn = disCdn;
-    }
-
-    public Date getDisDaDt() {
-        return this.disDaDt;
-    }
-
-    public void setDisDaDt(Date disDaDt) {
-        this.disDaDt = disDaDt;
-    }
-
-    public String getDisTiLb() {
-        return this.disTiLb;
-    }
-
-    public void setDisTiLb(String disTiLb) {
-        this.disTiLb = disTiLb;
-    }
-
-    public Date getDisDatiDt() {
-        return this.disDatiDt;
-    }
-
-    public void setDisDatiDt(Date disDatiDt) {
-        this.disDatiDt = disDatiDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
-     */
-    @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public Pos getPos() {
-        return this.pos;
-    }
-
-    public void setPos(Pos pos) {
-        this.pos = pos;
-    }
-
-    public List<Spe> getListSpe() {
-        if (spes == null) {
-            spes = new ArrayList<>();
-        }
-        return this.spes;
-    }
-
-    public void setListSpe(List<Spe> spes) {
-        this.spes = spes;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getDisCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Dis)) {
-            return false;
-        }
-        Dis castOther = (Dis) other;
-        return new EqualsBuilder().append(this.getDisCdn(),
-                castOther.getDisCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getDisCdn()).toHashCode();
-    }
-
-    /**
-     * Retourne l'identifiant.
+     * Obtient la valeur de la propriété pos.
      *
-     * @return l'identifiant
+     * @return possible object is {@link Pos }
+     *
      */
-    public Serializable getIdentifier() {
-        return disCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pos getPOS() {
+        return pos;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (DIS).
+     * Définit la valeur de la propriété pos.
      *
-     * @return this
+     * @param value allowed object is {@link Pos }
+     *
      */
-    private Object readResolve() {
-        // On crée l'attribut disDatiDt (date/heure) qui est une concaténation
-        // des attributs disDaDt (date) et disTiLb (heure)
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getDisDaDt()) + " "
-                + getDisTiLb();
-        Date disDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setDisDatiDt(disDatiDt);
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPOS(Pos value) {
+        this.pos = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
+     * Gets the value of the spe property.
      *
-     * @return un objet qui peut être exporté par XStream
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the spe property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Spe }
+     *
+     *
      */
-    public Dis cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Dis clone = new Dis();
-
-        clone.setDisDaDt(getDisDaDt());
-        clone.setDisTiLb(getDisTiLb());
-
-        Pos pos = getPos();
-        if (pos != null) {
-            clone.setPos(pos.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setPos(null);
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Spe> getSPE() {
+        if (spe == null) {
+            spe = new ArrayList<Spe>();
         }
-
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-
-        return clone;
+        return this.spe;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
+    /**
+     * Obtient la valeur de la propriété da.
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
-    public String getType() {
-        return "DIS";
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
+    /**
+     * Définit la valeur de la propriété da.
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
-    public Date getDatiDt() {
-        return getDisDatiDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
+    /**
+     * Obtient la valeur de la propriété ti.
+     *
+     * @return possible object is {@link String }
+     *
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
+    }
+
+    /**
+     * Définit la valeur de la propriété ti.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
+    }
+
     public Date getDaDt() {
-        return getDisDaDt();
+        return da.toGregorianCalendar().getTime();
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
-     */
+    public Date getDatiDt() {
+        return DateTimeUtils.createDateTime(getDaDt(), getTiLb()).toDate();
+    }
+
     public String getTiLb() {
-        return getDisTiLb();
+        return ti;
     }
 
-    public void addToLog(Log log) {
-        if (log.getListDis() == null) {
-            log.setListDis(new ArrayList<Dis>());
-        }
-        log.getListDis().add(this);
-    }
-
-    public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
-        //listRas.add(getRas());
-        if (getListSpe() != null) {
-            for (Spe spe : getListSpe()) {
-                listRas.add(spe.getRas());
-            }
-        }
-        return listRas;
-    }
 }

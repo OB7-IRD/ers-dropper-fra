@@ -1,230 +1,234 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Navire à qui on a transféré du thon rouge.
- *
- * @author christelle.jeanberne
+ * Sub-declaration containing the details of the BFT Catching Vessel Transferring the fish caught in a JFO into cages.
+ *  1.1-2.0: Added.
+ * 
+ * <p>Classe Java pour Cvt complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Cvt"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="NA" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="IN" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="IM" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="IR" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CfrType" /&gt;
+ *       &lt;attribute name="RC" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}RadioCallSignType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("CVT")
-public class Cvt implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CvtDeclarationType", propOrder = {
+    "spe"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Cvt {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long cvtCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NA")
-    private String cvtNaLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IN")
-    private String cvtInLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IM")
-    private String cvtImLb;
+    @XmlElement(name = "SPE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Spe> spe;
+    @XmlAttribute(name = "NA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String na;
+    @XmlAttribute(name = "IN", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String in;
+    @XmlAttribute(name = "IM")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String im;
+    @XmlAttribute(name = "IR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ir;
+    @XmlAttribute(name = "RC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String rc;
 
     /**
-     * nullable persistent field
+     * Gets the value of the spe property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spe property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Spe }
+     * 
+     * 
      */
-    @XStreamAsAttribute
-    @XStreamAlias("IR")
-    private String cvtIrLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RC")
-    private String cvtRcLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Far> listFar;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Bti> listBti;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> listSpe;
-
-    public Long getCvtCdn() {
-        return this.cvtCdn;
-    }
-
-    public void setCvtCdn(Long cvtCdn) {
-        this.cvtCdn = cvtCdn;
-    }
-
-    public String getCvtNaLb() {
-        return this.cvtNaLb;
-    }
-
-    public void setCvtNaLb(String cvtNaLb) {
-        this.cvtNaLb = cvtNaLb;
-    }
-
-    public String getCvtInLb() {
-        return this.cvtInLb;
-    }
-
-    public void setCvtInLb(String cvtInLb) {
-        this.cvtInLb = cvtInLb;
-    }
-
-    public String getCvtImLb() {
-        return this.cvtImLb;
-    }
-
-    public void setCvtImLb(String cvtImLb) {
-        this.cvtImLb = cvtImLb;
-    }
-
-    public String getCvtIrLb() {
-        return this.cvtIrLb;
-    }
-
-    public void setCvtIrLb(String cvtIrLb) {
-        this.cvtIrLb = cvtIrLb;
-    }
-
-    public String getCvtRcLb() {
-        return this.cvtRcLb;
-    }
-
-    public void setCvtRcLb(String cvtRcLb) {
-        this.cvtRcLb = cvtRcLb;
-    }
-
-    public List<Far> getListFar() {
-        if (listFar == null) {
-            listFar = new ArrayList<>();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Spe> getSPE() {
+        if (spe == null) {
+            spe = new ArrayList<Spe>();
         }
-        return this.listFar;
-    }
-
-    public void setListFar(List<Far> listFar) {
-        this.listFar = listFar;
-    }
-
-    public List<Bti> getListBti() {
-        if (listBti == null) {
-            listBti = new ArrayList<>();
-        }
-        return this.listBti;
-    }
-
-    public void setListBti(List<Bti> listBti) {
-        this.listBti = listBti;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
-        }
-        return this.listSpe;
-    }
-
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    @Override
-    public String toString() {
-        return "Cvt{" + "cvtNaLb=" + cvtNaLb + ", cvtInLb=" + cvtInLb + ", cvtImLb=" + cvtImLb + ", cvtIrLb=" + cvtIrLb + ", cvtRcLb=" + cvtRcLb + ", listFar=" + listFar + ", listBti=" + listBti + ", listSpe=" + listSpe + '}';
-    }
-
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Cvt)) {
-            return false;
-        }
-        Cvt castOther = (Cvt) other;
-        return new EqualsBuilder().append(this.getCvtCdn(),
-                castOther.getCvtCdn()).isEquals();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getCvtCdn()).toHashCode();
+        return this.spe;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Obtient la valeur de la propriété na.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Serializable getIdentifier() {
-        return getCvtCdn();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNA() {
+        return na;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété na.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Cvt cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Cvt clone = new Cvt();
-
-        clone.setCvtNaLb(getCvtNaLb());
-        clone.setCvtInLb(getCvtInLb());
-        clone.setCvtImLb(getCvtImLb());
-        clone.setCvtIrLb(getCvtIrLb());
-        clone.setCvtRcLb(getCvtRcLb());
-
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNA(String value) {
+        this.na = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété in.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIN() {
+        return in;
+    }
+
+    /**
+     * Définit la valeur de la propriété in.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIN(String value) {
+        this.in = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété im.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIM() {
+        return im;
+    }
+
+    /**
+     * Définit la valeur de la propriété im.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIM(String value) {
+        this.im = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ir.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIR() {
+        return ir;
+    }
+
+    /**
+     * Définit la valeur de la propriété ir.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIR(String value) {
+        this.ir = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété rc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRC() {
+        return rc;
+    }
+
+    /**
+     * Définit la valeur de la propriété rc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRC(String value) {
+        this.rc = value;
+    }
+
 }

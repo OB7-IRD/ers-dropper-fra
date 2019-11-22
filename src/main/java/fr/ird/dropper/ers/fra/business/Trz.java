@@ -1,210 +1,107 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Déclaration de changement de zone d'effort.
- *
- * @author christelle.jeanberne
+ * Trans-Zonal fishing effort declaration.
+ * 
+ * <p>Classe Java pour Trz complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Trz"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="COE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Coe"/&gt;
+ *         &lt;element name="COX" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Cox"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("TRZ")
-public class Trz extends EvenementDePecheImpl {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TrzDeclarationType", propOrder = {
+    "coe",
+    "cox"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Trz {
 
-    private static final long serialVersionUID = 5297009911354866152L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long trzCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("COE")
-    private Coe coe;
+    @XmlElement(name = "COE", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Coe coe;
+    @XmlElement(name = "COX", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Cox cox;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété coe.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Coe }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("COX")
-    private Cox cox;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    public Long getTrzCdn() {
-        return this.trzCdn;
-    }
-
-    public void setTrzCdn(Long trzCdn) {
-        this.trzCdn = trzCdn;
-    }
-
-    public Coe getCoe() {
-        return this.coe;
-    }
-
-    public void setCoe(Coe coe) {
-        this.coe = coe;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
-     */
-    @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public Cox getCox() {
-        return this.cox;
-    }
-
-    public void setCox(Cox cox) {
-        this.cox = cox;
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getTrzCdn();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Trz)) {
-            return false;
-        }
-        Trz castOther = (Trz) other;
-        return new EqualsBuilder().append(this.getTrzCdn(),
-                castOther.getTrzCdn()).isEquals();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getTrzCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Coe getCOE() {
+        return coe;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété coe.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Coe }
+     *     
      */
-    public Serializable getIdentifier() {
-        return trzCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setCOE(Coe value) {
+        this.coe = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Obtient la valeur de la propriété cox.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Cox }
+     *     
      */
-    public Trz cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Trz clone = new Trz();
-
-        clone.setCoe(getCoe().cloneExportedFields(exportConfiguration));
-        clone.setCox(getCox().cloneExportedFields(exportConfiguration));
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Cox getCOX() {
+        return cox;
     }
 
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
+    /**
+     * Définit la valeur de la propriété cox.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Cox }
+     *     
      */
-    public String getType() {
-        return "TRZ";
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setCOX(Cox value) {
+        this.cox = value;
     }
 
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
-     */
-    public Date getDatiDt() {
-        Date datiDt = null;
-        if (getCoe() != null && getCoe().getCoeDatiDt() != null) {
-            datiDt = getCoe().getCoeDatiDt();
-        }
-        if (datiDt == null && getCox() != null && getCox().getCoxDatiDt() != null) {
-            datiDt = getCox().getCoxDatiDt();
-        }
-        return datiDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
-     */
-    public Date getDaDt() {
-        Date daDt = null;
-        if (getCoe() != null && getCoe().getCoeDaDt() != null) {
-            daDt = getCoe().getCoeDaDt();
-        }
-        if (daDt == null && getCox() != null && getCox().getCoxDaDt() != null) {
-            daDt = getCox().getCoxDaDt();
-        }
-        return daDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
-     */
-    public String getTiLb() {
-        String tiLb = null;
-        if (getCoe() != null && getCoe().getCoeTiLb() != null) {
-            tiLb = getCoe().getCoeTiLb();
-        }
-        if (tiLb == null && getCox() != null && getCox().getCoxTiLb() != null) {
-            tiLb = getCox().getCoxTiLb();
-        }
-        return tiLb;
-
-    }
-
-    public void addToLog(Log log) {
-        if (log.getListTrz() == null) {
-            log.setListTrz(new ArrayList<Trz>());
-        }
-        log.getListTrz().add(this);
-    }
-
-    public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
-        /*if(getCoe()!=null){
-			listRas.addAll(getCoe().getRasList());
-		}
-		if(getCox()!=null){
-			listRas.addAll(getCox().getRasList());
-		}*/
-        return listRas;
-
-    }
 }

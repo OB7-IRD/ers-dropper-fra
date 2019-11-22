@@ -1,216 +1,169 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.XsDateConverter;
 
 /**
- * Informations sur le transfert et son navire.
- *
- * @author christelle.jeanberne
+ * Transfer within the vessel
+ * 
+ * <p>Classe Java pour Etrc complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Etrc"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="FH" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="NH" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://www.w3.org/2001/XMLSchema}date" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ETRC")
-public class Etrc implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ETrcType")
+@XmlSeeAlso({
+    fr.ird.dropper.ers.fra.business.Log.ELOG.ETRC.class
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Etrc {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long etrcCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String etrcTypeLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("FH")
-    private String etrcFhLb;
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "FH", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String fh;
+    @XmlAttribute(name = "NH", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String nh;
+    @XmlAttribute(name = "DA", required = true)
+    @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("NH")
-    private String etrcNhLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(XsDateConverter.class)
-    private Date etrcDaDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Elog elog;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> listSpe;
-
-    public Long getEtrcCdn() {
-        return this.etrcCdn;
-    }
-
-    public void setEtrcCdn(Long etrcCdn) {
-        this.etrcCdn = etrcCdn;
-    }
-
-    public String getEtrcTypeLb() {
-        return this.etrcTypeLb;
-    }
-
-    public void setEtrcTypeLb(String etrcTypeLb) {
-        this.etrcTypeLb = etrcTypeLb;
-    }
-
-    public String getEtrcFhLb() {
-        return this.etrcFhLb;
-    }
-
-    public void setEtrcFhLb(String etrcFhLb) {
-        this.etrcFhLb = etrcFhLb;
-    }
-
-    public String getEtrcNhLb() {
-        return this.etrcNhLb;
-    }
-
-    public void setEtrcNhLb(String etrcNhLb) {
-        this.etrcNhLb = etrcNhLb;
-    }
-
-    public Date getEtrcDaDt() {
-        return this.etrcDaDt;
-    }
-
-    public void setEtrcDaDt(Date etrcDaDt) {
-        this.etrcDaDt = etrcDaDt;
-    }
-
-    public Elog getElog() {
-        return this.elog;
-    }
-
-    public void setElog(Elog elog) {
-        this.elog = elog;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
-        }
-        return this.listSpe;
-    }
-
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEtrcCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Etrc)) {
-            return false;
-        }
-        Etrc castOther = (Etrc) other;
-        return new EqualsBuilder().append(this.getEtrcCdn(),
-                castOther.getEtrcCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEtrcCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return etrcCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ETRC).
-     *
-     * @return this
+     * Obtient la valeur de la propriété fh.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getFH() {
+        return fh;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété fh.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Etrc cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Etrc clone = new Etrc();
-
-        clone.setEtrcTypeLb(getEtrcTypeLb());
-        clone.setEtrcFhLb(getEtrcFhLb());
-        clone.setEtrcNhLb(getEtrcNhLb());
-        clone.setEtrcDaDt(getEtrcDaDt());
-
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setFH(String value) {
+        this.fh = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété nh.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNH() {
+        return nh;
+    }
+
+    /**
+     * Définit la valeur de la propriété nh.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNH(String value) {
+        this.nh = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété da.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
+    }
+
+    /**
+     * Définit la valeur de la propriété da.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
+    }
+
 }

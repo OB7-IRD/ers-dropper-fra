@@ -1,333 +1,262 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import fr.ird.common.DateTimeUtils;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
- * Débarquement.
+ * Landing declaration.
  *
- * @author christelle.jeanberne
+ * <p>
+ * Classe Java pour Lan complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
+ * <pre>
+ * &lt;complexType name="Lan"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="TRN" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Trn" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="TS" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}SenderType" /&gt;
+ *       &lt;attribute name="PO" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ *
+ *
  */
-@XStreamAlias("LAN")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "LanDeclarationType", propOrder = {
+    "spe",
+    "trn"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
 public class Lan extends EvenementDePecheImpl {
 
-    private static final long serialVersionUID = -3529253898598523142L;
+    @XmlElement(name = "SPE", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Spe> spe;
+    @XmlElement(name = "TRN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Trn> trn;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "TS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ts;
+    @XmlAttribute(name = "PO", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String po;
 
     /**
-     * identifier field
+     * Gets the value of the spe property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the spe property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Spe }
+     *
+     *
      */
-    @XStreamOmitField
-    private Long lanCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date lanDaDt;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String lanTiLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TS")
-    private String lanTsLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PO")
-    private String lanPoLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamOmitField
-    private Date lanDatiDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> listSpe;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "TRN")
-    private List<Trn> listTrn;
-
-    /**
-     * Retourne l'identifiant.
-     */
-    public Long getLanCdn() {
-        return this.lanCdn;
-    }
-
-    public void setLanCdn(Long lanCdn) {
-        this.lanCdn = lanCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Spe> getSPE() {
+        if (spe == null) {
+            spe = new ArrayList<Spe>();
+        }
+        return this.spe;
     }
 
     /**
-     * Retourne la date.
+     * Gets the value of the trn property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the trn property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTRN().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Trn }
+     *
+     *
      */
-    public Date getLanDaDt() {
-        return this.lanDaDt;
-    }
-
-    public void setLanDaDt(Date lanDaDt) {
-        this.lanDaDt = lanDaDt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Trn> getTRN() {
+        if (trn == null) {
+            trn = new ArrayList<Trn>();
+        }
+        return this.trn;
     }
 
     /**
-     * Retourne l'heure.
+     * Obtient la valeur de la propriété da.
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
-    public String getLanTiLb() {
-        return this.lanTiLb;
-    }
-
-    public void setLanTiLb(String lanTiLb) {
-        this.lanTiLb = lanTiLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
     }
 
     /**
-     * Retourne le port.
+     * Définit la valeur de la propriété da.
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
-    public String getLanPoLb() {
-        return this.lanPoLb;
-    }
-
-    public void setLanPoLb(String lanPoLb) {
-        this.lanPoLb = lanPoLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
     }
 
     /**
-     * Retourne le type d'expéditeur (MAS: maître, REP: son représentant, AGE:
-     * Agent).
+     * Obtient la valeur de la propriété ti.
+     *
+     * @return possible object is {@link String }
+     *
      */
-    public String getLanTsLb() {
-        return this.lanTsLb;
-    }
-
-    public void setLanTsLb(String lanTsLb) {
-        this.lanTsLb = lanTsLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
     }
 
     /**
-     * Retourne la date/heure.
+     * Définit la valeur de la propriété ti.
+     *
+     * @param value allowed object is {@link String }
+     *
      */
-    public Date getLanDatiDt() {
-        return this.lanDatiDt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
     }
 
-    public void setLanDatiDt(Date lanDatiDt) {
-        this.lanDatiDt = lanDatiDt;
+    /**
+     * Obtient la valeur de la propriété ts.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTS() {
+        return ts;
     }
 
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
+    /**
+     * Définit la valeur de la propriété ts.
+     *
+     * @param value allowed object is {@link String }
+     *
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTS(String value) {
+        this.ts = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété po.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPO() {
+        return po;
+    }
+
+    /**
+     * Définit la valeur de la propriété po.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPO(String value) {
+        this.po = value;
+    }
+
     @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public List<Trn> getListTrn() {
-        return this.listTrn;
-    }
-
-    public void setListTrn(List<Trn> listTrn) {
-        this.listTrn = listTrn;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
+    public void addToLog(Log log) {
+        if (log.getLAN() == null) {
+            log.setLAN(new ArrayList<Lan>());
         }
-        return this.listSpe;
+        log.getLAN().add(this);
     }
 
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getLanCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
+    @Override
+    public List<Ras> getRasList() {
+        List<Ras> listRas = new ArrayList<>();
+        if (getSPE() == null) {
+            return listRas;
         }
-        if (!(other instanceof Lan)) {
-            return false;
+        for (Spe spe : getSPE()) {
+            listRas.add(spe.getRAS());
         }
-        Lan castOther = (Lan) other;
-        return new EqualsBuilder().append(this.getLanCdn(),
-                castOther.getLanCdn()).isEquals();
+        return listRas;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getLanCdn()).toHashCode();
-    }
-
-    /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
-     */
-    public Serializable getIdentifier() {
-        return lanCdn;
-    }
-
-    /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (LAN)
-     *
-     * @return this
-     */
-    private Object readResolve() {
-        // On crée l'attribut lanDatiDt (date/heure) qui est une concaténation
-        // des attributs lanDaDt (date) et lanTiLb (heure)
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getLanDaDt());
-        if (getLanTiLb() == null) {
-            dateHeure += " 00:00";
-        } else {
-            dateHeure += " " + getLanTiLb();
-        }
-        Date lanDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setLanDatiDt(lanDatiDt);
-        return this;
-    }
-
-    /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peur être exporté par XStream
-     */
-    public Lan cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Lan clone = new Lan();
-
-        clone.setLanDaDt(getLanDaDt());
-        clone.setLanTiLb(getLanTiLb());
-        clone.setLanTsLb(getLanTsLb());
-        clone.setLanPoLb(getLanPoLb());
-
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-
-        return clone;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
-     */
     public String getType() {
         return "LAN";
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
-     */
-    public Date getDatiDt() {
-        return getLanDatiDt();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
-     */
+    @Override
     public Date getDaDt() {
-        return getLanDaDt();
+        return da.toGregorianCalendar().getTime();
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
-     */
+    @Override
+    public Date getDatiDt() {
+        return DateTimeUtils.createDateTime(getDaDt(), getTiLb()).toDate();
+    }
+
+    @Override
     public String getTiLb() {
-        return getLanTiLb();
-    }
-
-    public void addToLog(Log log) {
-        if (log.getListLan() == null) {
-            log.setListLan(new ArrayList<Lan>());
-        }
-        log.getListLan().add(this);
-    }
-
-    public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
-        if (getListSpe() == null) {
-            return listRas;
-        }
-        for (Spe spe : getListSpe()) {
-            listRas.add(spe.getRas());
-        }
-        return listRas;
+        return ti;
     }
 
 }

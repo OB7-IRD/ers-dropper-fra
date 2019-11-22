@@ -1,225 +1,250 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Traitement sur le poisson.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour ProDeclarationType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Pro"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="FF" type="{http://ec.europa.eu/fisheries/schema/ers/v3}FishFreshnessType" /&gt;
+ *       &lt;attribute name="PS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}FishStateType" /&gt;
+ *       &lt;attribute name="PR" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}FishPresentationType" /&gt;
+ *       &lt;attribute name="TY" type="{http://ec.europa.eu/fisheries/schema/ers/v3}FishPackagingType" /&gt;
+ *       &lt;attribute name="NN" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="AW" type="{http://www.w3.org/2001/XMLSchema}decimal" /&gt;
+ *       &lt;attribute name="CF" type="{http://www.w3.org/2001/XMLSchema}decimal" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("PRO")
-public class Pro implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ProDeclarationType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Pro {
 
-    private static final long serialVersionUID = -3479691165440373908L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long proCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("FF")
-    private String proFfLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PS")
-    private String proPsLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PR")
-    private String proPrLb;
+    @XmlAttribute(name = "FF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ff;
+    @XmlAttribute(name = "PS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ps;
+    @XmlAttribute(name = "PR", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String pr;
+    @XmlAttribute(name = "TY")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ty;
+    @XmlAttribute(name = "NN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer nn;
+    @XmlAttribute(name = "AW")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Double aw;
+    @XmlAttribute(name = "CF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Double cf;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété ff.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("TY")
-    private String proTyLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NN")
-    private Integer proNnNb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("AW")
-    private Double proAwNb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("CF")
-    private Double proCfNb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Spe> listSpe;
-
-    public Long getProCdn() {
-        return this.proCdn;
-    }
-
-    public void setProCdn(Long proCdn) {
-        this.proCdn = proCdn;
-    }
-
-    public String getProFfLb() {
-        return this.proFfLb;
-    }
-
-    public void setProFfLb(String proFfLb) {
-        this.proFfLb = proFfLb;
-    }
-
-    public String getProPsLb() {
-        return this.proPsLb;
-    }
-
-    public void setProPsLb(String proPsLb) {
-        this.proPsLb = proPsLb;
-    }
-
-    public String getProPrLb() {
-        return this.proPrLb;
-    }
-
-    public void setProPrLb(String proPrLb) {
-        this.proPrLb = proPrLb;
-    }
-
-    public String getProTyLb() {
-        return this.proTyLb;
-    }
-
-    public void setProTyLb(String proTyLb) {
-        this.proTyLb = proTyLb;
-    }
-
-    public Integer getProNnNb() {
-        return this.proNnNb;
-    }
-
-    public void setProNnNb(Integer proNnNb) {
-        this.proNnNb = proNnNb;
-    }
-
-    public Double getProAwNb() {
-        return this.proAwNb;
-    }
-
-    public void setProAwNb(Double proAwNb) {
-        this.proAwNb = proAwNb;
-    }
-
-    public Double getProCfNb() {
-        return this.proCfNb;
-    }
-
-    public void setProCfNb(Double proCfNb) {
-        this.proCfNb = proCfNb;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
-        }
-        return this.listSpe;
-    }
-
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getProCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Pro)) {
-            return false;
-        }
-        Pro castOther = (Pro) other;
-        return new EqualsBuilder().append(this.getProCdn(),
-                castOther.getProCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getProCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getFF() {
+        return ff;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété ff.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Serializable getIdentifier() {
-        return proCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setFF(String value) {
+        this.ff = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peur être exporté par XStream
+     * Obtient la valeur de la propriété ps.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Pro cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Pro clone = new Pro();
-
-        clone.setProFfLb(getProFfLb());
-        clone.setProPsLb(getProPsLb());
-        clone.setProPrLb(getProPrLb());
-        clone.setProTyLb(getProTyLb());
-        clone.setProNnNb(getProNnNb());
-        clone.setProAwNb(getProAwNb());
-        clone.setProCfNb(getProCfNb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPS() {
+        return ps;
     }
+
+    /**
+     * Définit la valeur de la propriété ps.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPS(String value) {
+        this.ps = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété pr.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPR() {
+        return pr;
+    }
+
+    /**
+     * Définit la valeur de la propriété pr.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPR(String value) {
+        this.pr = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ty.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTY() {
+        return ty;
+    }
+
+    /**
+     * Définit la valeur de la propriété ty.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTY(String value) {
+        this.ty = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété nn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getNN() {
+        return nn;
+    }
+
+    /**
+     * Définit la valeur de la propriété nn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNN(Integer value) {
+        this.nn = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété aw.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Double getAW() {
+        return aw;
+    }
+
+    /**
+     * Définit la valeur de la propriété aw.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setAW(Double value) {
+        this.aw = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété cf.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Double getCF() {
+        return cf;
+    }
+
+    /**
+     * Définit la valeur de la propriété cf.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setCF(Double value) {
+        this.cf = value;
+    }
+
 }

@@ -1,182 +1,168 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Etiquette électronique.
- *
- * @author christelle.jeanberne
+ * Information on the electronic tag
+ * 
+ * <p>Classe Java pour Etdd complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Etdd"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="GT" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="GI" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="GO"&gt;
+ *         &lt;simpleType&gt;
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *             &lt;maxLength value="300"/&gt;
+ *           &lt;/restriction&gt;
+ *         &lt;/simpleType&gt;
+ *       &lt;/attribute&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ETDD")
-public class Etdd implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ETddType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Etdd {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long etddCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String etddTypeLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("GT")
-    private String etddGtLb;
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "GT")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String gt;
+    @XmlAttribute(name = "GI")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String gi;
+    @XmlAttribute(name = "GO")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String go;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("GI")
-    private String etddGiLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("GO")
-    private String etddGoLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Efad efad;
-
-    public Long getEtddCdn() {
-        return etddCdn;
-    }
-
-    public void setEtddCdn(Long etddCdn) {
-        this.etddCdn = etddCdn;
-    }
-
-    public String getEtddTypeLb() {
-        return etddTypeLb;
-    }
-
-    public void setEtddTypeLb(String etddTypeLb) {
-        this.etddTypeLb = etddTypeLb;
-    }
-
-    public String getEtddGtLb() {
-        return etddGtLb;
-    }
-
-    public void setEtddGtLb(String etddGtLb) {
-        this.etddGtLb = etddGtLb;
-    }
-
-    public String getEtddGiLb() {
-        return etddGiLb;
-    }
-
-    public void setEtddGiLb(String etddGiLb) {
-        this.etddGiLb = etddGiLb;
-    }
-
-    public String getEtddGoLb() {
-        return etddGoLb;
-    }
-
-    public void setEtddGoLb(String etddGoLb) {
-        this.etddGoLb = etddGoLb;
-    }
-
-    public Efad getEfad() {
-        return efad;
-    }
-
-    public void setEfad(Efad efad) {
-        this.efad = efad;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEtddCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Etdd)) {
-            return false;
-        }
-        Etdd castOther = (Etdd) other;
-        return new EqualsBuilder().append(this.getEtddCdn(),
-                castOther.getEtddCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEtddCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return etddCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ETDD).
-     *
-     * @return this
+     * Obtient la valeur de la propriété gt.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getGT() {
+        return gt;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété gt.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Etdd cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Etdd clone = new Etdd();
-
-        clone.setEtddTypeLb(getEtddTypeLb());
-        clone.setEtddGtLb(getEtddGtLb());
-        clone.setEtddGiLb(getEtddGiLb());
-        clone.setEtddGoLb(getEtddGoLb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setGT(String value) {
+        this.gt = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété gi.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getGI() {
+        return gi;
+    }
+
+    /**
+     * Définit la valeur de la propriété gi.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setGI(String value) {
+        this.gi = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété go.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getGO() {
+        return go;
+    }
+
+    /**
+     * Définit la valeur de la propriété go.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setGO(String value) {
+        this.go = value;
+    }
+
 }

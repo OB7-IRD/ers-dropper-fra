@@ -1,212 +1,119 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import fr.ird.common.DateTimeUtils;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
- * Fin de la pêche.
+ * End Of Fishing declaration indicating completion of fishing operations prior
+ * to return to port.
  *
- * @author christelle.jeanberne
+ * <p>
+ * Classe Java pour Eof complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
+ * <pre>
+ * &lt;complexType name="Eof"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ *
+ *
  */
-@XStreamAlias("EOF")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "EofDeclarationType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
 public class Eof extends EvenementDePecheImpl {
 
-    private static final long serialVersionUID = 1182051750078974167L;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
 
     /**
-     * identifier field
+     * Obtient la valeur de la propriété da.
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
-    @XStreamOmitField
-    private Long eofCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
+    }
 
     /**
-     * persistent field
+     * Définit la valeur de la propriété da.
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date eofDaDt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
+    }
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété ti.
+     *
+     * @return possible object is {@link String }
+     *
      */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String eofTiLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
+    }
 
     /**
-     * nullable persistent field
+     * Définit la valeur de la propriété ti.
+     *
+     * @param value allowed object is {@link String }
+     *
      */
-    @XStreamOmitField
-    private Date eofDatiDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    public Long getEofCdn() {
-        return this.eofCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
     }
 
-    public void setEofCdn(Long eofCdn) {
-        this.eofCdn = eofCdn;
-    }
-
-    public Date getEofDaDt() {
-        return this.eofDaDt;
-    }
-
-    public void setEofDaDt(Date eofDaDt) {
-        this.eofDaDt = eofDaDt;
-    }
-
-    public String getEofTiLb() {
-        return this.eofTiLb;
-    }
-
-    public void setEofTiLb(String eofTiLb) {
-        this.eofTiLb = eofTiLb;
-    }
-
-    public Date getEofDatiDt() {
-        return this.eofDatiDt;
-    }
-
-    public void setEofDatiDt(Date eofDatiDt) {
-        this.eofDatiDt = eofDatiDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
-     */
     @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEofCdn();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Eof)) {
-            return false;
-        }
-        Eof castOther = (Eof) other;
-        return new EqualsBuilder().append(this.getEofCdn(),
-                castOther.getEofCdn()).isEquals();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEofCdn()).toHashCode();
-    }
-
-    /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
-     */
-    public Serializable getIdentifier() {
-        return eofCdn;
-    }
-
-    /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (EOF)
-     *
-     * @return this
-     */
-    private Object readResolve() {
-        // On crée l'attribut eofDatiDt (date/heure) qui est une concaténation
-        // des attributs eofDaDt (date) et eofTiLb (heure)
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getEofDaDt()) + " "
-                + getEofTiLb();
-        Date eofDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setEofDatiDt(eofDatiDt);
-        return this;
-    }
-
-    /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peur être exporté par XStream
-     */
-    public Eof cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Eof clone = new Eof();
-
-        clone.setEofDaDt(getEofDaDt());
-        clone.setEofTiLb(getEofTiLb());
-
-        return clone;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
-     */
-    public String getType() {
-        return "EOF";
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
-     */
-    public Date getDatiDt() {
-        return getEofDatiDt();
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
-     */
     public Date getDaDt() {
-        return getEofDaDt();
+        return da.toGregorianCalendar().getTime();
     }
 
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
-     */
+    @Override
+    public Date getDatiDt() {
+        return DateTimeUtils.createDateTime(getDaDt(), getTiLb()).toDate();
+    }
+
+    @Override
     public String getTiLb() {
-        return getEofTiLb();
+        return ti;
     }
 
     public void addToLog(Log log) {
-        if (log.getListEof() == null) {
-            log.setListEof(new ArrayList<Eof>());
-        }
-        log.getListEof().add(this);
+        log.setEOF(this);
     }
 
     public List<Ras> getRasList() {
@@ -214,4 +121,7 @@ public class Eof extends EvenementDePecheImpl {
         return listRas;
     }
 
+    public String getType() {
+        return "EOF";
+    }
 }

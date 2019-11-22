@@ -1,197 +1,104 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Extension (précision) de la capture.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour EFarType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Efar"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="DF" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("EFAR")
-public class Efar implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "EFarType")
+@XmlSeeAlso({
+    fr.ird.dropper.ers.fra.business.Far.EFAR.class
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Efar {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long efarCdn;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DF")
-    private Integer efarDfNb;
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "DF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer df;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String efarTypeLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Far> listFar;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("ETTS")
-    private Etts etts;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("EPFA")
-    private Epfa epfa;
-
-    public Long getEfarCdn() {
-        return this.efarCdn;
-    }
-
-    public void setEfarCdn(Long efarCdn) {
-        this.efarCdn = efarCdn;
-    }
-
-    public Integer getEfarDfNb() {
-        return this.efarDfNb;
-    }
-
-    public void setEfarDfNb(Integer efarDfNb) {
-        this.efarDfNb = efarDfNb;
-    }
-
-    public String getEfarTypeLb() {
-        return this.efarTypeLb;
-    }
-
-    public void setEfarTypeLb(String efarTypeLb) {
-        this.efarTypeLb = efarTypeLb;
-    }
-
-    public List<Far> getListFar() {
-        if (listFar == null) {
-            listFar = new ArrayList<>();
-        }
-        return listFar;
-    }
-
-    public void setListFar(List<Far> listFar) {
-        this.listFar = listFar;
-    }
-
-    public Etts getEtts() {
-        return this.etts;
-    }
-
-    public void setEtts(Etts etts) {
-        this.etts = etts;
-    }
-
-    public Epfa getEpfa() {
-        return this.epfa;
-    }
-
-    public void setEpfa(Epfa epfa) {
-        this.epfa = epfa;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEfarCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Efar)) {
-            return false;
-        }
-        Efar castOther = (Efar) other;
-        return new EqualsBuilder().append(this.getEfarCdn(),
-                castOther.getEfarCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEfarCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return efarCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (EFAR).
-     *
-     * @return this
+     * Obtient la valeur de la propriété df.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getDF() {
+        return df;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété df.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public Efar cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Efar clone = new Efar();
-
-        clone.setEfarTypeLb(getEfarTypeLb());
-        clone.setEfarDfNb(getEfarDfNb());
-
-        Etts etts = getEtts();
-        if (etts != null) {
-            clone.setEtts(etts.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setEtts(null);
-        }
-
-        Epfa epfa = getEpfa();
-        if (epfa != null) {
-            clone.setEpfa(epfa.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setEpfa(null);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDF(Integer value) {
+        this.df = value;
     }
+
 }

@@ -1,319 +1,140 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
-import fr.ird.dropper.ers.fra.xstreamconverters.XsDateConverter;
-import fr.ird.dropper.ers.fra.xstreamconverters.XsTimeConverter;
 
 /**
- * Déclaration des espèces protégées.
- *
- * @author christelle.jeanberne
+ * Protected species declaration
+ * 
+ * <p>Classe Java pour Ecps complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Ecps"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://www.w3.org/2001/XMLSchema}date" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://www.w3.org/2001/XMLSchema}time" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ECPS")
-public class Ecps extends EvenementDePecheImpl {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ECpsType")
+@XmlSeeAlso({
+    fr.ird.dropper.ers.fra.business.Log.ELOG.ECPS.class
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Ecps {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long ecpsCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String ecpsTypeLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(XsDateConverter.class)
-    private Date ecpsDaDt;
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "DA", required = true)
+    @XmlSchemaType(name = "date")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @XmlSchemaType(name = "time")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar ti;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    @XStreamConverter(XsTimeConverter.class)
-    private Date ecpsTiDt;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamOmitField
-    private Date ecpsDatiDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Elog elog;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("POS")
-    private Pos pos;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("GEA")
-    private Gea gea;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "EDCI")
-    private List<Edci> listEdci;
-
-    public Long getEcpsCdn() {
-        return this.ecpsCdn;
-    }
-
-    public void setEcpsCdn(Long ecpsCdn) {
-        this.ecpsCdn = ecpsCdn;
-    }
-
-    public String getEcpsTypeLb() {
-        return this.ecpsTypeLb;
-    }
-
-    public void setEcpsTypeLb(String ecpsTypeLb) {
-        this.ecpsTypeLb = ecpsTypeLb;
-    }
-
-    public Date getEcpsDaDt() {
-        return this.ecpsDaDt;
-    }
-
-    public void setEcpsDaDt(Date ecpsDaDt) {
-        this.ecpsDaDt = ecpsDaDt;
-    }
-
-    public Date getEcpsTiDt() {
-        return this.ecpsTiDt;
-    }
-
-    public void setEcpsTiDt(Date ecpsTiDt) {
-        this.ecpsTiDt = ecpsTiDt;
-    }
-
-    public Date getEcpsDatiDt() {
-        return this.ecpsDatiDt;
-    }
-
-    public void setEcpsDatiDt(Date ecpsDatiDt) {
-        this.ecpsDatiDt = ecpsDatiDt;
-    }
-
-    public Elog getElog() {
-        return this.elog;
-    }
-
-    public void setElog(Elog elog) {
-        this.elog = elog;
-    }
-
-    public Pos getPos() {
-        return this.pos;
-    }
-
-    public void setPos(Pos pos) {
-        this.pos = pos;
-    }
-
-    public Gea getGea() {
-        return this.gea;
-    }
-
-    public void setGea(Gea gea) {
-        this.gea = gea;
-    }
-
-    public List<Edci> getListEdci() {
-        if (listEdci == null) {
-            listEdci = new ArrayList<>();
-        }
-        return this.listEdci;
-    }
-
-    public void setListEdci(List<Edci> listEdci) {
-        this.listEdci = listEdci;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEcpsCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Ecps)) {
-            return false;
-        }
-        Ecps castOther = (Ecps) other;
-        return new EqualsBuilder().append(this.getEcpsCdn(),
-                castOther.getEcpsCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEcpsCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return ecpsCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ECPS).
-     *
-     * @return this
+     * Obtient la valeur de la propriété da.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    private Object readResolve() {
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getEcpsDaDt()) + " "
-                + converter.toTimeString(getEcpsTiDt());
-        Date ecpsDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setEcpsDatiDt(ecpsDatiDt);
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété da.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public Ecps cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Ecps clone = new Ecps();
-
-        clone.setEcpsTypeLb(getEcpsTypeLb());
-        clone.setEcpsDaDt(getEcpsDaDt());
-        clone.setEcpsTiDt(getEcpsTiDt());
-
-        Pos pos = getPos();
-        if (pos != null) {
-            clone.setPos(pos.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setPos(null);
-        }
-
-        Gea gea = getGea();
-        if (gea != null) {
-            clone.setGea(gea.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setGea(null);
-        }
-
-        // Clone des EDCI
-        if (getListEdci() != null && !getListEdci().isEmpty()) {
-            ArrayList<Edci> cloneListEdci = new ArrayList<Edci>();
-            for (Edci edci : getListEdci()) {
-                cloneListEdci.add(edci.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListEdci(cloneListEdci);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
     }
 
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
+    /**
+     * Obtient la valeur de la propriété ti.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public Date getDaDt() {
-        return getEcpsDaDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getTI() {
+        return ti;
     }
 
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
+    /**
+     * Définit la valeur de la propriété ti.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public Date getDatiDt() {
-        return getEcpsDatiDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(XMLGregorianCalendar value) {
+        this.ti = value;
     }
 
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
-     */
-    public String getTiLb() {
-        return new XsTimeConverter().toString(getEcpsTiDt());
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
-     */
-    public String getType() {
-        return "ECPS";
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getLog()
-     */
-    public Log getLog() {
-        if (getElog() != null && getElog().getLogs() != null && !getElog().getLogs().isEmpty()) {
-            return getElog().getLogs().iterator().next();
-        } else {
-            return null;
-        }
-    }
-
-    public void addToLog(Log log) {
-        if (log.getElog() == null) {
-            return;
-        }
-
-        if (log.getElog().getListEcps() == null) {
-            log.getElog().setListEcps(new ArrayList<Ecps>());
-        }
-        log.getElog().getListEcps().add(this);
-    }
-
-    public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
-        return listRas;
-    }
 }

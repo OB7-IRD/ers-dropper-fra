@@ -1,171 +1,130 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Extension (précision) du transport.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour ETrnType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Etrn"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="TD" type="{http://ec.europa.eu/fisheries/schema/ers/v3}code_receiver_type" /&gt;
+ *       &lt;attribute name="DT" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ham" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ETRN")
-public class Etrn implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ETrnType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Etrn {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long etrnCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String etrnTypeLb;
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "TD")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected CodeReceiverType td;
+    @XmlAttribute(name = "DT")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Ham dt;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("TD")
-    private String etrnTdLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DT")
-    private String etrnDtLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Trn> listTrn;
-
-    public Long getEtrnCdn() {
-        return etrnCdn;
-    }
-
-    public void setEtrnCdn(Long etrnCdn) {
-        this.etrnCdn = etrnCdn;
-    }
-
-    public String getEtrnTypeLb() {
-        return etrnTypeLb;
-    }
-
-    public void setEtrnTypeLb(String etrnTypeLb) {
-        this.etrnTypeLb = etrnTypeLb;
-    }
-
-    public String getEtrnTdLb() {
-        return etrnTdLb;
-    }
-
-    public void setEtrnTdLb(String etrnTdLb) {
-        this.etrnTdLb = etrnTdLb;
-    }
-
-    public String getEtrnDtLb() {
-        return etrnDtLb;
-    }
-
-    public void setEtrnDtLb(String etrnDtLb) {
-        this.etrnDtLb = etrnDtLb;
-    }
-
-    public List<Trn> getListTrn() {
-        if (listTrn == null) {
-            listTrn = new ArrayList<>();
-        }
-        return listTrn;
-    }
-
-    public void setListTrn(List<Trn> listTrn) {
-        this.listTrn = listTrn;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEtrnCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Etrn)) {
-            return false;
-        }
-        Etrn castOther = (Etrn) other;
-        return new EqualsBuilder().append(this.getEtrnCdn(),
-                castOther.getEtrnCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEtrnCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return etrnCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ETRN).
-     *
-     * @return this
+     * Obtient la valeur de la propriété td.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CodeReceiverType }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public CodeReceiverType getTD() {
+        return td;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété td.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CodeReceiverType }
+     *     
      */
-    public Etrn cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Etrn clone = new Etrn();
-
-        clone.setEtrnTypeLb(getEtrnTypeLb());
-        clone.setEtrnTdLb(getEtrnTdLb());
-        clone.setEtrnDtLb(getEtrnDtLb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTD(CodeReceiverType value) {
+        this.td = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété dt.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Ham }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Ham getDT() {
+        return dt;
+    }
+
+    /**
+     * Définit la valeur de la propriété dt.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Ham }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDT(Ham value) {
+        this.dt = value;
+    }
+
 }

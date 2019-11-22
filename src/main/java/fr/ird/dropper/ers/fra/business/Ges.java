@@ -1,202 +1,166 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import fr.ird.common.DateTimeUtils;
 import java.util.Date;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
+import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
- * Matériel lancé à la mer.
+ * Gear shot sub-declaration.
  *
- * @author christelle.jeanberne
+ * <p>
+ * Classe Java pour Ges complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
+ * <pre>
+ * &lt;complexType name="Ges"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="GS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}GearShotIdentifierType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ *
+ *
  */
-@XStreamAlias("GES")
-public class Ges implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "GesDeclarationType", propOrder = {
+    "pos"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Ges {
 
-    private static final long serialVersionUID = 1823192993237209985L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long gesCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date gesDaDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String gesTiLb;
+    @XmlElement(name = "POS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pos pos;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "GS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String gs;
 
     /**
-     * nullable persistent field
-     */
-    @XStreamOmitField
-    private Date gesDatiDt;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("GS")
-    private String gesGsLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Gea gea;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("POS")
-    private Pos pos;
-
-    public Long getGesCdn() {
-        return this.gesCdn;
-    }
-
-    public void setGesCdn(Long gesCdn) {
-        this.gesCdn = gesCdn;
-    }
-
-    public Date getGesDaDt() {
-        return this.gesDaDt;
-    }
-
-    public void setGesDaDt(Date gesDaDt) {
-        this.gesDaDt = gesDaDt;
-    }
-
-    public String getGesTiLb() {
-        return this.gesTiLb;
-    }
-
-    public void setGesTiLb(String gesTiLb) {
-        this.gesTiLb = gesTiLb;
-    }
-
-    public Date getGesDatiDt() {
-        return this.gesDatiDt;
-    }
-
-    public void setGesDatiDt(Date gesDatiDt) {
-        this.gesDatiDt = gesDatiDt;
-    }
-
-    public String getGesGsLb() {
-        return this.gesGsLb;
-    }
-
-    public void setGesGsLb(String gesGsLb) {
-        this.gesGsLb = gesGsLb;
-    }
-
-    public Gea getGea() {
-        return this.gea;
-    }
-
-    public void setGea(Gea gea) {
-        this.gea = gea;
-    }
-
-    public Pos getPos() {
-        return this.pos;
-    }
-
-    public void setPos(Pos pos) {
-        this.pos = pos;
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getGesCdn();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Ges)) {
-            return false;
-        }
-        Ges castOther = (Ges) other;
-        return new EqualsBuilder().append(this.getGesCdn(),
-                castOther.getGesCdn()).isEquals();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getGesCdn()).toHashCode();
-    }
-
-    /**
-     * Retourne l'identifiant.
+     * Obtient la valeur de la propriété pos.
      *
-     * @return l'identifiant
+     * @return possible object is {@link Pos }
+     *
      */
-    public Serializable getIdentifier() {
-        return gesCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pos getPOS() {
+        return pos;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (GES)
+     * Définit la valeur de la propriété pos.
      *
-     * @return this
+     * @param value allowed object is {@link Pos }
+     *
      */
-    private Object readResolve() {
-        // On crée l'attribut gesDatiDt (date/heure) qui est une concaténation
-        // des attributs gesDaDt (date) et gesTiLb (heure)
-        DateConverter convester = new DateConverter();
-        String dateHeure = convester.toString(getGesDaDt()) + " "
-                + getGesTiLb();
-        Date gesDatiDt = (Date) convester.fromDateTimeString(dateHeure);
-        setGesDatiDt(gesDatiDt);
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPOS(Pos value) {
+        this.pos = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
+     * Obtient la valeur de la propriété da.
      *
-     * @return un objet qui peur être exporté par XStream
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
-    public Ges cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Ges clone = new Ges();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
+    }
 
-        clone.setGesDaDt(getGesDaDt());
-        clone.setGesTiLb(getGesTiLb());
-        clone.setGesGsLb(getGesGsLb());
+    /**
+     * Définit la valeur de la propriété da.
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
+    }
 
-        clone.setPos(getPos() == null ? null : getPos().cloneExportedFields(exportConfiguration));
+    /**
+     * Obtient la valeur de la propriété ti.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
+    }
 
-        return clone;
+    /**
+     * Définit la valeur de la propriété ti.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété gs.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getGS() {
+        return gs;
+    }
+
+    /**
+     * Définit la valeur de la propriété gs.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setGS(String value) {
+        this.gs = value;
+    }
+
+    public Date getDaDt() {
+        return da.toGregorianCalendar().getTime();
+    }
+
+    public Date getDatiDt() {
+        return DateTimeUtils.createDateTime(getDaDt(), getTiLb()).toDate();
+    }
+
+    public String getTiLb() {
+        return ti;
     }
 }

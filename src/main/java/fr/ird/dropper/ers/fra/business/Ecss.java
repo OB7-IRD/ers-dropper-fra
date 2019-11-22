@@ -1,199 +1,190 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Extension(précision) des envois vendus.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour ECssType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Ecss"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="EF" type="{http://ec.europa.eu/fisheries/schema/ers/v3}extended_fish_size" /&gt;
+ *       &lt;attribute name="RR" type="{http://ec.europa.eu/fisheries/schema/ers/v3}code_transaction" /&gt;
+ *       &lt;attribute name="VC" type="{http://ec.europa.eu/fisheries/schema/ers/v3}fish_valorisation" /&gt;
+ *       &lt;attribute name="PN" type="{http://ec.europa.eu/fisheries/schema/ers/v3}national_presentation" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ECSS")
-public class Ecss implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ECssType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Ecss {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long ecssCdn;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("EF")
-    private String ecssEfLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RR")
-    private String ecssRrLb;
+    @XmlAttribute(name = "type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "EF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ef;
+    @XmlAttribute(name = "RR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String rr;
+    @XmlAttribute(name = "VC")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected FishValorisation vc;
+    @XmlAttribute(name = "PN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected NationalPresentation pn;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("VC")
-    private String ecssVcLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("type")
-    private String ecssTypeLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PN")
-    private String ecssPnLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Css> listCss;
-
-    public Long getEcssCdn() {
-        return ecssCdn;
-    }
-
-    public void setEcssCdn(Long ecssCdn) {
-        this.ecssCdn = ecssCdn;
-    }
-
-    public String getEcssEfLb() {
-        return ecssEfLb;
-    }
-
-    public void setEcssEfLb(String ecssEfLb) {
-        this.ecssEfLb = ecssEfLb;
-    }
-
-    public String getEcssRrLb() {
-        return ecssRrLb;
-    }
-
-    public void setEcssRrLb(String ecssRrLb) {
-        this.ecssRrLb = ecssRrLb;
-    }
-
-    public String getEcssVcLb() {
-        return ecssVcLb;
-    }
-
-    public void setEcssVcLb(String ecssVcLb) {
-        this.ecssVcLb = ecssVcLb;
-    }
-
-    public String getEcssTypeLb() {
-        return ecssTypeLb;
-    }
-
-    public void setEcssTypeLb(String ecssTypeLb) {
-        this.ecssTypeLb = ecssTypeLb;
-    }
-
-    public String getEcssPnLb() {
-        return ecssPnLb;
-    }
-
-    public void setEcssPnLb(String ecssPnLb) {
-        this.ecssPnLb = ecssPnLb;
-    }
-
-    public List<Css> getListCss() {
-        if (listCss == null) {
-            listCss = new ArrayList<>();
-        }
-        return listCss;
-    }
-
-    public void setListCss(List<Css> listCss) {
-        this.listCss = listCss;
-    }
-
-    @Override
-    public String toString() {
-        return "Ecss{" + "ecssEfLb=" + ecssEfLb + ", ecssRrLb=" + ecssRrLb + ", ecssVcLb=" + ecssVcLb + ", ecssTypeLb=" + ecssTypeLb + ", ecssPnLb=" + ecssPnLb + ", listCss=" + listCss + '}';
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Ecss)) {
-            return false;
-        }
-        Ecss castOther = (Ecss) other;
-        return new EqualsBuilder().append(this.getEcssCdn(),
-                castOther.getEcssCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEcssCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return ecssCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ECSS).
-     *
-     * @return this
+     * Obtient la valeur de la propriété ef.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getEF() {
+        return ef;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété ef.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Ecss cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Ecss clone = new Ecss();
-
-        clone.setEcssTypeLb(getEcssTypeLb());
-        clone.setEcssEfLb(getEcssEfLb());
-        clone.setEcssRrLb(getEcssRrLb());
-        clone.setEcssVcLb(getEcssVcLb());
-        clone.setEcssPnLb(getEcssPnLb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setEF(String value) {
+        this.ef = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété rr.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRR() {
+        return rr;
+    }
+
+    /**
+     * Définit la valeur de la propriété rr.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRR(String value) {
+        this.rr = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété vc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FishValorisation }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public FishValorisation getVC() {
+        return vc;
+    }
+
+    /**
+     * Définit la valeur de la propriété vc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FishValorisation }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setVC(FishValorisation value) {
+        this.vc = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété pn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link NationalPresentation }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public NationalPresentation getPN() {
+        return pn;
+    }
+
+    /**
+     * Définit la valeur de la propriété pn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link NationalPresentation }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPN(NationalPresentation value) {
+        this.pn = value;
+    }
+
 }

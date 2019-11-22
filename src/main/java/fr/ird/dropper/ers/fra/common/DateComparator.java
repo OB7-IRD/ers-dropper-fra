@@ -34,6 +34,7 @@ public class DateComparator implements Comparator<Date> {
 	 * 
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
      */
+    @Override
     public int compare(Date o1, Date o2) {
         // Compare deux dates
         // Retourne 0 si les deux dates sont identiques
@@ -46,11 +47,11 @@ public class DateComparator implements Comparator<Date> {
      * Comparateur permettant de trier des OPS par ordre croissant de date/heure
      * Attribut ODOT
      */
-    public static final Comparator<Ops> OPS_ORDER_ODOT_ASC = new Comparator<Ops>() {
-        public int compare(Ops e1, Ops e2) {
-            return e1.getOpsOdotDt().compareTo(e2.getOpsOdotDt());
-        }
-    };
+//    public static final Comparator<Ops> OPS_ORDER_ODOT_ASC = new Comparator<Ops>() {
+//        public int compare(Ops e1, Ops e2) {
+//            return e1.getOpsOdotDt().compareTo(e2.getOpsOdotDt());
+//        }
+//    };
 
     /**
      * Comparateur permettant de trier des événements de pêche par ordre
@@ -89,30 +90,30 @@ public class DateComparator implements Comparator<Date> {
      * date/heure (ou seulement date si le journal de bord n'a pas l'heure
      * renseignée.
      */
-    public static final Comparator<Ers> ORDER_ERS_DATI_ASC = new Comparator<Ers>() {
-        public int compare(Ers e1, Ers e2) {
-            if (!StringUtils.isEmpty(e1.getErsRtLb())
-                    && !StringUtils.isEmpty(e2.getErsRtLb())) {
-                return e1.getErsRdtDt().compareTo(e2.getErsRdtDt());
-            } else {
-                return e1.getErsRdDt().compareTo(e2.getErsRdDt());
-            }
-        }
-    };
+//    public static final Comparator<Ers> ORDER_ERS_DATI_ASC = new Comparator<Ers>() {
+//        public int compare(Ers e1, Ers e2) {
+//            if (!StringUtils.isEmpty(e1.getErsRtLb())
+//                    && !StringUtils.isEmpty(e2.getErsRtLb())) {
+//                return e1.getErsRdtDt().compareTo(e2.getErsRdtDt());
+//            } else {
+//                return e1.getErsRdDt().compareTo(e2.getErsRdDt());
+//            }
+//        }
+//    };
 
     /**
      * Comparateur permettant de trier des marées par ordre décroissant de
      * date/heure (ou seulement date si le journal de bord n'a pas l'heure
      * renseignée.
      */
-    public static final Comparator<Ers> ORDER_ERS_DATI_DESC = new Comparator<Ers>() {
-        public int compare(Ers e1, Ers e2) {
-            if (!StringUtils.isEmpty(e1.getErsRtLb())
-                    && !StringUtils.isEmpty(e2.getErsRtLb())) {
-                return e2.getErsRdtDt().compareTo(e1.getErsRdtDt());
-            } else {
-                return e2.getErsRdDt().compareTo(e1.getErsRdDt());
-            }
-        }
-    };
+//    public static final Comparator<Ers> ORDER_ERS_DATI_DESC = new Comparator<Ers>() {
+//        public int compare(Ers e1, Ers e2) {
+//            if (!StringUtils.isEmpty(e1.getErsRtLb())
+//                    && !StringUtils.isEmpty(e2.getErsRtLb())) {
+//                return e2.getErsRdtDt().compareTo(e1.getErsRdtDt());
+//            } else {
+//                return e2.getErsRdDt().compareTo(e1.getErsRdDt());
+//            }
+//        }
+//    };
 }

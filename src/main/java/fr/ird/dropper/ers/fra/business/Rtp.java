@@ -1,298 +1,251 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import fr.ird.common.DateTimeUtils;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
- * Retour au port.
+ * Return To Port declaration indicating the return to the harbour. To be
+ * transmitted on entry into port, after any PNO declaration.
  *
- * @author christelle.jeanberne
+ * <p>
+ * Classe Java pour Rtp complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
+ * <pre>
+ * &lt;complexType name="Rtp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="GEA" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Gea" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="ERTP" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Ertp" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="PO" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *       &lt;attribute name="RE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ReasonReturnType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ *
+ *
  */
-@XStreamAlias("RTP")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "RtpDeclarationType", propOrder = {
+    "gea",
+    "ertp"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
 public class Rtp extends EvenementDePecheImpl {
 
-    private static final long serialVersionUID = -5909311993263624722L;
+    @XmlElement(name = "GEA")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Gea> gea;
+    @XmlElement(name = "ERTP")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Ertp ertp;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "PO", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String po;
+    @XmlAttribute(name = "RE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String re;
 
     /**
-     * identifier field
+     * Gets the value of the gea property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the gea property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getGEA().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Gea }
+     *
+     *
      */
-    @XStreamOmitField
-    private Long rtpCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Gea> getGEA() {
+        if (gea == null) {
+            gea = new ArrayList<Gea>();
+        }
+        return this.gea;
+    }
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété ertp.
+     *
+     * @return possible object is {@link Ertp }
+     *
      */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date rtpDaDt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Ertp getERTP() {
+        return ertp;
+    }
 
     /**
-     * persistent field
+     * Définit la valeur de la propriété ertp.
+     *
+     * @param value allowed object is {@link Ertp }
+     *
      */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String rtpTiLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setERTP(Ertp value) {
+        this.ertp = value;
+    }
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété da.
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
-    @XStreamAsAttribute
-    @XStreamAlias("PO")
-    private String rtpPoLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
+    }
 
     /**
-     * nullable persistent field
+     * Définit la valeur de la propriété da.
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
-    @XStreamAsAttribute
-    @XStreamAlias("RE")
-    private String rtpReLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
+    }
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété ti.
+     *
+     * @return possible object is {@link String }
+     *
      */
-    @XStreamOmitField
-    private Date rtpDatiDt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
+    }
 
     /**
-     * persistent field
+     * Définit la valeur de la propriété ti.
+     *
+     * @param value allowed object is {@link String }
+     *
      */
-    @XStreamImplicit(itemFieldName = "GEA")
-    private List<Gea> listGea;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
+    }
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété po.
+     *
+     * @return possible object is {@link String }
+     *
      */
-    @XStreamAlias("ERTP")
-    private Ertp ertp;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPO() {
+        return po;
+    }
 
     /**
-     * persistent field
+     * Définit la valeur de la propriété po.
+     *
+     * @param value allowed object is {@link String }
+     *
      */
-    @XStreamOmitField
-    private Log log;
-
-    public Long getRtpCdn() {
-        return this.rtpCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPO(String value) {
+        this.po = value;
     }
 
-    public void setRtpCdn(Long rtpCdn) {
-        this.rtpCdn = rtpCdn;
-    }
-
-    public Date getRtpDaDt() {
-        return this.rtpDaDt;
-    }
-
-    public void setRtpDaDt(Date rtpDaDt) {
-        this.rtpDaDt = rtpDaDt;
-    }
-
-    public String getRtpTiLb() {
-        return this.rtpTiLb;
-    }
-
-    public void setRtpTiLb(String rtpTiLb) {
-        this.rtpTiLb = rtpTiLb;
-    }
-
-    public String getRtpPoLb() {
-        return this.rtpPoLb;
-    }
-
-    public void setRtpPoLb(String rtpPoLb) {
-        this.rtpPoLb = rtpPoLb;
-    }
-
-    public String getRtpReLb() {
-        return this.rtpReLb;
-    }
-
-    public void setRtpReLb(String rtpReLb) {
-        this.rtpReLb = rtpReLb;
-    }
-
-    public Date getRtpDatiDt() {
-        return this.rtpDatiDt;
-    }
-
-    public void setRtpDatiDt(Date rtpDatiDt) {
-        this.rtpDatiDt = rtpDatiDt;
-    }
-
-    public Ertp getErtp() {
-        return this.ertp;
-    }
-
-    public void setErtp(Ertp ertp) {
-        this.ertp = ertp;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
+    /**
+     * Obtient la valeur de la propriété re.
+     *
+     * @return possible object is {@link String }
+     *
      */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRE() {
+        return re;
+    }
+
+    /**
+     * Définit la valeur de la propriété re.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRE(String value) {
+        this.re = value;
+    }
+
     @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public List<Gea> getListGea() {
-        if (listGea == null) {
-            listGea = new ArrayList<>();
-        }
-        return this.listGea;
-    }
-
-    public void setListGea(List<Gea> listGea) {
-        this.listGea = listGea;
-    }
-
-    @Override
-    public String toString() {
-        return "Rtp{" + "rtpDaDt=" + rtpDaDt + ", rtpTiLb=" + rtpTiLb + ", rtpPoLb=" + rtpPoLb + ", rtpReLb=" + rtpReLb + ", rtpDatiDt=" + rtpDatiDt + '}';
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Rtp)) {
-            return false;
-        }
-        Rtp castOther = (Rtp) other;
-        return new EqualsBuilder().append(this.getRtpCdn(),
-                castOther.getRtpCdn()).isEquals();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getRtpCdn()).toHashCode();
-    }
-
-    /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
-     */
-    public Serializable getIdentifier() {
-        return rtpCdn;
-    }
-
-    /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (RTP)
-     *
-     * @return this
-     */
-    private Object readResolve() {
-        // On crée l'attribut rtpDatiDt (date/heure) qui est une concaténation
-        // des attributs rtpDaDt (date) et rtpTiLb (heure)
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getRtpDaDt()) + " "
-                + getRtpTiLb();
-        Date rtpDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setRtpDatiDt(rtpDatiDt);
-        return this;
-    }
-
-    /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
-     */
-    public Rtp cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Rtp clone = new Rtp();
-
-        clone.setRtpDaDt(getRtpDaDt());
-        clone.setRtpTiLb(getRtpTiLb());
-        clone.setRtpPoLb(getRtpPoLb());
-        clone.setRtpReLb(getRtpReLb());
-
-        // Clone des GEA
-        if (getListGea() != null && !getListGea().isEmpty()) {
-            ArrayList<Gea> cloneGeas = new ArrayList<Gea>();
-            for (Gea gea : getListGea()) {
-                cloneGeas.add(gea.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListGea(cloneGeas);
-        }
-
-        Ertp ertp = getErtp();
-        if (exportConfiguration.isExtensionsFrancaises() && ertp != null) {
-            clone.setErtp(ertp.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setErtp(null);
-        }
-
-        return clone;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
-     */
-    public String getType() {
-        return "RTP";
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
-     */
-    public Date getDatiDt() {
-        return getRtpDatiDt();
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
-     */
-    public Date getDaDt() {
-        return getRtpDaDt();
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
-     */
-    public String getTiLb() {
-        return getRtpTiLb();
-    }
-
     public void addToLog(Log log) {
-        if (log.getListRtp() == null) {
-            log.setListRtp(new ArrayList<Rtp>());
-        }
-        log.getListRtp().add(this);
+        log.getRTP().add(this);
     }
 
+    @Override
     public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
+        List<Ras> listRas = new ArrayList<>();
         /**
          * listRas.add(getRas()); for(Spe spe : getListSpe()){
          * listRas.add(spe.getRas()); }*
          */
         return listRas;
+    }
+
+    @Override
+    public String getType() {
+        return "RTP";
+    }
+
+    @Override
+    public Date getDaDt() {
+        return da.toGregorianCalendar().getTime();
+    }
+
+    @Override
+    public Date getDatiDt() {
+        return DateTimeUtils.createDateTime(getDaDt(), getTiLb()).toDate();
+    }
+
+    @Override
+    public String getTiLb() {
+        return ti;
     }
 }

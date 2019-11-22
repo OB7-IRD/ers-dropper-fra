@@ -1,151 +1,100 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Extension (précision) du retour au port.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour ERtpType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Ertp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="ND" type="{http://www.w3.org/2001/XMLSchema}decimal" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ERTP")
-public class Ertp implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ERtpType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Ertp {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long ertpCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String ertpTypeLb;
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "ND")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Double nd;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("ND")
-    private Double ertpNdNb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Rtp> listRtp;
-
-    public Long getErtpCdn() {
-        return this.ertpCdn;
-    }
-
-    public void setErtpCdn(Long ertpCdn) {
-        this.ertpCdn = ertpCdn;
-    }
-
-    public String getErtpTypeLb() {
-        return ertpTypeLb;
-    }
-
-    public void setErtpTypeLb(String ertpTypeLb) {
-        this.ertpTypeLb = ertpTypeLb;
-    }
-
-    public Double getErtpNdNb() {
-        return this.ertpNdNb;
-    }
-
-    public void setErtpNdNb(Double ertpNdNb) {
-        this.ertpNdNb = ertpNdNb;
-    }
-
-    public List<Rtp> getListRtp() {
-        if (listRtp == null) {
-            listRtp = new ArrayList<>();
-        }
-        return this.listRtp;
-    }
-
-    public void setListRtp(List<Rtp> listRtp) {
-        this.listRtp = listRtp;
-    }
-
-    @Override
-    public String toString() {
-        return "Ertp{" + "ertpTypeLb=" + ertpTypeLb + ", ertpNdNb=" + ertpNdNb + ", listRtp=" + listRtp + '}';
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Ertp)) {
-            return false;
-        }
-        Ertp castOther = (Ertp) other;
-        return new EqualsBuilder().append(this.getErtpCdn(),
-                castOther.getErtpCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getErtpCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return ertpCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ERTP).
-     *
-     * @return this
+     * Obtient la valeur de la propriété nd.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Double getND() {
+        return nd;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété nd.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
-    public Ertp cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Ertp clone = new Ertp();
-
-        clone.setErtpTypeLb(getErtpTypeLb());
-        clone.setErtpNdNb(getErtpNdNb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setND(Double value) {
+        this.nd = value;
     }
+
 }

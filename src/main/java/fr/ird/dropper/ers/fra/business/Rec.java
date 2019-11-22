@@ -1,137 +1,77 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Navire receveur (hors "BFT" : thon rouge qui est dans balise BTI).
- *
- * @author christelle.jeanberne
+ * Receiving vessel identification: For transfer	under BFT rules, fill out BTI instead.
+ *  1.1-2.0: Receiving vessel. One of REC or DON must be referring to "this vessel", meaning the one identified in the LOG super-element. Required unless reporting under ICCAT BFT rules.
+ * 
+ * <p>Classe Java pour Rec complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Rec"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="PFP" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pfp"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("REC")
-public class Rec implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "RecDeclarationType", propOrder = {
+    "pfp"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Rec {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long recCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("PFP")
-    private Pfp pfp;
+    @XmlElement(name = "PFP", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pfp pfp;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété pfp.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Pfp }
+     *     
      */
-    @XStreamOmitField
-    private List<Rlc> listRlc;
-
-    public Long getRecCdn() {
-        return this.recCdn;
-    }
-
-    public void setRecCdn(Long recCdn) {
-        this.recCdn = recCdn;
-    }
-
-    public Pfp getPfp() {
-        return this.pfp;
-    }
-
-    public void setPfp(Pfp pfp) {
-        this.pfp = pfp;
-    }
-
-    public List<Rlc> getListRlc() {
-        return listRlc;
-    }
-
-    public void setListRlc(List<Rlc> listRlc) {
-        this.listRlc = listRlc;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getRecCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Rec)) {
-            return false;
-        }
-        Rec castOther = (Rec) other;
-        return new EqualsBuilder().append(this.getRecCdn(),
-                castOther.getRecCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getRecCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pfp getPFP() {
+        return pfp;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété pfp.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Pfp }
+     *     
      */
-    public Serializable getIdentifier() {
-        return recCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPFP(Pfp value) {
+        this.pfp = value;
     }
 
-    /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (REC).
-     *
-     * @return this
-     */
-    private Object readResolve() {
-        return this;
-    }
-
-    /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
-     */
-    public Rec cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Rec clone = new Rec();
-
-        if (getPfp() != null) {
-            clone.setPfp(getPfp().cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setPfp(null);
-        }
-
-        return clone;
-    }
 }

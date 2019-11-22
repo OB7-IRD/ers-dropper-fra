@@ -53,43 +53,43 @@ public class OpsFileValidator {
      * @param xsdFilepath
      * @return
      */
-    public OpsFileValidatorReport validate(String xsdFilepath) {
-        LogService.getService(OpsFileValidator.class)
-                .logApplicationDebug("validate");
-        OpsFileValidatorReport opsFileValidatorReport = new OpsFileValidatorReport();
-        XSDHandler handler = new XSDHandler(opsFileValidatorReport);
-        LogService.getService(OpsFileValidator.class)
-                .logApplicationDebug("validate - 1");
-        try {
-            SAXParserFactory spf = SAXParserFactory.newInstance();
-            spf.setNamespaceAware(true);
-            spf.setValidating(true);
-            LogService.getService(OpsFileValidator.class)
-                    .logApplicationDebug("validate - 2");
-            SAXParser sp = spf.newSAXParser();
-
-            sp.getParser().setLocale(Locale.ENGLISH);
-
-            sp.setProperty(JAXP_SCHEMA_LANGUAGE, W3C_XML_SCHEMA);
-            LogService.getService(OpsFileValidator.class)
-                    .logApplicationDebug("validate - 3");
-            List<String> xsds = new ArrayList<>();
-            xsds.add(xsdFilepath);
-            LogService.getService(OpsFileValidator.class)
-                    .logApplicationDebug("validate - 4");
-            for (String xsd : xsds) {
-                InputStream schemaIs = getClass().getResourceAsStream(xsd);
-                sp.setProperty(JAXP_SCHEMA_SOURCE, schemaIs);
-                sp.parse(opsFile, handler);
-            }
-            LogService.getService(OpsFileValidator.class)
-                    .logApplicationDebug("validate - 5");
-
-        } catch (FactoryConfigurationError e) {
-            LogService.getService(this.getClass()).logApplicationError(e.getMessage());
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            LogService.getService(this.getClass()).logApplicationError(e.getMessage());
-        }
-        return opsFileValidatorReport;
-    }
+//    public OpsFileValidatorReport validate(String xsdFilepath) {
+//        LogService.getService(OpsFileValidator.class)
+//                .logApplicationDebug("validate");
+//        OpsFileValidatorReport opsFileValidatorReport = new OpsFileValidatorReport();
+//        XSDHandler handler = new XSDHandler(opsFileValidatorReport);
+//        LogService.getService(OpsFileValidator.class)
+//                .logApplicationDebug("validate - 1");
+//        try {
+//            SAXParserFactory spf = SAXParserFactory.newInstance();
+//            spf.setNamespaceAware(true);
+//            spf.setValidating(true);
+//            LogService.getService(OpsFileValidator.class)
+//                    .logApplicationDebug("validate - 2");
+//            SAXParser sp = spf.newSAXParser();
+//
+//            sp.getParser().setLocale(Locale.ENGLISH);
+//
+//            sp.setProperty(JAXP_SCHEMA_LANGUAGE, W3C_XML_SCHEMA);
+//            LogService.getService(OpsFileValidator.class)
+//                    .logApplicationDebug("validate - 3");
+//            List<String> xsds = new ArrayList<>();
+//            xsds.add(xsdFilepath);
+//            LogService.getService(OpsFileValidator.class)
+//                    .logApplicationDebug("validate - 4");
+//            for (String xsd : xsds) {
+//                InputStream schemaIs = getClass().getResourceAsStream(xsd);
+//                sp.setProperty(JAXP_SCHEMA_SOURCE, schemaIs);
+//                sp.parse(opsFile, handler);
+//            }
+//            LogService.getService(OpsFileValidator.class)
+//                    .logApplicationDebug("validate - 5");
+//
+//        } catch (FactoryConfigurationError e) {
+//            LogService.getService(this.getClass()).logApplicationError(e.getMessage());
+//        } catch (ParserConfigurationException | SAXException | IOException e) {
+//            LogService.getService(this.getClass()).logApplicationError(e.getMessage());
+//        }
+//        return opsFileValidatorReport;
+//    }
 }

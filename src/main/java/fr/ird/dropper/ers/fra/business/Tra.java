@@ -1,456 +1,416 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
- * Transbordement.
- *
- * @author christelle.jeanberne
+ * Transhipment declaration.
+ * 
+ * <p>Classe Java pour Tra complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Tra"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RAS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Ras" minOccurs="0"/&gt;
+ *         &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos" minOccurs="0"/&gt;
+ *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe" maxOccurs="unbounded"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="PO" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *       &lt;attribute name="IR" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CfrType" /&gt;
+ *       &lt;attribute name="TT" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}RadioCallSignType" /&gt;
+ *       &lt;attribute name="TC" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CountryType" /&gt;
+ *       &lt;attribute name="RF" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CfrType" /&gt;
+ *       &lt;attribute name="TF" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}RadioCallSignType" /&gt;
+ *       &lt;attribute name="FC" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CountryType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("TRA")
-public class Tra extends EvenementDePecheImpl {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TraDeclarationType", propOrder = {
+    "ras",
+    "pos",
+    "spe"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Tra {
 
-    private static final long serialVersionUID = 4735021771120382826L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long traCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date traDaDt;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String traTiLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PO")
-    private String traPoLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IR")
-    private String traIrLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TT")
-    private String traTtLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TC")
-    private String traTcLb;
+    @XmlElement(name = "RAS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Ras ras;
+    @XmlElement(name = "POS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pos pos;
+    @XmlElement(name = "SPE", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Spe> spe;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "PO")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String po;
+    @XmlAttribute(name = "IR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ir;
+    @XmlAttribute(name = "TT", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String tt;
+    @XmlAttribute(name = "TC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String tc;
+    @XmlAttribute(name = "RF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String rf;
+    @XmlAttribute(name = "TF", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String tf;
+    @XmlAttribute(name = "FC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String fc;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété ras.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Ras }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("RF")
-    private String traRfLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TF")
-    private String traTfLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("FC")
-    private String traFcLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamOmitField
-    private Date traDatiDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("RAS")
-    private Ras ras;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("POS")
-    private Pos pos;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> listSpe;
-
-    /**
-     * Retourne l'identifiant.
-     */
-    public Long getTraCdn() {
-        return this.traCdn;
-    }
-
-    public void setTraCdn(Long traCdn) {
-        this.traCdn = traCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Ras getRAS() {
+        return ras;
     }
 
     /**
-     * Retourne la date.
+     * Définit la valeur de la propriété ras.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Ras }
+     *     
      */
-    public Date getTraDaDt() {
-        return this.traDaDt;
-    }
-
-    public void setTraDaDt(Date traDaDt) {
-        this.traDaDt = traDaDt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRAS(Ras value) {
+        this.ras = value;
     }
 
     /**
-     * Retourne l'heure.
+     * Obtient la valeur de la propriété pos.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Pos }
+     *     
      */
-    public String getTraTiLb() {
-        return this.traTiLb;
-    }
-
-    public void setTraTiLb(String traTiLb) {
-        this.traTiLb = traTiLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pos getPOS() {
+        return pos;
     }
 
     /**
-     * Retourne le port.
+     * Définit la valeur de la propriété pos.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Pos }
+     *     
      */
-    public String getTraPoLb() {
-        return this.traPoLb;
-    }
-
-    public void setTraPoLb(String traPoLb) {
-        this.traPoLb = traPoLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPOS(Pos value) {
+        this.pos = value;
     }
 
     /**
-     * Retourne l'identifiant (NAVIRE_CFR_RFA) du navire receveur.
+     * Gets the value of the spe property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spe property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Spe }
+     * 
+     * 
      */
-    public String getTraIrLb() {
-        return this.traIrLb;
-    }
-
-    public void setTraIrLb(String traIrLb) {
-        this.traIrLb = traIrLb;
-    }
-
-    /**
-     * Retourne l'identifiant (NAVIRE_IRCSCOD_LB) du navire receveur.
-     */
-    public String getTraTtLb() {
-        return this.traTtLb;
-    }
-
-    public void setTraTtLb(String traTtLb) {
-        this.traTtLb = traTtLb;
-    }
-
-    /**
-     * Retourne le pays du navire receveur.
-     */
-    public String getTraTcLb() {
-        return this.traTcLb;
-    }
-
-    public void setTraTcLb(String traTcLb) {
-        this.traTcLb = traTcLb;
-    }
-
-    /**
-     * Retourne l'identifiant (NAVIRE_CFR_RFA) du navire donneur.
-     */
-    public String getTraRfLb() {
-        return this.traRfLb;
-    }
-
-    public void setTraRfLb(String traRfLb) {
-        this.traRfLb = traRfLb;
-    }
-
-    /**
-     * Retourne l'identifiant (NAVIRE_IRCSCOD_LB) du navire donneur.
-     */
-    public String getTraTfLb() {
-        return this.traTfLb;
-    }
-
-    public void setTraTfLb(String traTfLb) {
-        this.traTfLb = traTfLb;
-    }
-
-    /**
-     * Retourne le pays du navire donneur.
-     */
-    public String getTraFcLb() {
-        return this.traFcLb;
-    }
-
-    public void setTraFcLb(String traFcLb) {
-        this.traFcLb = traFcLb;
-    }
-
-    /**
-     * Retourne la date/heure.
-     */
-    public Date getTraDatiDt() {
-        return this.traDatiDt;
-    }
-
-    public void setTraDatiDt(Date traDatiDt) {
-        this.traDatiDt = traDatiDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
-     */
-    @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public Pos getPos() {
-        return this.pos;
-    }
-
-    public void setPos(Pos pos) {
-        this.pos = pos;
-    }
-
-    public Ras getRas() {
-        return this.ras;
-    }
-
-    public void setRas(Ras ras) {
-        this.ras = ras;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Spe> getSPE() {
+        if (spe == null) {
+            spe = new ArrayList<Spe>();
         }
-        return this.listSpe;
-    }
-
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getTraCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Tra)) {
-            return false;
-        }
-        Tra castOther = (Tra) other;
-        return new EqualsBuilder().append(this.getTraCdn(),
-                castOther.getTraCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getTraCdn()).toHashCode();
+        return this.spe;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Obtient la valeur de la propriété da.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public Serializable getIdentifier() {
-        return traCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (TRA).
-     *
-     * @return this
+     * Définit la valeur de la propriété da.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    private Object readResolve() {
-        // On crée l'attribut traDatiDt (date/heure) qui est une concaténation
-        // des attributs traDaDt (date) et traTiLb (heure)
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getTraDaDt());
-        if (getTraTiLb() == null) {
-            dateHeure += " 00:00";
-        } else {
-            dateHeure += " " + getTraTiLb();
-        }
-        Date traDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setTraDatiDt(traDatiDt);
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Obtient la valeur de la propriété ti.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Tra cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Tra clone = new Tra();
-
-        clone.setTraDaDt(getTraDaDt());
-        clone.setTraTiLb(getTraTiLb());
-        clone.setTraPoLb(getTraPoLb());
-        clone.setTraIrLb(getTraIrLb());
-        clone.setTraTtLb(getTraTtLb());
-        clone.setTraTcLb(getTraTcLb());
-        clone.setTraRfLb(getTraRfLb());
-        clone.setTraTfLb(getTraTfLb());
-        clone.setTraFcLb(getTraFcLb());
-
-        Pos pos = getPos();
-        if (pos != null) {
-            clone.setPos(pos.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setPos(null);
-        }
-
-        Ras ras = getRas();
-        if (ras != null) {
-            clone.setRas(ras.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setRas(null);
-        }
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
+    /**
+     * Définit la valeur de la propriété ti.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public String getType() {
-        return "TRA";
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
+    /**
+     * Obtient la valeur de la propriété po.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Date getDatiDt() {
-        return getTraDatiDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPO() {
+        return po;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
+    /**
+     * Définit la valeur de la propriété po.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Date getDaDt() {
-        return getTraDaDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPO(String value) {
+        this.po = value;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getTiLb()
+    /**
+     * Obtient la valeur de la propriété ir.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getTiLb() {
-        return getTraTiLb();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIR() {
+        return ir;
     }
 
-    public void addToLog(Log log) {
-        if (log.getListTra() == null) {
-            log.setListTra(new ArrayList<Tra>());
-        }
-        log.getListTra().add(this);
+    /**
+     * Définit la valeur de la propriété ir.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIR(String value) {
+        this.ir = value;
     }
 
-    public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
-        if (getRas() != null) {
-            listRas.add(getRas());
-        }
-        if (getListSpe() == null) {
-            return listRas;
-        }
-        for (Spe spe : getListSpe()) {
-            listRas.add(spe.getRas());
-        }
-        return listRas;
+    /**
+     * Obtient la valeur de la propriété tt.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTT() {
+        return tt;
+    }
+
+    /**
+     * Définit la valeur de la propriété tt.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTT(String value) {
+        this.tt = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété tc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTC() {
+        return tc;
+    }
+
+    /**
+     * Définit la valeur de la propriété tc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTC(String value) {
+        this.tc = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété rf.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRF() {
+        return rf;
+    }
+
+    /**
+     * Définit la valeur de la propriété rf.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRF(String value) {
+        this.rf = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété tf.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTF() {
+        return tf;
+    }
+
+    /**
+     * Définit la valeur de la propriété tf.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTF(String value) {
+        this.tf = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété fc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getFC() {
+        return fc;
+    }
+
+    /**
+     * Définit la valeur de la propriété fc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setFC(String value) {
+        this.fc = value;
     }
 
 }

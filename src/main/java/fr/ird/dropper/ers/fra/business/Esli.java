@@ -1,230 +1,251 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import java.math.BigInteger;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Extension (précision) de la ligne de vente.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour ESliType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Esli"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="BI" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="BY" type="{http://ec.europa.eu/fisheries/schema/ers/v3}buyer-type" /&gt;
+ *       &lt;attribute name="SI" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ham" /&gt;
+ *       &lt;attribute name="SY" type="{http://ec.europa.eu/fisheries/schema/ers/v3}seller_type" /&gt;
+ *       &lt;attribute name="TI" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="LO" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("ESLI")
-public class Esli implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ESliType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Esli {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long esliCdn;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("BI")
-    private String esliBiLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("BY")
-    private String esliByLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("SI")
-    private String esliSiLb;
+    @XmlAttribute(name = "type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "BI")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String bi;
+    @XmlAttribute(name = "BY")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected BuyerType by;
+    @XmlAttribute(name = "SI")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Ham si;
+    @XmlAttribute(name = "SY")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected SellerType sy;
+    @XmlAttribute(name = "TI")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "LO")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer lo;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("SY")
-    private String esliSyLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String esliTiLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("type")
-    private String esliTypeLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("LO")
-    private String esliLoNb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Sli sli;
-
-    public Long getEsliCdn() {
-        return this.esliCdn;
-    }
-
-    public void setEsliCdn(Long esliCdn) {
-        this.esliCdn = esliCdn;
-    }
-
-    public String getEsliBiLb() {
-        return this.esliBiLb;
-    }
-
-    public void setEsliBiLb(String esliBiLb) {
-        this.esliBiLb = esliBiLb;
-    }
-
-    public String getEsliByLb() {
-        return this.esliByLb;
-    }
-
-    public void setEsliByLb(String esliByLb) {
-        this.esliByLb = esliByLb;
-    }
-
-    public String getEsliSiLb() {
-        return this.esliSiLb;
-    }
-
-    public void setEsliSiLb(String esliSiLb) {
-        this.esliSiLb = esliSiLb;
-    }
-
-    public String getEsliSyLb() {
-        return this.esliSyLb;
-    }
-
-    public void setEsliSyLb(String esliSyLb) {
-        this.esliSyLb = esliSyLb;
-    }
-
-    public String getEsliTiLb() {
-        return this.esliTiLb;
-    }
-
-    public void setEsliTiLb(String esliTiLb) {
-        this.esliTiLb = esliTiLb;
-    }
-
-    public String getEsliTypeLb() {
-        return this.esliTypeLb;
-    }
-
-    public void setEsliTypeLb(String esliTypeLb) {
-        this.esliTypeLb = esliTypeLb;
-    }
-
-    public String getEsliLoNb() {
-        return this.esliLoNb;
-    }
-
-    public void setEsliLoNb(String esliLoNb) {
-        this.esliLoNb = esliLoNb;
-    }
-
-    public Sli getSli() {
-        return this.sli;
-    }
-
-    public void setSli(Sli sli) {
-        this.sli = sli;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getEsliCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Esli)) {
-            return false;
-        }
-        Esli castOther = (Esli) other;
-        return new EqualsBuilder().append(this.getEsliCdn(),
-                castOther.getEsliCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEsliCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return esliCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (ESLI).
-     *
-     * @return this
+     * Obtient la valeur de la propriété bi.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getBI() {
+        return bi;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété bi.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Esli cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Esli clone = new Esli();
-
-        clone.setEsliTypeLb(getEsliTypeLb());
-        clone.setEsliBiLb(getEsliBiLb());
-        clone.setEsliByLb(getEsliByLb());
-        clone.setEsliSiLb(getEsliSiLb());
-        clone.setEsliSyLb(getEsliSyLb());
-        clone.setEsliTiLb(getEsliTiLb());
-        clone.setEsliLoNb(getEsliLoNb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setBI(String value) {
+        this.bi = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété by.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BuyerType }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public BuyerType getBY() {
+        return by;
+    }
+
+    /**
+     * Définit la valeur de la propriété by.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BuyerType }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setBY(BuyerType value) {
+        this.by = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété si.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Ham }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Ham getSI() {
+        return si;
+    }
+
+    /**
+     * Définit la valeur de la propriété si.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Ham }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setSI(Ham value) {
+        this.si = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété sy.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SellerType }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public SellerType getSY() {
+        return sy;
+    }
+
+    /**
+     * Définit la valeur de la propriété sy.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SellerType }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setSY(SellerType value) {
+        this.sy = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ti.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
+    }
+
+    /**
+     * Définit la valeur de la propriété ti.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété lo.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getLO() {
+        return lo;
+    }
+
+    /**
+     * Définit la valeur de la propriété lo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setLO(Integer value) {
+        this.lo = value;
+    }
+
 }

@@ -1,155 +1,103 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Composition du poisson s'il est en dessous de la taille minimale.
- *
- * @author christelle.jeanberne
+ * Size composition if fish caught smaller than minimum size
+ *  2.0-3.0: added.
+ * 
+ * <p>Classe Java pour Siz complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Siz"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="S6" use="required" type="{http://www.w3.org/2001/XMLSchema}decimal" /&gt;
+ *       &lt;attribute name="S8" use="required" type="{http://www.w3.org/2001/XMLSchema}decimal" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("SIZ")
-public class Siz implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SizDeclarationType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Siz {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long sizCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("S6")
-    private double sizS6Nb;
+    @XmlAttribute(name = "S6", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Double s6;
+    @XmlAttribute(name = "S8", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Double s8;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété s6.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("S8")
-    private double sizS8Nb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Spe> listSpe;
-
-    public Long getSizCdn() {
-        return this.sizCdn;
-    }
-
-    public void setSizCdn(Long sizCdn) {
-        this.sizCdn = sizCdn;
-    }
-
-    public double getSizS6Nb() {
-        return this.sizS6Nb;
-    }
-
-    public void setSizS6Nb(double sizS6Nb) {
-        this.sizS6Nb = sizS6Nb;
-    }
-
-    public double getSizS8Nb() {
-        return this.sizS8Nb;
-    }
-
-    public void setSizS8Nb(double sizS8Nb) {
-        this.sizS8Nb = sizS8Nb;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
-        }
-        return this.listSpe;
-    }
-
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getSizCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Siz)) {
-            return false;
-        }
-        Siz castOther = (Siz) other;
-        return new EqualsBuilder().append(this.getSizCdn(),
-                castOther.getSizCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getSizCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Double getS6() {
+        return s6;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété s6.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
-    public Serializable getIdentifier() {
-        return sizCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setS6(Double value) {
+        this.s6 = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (SIZ).
-     *
-     * @return this
+     * Obtient la valeur de la propriété s8.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Double getS8() {
+        return s8;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété s8.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
-    public Siz cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Siz clone = new Siz();
-
-        clone.setSizS6Nb(getSizS6Nb());
-        clone.setSizS8Nb(getSizS8Nb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setS8(Double value) {
+        this.s8 = value;
     }
+
 }

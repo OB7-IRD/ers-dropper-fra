@@ -1,303 +1,130 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Message de retour.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour RetElementType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Ret"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="ON" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}RecordNumberType" /&gt;
+ *       &lt;attribute name="RS" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ReturnStatusType" /&gt;
+ *       &lt;attribute name="RE" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("RET")
-public class Ret implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "RetElementType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Ret {
 
-    private static final long serialVersionUID = 6524469966162317945L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long retCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RS")
-    private String retRsLb;
+    @XmlAttribute(name = "ON", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String on;
+    @XmlAttribute(name = "RS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String rs;
+    @XmlAttribute(name = "RE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String re;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété on.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("ON")
-    private String retOnLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RE")
-    private String retReLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Ers ers;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Ops ops;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Ops opsAcquite;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private String retIrAcquit;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private String retXrAcquit;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private String retRcAcquit;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private String retNaAcquit;
-
-    /**
-     * non persistent field
-     */
-    @XStreamOmitField
-    private boolean transfertAcquittement = false;
-
-    public Long getRetCdn() {
-        return this.retCdn;
-    }
-
-    public void setRetCdn(Long retCdn) {
-        this.retCdn = retCdn;
-    }
-
-    public String getRetRsLb() {
-        return this.retRsLb;
-    }
-
-    public void setRetRsLb(String retRsLb) {
-        this.retRsLb = retRsLb;
-    }
-
-    public String getRetOnLb() {
-        return this.retOnLb;
-    }
-
-    public void setRetOnLb(String retOnLb) {
-        this.retOnLb = retOnLb;
-    }
-
-    public String getRetReLb() {
-        return this.retReLb;
-    }
-
-    public void setRetReLb(String retReLb) {
-        this.retReLb = retReLb;
-    }
-
-    public Ers getErs() {
-        return this.ers;
-    }
-
-    public void setErs(Ers ers) {
-        this.ers = ers;
-    }
-
-    public Ops getOps() {
-        return this.ops;
-    }
-
-    public void setOps(Ops ops) {
-        this.ops = ops;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getRetCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Ret)) {
-            return false;
-        }
-        Ret castOther = (Ret) other;
-        return new EqualsBuilder().append(this.getRetCdn(),
-                castOther.getRetCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getRetCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getON() {
+        return on;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété on.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Serializable getIdentifier() {
-        return retCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setON(String value) {
+        this.on = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Obtient la valeur de la propriété rs.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Ret cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Ret clone = new Ret();
-
-        clone.setRetRsLb(getRetRsLb());
-        clone.setRetOnLb(getRetOnLb());
-        clone.setRetReLb(getRetReLb());
-
-        Ers ers = getErs();
-        if (ers != null) {
-            clone.setErs(ers.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setErs(null);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRS() {
+        return rs;
     }
 
     /**
-     * @param opsAcquite the opsAcquite to set
+     * Définit la valeur de la propriété rs.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setOpsAcquite(Ops opsAcquite) {
-        if (opsAcquite != null && opsAcquite.isTsRenseigne()) {
-            // si on renseigne l'opsAcquite, il sera persité en base, ce qui ne doit
-            // pas être fait si son attribut TS est renseigné (règle MSGR06)
-            this.opsAcquite = null;
-        } else {
-            this.opsAcquite = opsAcquite;
-        }
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRS(String value) {
+        this.rs = value;
     }
 
     /**
-     * @return the opsAcquite
+     * Obtient la valeur de la propriété re.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Ops getOpsAcquite() {
-        return opsAcquite;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRE() {
+        return re;
     }
 
     /**
-     * @return the transfertAcquittement
+     * Définit la valeur de la propriété re.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public boolean isTransfertAcquittement() {
-        return transfertAcquittement;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRE(String value) {
+        this.re = value;
     }
 
-    /**
-     * @param transfertAcquittement the transfertAcquittement to set
-     */
-    public void setTransfertAcquittement(boolean transfertAcquittement) {
-        this.transfertAcquittement = transfertAcquittement;
-    }
-
-    /**
-     * @return the retIrAcquit
-     */
-    public String getRetIrAcquit() {
-        return retIrAcquit;
-    }
-
-    /**
-     * @param retIrAcquit the retIrAcquit to set
-     */
-    public void setRetIrAcquit(String retIrAcquit) {
-        this.retIrAcquit = retIrAcquit;
-    }
-
-    /**
-     * @return the retXrAcquit
-     */
-    public String getRetXrAcquit() {
-        return retXrAcquit;
-    }
-
-    /**
-     * @param retXrAcquit the retXrAcquit to set
-     */
-    public void setRetXrAcquit(String retXrAcquit) {
-        this.retXrAcquit = retXrAcquit;
-    }
-
-    /**
-     * @return the retRcAcquit
-     */
-    public String getRetRcAcquit() {
-        return retRcAcquit;
-    }
-
-    /**
-     * @param retRcAcquit the retRcAcquit to set
-     */
-    public void setRetRcAcquit(String retRcAcquit) {
-        this.retRcAcquit = retRcAcquit;
-    }
-
-    /**
-     * @return the retNaAcquit
-     */
-    public String getRetNaAcquit() {
-        return retNaAcquit;
-    }
-
-    /**
-     * @param retNaAcquit the retNaAcquit to set
-     */
-    public void setRetNaAcquit(String retNaAcquit) {
-        this.retNaAcquit = retNaAcquit;
-    }
 }

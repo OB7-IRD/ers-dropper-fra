@@ -1,377 +1,202 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import fr.ird.dropper.ers.fra.common.ErsUtils;
 
 /**
- * Message de réponse.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour RspElementType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Rsp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+ *         &lt;element ref="{http://ec.europa.eu/fisheries/schema/ers/v3}Ers"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="RS" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ReturnStatusType" /&gt;
+ *       &lt;attribute name="ON" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}RecordNumberType" /&gt;
+ *       &lt;attribute name="RE" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="RP" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}BooleanType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("RSP")
-public class Rsp implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "RspElementType", propOrder = {
+    "ers"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Rsp {
 
-    private static final long serialVersionUID = -1320884432363905184L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long rspCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RS")
-    private String rspRsLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("ON")
-    private String rspOnLb;
+    @XmlElement(name = "ERS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Ers> ers;
+    @XmlAttribute(name = "RS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String rs;
+    @XmlAttribute(name = "ON", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String on;
+    @XmlAttribute(name = "RE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String re;
+    @XmlAttribute(name = "RP", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer rp;
 
     /**
-     * nullable persistent field
+     * Gets the value of the ers property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the ers property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getERS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Ers }
+     * 
+     * 
      */
-    @XStreamAsAttribute
-    @XStreamAlias("RE")
-    private String rspReLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RP")
-    private int rspRpBl;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Ops opsByOpsCdnQue;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Ops ops;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private String rspIrQueLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private String rspXrQueLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private String rspRcQueLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private String rspNaQueLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Ers> listErs;
-
-    /**
-     * NON persistent field
-     */
-    @XStreamImplicit(itemFieldName = "ERS")
-    private List<Ers> listErsOfXmlResponse;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<RspErsTn> listRspErsTn;
-
-    public Long getRspCdn() {
-        return this.rspCdn;
-    }
-
-    public void setRspCdn(Long rspCdn) {
-        this.rspCdn = rspCdn;
-    }
-
-    public String getRspRsLb() {
-        return this.rspRsLb;
-    }
-
-    public void setRspRsLb(String rspRsLb) {
-        this.rspRsLb = rspRsLb;
-    }
-
-    public String getRspOnLb() {
-        return this.rspOnLb;
-    }
-
-    public void setRspOnLb(String rspOnLb) {
-        this.rspOnLb = rspOnLb;
-    }
-
-    public String getRspReLb() {
-        return this.rspReLb;
-    }
-
-    public void setRspReLb(String rspReLb) {
-        this.rspReLb = rspReLb;
-    }
-
-    public Ops getOpsByOpsCdnQue() {
-        return this.opsByOpsCdnQue;
-    }
-
-    public void setOpsByOpsCdnQue(Ops opsByOpsCdnQue) {
-        this.opsByOpsCdnQue = opsByOpsCdnQue;
-    }
-
-//	public void setDataFromOpsByOpsCdnQue(Ops opsByOpsCdnQue) {
-//		// CRSP02: on stocke les informations navires de la question
-//		setRspIrQueLb(null);
-//		setRspXrQueLb(null);
-//		setRspRcQueLb(null);
-//		setRspNaQueLb(null);
-//
-//		if (opsByOpsCdnQue != null && opsByOpsCdnQue.getQue() != null) {
-//			Que que = opsByOpsCdnQue.getQue();
-//			String idValue = que.getQueIvLb();
-//			if (!StringUtils.isEmpty(idValue)) {
-//				Navire navire = ErsUtils.findNavireByQue(que);
-//				if (navire != null) {
-//					setRspIrQueLb(navire.getNavireCfrRfa());
-//					setRspXrQueLb(navire.getNavireMarqextLb());
-//					setRspRcQueLb(navire.getNavireIrcscodLb());
-//					setRspNaQueLb(navire.getNavireNomLb());
-//				}
-//			}
-//		}
-//	}
-    public Ops getOps() {
-        return this.ops;
-    }
-
-    public void setOps(Ops ops) {
-        this.ops = ops;
-    }
-
-    public List<Ers> getListErs() {
-        return this.listErs;
-    }
-
-    public void setListErs(List<Ers> listErs) {
-        this.listErs = listErs;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getRspCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Ers> getERS() {
+        if (ers == null) {
+            ers = new ArrayList<Ers>();
         }
-        if (!(other instanceof Rsp)) {
-            return false;
-        }
-        Rsp castOther = (Rsp) other;
-        return new EqualsBuilder().append(this.getRspCdn(), castOther.getRspCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getRspCdn()).toHashCode();
+        return this.ers;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Obtient la valeur de la propriété rs.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Serializable getIdentifier() {
-        return rspCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRS() {
+        return rs;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété rs.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Rsp cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Rsp clone = new Rsp();
-
-        clone.setRspRsLb(getRspRsLb());
-        clone.setRspOnLb(getRspOnLb());
-        clone.setRspReLb(getRspReLb());
-        clone.setRspRpBl(getRspRpBl());
-
-        // Clone des ERS
-        if (getListErs() != null && !getListErs().isEmpty()) {
-            ArrayList<Ers> cloneErss = new ArrayList<Ers>();
-            for (Ers ers : getListErs()) {
-                cloneErss.add(ers.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListErs(cloneErss);
-        }
-
-        // Clone des ERS à exporter dans le XML
-        if (getListErsOfXmlResponse() != null && !getListErsOfXmlResponse().isEmpty()) {
-            ArrayList<Ers> cloneErss = new ArrayList<Ers>();
-            for (Ers ers : getListErsOfXmlResponse()) {
-                cloneErss.add(ers.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListErsOfXmlResponse(cloneErss);
-        }
-
-        // Clone des ERS à exporter dans le XML
-        if (getListErsOfXmlResponse() != null && !getListErsOfXmlResponse().isEmpty()) {
-            ArrayList<Ers> cloneErss = new ArrayList<Ers>();
-            for (Ers ers : getListErsOfXmlResponse()) {
-                cloneErss.add(ers.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListErsOfXmlResponse(cloneErss);
-        }
-
-        return clone;
-    }
-
-    public int getRspRpBl() {
-        return rspRpBl;
-    }
-
-    public void setRspRpBl(int rspRpBl) {
-        this.rspRpBl = rspRpBl;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRS(String value) {
+        this.rs = value;
     }
 
     /**
-     * @return the rspIrQueLb
+     * Obtient la valeur de la propriété on.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getRspIrQueLb() {
-        return rspIrQueLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getON() {
+        return on;
     }
 
     /**
-     * @param rspIrQueLb the rspIrQueLb to set
+     * Définit la valeur de la propriété on.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setRspIrQueLb(String rspIrQueLb) {
-        this.rspIrQueLb = rspIrQueLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setON(String value) {
+        this.on = value;
     }
 
     /**
-     * @return the rspXrQueLb
+     * Obtient la valeur de la propriété re.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public String getRspXrQueLb() {
-        return rspXrQueLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRE() {
+        return re;
     }
 
     /**
-     * @param rspXrQueLb the rspXrQueLb to set
+     * Définit la valeur de la propriété re.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setRspXrQueLb(String rspXrQueLb) {
-        this.rspXrQueLb = rspXrQueLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRE(String value) {
+        this.re = value;
     }
 
     /**
-     * @return the rspRcQueLb
+     * Obtient la valeur de la propriété rp.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public String getRspRcQueLb() {
-        return rspRcQueLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getRP() {
+        return rp;
     }
 
     /**
-     * @param rspRcQueLb the rspRcQueLb to set
+     * Définit la valeur de la propriété rp.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setRspRcQueLb(String rspRcQueLb) {
-        this.rspRcQueLb = rspRcQueLb;
-    }
-
-    /**
-     * @return the rspNaQueLb
-     */
-    public String getRspNaQueLb() {
-        return rspNaQueLb;
-    }
-
-    /**
-     * @param rspNaQueLb the rspNaQueLb to set
-     */
-    public void setRspNaQueLb(String rspNaQueLb) {
-        this.rspNaQueLb = rspNaQueLb;
-    }
-
-    public void setListErsOfXmlResponse(List<Ers> listErsOfXmlResponse) {
-        this.listErsOfXmlResponse = listErsOfXmlResponse;
-    }
-
-    public List<Ers> getListErsOfXmlResponse() {
-        return listErsOfXmlResponse;
-    }
-
-    /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (RSP)
-     *
-     * @return this
-     */
-    private Object readResolve() {
-        // Si des ers sont présents dans le XML, on les met dans l'attribut
-        // listErs car c'est lui qui est persisté
-        if (getListErsOfXmlResponse() != null) {
-            setListErs(new ArrayList<Ers>());
-            getListErs().addAll(getListErsOfXmlResponse());
-        }
-        return this;
-    }
-
-    public void setListRspErsTn(List<RspErsTn> listRspErsTn) {
-        this.listRspErsTn = listRspErsTn;
-    }
-
-    public List<RspErsTn> getListRspErsTn() {
-        return listRspErsTn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRP(Integer value) {
+        this.rp = value;
     }
 
 }

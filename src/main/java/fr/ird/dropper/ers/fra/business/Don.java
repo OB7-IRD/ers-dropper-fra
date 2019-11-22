@@ -1,126 +1,77 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Navire donneur.
- *
- * @author christelle.jeanberne
+ * Donor Vessel(s): Donor vessel(s) identification. For transfer under BFT rules, fill out BTI instead.
+ *  1.1-2.0: Donor vessel(s). One of REC or DON must be referring to "this vessel", meaning the one identified in the LOG super-element. Required unless reporting under ICCAT BFT rules.
+ * 
+ * <p>Classe Java pour Don complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Don"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="PFP" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pfp"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("DON")
-public class Don implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "DonDeclarationType", propOrder = {
+    "pfp"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Don {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long donCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("PFP")
-    private Pfp pfp;
+    @XmlElement(name = "PFP", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pfp pfp;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété pfp.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Pfp }
+     *     
      */
-    @XStreamOmitField
-    private Rlc rlc;
-
-    public Long getDonCdn() {
-        return this.donCdn;
-    }
-
-    public void setDonCdn(Long donCdn) {
-        this.donCdn = donCdn;
-    }
-
-    public Pfp getPfp() {
-        return this.pfp;
-    }
-
-    public void setPfp(Pfp pfp) {
-        this.pfp = pfp;
-    }
-
-    public Rlc getRlc() {
-        return this.rlc;
-    }
-
-    public void setRlc(Rlc rlc) {
-        this.rlc = rlc;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getDonCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Don)) {
-            return false;
-        }
-        Don castOther = (Don) other;
-        return new EqualsBuilder().append(this.getDonCdn(),
-                castOther.getDonCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getDonCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pfp getPFP() {
+        return pfp;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété pfp.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Pfp }
+     *     
      */
-    public Serializable getIdentifier() {
-        return getDonCdn();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPFP(Pfp value) {
+        this.pfp = value;
     }
 
-    /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
-     */
-    public Don cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Don clone = new Don();
-
-        if (getPfp() != null) {
-            clone.setPfp(getPfp().cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setPfp(null);
-        }
-
-        return clone;
-    }
 }

@@ -1,307 +1,386 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
- * Ligne de vente.
- *
- * @author christelle.jeanberne
+ * Sales Line declaration containing details of a consignment sale.
+ * 
+ * <p>Classe Java pour Sli complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Sli"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SRC" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Src"/&gt;
+ *         &lt;element name="CSS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Css" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="ESLI" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Esli" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="SC" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CountryType" /&gt;
+ *       &lt;attribute name="SL" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *       &lt;attribute name="NS" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="NB" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="VN" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}VatNumberType" /&gt;
+ *       &lt;attribute name="CN" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="BC" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("SLI")
-public class Sli implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SliDeclarationType", propOrder = {
+    "src",
+    "css",
+    "esli"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Sli {
 
-    private static final long serialVersionUID = 5318410088347118399L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long sliCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date sliDaDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("SC")
-    private String sliScLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("SL")
-    private String sliSlLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NS")
-    private String sliNsLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NB")
-    private String sliNbLb;
+    @XmlElement(name = "SRC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Src src;
+    @XmlElement(name = "CSS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Css> css;
+    @XmlElement(name = "ESLI")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Esli esli;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "SC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String sc;
+    @XmlAttribute(name = "SL", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String sl;
+    @XmlAttribute(name = "NS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ns;
+    @XmlAttribute(name = "NB", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String nb;
+    @XmlAttribute(name = "VN", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String vn;
+    @XmlAttribute(name = "CN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String cn;
+    @XmlAttribute(name = "BC")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String bc;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété src.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Src }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("VN")
-    private String sliVnLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Src getSRC() {
+        return src;
+    }
 
     /**
-     * nullable persistent field
+     * Définit la valeur de la propriété src.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Src }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("CN")
-    private String sliCnLb;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setSRC(Src value) {
+        this.src = value;
+    }
 
     /**
-     * nullable persistent field
+     * Gets the value of the css property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the css property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCSS().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Css }
+     * 
+     * 
      */
-    @XStreamAsAttribute
-    @XStreamAlias("BC")
-    private String sliBcLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("SRC")
-    private Src src;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "CSS")
-    private List<Css> listCss;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "ESLI")
-    private List<Esli> listEsli;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Sal> listSal;
-
-    public Long getSliCdn() {
-        return this.sliCdn;
-    }
-
-    public void setSliCdn(Long sliCdn) {
-        this.sliCdn = sliCdn;
-    }
-
-    public Date getSliDaDt() {
-        return this.sliDaDt;
-    }
-
-    public void setSliDaDt(Date sliDaDt) {
-        this.sliDaDt = sliDaDt;
-    }
-
-    public String getSliScLb() {
-        return this.sliScLb;
-    }
-
-    public void setSliScLb(String sliScLb) {
-        this.sliScLb = sliScLb;
-    }
-
-    public String getSliSlLb() {
-        return this.sliSlLb;
-    }
-
-    public void setSliSlLb(String sliSlLb) {
-        this.sliSlLb = sliSlLb;
-    }
-
-    public String getSliNsLb() {
-        return this.sliNsLb;
-    }
-
-    public void setSliNsLb(String sliNsLb) {
-        this.sliNsLb = sliNsLb;
-    }
-
-    public String getSliNbLb() {
-        return this.sliNbLb;
-    }
-
-    public void setSliNbLb(String sliNbLb) {
-        this.sliNbLb = sliNbLb;
-    }
-
-    public String getSliVnLb() {
-        return this.sliVnLb;
-    }
-
-    public void setSliVnLb(String sliVnLb) {
-        this.sliVnLb = sliVnLb;
-    }
-
-    public String getSliCnLb() {
-        return this.sliCnLb;
-    }
-
-    public void setSliCnLb(String sliCnLb) {
-        this.sliCnLb = sliCnLb;
-    }
-
-    public String getSliBcLb() {
-        return this.sliBcLb;
-    }
-
-    public void setSliBcLb(String sliBcLb) {
-        this.sliBcLb = sliBcLb;
-    }
-
-    public Src getSrc() {
-        return this.src;
-    }
-
-    public void setSrc(Src src) {
-        this.src = src;
-    }
-
-    public List<Css> getListCss() {
-        return this.listCss;
-    }
-
-    public void setListCss(List<Css> listCss) {
-        this.listCss = listCss;
-    }
-
-    public List<Esli> getListEsli() {
-        return this.listEsli;
-    }
-
-    public void setListEsli(List<Esli> listEsli) {
-        this.listEsli = listEsli;
-    }
-
-    public List<Sal> getListSal() {
-        return this.listSal;
-    }
-
-    public void setListSal(List<Sal> listSal) {
-        this.listSal = listSal;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getSliCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Css> getCSS() {
+        if (css == null) {
+            css = new ArrayList<Css>();
         }
-        if (!(other instanceof Sli)) {
-            return false;
-        }
-        Sli castOther = (Sli) other;
-        return new EqualsBuilder().append(this.getSliCdn(),
-                castOther.getSliCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getSliCdn()).toHashCode();
+        return this.css;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Obtient la valeur de la propriété esli.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Esli }
+     *     
      */
-    public Serializable getIdentifier() {
-        return sliCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Esli getESLI() {
+        return esli;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peur être exporté par XStream
+     * Définit la valeur de la propriété esli.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Esli }
+     *     
      */
-    public Sli cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Sli clone = new Sli();
-
-        clone.setSliDaDt(getSliDaDt());
-        clone.setSliScLb(getSliScLb());
-        clone.setSliSlLb(getSliSlLb());
-        clone.setSliNsLb(getSliNsLb());
-        clone.setSliNbLb(getSliNbLb());
-        clone.setSliVnLb(getSliVnLb());
-        clone.setSliCnLb(getSliCnLb());
-        clone.setSliBcLb(getSliBcLb());
-
-        clone.setSrc(getSrc().cloneExportedFields(exportConfiguration));
-
-        // Clone des CSS
-        if (getListCss() != null && !getListCss().isEmpty()) {
-            ArrayList<Css> cloneCsss = new ArrayList<Css>();
-            for (Css css : getListCss()) {
-                cloneCsss.add(css.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListCss(cloneCsss);
-        }
-
-        // Clone des ESLI
-        if (exportConfiguration.isExtensionsFrancaises()
-                && getListEsli() != null && !getListEsli().isEmpty()) {
-            ArrayList<Esli> cloneEslis = new ArrayList<Esli>();
-            for (Esli esli : getListEsli()) {
-                cloneEslis.add(esli.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListEsli(cloneEslis);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setESLI(Esli value) {
+        this.esli = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété da.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
+    }
+
+    /**
+     * Définit la valeur de la propriété da.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété sc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getSC() {
+        return sc;
+    }
+
+    /**
+     * Définit la valeur de la propriété sc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setSC(String value) {
+        this.sc = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété sl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getSL() {
+        return sl;
+    }
+
+    /**
+     * Définit la valeur de la propriété sl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setSL(String value) {
+        this.sl = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ns.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNS() {
+        return ns;
+    }
+
+    /**
+     * Définit la valeur de la propriété ns.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNS(String value) {
+        this.ns = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété nb.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNB() {
+        return nb;
+    }
+
+    /**
+     * Définit la valeur de la propriété nb.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNB(String value) {
+        this.nb = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété vn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getVN() {
+        return vn;
+    }
+
+    /**
+     * Définit la valeur de la propriété vn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setVN(String value) {
+        this.vn = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété cn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getCN() {
+        return cn;
+    }
+
+    /**
+     * Définit la valeur de la propriété cn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setCN(String value) {
+        this.cn = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété bc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getBC() {
+        return bc;
+    }
+
+    /**
+     * Définit la valeur de la propriété bc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setBC(String value) {
+        this.bc = value;
+    }
+
 }

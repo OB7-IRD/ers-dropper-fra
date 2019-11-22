@@ -1,220 +1,258 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import java.math.BigInteger;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Déploiement du filet de pêche.
- *
- * @author christelle.jeanberne
+ * Gillnet deployment sub-declaration.
+ * 
+ * <p>Classe Java pour Gil complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Gil"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="NL" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="NN" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="FL" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="FD" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="ST" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *       &lt;attribute name="GS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}GearShotIdentifierType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("GIL")
-public class Gil implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "GilDeclarationType", propOrder = {
+    "pos"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Gil {
 
-    private static final long serialVersionUID = -4309551906608817560L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long gilCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NL")
-    private int gilNlNb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NN")
-    private int gilNnNb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("FL")
-    private int gilFlNb;
+    @XmlElement(name = "POS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pos pos;
+    @XmlAttribute(name = "NL", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer nl;
+    @XmlAttribute(name = "NN", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer nn;
+    @XmlAttribute(name = "FL", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer fl;
+    @XmlAttribute(name = "FD", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer fd;
+    @XmlAttribute(name = "ST", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer st;
+    @XmlAttribute(name = "GS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String gs;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété pos.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Pos }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("FD")
-    private int gilFdNb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("ST")
-    private int gilStNb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("GS")
-    private String gilGsLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Gea gea;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("POS")
-    private Pos pos;
-
-    public Long getGilCdn() {
-        return this.gilCdn;
-    }
-
-    public void setGilCdn(Long gilCdn) {
-        this.gilCdn = gilCdn;
-    }
-
-    public int getGilNlNb() {
-        return this.gilNlNb;
-    }
-
-    public void setGilNlNb(int gilNlNb) {
-        this.gilNlNb = gilNlNb;
-    }
-
-    public int getGilNnNb() {
-        return this.gilNnNb;
-    }
-
-    public void setGilNnNb(int gilNnNb) {
-        this.gilNnNb = gilNnNb;
-    }
-
-    public int getGilFlNb() {
-        return this.gilFlNb;
-    }
-
-    public void setGilFlNb(int gilFlNb) {
-        this.gilFlNb = gilFlNb;
-    }
-
-    public int getGilFdNb() {
-        return this.gilFdNb;
-    }
-
-    public void setGilFdNb(int gilFdNb) {
-        this.gilFdNb = gilFdNb;
-    }
-
-    public int getGilStNb() {
-        return this.gilStNb;
-    }
-
-    public void setGilStNb(int gilStNb) {
-        this.gilStNb = gilStNb;
-    }
-
-    public String getGilGsLb() {
-        return this.gilGsLb;
-    }
-
-    public void setGilGsLb(String gilGsLb) {
-        this.gilGsLb = gilGsLb;
-    }
-
-    public Gea getGea() {
-        return this.gea;
-    }
-
-    public void setGea(Gea gea) {
-        this.gea = gea;
-    }
-
-    public Pos getPos() {
-        return this.pos;
-    }
-
-    public void setPos(Pos pos) {
-        this.pos = pos;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getGilCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Gil)) {
-            return false;
-        }
-        Gil castOther = (Gil) other;
-        return new EqualsBuilder().append(this.getGilCdn(),
-                castOther.getGilCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getGilCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pos getPOS() {
+        return pos;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété pos.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Pos }
+     *     
      */
-    public Serializable getIdentifier() {
-        return gilCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPOS(Pos value) {
+        this.pos = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peur être exporté par XStream
+     * Obtient la valeur de la propriété nl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public Gil cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Gil clone = new Gil();
-
-        clone.setGilNlNb(getGilNlNb());
-        clone.setGilNnNb(getGilNnNb());
-        clone.setGilFlNb(getGilFlNb());
-        clone.setGilFdNb(getGilFdNb());
-        clone.setGilStNb(getGilStNb());
-        clone.setGilGsLb(getGilGsLb());
-
-        clone.setPos(getPos() == null ? null : getPos().cloneExportedFields(exportConfiguration));
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getNL() {
+        return nl;
     }
+
+    /**
+     * Définit la valeur de la propriété nl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNL(Integer value) {
+        this.nl = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété nn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getNN() {
+        return nn;
+    }
+
+    /**
+     * Définit la valeur de la propriété nn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNN(Integer value) {
+        this.nn = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété fl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getFL() {
+        return fl;
+    }
+
+    /**
+     * Définit la valeur de la propriété fl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setFL(Integer value) {
+        this.fl = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété fd.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getFD() {
+        return fd;
+    }
+
+    /**
+     * Définit la valeur de la propriété fd.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setFD(Integer value) {
+        this.fd = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété st.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getST() {
+        return st;
+    }
+
+    /**
+     * Définit la valeur de la propriété st.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setST(Integer value) {
+        this.st = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété gs.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getGS() {
+        return gs;
+    }
+
+    /**
+     * Définit la valeur de la propriété gs.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setGS(String value) {
+        this.gs = value;
+    }
+
 }

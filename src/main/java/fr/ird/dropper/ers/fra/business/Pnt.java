@@ -1,398 +1,267 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import fr.ird.dropper.ers.fra.common.ErsUtils;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
- * Notification de transfert.
- *
- * @author christelle.jeanberne
+ * Prior Notification of transfer declaration. To be used under BFT rules.
+ *  2.0-3.0: Added.
+ * 
+ * <p>Classe Java pour Pnt complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Pnt"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="NA" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="IN" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="CT" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("PNT")
-public class Pnt extends EvenementDePecheImpl {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "PntDeclarationType", propOrder = {
+    "spe",
+    "pos"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Pnt {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long pntCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date pntDaDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String pntTiLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NA")
-    private String pntNaLb;
+    @XmlElement(name = "SPE", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Spe> spe;
+    @XmlElement(name = "POS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pos pos;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "NA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String na;
+    @XmlAttribute(name = "IN", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String in;
+    @XmlAttribute(name = "CT", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Integer ct;
 
     /**
-     * persistent field
+     * Gets the value of the spe property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spe property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Spe }
+     * 
+     * 
      */
-    @XStreamAsAttribute
-    @XStreamAlias("IN")
-    private String pntInLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("CT")
-    private int pntCtNb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamOmitField
-    private Date pntDatiDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> listSpe;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("POS")
-    private Pos pos;
-
-    /**
-     * non persistent field
-     */
-    @XStreamOmitField
-    private Ops nonPersistedOps;
-
-    public Long getPntCdn() {
-        return this.pntCdn;
-    }
-
-    public void setPntCdn(Long pntCdn) {
-        this.pntCdn = pntCdn;
-    }
-
-    public Date getPntDaDt() {
-        return this.pntDaDt;
-    }
-
-    public void setPntDaDt(Date pntDaDt) {
-        this.pntDaDt = pntDaDt;
-    }
-
-    public String getPntTiLb() {
-        return this.pntTiLb;
-    }
-
-    public void setPntTiLb(String pntTiLb) {
-        this.pntTiLb = pntTiLb;
-    }
-
-    public String getPntNaLb() {
-        return this.pntNaLb;
-    }
-
-    public void setPntNaLb(String pntNaLb) {
-        this.pntNaLb = pntNaLb;
-    }
-
-    public String getPntInLb() {
-        return this.pntInLb;
-    }
-
-    public void setPntInLb(String pntInLb) {
-        this.pntInLb = pntInLb;
-    }
-
-    public int getPntCtNb() {
-        return this.pntCtNb;
-    }
-
-    public void setPntCtNb(int pntCtNb) {
-        this.pntCtNb = pntCtNb;
-    }
-
-    public Date getPntDatiDt() {
-        return this.pntDatiDt;
-    }
-
-    public void setPntDatiDt(Date pntDatiDt) {
-        this.pntDatiDt = pntDatiDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
-     */
-    @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public Pos getPos() {
-        return this.pos;
-    }
-
-    public void setPos(Pos pos) {
-        this.pos = pos;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Spe> getSPE() {
+        if (spe == null) {
+            spe = new ArrayList<Spe>();
         }
-        return this.listSpe;
-    }
-
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getPntCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Pnt)) {
-            return false;
-        }
-        Pnt castOther = (Pnt) other;
-        return new EqualsBuilder().append(this.getPntCdn(),
-                castOther.getPntCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getPntCdn()).toHashCode();
+        return this.spe;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Obtient la valeur de la propriété pos.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Pos }
+     *     
      */
-    public Serializable getIdentifier() {
-        return pntCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pos getPOS() {
+        return pos;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (PNT)
-     *
-     * @return this
+     * Définit la valeur de la propriété pos.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Pos }
+     *     
      */
-    private Object readResolve() {
-        DateConverter converter = new DateConverter();
-        // On crée l'attribut pntPdptDt (date/heure) qui est une concaténation
-        // des attributs pntPdDt (date) et pntPtLb (heure)
-        String dateHeure = converter.toString(getPntDaDt()) + " "
-                + getPntTiLb();
-        Date datiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setPntDatiDt(datiDt);
-
-        if (getPntDaDt() != null && getPntTiLb() != null) {
-            String heure = getPntTiLb();
-
-            // si l'heure n'est pas fournie, on prend 0h00
-            if (heure == null) {
-                heure = "00:00";
-            }
-
-            // On crée l'attribut pntDatiDt (date/heure) qui est une
-            // concaténation des attributs pntDaDt (date) et pntTiLb (heure)
-            String dateHeure2 = converter.toString(getPntDaDt()) + " " + heure;
-            Date pntDatiDt = (Date) converter.fromDateTimeString(dateHeure2);
-            setPntDatiDt(pntDatiDt);
-        } else {
-            setPntDatiDt(null);
-        }
-
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPOS(Pos value) {
+        this.pos = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichie XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peur être exporté par XStream
+     * Obtient la valeur de la propriété da.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public Pnt cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Pnt clone = new Pnt();
-
-        clone.setPntDaDt(getPntDaDt());
-        clone.setPntTiLb(getPntTiLb());
-        clone.setPntNaLb(getPntNaLb());
-        clone.setPntInLb(getPntInLb());
-        clone.setPntCtNb(getPntCtNb());
-
-        Pos pos = getPos();
-        if (pos != null) {
-            clone.setPos(pos.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setPos(null);
-        }
-
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-        return clone;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
-     */
-    public String getType() {
-        return "PNT";
-    }
-
-    public Ops getOpsAncetre() {
-        Ops opsAncetre;
-
-        if (getNonPersistedOps() != null) {
-            opsAncetre = getNonPersistedOps();
-        } else {
-            opsAncetre = ErsUtils.getOps(this);
-        }
-
-        return opsAncetre;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
-     */
-    public Date getDatiDt() {
-        Ops opsAncetre = this.getOpsAncetre();
-        if (opsAncetre != null) {
-            return opsAncetre.getOpsOdotDt();
-        } else {
-            return this.getPntDatiDt();
-        }
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
-     */
-    public Date getDaDt() {
-        Ops opsAncetre = this.getOpsAncetre();
-        if (opsAncetre != null) {
-            return opsAncetre.getOpsOdDt();
-        } else {
-            return this.getPntDaDt();
-        }
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
-     */
-    public String getTiLb() {
-        Ops opsAncetre = this.getOpsAncetre();
-        if (opsAncetre != null) {
-            return opsAncetre.getOpsOtLb();
-        } else {
-            return this.getPntTiLb();
-        }
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
     }
 
     /**
-     * @return the nonPersistedOps
+     * Définit la valeur de la propriété da.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public Ops getNonPersistedOps() {
-        return nonPersistedOps;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
     }
 
     /**
-     * @param nonPersistedOps the nonPersistedOps to set
+     * Obtient la valeur de la propriété ti.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public void setNonPersistedOps(Ops nonPersistedOps) {
-        this.nonPersistedOps = nonPersistedOps;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
     }
 
-    public void addToLog(Log log) {
-        if (log.getListPnt() == null) {
-            log.setListPnt(new ArrayList<Pnt>());
-        }
-        log.getListPnt().add(this);
+    /**
+     * Définit la valeur de la propriété ti.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
     }
 
-    public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
-        if (getListSpe() == null) {
-            return listRas;
-        }
-        for (Spe spe : getListSpe()) {
-            listRas.add(spe.getRas());
-        }
-        return listRas;
+    /**
+     * Obtient la valeur de la propriété na.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNA() {
+        return na;
+    }
+
+    /**
+     * Définit la valeur de la propriété na.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNA(String value) {
+        this.na = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété in.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIN() {
+        return in;
+    }
+
+    /**
+     * Définit la valeur de la propriété in.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIN(String value) {
+        this.in = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ct.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Integer getCT() {
+        return ct;
+    }
+
+    /**
+     * Définit la valeur de la propriété ct.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setCT(Integer value) {
+        this.ct = value;
     }
 
 }

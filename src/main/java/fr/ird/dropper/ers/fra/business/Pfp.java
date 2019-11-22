@@ -1,260 +1,223 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import java.util.ArrayList;
 
 /**
- * Navire donneur.
- *
- * @author christelle.jeanberne
+ * Partner vessel(s) in standard pair fishing operations. One of the partner vessel should be "this vessel", meaning the same as in the LOG attributes.
+ *  1.1-2.0: added.
+ * 
+ * <p>Classe Java pour Pfp complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Pfp"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="IR" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CfrType" /&gt;
+ *       &lt;attribute name="RC" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}RadioCallSignType" /&gt;
+ *       &lt;attribute name="XR" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}HullRegistrationType" /&gt;
+ *       &lt;attribute name="FS" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CountryType" /&gt;
+ *       &lt;attribute name="NA" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="MA" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("PFP")
-public class Pfp implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "PfpDeclarationType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Pfp {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long pfpCdn;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IR")
-    private String pfpIrLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RC")
-    private String pfpRcLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("XR")
-    private String pfpXrLb;
+    @XmlAttribute(name = "IR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ir;
+    @XmlAttribute(name = "RC", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String rc;
+    @XmlAttribute(name = "XR", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String xr;
+    @XmlAttribute(name = "FS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String fs;
+    @XmlAttribute(name = "NA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String na;
+    @XmlAttribute(name = "MA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ma;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété ir.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("FS")
-    private String pfpFsLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NA")
-    private String pfpNaLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("MA")
-    private String pfpMaLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Log log;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Far> listFar;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Don> listDon;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Rec> listRec;
-
-    public Long getPfpCdn() {
-        return pfpCdn;
-    }
-
-    public void setPfpCdn(Long pfpCdn) {
-        this.pfpCdn = pfpCdn;
-    }
-
-    public String getPfpIrLb() {
-        return pfpIrLb;
-    }
-
-    public void setPfpIrLb(String pfpIrLb) {
-        this.pfpIrLb = pfpIrLb;
-    }
-
-    public String getPfpRcLb() {
-        return pfpRcLb;
-    }
-
-    public void setPfpRcLb(String pfpRcLb) {
-        this.pfpRcLb = pfpRcLb;
-    }
-
-    public String getPfpXrLb() {
-        return pfpXrLb;
-    }
-
-    public void setPfpXrLb(String pfpXrLb) {
-        this.pfpXrLb = pfpXrLb;
-    }
-
-    public String getPfpFsLb() {
-        return pfpFsLb;
-    }
-
-    public void setPfpFsLb(String pfpFsLb) {
-        this.pfpFsLb = pfpFsLb;
-    }
-
-    public String getPfpNaLb() {
-        return pfpNaLb;
-    }
-
-    public void setPfpNaLb(String pfpNaLb) {
-        this.pfpNaLb = pfpNaLb;
-    }
-
-    public String getPfpMaLb() {
-        return pfpMaLb;
-    }
-
-    public void setPfpMaLb(String pfpMaLb) {
-        this.pfpMaLb = pfpMaLb;
-    }
-
-    public Log getLog() {
-        return log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public List<Far> getListFar() {        if (listFar == null) {
-            listFar = new ArrayList<>();
-        }
-        return listFar;
-    }
-
-    public void setListFar(List<Far> listFar) {
-        this.listFar = listFar;
-    }
-
-    public List<Don> getListDon() {
-        return listDon;
-    }
-
-    public void setListDon(List<Don> listDon) {
-        this.listDon = listDon;
-    }
-
-    public List<Rec> getListRec() {
-        return listRec;
-    }
-
-    public void setListRec(List<Rec> listRec) {
-        this.listRec = listRec;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getPfpCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Pfp)) {
-            return false;
-        }
-        Pfp castOther = (Pfp) other;
-        return new EqualsBuilder().append(this.getPfpCdn(),
-                castOther.getPfpCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getPfpCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIR() {
+        return ir;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété ir.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Serializable getIdentifier() {
-        return pfpCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIR(String value) {
+        this.ir = value;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (PFP).
-     *
-     * @return this
+     * Obtient la valeur de la propriété rc.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRC() {
+        return rc;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Définit la valeur de la propriété rc.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Pfp cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Pfp clone = new Pfp();
-
-        clone.setPfpIrLb(getPfpIrLb());
-        clone.setPfpRcLb(getPfpRcLb());
-        clone.setPfpXrLb(getPfpXrLb());
-        clone.setPfpFsLb(getPfpFsLb());
-        clone.setPfpNaLb(getPfpNaLb());
-        clone.setPfpMaLb(getPfpMaLb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRC(String value) {
+        this.rc = value;
     }
+
+    /**
+     * Obtient la valeur de la propriété xr.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getXR() {
+        return xr;
+    }
+
+    /**
+     * Définit la valeur de la propriété xr.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setXR(String value) {
+        this.xr = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété fs.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getFS() {
+        return fs;
+    }
+
+    /**
+     * Définit la valeur de la propriété fs.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setFS(String value) {
+        this.fs = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété na.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNA() {
+        return na;
+    }
+
+    /**
+     * Définit la valeur de la propriété na.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNA(String value) {
+        this.na = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ma.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getMA() {
+        return ma;
+    }
+
+    /**
+     * Définit la valeur de la propriété ma.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setMA(String value) {
+        this.ma = value;
+    }
+
 }

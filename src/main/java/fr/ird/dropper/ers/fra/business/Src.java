@@ -1,160 +1,103 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
- * Document source de la ligne de vente (balise SLI).
- *
- * @author christelle.jeanberne
+ * Sub-declaration containing details of the source document for the consignment sold . Flag state authorities shall trace back the source document based on the vessel's logbook and landing data.
+ * 
+ * <p>Classe Java pour Src complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Src"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="DL" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="PO" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}PortType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("SRC")
-public class Src implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SrcDeclarationType")
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Src {
 
-    private static final long serialVersionUID = 4060294555730325669L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long srcCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DL")
-    @XStreamConverter(DateConverter.class)
-    private Date srcDlDt;
+    @XmlAttribute(name = "DL", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar dl;
+    @XmlAttribute(name = "PO", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String po;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété dl.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    @XStreamAsAttribute
-    @XStreamAlias("PO")
-    private String srcPoLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Sli> listSli;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Tli> listTli;
-
-    public Long getSrcCdn() {
-        return this.srcCdn;
-    }
-
-    public void setSrcCdn(Long srcCdn) {
-        this.srcCdn = srcCdn;
-    }
-
-    public Date getSrcDlDt() {
-        return this.srcDlDt;
-    }
-
-    public void setSrcDlDt(Date srcDlDt) {
-        this.srcDlDt = srcDlDt;
-    }
-
-    public String getSrcPoLb() {
-        return this.srcPoLb;
-    }
-
-    public void setSrcPoLb(String srcPoLb) {
-        this.srcPoLb = srcPoLb;
-    }
-
-    public List<Sli> getListSli() {
-        return this.listSli;
-    }
-
-    public void setListSli(List<Sli> listSli) {
-        this.listSli = listSli;
-    }
-
-    public List<Tli> getListTli() {
-        return this.listTli;
-    }
-
-    public void setListTli(List<Tli> listTli) {
-        this.listTli = listTli;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getSrcCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Src)) {
-            return false;
-        }
-        Src castOther = (Src) other;
-        return new EqualsBuilder().append(this.getSrcCdn(),
-                castOther.getSrcCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getSrcCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDL() {
+        return dl;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété dl.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public Serializable getIdentifier() {
-        return srcCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDL(XMLGregorianCalendar value) {
+        this.dl = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Obtient la valeur de la propriété po.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Src cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Src clone = new Src();
-
-        clone.setSrcDlDt(getSrcDlDt());
-        clone.setSrcPoLb(getSrcPoLb());
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getPO() {
+        return po;
     }
+
+    /**
+     * Définit la valeur de la propriété po.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPO(String value) {
+        this.po = value;
+    }
+
 }

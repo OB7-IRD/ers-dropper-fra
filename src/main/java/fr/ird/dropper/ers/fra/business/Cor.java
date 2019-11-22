@@ -1,150 +1,135 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Message de correction.
- *
- * @author christelle.jeanberne
+ * <p>Classe Java pour CorElementType complex type.
+ * 
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Cor"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element ref="{http://ec.europa.eu/fisheries/schema/ers/v3}Ers"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="RN" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}RecordNumberType" /&gt;
+ *       &lt;attribute name="RE" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("COR")
-public class Cor implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CorElementType", propOrder = {
+    "ers"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Cor {
 
-    private static final long serialVersionUID = 100713332277381860L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long corCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RN")
-    private String corRnLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RE")
-    private String corReLb;
+    @XmlElement(name = "ERS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Ers ers;
+    @XmlAttribute(name = "RN", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String rn;
+    @XmlAttribute(name = "RE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String re;
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété ers.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Ers }
+     *     
      */
-    @XStreamAlias("ERS")
-    private Ers ers;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Ops ops;
-
-    public Long getCorCdn() {
-        return this.corCdn;
-    }
-
-    public void setCorCdn(Long corCdn) {
-        this.corCdn = corCdn;
-    }
-
-    public String getCorRnLb() {
-        return this.corRnLb;
-    }
-
-    public void setCorRnLb(String corRnLb) {
-        this.corRnLb = corRnLb;
-    }
-
-    public String getCorReLb() {
-        return this.corReLb;
-    }
-
-    public void setCorReLb(String corReLb) {
-        this.corReLb = corReLb;
-    }
-
-    public Ers getErs() {
-        return this.ers;
-    }
-
-    public void setErs(Ers ers) {
-        this.ers = ers;
-    }
-
-    public Ops getOps() {
-        return this.ops;
-    }
-
-    public void setOps(Ops ops) {
-        this.ops = ops;
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getCorCdn();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Cor)) {
-            return false;
-        }
-        Cor castOther = (Cor) other;
-        return new EqualsBuilder().append(this.getCorCdn(),
-                castOther.getCorCdn()).isEquals();
-    }
-
-    /* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getCorCdn()).toHashCode();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Ers getERS() {
+        return ers;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Définit la valeur de la propriété ers.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Ers }
+     *     
      */
-    public Serializable getIdentifier() {
-        return corCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setERS(Ers value) {
+        this.ers = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Obtient la valeur de la propriété rn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Cor cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Cor clone = new Cor();
-
-        clone.setCorRnLb(getCorRnLb());
-        clone.setCorReLb(getCorReLb());
-
-        clone.setErs(getErs() == null ? null : getErs().cloneExportedFields(exportConfiguration));
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRN() {
+        return rn;
     }
+
+    /**
+     * Définit la valeur de la propriété rn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRN(String value) {
+        this.rn = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété re.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRE() {
+        return re;
+    }
+
+    /**
+     * Définit la valeur de la propriété re.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRE(String value) {
+        this.re = value;
+    }
+
 }

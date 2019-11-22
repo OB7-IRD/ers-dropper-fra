@@ -1,178 +1,111 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * Captures relâchées ou récupérées.
- *
- * @author christelle.jeanberne
+ * Compulsory if used for catches, and when launched or retrieved
+ * 
+ * <p>Classe Java pour Epfa complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Epfa"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;attribute name="Type" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}ErsNat" /&gt;
+ *       &lt;attribute name="PF" type="{http://ec.europa.eu/fisheries/schema/ers/v3}type_association" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("EPFA")
-public class Epfa implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "EPfaType")
+@XmlSeeAlso({
+    fr.ird.dropper.ers.fra.business.Far.EFAR.EPFA.class
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Epfa {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long epfaCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("Type")
-    private String epfaTypeLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("PF")
-    private String epfaPfLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Efar> listEfar;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "EFAD")
-    private List<Efad> listEfad;
-
-    public Long getEpfaCdn() {
-        return this.epfaCdn;
-    }
-
-    public void setEpfaCdn(Long epfaCdn) {
-        this.epfaCdn = epfaCdn;
-    }
-
-    public String getEpfaTypeLb() {
-        return this.epfaTypeLb;
-    }
-
-    public void setEpfaTypeLb(String epfaTypeLb) {
-        this.epfaTypeLb = epfaTypeLb;
-    }
-
-    public String getEpfaPfLb() {
-        return this.epfaPfLb;
-    }
-
-    public void setEpfaPfLb(String epfaPfLb) {
-        this.epfaPfLb = epfaPfLb;
-    }
-
-    public List<Efar> getListEfar() {
-        if (listEfar == null) {
-            listEfar = new ArrayList<>();
-        }
-        return listEfar;
-    }
-
-    public void setListEfar(List<Efar> listEfar) {
-        this.listEfar = listEfar;
-    }
-
-    public List<Efad> getListEfad() {
-        if (listEfad == null) {
-            listEfad = new ArrayList<>();
-        }
-        return this.listEfad;
-    }
-
-    public void setListEfad(List<Efad> listEfad) {
-        this.listEfad = listEfad;
-    }
+    @XmlAttribute(name = "Type", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected ErsNat type;
+    @XmlAttribute(name = "PF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected TypeAssociation pf;
 
     @Override
     public String toString() {
-        return "Epfa{" + "epfaTypeLb=" + epfaTypeLb + ", epfaPfLb=" + epfaPfLb + ", listEfar=" + listEfar + ", listEfad=" + listEfad + '}';
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Epfa)) {
-            return false;
-        }
-        Epfa castOther = (Epfa) other;
-        return new EqualsBuilder().append(this.getEpfaCdn(),
-                castOther.getEpfaCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getEpfaCdn()).toHashCode();
+        return "Epfa{" + "type=" + type + ", pf=" + pf + '}';
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Obtient la valeur de la propriété type.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ErsNat }
+     *     
      */
-    public Serializable getIdentifier() {
-        return epfaCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public ErsNat getType() {
+        return type;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (EPFA).
-     *
-     * @return this
+     * Définit la valeur de la propriété type.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ErsNat }
+     *     
      */
-    private Object readResolve() {
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setType(ErsNat value) {
+        this.type = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Obtient la valeur de la propriété pf.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TypeAssociation }
+     *     
      */
-    public Epfa cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Epfa clone = new Epfa();
-
-        clone.setEpfaTypeLb(getEpfaTypeLb());
-        clone.setEpfaPfLb(getEpfaPfLb());
-
-        // Clone des EFAD
-        if (getListEfad() != null && !getListEfad().isEmpty()) {
-            ArrayList<Efad> cloneEfads = new ArrayList<Efad>();
-            for (Efad efad : getListEfad()) {
-                cloneEfads.add(efad.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListEfad(cloneEfads);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public TypeAssociation getPF() {
+        return pf;
     }
+
+    /**
+     * Définit la valeur de la propriété pf.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TypeAssociation }
+     *     
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPF(TypeAssociation value) {
+        this.pf = value;
+    }
+
 }

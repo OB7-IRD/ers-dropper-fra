@@ -1,367 +1,236 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
+
+
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
-import fr.ird.dropper.ers.fra.xstreamconverters.DateConverter;
 
 /**
- * Entrée dans une zone d'effort.
- *
- * @author christelle.jeanberne
+ * Catch On Entry: entry in zone effort declaration.
+ * 
+ * <p>Classe Java pour Coe complex type.
+ 
+ <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * 
+ * <pre>
+ * &lt;complexType name="Coe"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="RAS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Ras" minOccurs="0"/&gt;
+ *         &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos"/&gt;
+ *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="DA" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcDateType" /&gt;
+ *       &lt;attribute name="TI" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}UtcTimeType" /&gt;
+ *       &lt;attribute name="TS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}TargetSpeciesType" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
  */
-@XStreamAlias("COE")
-public class Coe extends EvenementDePecheImpl {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "CoeDeclarationType", propOrder = {
+    "ras",
+    "pos",
+    "spe"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Coe {
 
-    private static final long serialVersionUID = -6302744737711531450L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long coeCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("DA")
-    @XStreamConverter(DateConverter.class)
-    private Date coeDaDt;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TI")
-    private String coeTiLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("TS")
-    private String coeTsLb;
+    @XmlElement(name = "RAS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Ras ras;
+    @XmlElement(name = "POS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pos pos;
+    @XmlElement(name = "SPE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Spe> spe;
+    @XmlAttribute(name = "DA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected XMLGregorianCalendar da;
+    @XmlAttribute(name = "TI", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ti;
+    @XmlAttribute(name = "TS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ts;
 
     /**
-     * nullable persistent field
+     * Obtient la valeur de la propriété ras.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Ras }
+     *     
      */
-    @XStreamOmitField
-    private Date coeDatiDt;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Ras getRAS() {
+        return ras;
+    }
 
     /**
-     * persistent field
+     * Définit la valeur de la propriété ras.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Ras }
+     *     
      */
-    @XStreamOmitField
-    private Log log;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRAS(Ras value) {
+        this.ras = value;
+    }
 
     /**
-     * persistent field
+     * Obtient la valeur de la propriété pos.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Pos }
+     *     
      */
-    @XStreamAlias("RAS")
-    private Ras ras;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pos getPOS() {
+        return pos;
+    }
 
     /**
-     * persistent field
+     * Définit la valeur de la propriété pos.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Pos }
+     *     
      */
-    @XStreamAlias("POS")
-    private Pos pos;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPOS(Pos value) {
+        this.pos = value;
+    }
 
     /**
-     * persistent field
+     * Gets the value of the spe property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the spe property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getSPE().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Spe }
+     * 
+     * 
      */
-    @XStreamImplicit(itemFieldName = "SPE")
-    private List<Spe> listSpe;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Cro> listCro;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private List<Trz> listTrz;
-
-    public Long getCoeCdn() {
-        return this.coeCdn;
-    }
-
-    public void setCoeCdn(Long coeCdn) {
-        this.coeCdn = coeCdn;
-    }
-
-    public Date getCoeDaDt() {
-        return this.coeDaDt;
-    }
-
-    public void setCoeDaDt(Date coeDaDt) {
-        this.coeDaDt = coeDaDt;
-    }
-
-    public String getCoeTiLb() {
-        return this.coeTiLb;
-    }
-
-    public void setCoeTiLb(String coeTiLb) {
-        this.coeTiLb = coeTiLb;
-    }
-
-    public String getCoeTsLb() {
-        return this.coeTsLb;
-    }
-
-    public void setCoeTsLb(String coeTsLb) {
-        this.coeTsLb = coeTsLb;
-    }
-
-    public Date getCoeDatiDt() {
-        return this.coeDatiDt;
-    }
-
-    public void setCoeDatiDt(Date coeDatiDt) {
-        this.coeDatiDt = coeDatiDt;
-    }
-
-    /* (non-Javadoc)
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getLog()
-     */
-    @Override
-    public Log getLog() {
-        return this.log;
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
-    }
-
-    public Ras getRas() {
-        return this.ras;
-    }
-
-    public void setRas(Ras ras) {
-        this.ras = ras;
-    }
-
-    public Pos getPos() {
-        return this.pos;
-    }
-
-    public void setPos(Pos pos) {
-        this.pos = pos;
-    }
-
-    public Cro getCro() {
-        if (getListCro() == null || getListCro().isEmpty()) {
-            return null;
-        } else {
-            return getListCro().get(0);
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Spe> getSPE() {
+        if (spe == null) {
+            spe = new ArrayList<Spe>();
         }
-    }
-
-    public List<Cro> getListCro() {
-        return this.listCro;
-    }
-
-    public void setListCro(List<Cro> listCro) {
-        this.listCro = listCro;
-    }
-
-    public Trz getTrz() {
-        if (getListTrz() == null || getListTrz().isEmpty()) {
-            return null;
-        } else {
-            return getListTrz().get(0);
-        }
-    }
-
-    public List<Trz> getListTrz() {
-        if (listTrz == null) {
-            listTrz = new ArrayList<>();
-        }
-        return this.listTrz;
-    }
-
-    public void setListTrz(List<Trz> listTrz) {
-        this.listTrz = listTrz;
-    }
-
-    public List<Spe> getListSpe() {
-        if (listSpe == null) {
-            listSpe = new ArrayList<>();
-        }
-        return this.listSpe;
-    }
-
-    public void setListSpe(List<Spe> listSpe) {
-        this.listSpe = listSpe;
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-     */
-    public String toString() {
-        return "" + getCoeCdn();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Coe)) {
-            return false;
-        }
-        Coe castOther = (Coe) other;
-        return new EqualsBuilder().append(this.getCoeCdn(),
-                castOther.getCoeCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getCoeCdn()).toHashCode();
+        return this.spe;
     }
 
     /**
-     * Retourne l'identifiant.
-     *
-     * @return l'identifiant
+     * Obtient la valeur de la propriété da.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    public Serializable getIdentifier() {
-        return coeCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public XMLGregorianCalendar getDA() {
+        return da;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (COE)
-     *
-     * @return this
+     * Définit la valeur de la propriété da.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
      */
-    private Object readResolve() {
-        // On crée l'attribut coeDatiDt (date/heure) qui est une concaténation
-        // des attributs coeDaDt (date) et coeTiLb (heure)
-        DateConverter converter = new DateConverter();
-        String dateHeure = converter.toString(getCoeDaDt()) + " "
-                + getCoeTiLb();
-        Date coeDatiDt = (Date) converter.fromDateTimeString(dateHeure);
-        setCoeDatiDt(coeDatiDt);
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDA(XMLGregorianCalendar value) {
+        this.da = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
-     *
-     * @return un objet qui peut être exporté par XStream
+     * Obtient la valeur de la propriété ti.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Coe cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Coe clone = new Coe();
-
-        clone.setCoeDaDt(getCoeDaDt());
-        clone.setCoeTiLb(getCoeTiLb());
-        clone.setCoeTsLb(getCoeTsLb());
-
-        clone.setPos(getPos() == null ? null : getPos().cloneExportedFields(exportConfiguration));
-
-        Ras ras = getRas();
-        if (ras != null) {
-            clone.setRas(ras.cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setRas(null);
-        }
-
-        // Clone des SPE
-        if (getListSpe() != null && !getListSpe().isEmpty()) {
-            ArrayList<Spe> cloneSpes = new ArrayList<Spe>();
-            for (Spe spe : getListSpe()) {
-                cloneSpes.add(spe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListSpe(cloneSpes);
-        }
-
-        return clone;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTI() {
+        return ti;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getType()
+    /**
+     * Définit la valeur de la propriété ti.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public String getType() {
-        return "COE";
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTI(String value) {
+        this.ti = value;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDatiDt()
+    /**
+     * Obtient la valeur de la propriété ts.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public Date getDatiDt() {
-        return getCoeDatiDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getTS() {
+        return ts;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see fr.gouv.agriculture.adage.ers.business.EvenementDePeche#getDaDt()
+    /**
+     * Définit la valeur de la propriété ts.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public Date getDaDt() {
-        return getCoeDaDt();
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setTS(String value) {
+        this.ts = value;
     }
 
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * fr.gouv.agriculture.adage.ers.business.EvenementDePecheImpl#getTiLb()
-     */
-    public String getTiLb() {
-        return getCoeTiLb();
-    }
-
-    public void addToLog(Log log) {
-        if (log.getListCoe() == null) {
-            log.setListCoe(new ArrayList<Coe>());
-        }
-        log.getListCoe().add(this);
-    }
-
-    public List<Ras> getRasList() {
-        List<Ras> listRas = new ArrayList<Ras>();
-        if (getRas() != null) {
-            listRas.add(getRas());
-        }
-        if (getListSpe() == null) {
-            return listRas;
-        }
-        for (Spe spe : getListSpe()) {
-            listRas.add(spe.getRas());
-        }
-        return listRas;
-    }
 }

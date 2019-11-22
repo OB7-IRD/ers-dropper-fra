@@ -1,931 +1,1208 @@
+//
+// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+// Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+// Généré le : 2019.11.21 à 01:58:47 PM MUT 
+//
 package fr.ird.dropper.ers.fra.business;
 
-import fr.ird.dropper.ers.fra.business.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import javax.annotation.Generated;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * Registre des événements de pêche (départ, capture, rejet, retour au port...).
+ * Logbook declaration.
  *
- * @author christelle.jeanberne
+ * <p>
+ * Classe Java pour Log complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
+ * <pre>
+ * &lt;complexType name="Log"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="DEP" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Dep" minOccurs="0"/&gt;
+ *         &lt;element name="FAR" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Far" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="RLC" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Rlc" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="TRA" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Tra" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="COE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Coe" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="COX" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Cox" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="CRO" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Cro" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="TRZ" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Trz" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="INS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Ins" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="DIS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Dis" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="PNO" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pno" minOccurs="0"/&gt;
+ *         &lt;element name="PNT" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pnt" minOccurs="0"/&gt;
+ *         &lt;element name="EOF" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Eof" minOccurs="0"/&gt;
+ *         &lt;element name="RTP" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Rtp" minOccurs="0"/&gt;
+ *         &lt;element name="LAN" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Lan" minOccurs="0"/&gt;
+ *         &lt;element name="ELOG" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Elog"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="ECPS" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Ecps"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos" minOccurs="0"/&gt;
+ *                             &lt;element name="GEA" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Gea" minOccurs="0"/&gt;
+ *                             &lt;element name="EDCI" maxOccurs="unbounded"&gt;
+ *                               &lt;complexType&gt;
+ *                                 &lt;complexContent&gt;
+ *                                   &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Edci"&gt;
+ *                                     &lt;sequence&gt;
+ *                                       &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe"/&gt;
+ *                                     &lt;/sequence&gt;
+ *                                   &lt;/extension&gt;
+ *                                 &lt;/complexContent&gt;
+ *                               &lt;/complexType&gt;
+ *                             &lt;/element&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/extension&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="ETRC" maxOccurs="unbounded" minOccurs="0"&gt;
+ *                     &lt;complexType&gt;
+ *                       &lt;complexContent&gt;
+ *                         &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Etrc"&gt;
+ *                           &lt;sequence&gt;
+ *                             &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe"/&gt;
+ *                           &lt;/sequence&gt;
+ *                         &lt;/extension&gt;
+ *                       &lt;/complexContent&gt;
+ *                     &lt;/complexType&gt;
+ *                   &lt;/element&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/extension&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="IR" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CfrType" /&gt;
+ *       &lt;attribute name="RC" type="{http://ec.europa.eu/fisheries/schema/ers/v3}RadioCallSignType" /&gt;
+ *       &lt;attribute name="XR" type="{http://ec.europa.eu/fisheries/schema/ers/v3}HullRegistrationType" /&gt;
+ *       &lt;attribute name="NA" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="MA" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="MD" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="FS" use="required" type="{http://ec.europa.eu/fisheries/schema/ers/v3}CountryType" /&gt;
+ *       &lt;attribute name="IN" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="IM" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ *
+ *
  */
-@XStreamAlias("LOG")
-public class Log implements Serializable {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "LogDeclarationType", propOrder = {
+    "dep",
+    "far",
+    "rlc",
+    "tra",
+    "coe",
+    "cox",
+    "cro",
+    "trz",
+    "ins",
+    "dis",
+    "pno",
+    "pnt",
+    "eof",
+    "rtp",
+    "lan",
+    "elog"
+})
+@Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+public class Log {
 
-    private static final long serialVersionUID = 3101094322422315289L;
-
-    /**
-     * identifier field
-     */
-    @XStreamOmitField
-    private Long logCdn;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IR")
-    private String logIrLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("RC")
-    private String logRcLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("XR")
-    private String logXrLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("NA")
-    private String logNaLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("MA")
-    private String logMaLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("MD")
-    private String logMdLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("FS")
-    private String logFsLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IN")
-    private String logInLb;
-
-    /**
-     * nullable persistent field
-     */
-    @XStreamAsAttribute
-    @XStreamAlias("IM")
-    private String logImLb;
-
-    /**
-     * persistent field
-     */
-    @XStreamOmitField
-    private Ers ers;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "DEP")
-    private List<Dep> listDep;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "FAR")
-    private List<Far> listFar;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "RLC")
-    private List<Rlc> listRlc;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "TRA")
-    private List<Tra> listTra;
+    @XmlElement(name = "DEP")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Dep> dep;
+    @XmlElement(name = "FAR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Far> far;
+    @XmlElement(name = "RLC")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Rlc> rlc;
+    @XmlElement(name = "TRA")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Tra> tra;
+    @XmlElement(name = "COE")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Coe> coe;
+    @XmlElement(name = "COX")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Cox> cox;
+    @XmlElement(name = "CRO")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Cro> cro;
+    @XmlElement(name = "TRZ")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Trz> trz;
+    @XmlElement(name = "INS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Ins> ins;
+    @XmlElement(name = "DIS")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Dis> dis;
+    @XmlElement(name = "PNO")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pno pno;
+    @XmlElement(name = "PNT")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Pnt pnt;
+    @XmlElement(name = "EOF")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Eof eof;
+    @XmlElement(name = "RTP")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Rtp> rtp;
+    @XmlElement(name = "LAN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected List<Lan> lan;
+    @XmlElement(name = "ELOG")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected Log.ELOG elog;
+    @XmlAttribute(name = "IR", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ir;
+    @XmlAttribute(name = "RC")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String rc;
+    @XmlAttribute(name = "XR")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String xr;
+    @XmlAttribute(name = "NA")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String na;
+    @XmlAttribute(name = "MA", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String ma;
+    @XmlAttribute(name = "MD", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String md;
+    @XmlAttribute(name = "FS", required = true)
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String fs;
+    @XmlAttribute(name = "IN")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String in;
+    @XmlAttribute(name = "IM")
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    protected String im;
 
     /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "COE")
-    private List<Coe> listCoe;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "COX")
-    private List<Cox> listCox;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "CRO")
-    private List<Cro> listCro;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "TRZ")
-    private List<Trz> listTrz;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "INS")
-    private List<Ins> listIns;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "DIS")
-    private List<Dis> listDis;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "PNO")
-    private List<Pno> listPno;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "PNT")
-    private List<Pnt> listPnt;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "EOF")
-    private List<Eof> listEof;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "RTP")
-    private List<Rtp> listRtp;
-
-    /**
-     * persistent field
-     */
-    @XStreamImplicit(itemFieldName = "LAN")
-    private List<Lan> listLan;
-
-    /**
-     * persistent field
-     */
-    @XStreamAlias("ELOG")
-    private Elog elog;
-
-    public Long getLogCdn() {
-        return this.logCdn;
-    }
-
-    public void setLogCdn(Long logCdn) {
-        this.logCdn = logCdn;
-    }
-
-    public String getLogIrLb() {
-        return this.logIrLb;
-    }
-
-    public void setLogIrLb(String logIrLb) {
-        this.logIrLb = logIrLb;
-    }
-
-    public String getLogRcLb() {
-        return this.logRcLb;
-    }
-
-    public void setLogRcLb(String logRcLb) {
-        this.logRcLb = logRcLb;
-    }
-
-    public String getLogXrLb() {
-        return this.logXrLb;
-    }
-
-    public void setLogXrLb(String logXrLb) {
-        this.logXrLb = logXrLb;
-    }
-
-    public String getLogNaLb() {
-        return this.logNaLb;
-    }
-
-    public void setLogNaLb(String logNaLb) {
-        this.logNaLb = logNaLb;
-    }
-
-    public String getLogMaLb() {
-        return this.logMaLb;
-    }
-
-    public void setLogMaLb(String logMaLb) {
-        this.logMaLb = logMaLb;
-    }
-
-    public String getLogMdLb() {
-        return this.logMdLb;
-    }
-
-    public void setLogMdLb(String logMdLb) {
-        this.logMdLb = logMdLb;
-    }
-
-    public String getLogFsLb() {
-        return this.logFsLb;
-    }
-
-    public void setLogFsLb(String logFsLb) {
-        this.logFsLb = logFsLb;
-    }
-
-    public String getLogInLb() {
-        return this.logInLb;
-    }
-
-    public void setLogInLb(String logInLb) {
-        this.logInLb = logInLb;
-    }
-
-    public String getLogImLb() {
-        return this.logImLb;
-    }
-
-    public void setLogImLb(String logImLb) {
-        this.logImLb = logImLb;
-    }
-
-    public Ers getErs() {
-        return this.ers;
-    }
-
-    public void setErs(Ers ers) {
-        this.ers = ers;
-    }
-
-    public Elog getElog() {
-        return this.elog;
-    }
-
-    public void setElog(Elog elog) {
-        this.elog = elog;
-    }
-
-    public List<Tra> getListTra() {
-        if (listTra == null) {
-            this.listTra = new ArrayList<>();
-        }
-        return this.listTra;
-    }
-
-    public void setListTra(List<Tra> listTra) {
-        this.listTra = listTra;
-    }
-
-    public List<Cox> getListCox() {
-        if (listCox == null) {
-            this.listCox = new ArrayList<>();
-        }
-        return this.listCox;
-    }
-
-    public void setListCox(List<Cox> listCox) {
-        this.listCox = listCox;
-    }
-
-    public Dep getDep() {
-        if (getListDep() == null || getListDep().isEmpty()) {
-            return null;
-        } else {
-            return getListDep().get(0);
-        }
-    }
-
-    public List<Dep> getListDep() {
-        if (listDep == null) {
-            this.listDep = new ArrayList<>();
-        }
-        return this.listDep;
-    }
-
-    public void setListDep(List<Dep> listDep) {
-        this.listDep = listDep;
-    }
-
-    public Rtp getRtp() {
-        if (getListRtp() == null || getListRtp().isEmpty()) {
-            return null;
-        } else {
-            return getListRtp().get(0);
-        }
-    }
-
-    public List<Rtp> getListRtp() {
-        if (listRtp == null) {
-            this.listRtp = new ArrayList<>();
-        }
-        return this.listRtp;
-    }
-
-    public void setListRtp(List<Rtp> listRtp) {
-        this.listRtp = listRtp;
-    }
-
-    public List<Far> getListFar() {
-        if (listFar == null) {
-            this.listFar = new ArrayList<>();
-        }
-        return this.listFar;
-    }
-
-    public void setListFar(List<Far> listFar) {
-        this.listFar = listFar;
-    }
-
-    public List<Rlc> getListRlc() {
-        if (listRlc == null) {
-            this.listRlc = new ArrayList<>();
-        }
-        return this.listRlc;
-    }
-
-    public void setListRlc(List<Rlc> listRlc) {
-        this.listRlc = listRlc;
-    }
-
-    public List<Ins> getListIns() {
-        if (listIns == null) {
-            this.listIns = new ArrayList<>();
-        }
-        return this.listIns;
-    }
-
-    public void setListIns(List<Ins> listIns) {
-        this.listIns = listIns;
-    }
-
-    public List<Trz> getListTrz() {
-        if (listTrz == null) {
-            this.listTrz = new ArrayList<>();
-        }
-        return this.listTrz;
-    }
-
-    public void setListTrz(List<Trz> listTrz) {
-        this.listTrz = listTrz;
-    }
-
-    public List<Coe> getListCoe() {
-        if (listCoe == null) {
-            this.listCoe = new ArrayList<>();
-        }
-        return this.listCoe;
-    }
-
-    public void setListCoe(List<Coe> listCoe) {
-        this.listCoe = listCoe;
-    }
-
-    public List<Cro> getListCro() {
-        if (listCro == null) {
-            this.listCro = new ArrayList<>();
-        }
-        return this.listCro;
-    }
-
-    public void setListCro(List<Cro> listCro) {
-        this.listCro = listCro;
-    }
-
-    public Lan getLan() {
-        if (getListLan() == null || getListLan().isEmpty()) {
-            return null;
-        } else {
-            return getListLan().get(0);
-        }
-    }
-
-    public List<Lan> getListLan() {
-        if (listLan == null) {
-            this.listLan = new ArrayList<>();
-        }
-        return this.listLan;
-    }
-
-    public void setListLan(List<Lan> listLan) {
-        this.listLan = listLan;
-    }
-
-    public Eof getEof() {
-        if (getListEof() == null || getListEof().isEmpty()) {
-            return null;
-        } else {
-            return getListEof().get(0);
-        }
-    }
-
-    public List<Eof> getListEof() {
-        if (listEof == null) {
-            this.listEof = new ArrayList<>();
-        }
-        return this.listEof;
-    }
-
-    public void setListEof(List<Eof> listEof) {
-        this.listEof = listEof;
-    }
-
-    public Pno getPno() {
-        if (getListPno() == null || getListPno().isEmpty()) {
-            return null;
-        } else {
-            return getListPno().get(0);
-        }
-    }
-
-    public List<Pno> getListPno() {
-        if (listPno == null) {
-            this.listPno = new ArrayList<>();
-        }
-        return this.listPno;
-    }
-
-    public void setListPno(List<Pno> listPno) {
-        this.listPno = listPno;
-    }
-
-    public Pnt getPnt() {
-        if (getListPnt() == null || getListPnt().isEmpty()) {
-            return null;
-        } else {
-            return getListPnt().get(0);
-        }
-    }
-
-    public List<Pnt> getListPnt() {
-        if (listPnt == null) {
-            this.listPnt = new ArrayList<>();
-        }
-        return listPnt;
-    }
-
-    public void setListPnt(List<Pnt> listPnt) {
-        this.listPnt = listPnt;
-    }
-
-    public List<Dis> getListDis() {
-        if (listDis == null) {
-            this.listDis = new ArrayList<>();
-        }
-        return this.listDis;
-    }
-
-    public void setListDis(List<Dis> listDis) {
-        this.listDis = listDis;
-    }
-
-    @Override
-    public String toString() {
-        return "Log{" + "logCdn=" + logCdn + ", logIrLb=" + logIrLb + ", logRcLb=" + logRcLb + ", logXrLb=" + logXrLb + ", logNaLb=" + logNaLb + ", logMaLb=" + logMaLb + ", logMdLb=" + logMdLb + ", logFsLb=" + logFsLb + ", logInLb=" + logInLb + ", logImLb=" + logImLb + ", ers=" + ers + ", listDep=" + listDep + ", listFar=" + listFar + ", listRlc=" + listRlc + ", listTra=" + listTra + ", listCoe=" + listCoe + ", listCox=" + listCox + ", listCro=" + listCro + ", listTrz=" + listTrz + ", listIns=" + listIns + ", listDis=" + listDis + ", listPno=" + listPno + ", listPnt=" + listPnt + ", listEof=" + listEof + ", listRtp=" + listRtp + ", listLan=" + listLan + ", elog=" + elog + '}';
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-     */
-    public boolean equals(Object other) {
-        if ((this == other)) {
-            return true;
-        }
-        if (!(other instanceof Log)) {
-            return false;
-        }
-        Log castOther = (Log) other;
-        return new EqualsBuilder().append(this.getLogCdn(),
-                castOther.getLogCdn()).isEquals();
-    }
-
-    /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-     */
-    public int hashCode() {
-        return new HashCodeBuilder().append(getLogCdn()).toHashCode();
-    }
-
-    /**
-     * Retourne l'identifiant.
+     * Obtient la valeur de la propriété dep.
      *
-     * @return l'identifiant
+     * @return possible object is {@link Dep }
+     *
      */
-    public Serializable getIdentifier() {
-        return logCdn;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Dep> getDEP() {
+        if (dep == null) {
+            dep = new ArrayList<Dep>();
+        }
+        return dep;
     }
 
     /**
-     * On va remplir les champs non présents dans le XML reçu. Cette méthode est
-     * appelée automatiquement par XStream après la création de l'objet (LOG).
+     * Définit la valeur de la propriété dep.
      *
-     * @return this
+     * @param value allowed object is {@link Dep }
+     *
      */
-    private Object readResolve() {
-        if (getListCoe() == null) {
-            setListCoe(new ArrayList<Coe>());
-        }
-
-        if (getListCox() == null) {
-            setListCox(new ArrayList<Cox>());
-        }
-
-        if (getListCro() != null) {
-            for (Cro cro : getListCro()) {
-
-                if (cro.getCoe() != null) {
-                    getListCoe().add(cro.getCoe());
-                    cro.getCoe().setLog(this);
-                }
-
-                if (cro.getCox() != null) {
-                    getListCox().add(cro.getCox());
-                    cro.getCox().setLog(this);
-                }
-            }
-        }
-
-        if (getListTrz() != null) {
-            for (Trz trz : getListTrz()) {
-                if (trz.getCoe() != null) {
-                    getListCoe().add(trz.getCoe());
-                    trz.getCoe().setLog(this);
-                }
-
-                if (trz.getCox() != null) {
-                    getListCox().add(trz.getCox());
-                    trz.getCox().setLog(this);
-                }
-            }
-        }
-
-        // Affectation du TnOrigLb et du Tn de l'ELOG: 
-        // le TnOrigLb contiendra le contenu de l'attribut TB
-        // le Tn contiendra la concaténation de l'IR du LOG et du TN de l'ELOG
-        if (getElog() != null) {
-            getElog().setElogTnOrigLb(getElog().getElogTnLb());
-            getElog().setElogTnLb(getLogIrLb() + "-" + getElog().getElogTnLb());
-        }
-
-        return this;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setDEP(List<Dep> value) {
+        this.dep = value;
     }
 
     /**
-     * Retourne un clone qui pourra être exporté par XStream dans un fichier XML
-     * (on ne peut pas exporter directement un objet obtenu par Hibernate car ce
-     * dernier est rempli de "proxies" que XStream ne gère pas correctement).
+     * Gets the value of the far property.
      *
-     * @return un objet qui peut être exporté par XStream
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the far property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getFAR().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Far }
+     *
+     *
      */
-    public Log cloneExportedFields(IExportConfiguration exportConfiguration) {
-        Log clone = new Log();
-
-        clone.setLogIrLb(getLogIrLb());
-        clone.setLogRcLb(getLogRcLb());
-        clone.setLogXrLb(getLogXrLb());
-        clone.setLogNaLb(getLogNaLb());
-        clone.setLogMaLb(getLogMaLb());
-        clone.setLogMdLb(getLogMdLb());
-        clone.setLogFsLb(getLogFsLb());
-        clone.setLogInLb(getLogInLb());
-        clone.setLogImLb(getLogImLb());
-
-        // Clone des DEP
-        if (getListDep() != null && !getListDep().isEmpty()) {
-            ArrayList<Dep> cloneDeps = new ArrayList<Dep>();
-            for (Dep dep : getListDep()) {
-                cloneDeps.add(dep.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListDep(cloneDeps);
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Far> getFAR() {
+        if (far == null) {
+            far = new ArrayList<Far>();
         }
-
-        // Clone des FAR
-        if (getListFar() != null && !getListFar().isEmpty()) {
-            ArrayList<Far> cloneFars = new ArrayList<Far>();
-            for (Far far : getListFar()) {
-                cloneFars.add(far.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListFar(cloneFars);
-        }
-
-        // Clone des RLC
-        if (getListRlc() != null && !getListRlc().isEmpty()) {
-            ArrayList<Rlc> cloneRlcs = new ArrayList<Rlc>();
-            for (Rlc rlc : getListRlc()) {
-                cloneRlcs.add(rlc.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListRlc(cloneRlcs);
-        }
-
-        // Clone des TRA
-        if (getListTra() != null && !getListTra().isEmpty()) {
-            ArrayList<Tra> cloneTras = new ArrayList<Tra>();
-            for (Tra tra : getListTra()) {
-                cloneTras.add(tra.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListTra(cloneTras);
-        }
-
-        // Clone des COE
-        if (getListCoe() != null && !getListCoe().isEmpty()) {
-            ArrayList<Coe> cloneCoes = new ArrayList<Coe>();
-            for (Coe coe : getListCoe()) {
-                cloneCoes.add(coe.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListCoe(cloneCoes);
-        }
-
-        // Clone des COX
-        if (getListCox() != null && !getListCox().isEmpty()) {
-            ArrayList<Cox> cloneCoxs = new ArrayList<Cox>();
-            for (Cox cox : getListCox()) {
-                cloneCoxs.add(cox.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListCox(cloneCoxs);
-        }
-
-        // Clone des CRO
-        if (getListCro() != null && !getListCro().isEmpty()) {
-            ArrayList<Cro> cloneCros = new ArrayList<Cro>();
-            for (Cro cro : getListCro()) {
-                cloneCros.add(cro.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListCro(cloneCros);
-        }
-
-        // Clone des TRZ
-        if (getListTrz() != null && !getListTrz().isEmpty()) {
-            ArrayList<Trz> cloneTrzs = new ArrayList<Trz>();
-            for (Trz trz : getListTrz()) {
-                cloneTrzs.add(trz.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListTrz(cloneTrzs);
-        }
-
-        // Clone des INS
-        if (getListIns() != null && !getListIns().isEmpty()) {
-            ArrayList<Ins> cloneInss = new ArrayList<Ins>();
-            for (Ins ins : getListIns()) {
-                cloneInss.add(ins.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListIns(cloneInss);
-        }
-
-        // Clone des DIS
-        if (getListDis() != null && !getListDis().isEmpty()) {
-            ArrayList<Dis> cloneDiss = new ArrayList<Dis>();
-            for (Dis dis : getListDis()) {
-                cloneDiss.add(dis.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListDis(cloneDiss);
-        }
-
-        // Clone des PNO
-        if (getListPno() != null && !getListPno().isEmpty()) {
-            ArrayList<Pno> clonePnos = new ArrayList<Pno>();
-            for (Pno pno : getListPno()) {
-                clonePnos.add(pno.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListPno(clonePnos);
-        }
-
-        // Clone des PNT
-        if (getListPnt() != null && !getListPnt().isEmpty()) {
-            ArrayList<Pnt> clonePnts = new ArrayList<Pnt>();
-            for (Pnt pnt : getListPnt()) {
-                clonePnts.add(pnt.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListPnt(clonePnts);
-        }
-
-        // Clone des EOF
-        if (getListEof() != null && !getListEof().isEmpty()) {
-            ArrayList<Eof> cloneEofs = new ArrayList<Eof>();
-            for (Eof eof : getListEof()) {
-                cloneEofs.add(eof.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListEof(cloneEofs);
-        }
-
-        // Clone des RTP
-        if (getListRtp() != null && !getListRtp().isEmpty()) {
-            ArrayList<Rtp> cloneRtps = new ArrayList<Rtp>();
-            for (Rtp rtp : getListRtp()) {
-                cloneRtps.add(rtp.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListRtp(cloneRtps);
-        }
-
-        // Clone des LAN
-        if (getListLan() != null && !getListLan().isEmpty()) {
-            ArrayList<Lan> cloneLans = new ArrayList<Lan>();
-            for (Lan lan : getListLan()) {
-                cloneLans.add(lan.cloneExportedFields(exportConfiguration));
-            }
-            clone.setListLan(cloneLans);
-        }
-
-        // La balise ELOG n'est présente dans les réponses que si les extensions françaises 
-        // sont demandées et si la taille du TN est de 8, en effet, les messages V1 ont pour 
-        // TN le ersGroupeLb qui a une taille supérieure à 8 et ne serait donc pas valide
-        // par rapport au xsd
-        if (exportConfiguration.isExtensionsFrancaises() && getElog() != null
-                && getElog().getElogTnLb() != null
-                && getElog().getElogTnOrigLb().length() == Constant.ELOG_TN_LB_LENGTH) {
-            clone.setElog(getElog().cloneExportedFields(exportConfiguration));
-        } else {
-            clone.setElog(null);
-        }
-
-        return clone;
+        return this.far;
     }
 
     /**
-     * Retourne tous les événements de pêche, en incluant les COE et COX fils de
-     * TRZ et CRO.
+     * Gets the value of the rlc property.
      *
-     * @return the evts les événements de pêche
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the rlc property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRLC().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Rlc }
+     *
+     *
      */
-    public List<? extends EvenementDePeche> getEvts() {
-        return getEvts(true);
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Rlc> getRLC() {
+        if (rlc == null) {
+            rlc = new ArrayList<Rlc>();
+        }
+        return this.rlc;
     }
 
     /**
-     * Retourne tous les événements de pêche, en incluant ou non les COE et COX
-     * qui ne sont pas directement sous LOG.
+     * Gets the value of the tra property.
      *
-     * @param includeAllCoesAndCox si <code>true</code>, tous les COE et COX
-     * sont retournés, même ceux qui ne sont pas directement fils de LOG (c-a-d
-     * les fils COE et COX des TRZ et CRO sont inclus). Si <code>false<code>, seuls les COE et COX qui sont directement sous
-     * LOG sont inclus.
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the tra property.
      *
-     * @return the evts les événements de pêche
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTRA().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Tra }
+     *
+     *
      */
-    @SuppressWarnings("unchecked")
-    public List<? extends EvenementDePeche> getEvts(boolean includeAllCoesAndCox) {
-        List evts = new ArrayList();
-        if (getDep() != null) {
-            evts.add(getDep());
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Tra> getTRA() {
+        if (tra == null) {
+            tra = new ArrayList<Tra>();
         }
-        if (getListFar() != null && !getListFar().isEmpty()) {
-            evts.addAll(getListFar());
-        }
-        if (getListRlc() != null && !getListRlc().isEmpty()) {
-            evts.addAll(getListRlc());
-        }
-
-        if (getListCoe() != null && !getListCoe().isEmpty()) {
-            if (includeAllCoesAndCox) {
-                evts.addAll(getListCoe());
-            } else {
-                for (Coe coe : getListCoe()) {
-                    if (isCoeInLog(coe)) {
-                        evts.add(coe);
-                    }
-                }
-            }
-        }
-        if (getListCox() != null && !getListCox().isEmpty()) {
-            if (includeAllCoesAndCox) {
-                evts.addAll(getListCox());
-            } else {
-                for (Cox cox : getListCox()) {
-                    if (isCoxInLog(cox)) {
-                        evts.add(cox);
-                    }
-                }
-            }
-        }
-        if (getListCro() != null && !getListCro().isEmpty()) {
-            evts.addAll(getListCro());
-        }
-        if (getListTrz() != null && !getListTrz().isEmpty()) {
-            evts.addAll(getListTrz());
-        }
-        if (getListDis() != null && !getListDis().isEmpty()) {
-            evts.addAll(getListDis());
-        }
-
-        if (getElog() != null && getElog().getListEcps() != null && !getElog().getListEcps().isEmpty()) {
-            evts.addAll(getElog().getListEcps());
-        }
-
-        if (getEof() != null) {
-            evts.add(getEof());
-        }
-
-        if (getListIns() != null && !getListIns().isEmpty()) {
-            evts.addAll(getListIns());
-        }
-        if (getPno() != null) {
-            evts.add(getPno());
-        }
-        if (getPnt() != null) {
-            evts.add(getPnt());
-        }
-        if (getRtp() != null) {
-            evts.add(getRtp());
-        }
-        if (getLan() != null) {
-            evts.add(getLan());
-        }
-        if (getListTra() != null && !getListTra().isEmpty()) {
-            evts.addAll(getListTra());
-        }
-        return evts;
+        return this.tra;
     }
 
     /**
-     * Indique si un COE est associé directement à ce LOG et pas à l'un de ses
-     * éventuels CRO ou TRZ
+     * Gets the value of the coe property.
      *
-     * @param coe
-     * @return
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the coe property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCOE().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Coe }
+     *
+     *
      */
-    public boolean isCoeInLog(Coe coe) {
-        if (getListCoe() == null || getListCoe().isEmpty() || !getListCoe().contains(coe)) {
-            return false;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Coe> getCOE() {
+        if (coe == null) {
+            coe = new ArrayList<Coe>();
         }
-
-        // on vérifie si le coe appartient à un CRO
-        if (getListCro() != null) {
-            for (Cro cro : getListCro()) {
-                if (coe == cro.getCoe()) {
-                    return false;
-                }
-            }
-        }
-
-        // on vérifie si le coe appartient à un TRZ
-        if (getListTrz() != null) {
-            for (Trz trz : getListTrz()) {
-                if (coe == trz.getCoe()) {
-                    return false;
-                }
-            }
-        }
-
-        return true;
+        return this.coe;
     }
 
     /**
-     * Indique si un COX est associé directement à ce LOG et pas à l'un de ses
-     * éventuels CRO ou TRZ
+     * Gets the value of the cox property.
      *
-     * @param coe
-     * @return
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the cox property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCOX().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Cox }
+     *
+     *
      */
-    public boolean isCoxInLog(Cox cox) {
-        if (getListCox() == null || getListCox().isEmpty() || !getListCox().contains(cox)) {
-            return false;
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Cox> getCOX() {
+        if (cox == null) {
+            cox = new ArrayList<Cox>();
         }
-
-        // on vérifie si le cox appartient à un CRO
-        if (getListCro() != null) {
-            for (Cro cro : getListCro()) {
-                if (cox == cro.getCox()) {
-                    return false;
-                }
-            }
-        }
-
-        // on vérifie si le cox appartient à un TRZ
-        if (getListTrz() != null) {
-            for (Trz trz : getListTrz()) {
-                if (cox == trz.getCox()) {
-                    return false;
-                }
-            }
-        }
-
-        return true;
+        return this.cox;
     }
+
+    /**
+     * Gets the value of the cro property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the cro property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCRO().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Cro }
+     *
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Cro> getCRO() {
+        if (cro == null) {
+            cro = new ArrayList<Cro>();
+        }
+        return this.cro;
+    }
+
+    /**
+     * Gets the value of the trz property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the trz property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getTRZ().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Trz }
+     *
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Trz> getTRZ() {
+        if (trz == null) {
+            trz = new ArrayList<Trz>();
+        }
+        return this.trz;
+    }
+
+    /**
+     * Gets the value of the ins property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the ins property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getINS().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Ins }
+     *
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Ins> getINS() {
+        if (ins == null) {
+            ins = new ArrayList<Ins>();
+        }
+        return this.ins;
+    }
+
+    /**
+     * Gets the value of the dis property.
+     *
+     * <p>
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the dis property.
+     *
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getDIS().add(newItem);
+     * </pre>
+     *
+     *
+     * <p>
+     * Objects of the following type(s) are allowed in the list {@link Dis }
+     *
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Dis> getDIS() {
+        if (dis == null) {
+            dis = new ArrayList<Dis>();
+        }
+        return this.dis;
+    }
+
+    /**
+     * Obtient la valeur de la propriété pno.
+     *
+     * @return possible object is {@link Pno }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pno getPNO() {
+        return pno;
+    }
+
+    /**
+     * Définit la valeur de la propriété pno.
+     *
+     * @param value allowed object is {@link Pno }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPNO(Pno value) {
+        this.pno = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété pnt.
+     *
+     * @return possible object is {@link Pnt }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Pnt getPNT() {
+        return pnt;
+    }
+
+    /**
+     * Définit la valeur de la propriété pnt.
+     *
+     * @param value allowed object is {@link Pnt }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setPNT(Pnt value) {
+        this.pnt = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété eof.
+     *
+     * @return possible object is {@link Eof }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Eof getEOF() {
+        return eof;
+    }
+
+    /**
+     * Définit la valeur de la propriété eof.
+     *
+     * @param value allowed object is {@link Eof }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setEOF(Eof value) {
+        this.eof = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété rtp.
+     *
+     * @return possible object is {@link Rtp }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Rtp> getRTP() {
+        if (rtp == null) {
+            rtp = new ArrayList<Rtp>();
+        }
+        return this.rtp;
+    }
+
+    /**
+     * Définit la valeur de la propriété rtp.
+     *
+     * @param value allowed object is {@link Rtp }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRTP(List<Rtp> value) {
+        this.rtp = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété lan.
+     *
+     * @return possible object is {@link Lan }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public List<Lan> getLAN() {
+        if (lan == null) {
+            lan = new ArrayList<Lan>();
+        }
+        return this.lan;
+    }
+
+    /**
+     * Définit la valeur de la propriété lan.
+     *
+     * @param value allowed object is {@link Lan }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setLAN(List<Lan> value) {
+        this.lan = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété elog.
+     *
+     * @return possible object is {@link LogDeclarationType.ELOG }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public Log.ELOG getELOG() {
+        return elog;
+    }
+
+    /**
+     * Définit la valeur de la propriété elog.
+     *
+     * @param value allowed object is {@link LogDeclarationType.ELOG }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setELOG(Log.ELOG value) {
+        this.elog = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ir.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIR() {
+        return ir;
+    }
+
+    /**
+     * Définit la valeur de la propriété ir.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIR(String value) {
+        this.ir = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété rc.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getRC() {
+        return rc;
+    }
+
+    /**
+     * Définit la valeur de la propriété rc.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setRC(String value) {
+        this.rc = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété xr.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getXR() {
+        return xr;
+    }
+
+    /**
+     * Définit la valeur de la propriété xr.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setXR(String value) {
+        this.xr = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété na.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getNA() {
+        return na;
+    }
+
+    /**
+     * Définit la valeur de la propriété na.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setNA(String value) {
+        this.na = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété ma.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getMA() {
+        return ma;
+    }
+
+    /**
+     * Définit la valeur de la propriété ma.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setMA(String value) {
+        this.ma = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété md.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getMD() {
+        return md;
+    }
+
+    /**
+     * Définit la valeur de la propriété md.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setMD(String value) {
+        this.md = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété fs.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getFS() {
+        return fs;
+    }
+
+    /**
+     * Définit la valeur de la propriété fs.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setFS(String value) {
+        this.fs = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété in.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIN() {
+        return in;
+    }
+
+    /**
+     * Définit la valeur de la propriété in.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIN(String value) {
+        this.in = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété im.
+     *
+     * @return possible object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public String getIM() {
+        return im;
+    }
+
+    /**
+     * Définit la valeur de la propriété im.
+     *
+     * @param value allowed object is {@link String }
+     *
+     */
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public void setIM(String value) {
+        this.im = value;
+    }
+
+    /**
+     * <p>
+     * Classe Java pour anonymous complex type.
+     *
+     * <p>
+     * Le fragment de schéma suivant indique le contenu attendu figurant dans
+     * cette classe.
+     *
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Elog"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="ECPS" maxOccurs="unbounded" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Ecps"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos" minOccurs="0"/&gt;
+     *                   &lt;element name="GEA" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Gea" minOccurs="0"/&gt;
+     *                   &lt;element name="EDCI" maxOccurs="unbounded"&gt;
+     *                     &lt;complexType&gt;
+     *                       &lt;complexContent&gt;
+     *                         &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Edci"&gt;
+     *                           &lt;sequence&gt;
+     *                             &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe"/&gt;
+     *                           &lt;/sequence&gt;
+     *                         &lt;/extension&gt;
+     *                       &lt;/complexContent&gt;
+     *                     &lt;/complexType&gt;
+     *                   &lt;/element&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/extension&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *         &lt;element name="ETRC" maxOccurs="unbounded" minOccurs="0"&gt;
+     *           &lt;complexType&gt;
+     *             &lt;complexContent&gt;
+     *               &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Etrc"&gt;
+     *                 &lt;sequence&gt;
+     *                   &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe"/&gt;
+     *                 &lt;/sequence&gt;
+     *               &lt;/extension&gt;
+     *             &lt;/complexContent&gt;
+     *           &lt;/complexType&gt;
+     *         &lt;/element&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/extension&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "ecps",
+        "etrc"
+    })
+    @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+    public static class ELOG
+            extends Elog {
+
+        @XmlElement(name = "ECPS")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+        protected List<Log.ELOG.ECPS> ecps;
+        @XmlElement(name = "ETRC")
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+        protected List<Log.ELOG.ETRC> etrc;
+
+        /**
+         * Gets the value of the ecps property.
+         *
+         * <p>
+         * This accessor method returns a reference to the live list, not a
+         * snapshot. Therefore any modification you make to the returned list
+         * will be present inside the JAXB object. This is why there is not a
+         * <CODE>set</CODE> method for the ecps property.
+         *
+         * <p>
+         * For example, to add a new item, do as follows:
+         * <pre>
+         *    getECPS().add(newItem);
+         * </pre>
+         *
+         *
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link LogDeclarationType.ELOG.ECPS }
+         *
+         *
+         */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+        public List<Log.ELOG.ECPS> getECPS() {
+            if (ecps == null) {
+                ecps = new ArrayList<Log.ELOG.ECPS>();
+            }
+            return this.ecps;
+        }
+
+        /**
+         * Gets the value of the etrc property.
+         *
+         * <p>
+         * This accessor method returns a reference to the live list, not a
+         * snapshot. Therefore any modification you make to the returned list
+         * will be present inside the JAXB object. This is why there is not a
+         * <CODE>set</CODE> method for the etrc property.
+         *
+         * <p>
+         * For example, to add a new item, do as follows:
+         * <pre>
+         *    getETRC().add(newItem);
+         * </pre>
+         *
+         *
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link LogDeclarationType.ELOG.ETRC }
+         *
+         *
+         */
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+        public List<Log.ELOG.ETRC> getETRC() {
+            if (etrc == null) {
+                etrc = new ArrayList<Log.ELOG.ETRC>();
+            }
+            return this.etrc;
+        }
+
+        /**
+         * <p>
+         * Classe Java pour anonymous complex type.
+         *
+         * <p>
+         * Le fragment de schéma suivant indique le contenu attendu figurant
+         * dans cette classe.
+         *
+         * <pre>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Ecps"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="POS" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Pos" minOccurs="0"/&gt;
+         *         &lt;element name="GEA" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Gea" minOccurs="0"/&gt;
+         *         &lt;element name="EDCI" maxOccurs="unbounded"&gt;
+         *           &lt;complexType&gt;
+         *             &lt;complexContent&gt;
+         *               &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Edci"&gt;
+         *                 &lt;sequence&gt;
+         *                   &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe"/&gt;
+         *                 &lt;/sequence&gt;
+         *               &lt;/extension&gt;
+         *             &lt;/complexContent&gt;
+         *           &lt;/complexType&gt;
+         *         &lt;/element&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/extension&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
+         * </pre>
+         *
+         *
+         */
+        @XmlAccessorType(XmlAccessType.FIELD)
+        @XmlType(name = "", propOrder = {
+            "pos",
+            "gea",
+            "edci"
+        })
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+        public static class ECPS
+                extends Ecps {
+
+            @XmlElement(name = "POS")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            protected Pos pos;
+            @XmlElement(name = "GEA")
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            protected Gea gea;
+            @XmlElement(name = "EDCI", required = true)
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            protected List<Log.ELOG.ECPS.EDCI> edci;
+
+            /**
+             * Obtient la valeur de la propriété pos.
+             *
+             * @return possible object is {@link Pos }
+             *
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            public Pos getPOS() {
+                return pos;
+            }
+
+            /**
+             * Définit la valeur de la propriété pos.
+             *
+             * @param value allowed object is {@link Pos }
+             *
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            public void setPOS(Pos value) {
+                this.pos = value;
+            }
+
+            /**
+             * Obtient la valeur de la propriété gea.
+             *
+             * @return possible object is {@link Gea }
+             *
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            public Gea getGEA() {
+                return gea;
+            }
+
+            /**
+             * Définit la valeur de la propriété gea.
+             *
+             * @param value allowed object is {@link Gea }
+             *
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            public void setGEA(Gea value) {
+                this.gea = value;
+            }
+
+            /**
+             * Gets the value of the edci property.
+             *
+             * <p>
+             * This accessor method returns a reference to the live list, not a
+             * snapshot. Therefore any modification you make to the returned
+             * list will be present inside the JAXB object. This is why there is
+             * not a <CODE>set</CODE> method for the edci property.
+             *
+             * <p>
+             * For example, to add a new item, do as follows:
+             * <pre>
+             *    getEDCI().add(newItem);
+             * </pre>
+             *
+             *
+             * <p>
+             * Objects of the following type(s) are allowed in the list
+             * {@link LogDeclarationType.ELOG.ECPS.EDCI }
+             *
+             *
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            public List<Log.ELOG.ECPS.EDCI> getEDCI() {
+                if (edci == null) {
+                    edci = new ArrayList<Log.ELOG.ECPS.EDCI>();
+                }
+                return this.edci;
+            }
+
+            /**
+             * <p>
+             * Classe Java pour anonymous complex type.
+             *
+             * <p>
+             * Le fragment de schéma suivant indique le contenu attendu figurant
+             * dans cette classe.
+             *
+             * <pre>
+             * &lt;complexType&gt;
+             *   &lt;complexContent&gt;
+             *     &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Edci"&gt;
+             *       &lt;sequence&gt;
+             *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe"/&gt;
+             *       &lt;/sequence&gt;
+             *     &lt;/extension&gt;
+             *   &lt;/complexContent&gt;
+             * &lt;/complexType&gt;
+             * </pre>
+             *
+             *
+             */
+            @XmlAccessorType(XmlAccessType.FIELD)
+            @XmlType(name = "", propOrder = {
+                "spe"
+            })
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            public static class EDCI
+                    extends Edci {
+
+                @XmlElement(name = "SPE", required = true)
+                @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+                protected Spe spe;
+
+                /**
+                 * Obtient la valeur de la propriété spe.
+                 *
+                 * @return possible object is {@link Spe }
+                 *
+                 */
+                @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+                public Spe getSPE() {
+                    return spe;
+                }
+
+                /**
+                 * Définit la valeur de la propriété spe.
+                 *
+                 * @param value allowed object is {@link Spe }
+                 *
+                 */
+                @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+                public void setSPE(Spe value) {
+                    this.spe = value;
+                }
+
+            }
+
+        }
+
+        /**
+         * <p>
+         * Classe Java pour anonymous complex type.
+         *
+         * <p>
+         * Le fragment de schéma suivant indique le contenu attendu figurant
+         * dans cette classe.
+         *
+         * <pre>
+         * &lt;complexType&gt;
+         *   &lt;complexContent&gt;
+         *     &lt;extension base="{http://ec.europa.eu/fisheries/schema/ers/v3}Etrc"&gt;
+         *       &lt;sequence&gt;
+         *         &lt;element name="SPE" type="{http://ec.europa.eu/fisheries/schema/ers/v3}Spe"/&gt;
+         *       &lt;/sequence&gt;
+         *     &lt;/extension&gt;
+         *   &lt;/complexContent&gt;
+         * &lt;/complexType&gt;
+         * </pre>
+         *
+         *
+         */
+        @XmlAccessorType(XmlAccessType.FIELD)
+        @XmlType(name = "", propOrder = {
+            "spe"
+        })
+        @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+        public static class ETRC
+                extends Etrc {
+
+            @XmlElement(name = "SPE", required = true)
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            protected Spe spe;
+
+            /**
+             * Obtient la valeur de la propriété spe.
+             *
+             * @return possible object is {@link Spe }
+             *
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            public Spe getSPE() {
+                return spe;
+            }
+
+            /**
+             * Définit la valeur de la propriété spe.
+             *
+             * @param value allowed object is {@link Spe }
+             *
+             */
+            @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
+            public void setSPE(Spe value) {
+                this.spe = value;
+            }
+
+        }
+
+    }
+
 }
