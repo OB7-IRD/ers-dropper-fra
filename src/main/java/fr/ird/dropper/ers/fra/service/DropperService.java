@@ -747,7 +747,7 @@ public class DropperService extends ErsMainService {
                 ActivityReturnToPort a = iterator.next();
                 if (a.getRnMessageERS() == null ? rnMessageERS == null : a.getRnMessageERS().equals(rnMessageERS)) {
                     LogService.getService(this.getClass()).logApplicationDebug("Suppression de " + a);
-                    trip.getActivityReturnToPorts().remove(a);
+                    iterator.remove();
                     new ActivityReturnToPortDAO().delete(a);
                 }
             }
@@ -755,7 +755,7 @@ public class DropperService extends ErsMainService {
                 ActivityDepartureToPort a = iterator.next();
                 if (a.getRnMessageERS() == null ? rnMessageERS == null : a.getRnMessageERS().equals(rnMessageERS)) {
                     LogService.getService(this.getClass()).logApplicationDebug("Suppression de " + a);
-                    trip.getActivityDepartureToPorts().remove(a);
+                    iterator.remove();
                     new ActivityDepartureToPortDAO().delete(a);
                 }
             }
@@ -763,7 +763,7 @@ public class DropperService extends ErsMainService {
                 FADActivity a = iterator.next();
                 if (a.getRnMessageERS() == null ? rnMessageERS == null : a.getRnMessageERS().equals(rnMessageERS)) {
                     LogService.getService(this.getClass()).logApplicationDebug("Suppression de " + a);
-                    trip.getFadActivitys().remove(a);
+                    iterator.remove();
                     new FADActivityDAO().delete(a);
                 }
             }
@@ -771,7 +771,7 @@ public class DropperService extends ErsMainService {
                 FishingActivity a = iterator.next();
                 if (a.getRnMessageERS() == null ? rnMessageERS == null : a.getRnMessageERS().equals(rnMessageERS)) {
                     LogService.getService(this.getClass()).logApplicationDebug("Suppression de " + a);
-                    trip.getFishingActivitys().remove(a);
+                    iterator.remove();
                     new FishingActivityDAO().delete(a);
                 }
             }
