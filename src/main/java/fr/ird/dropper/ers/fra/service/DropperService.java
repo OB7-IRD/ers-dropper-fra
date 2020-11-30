@@ -7,7 +7,7 @@ import fr.ird.driver.eva.business.ActivityDepartureToPort;
 import fr.ird.driver.eva.business.ActivityReturnToPort;
 import fr.ird.driver.eva.business.Capture;
 import fr.ird.driver.eva.business.Discard;
-import fr.ird.driver.eva.business.EndOFishing;
+import fr.ird.driver.eva.business.EndOfFishing;
 import fr.ird.driver.eva.business.FADActivity;
 import fr.ird.driver.eva.business.Fad;
 import fr.ird.driver.eva.business.FishingActivity;
@@ -21,25 +21,13 @@ import fr.ird.driver.eva.business.Specie;
 import fr.ird.driver.eva.business.Trip;
 import fr.ird.driver.eva.dao.ActivityDepartureToPortDAO;
 import fr.ird.driver.eva.dao.ActivityReturnToPortDAO;
+import fr.ird.driver.eva.dao.EndOfFishingDAO;
 import fr.ird.driver.eva.dao.FADActivityDAO;
 import fr.ird.driver.eva.dao.FishingActivityDAO;
 import fr.ird.driver.eva.dao.HarbourDAO;
 import fr.ird.driver.eva.dao.TripDAO;
 import fr.ird.driver.eva.dao.VesselDAO;
-import fr.ird.dropper.ers.fra.business.Dep;
-import fr.ird.dropper.ers.fra.business.Dis;
-import fr.ird.dropper.ers.fra.business.Eof;
-import fr.ird.dropper.ers.fra.business.Ers;
 import fr.ird.dropper.ers.fra.business.*;
-import fr.ird.dropper.ers.fra.business.EvenementDePeche;
-import fr.ird.dropper.ers.fra.business.Far;
-import fr.ird.dropper.ers.fra.business.Gea;
-import fr.ird.dropper.ers.fra.business.Log;
-import fr.ird.dropper.ers.fra.business.Ops;
-import fr.ird.dropper.ers.fra.business.Pos;
-import fr.ird.dropper.ers.fra.business.Ret;
-import fr.ird.dropper.ers.fra.business.Rtp;
-import fr.ird.dropper.ers.fra.business.Spe;
 import fr.ird.dropper.ers.fra.common.ErsUtils;
 import fr.ird.dropper.ers.fra.config.ERSDropperProperties;
 import fr.ird.dropper.ers.fra.exception.DropperException;
@@ -89,6 +77,7 @@ public class DropperService extends ErsMainService {
         // shell unix
         DropperService dropperService = DropperService.getService();
         try {
+            LogService.getService(DropperService.class).logApplicationDebug("Init Dropper service");;
             dropperService.init();
             dropperService.traiteFichiers();
 
@@ -103,6 +92,7 @@ public class DropperService extends ErsMainService {
     }
 
     private void traiteFichiers() throws Exception {
+        LogService.getService(DropperService.class).logApplicationDebug("Run traiteFichiers");;
         integreFichiersDeRepertoire(ERSDropperProperties.MESSAGE_DIRECTORY);
     }
 
@@ -187,30 +177,11 @@ public class DropperService extends ErsMainService {
                     LogService.getService(DropperService.class)
                             .logApplicationDebug("integreFichiers - notDirectory");
 
-                    // MSGR02
-                    // On vérifie que le fichier est conforme aux XSD
-//                    LogService.getService(DropperService.class)
-//                            .logApplicationDebug("integreFichiers - OpsFrenchFileValidator");
-//                    OpsFrenchFileValidator validator = new OpsFrenchFileValidator(fichier);
-//                    LogService.getService(DropperService.class)
-//                            .logApplicationDebug("integreFichiers - validator.validate");
-//                    OpsFileValidatorReport report = validator.validate(ERSDropperProperties.FORMAT_XML);
-                    // Non conformité
-//                    if (!report.isEmpty()) {
-//
-//                        LogService.getService(DropperService.class)
-//                                .logApplicationError("Le fichier est non conforme avec le schéma XSD.");
-//                        exitCode = 4;
-//                        moveFileToErrorDirectory(receivedOps, fichier);
-//                        continue;
-//                    } // Conformité
-//                    else {
                     LogService.getService(DropperService.class)
                             .logApplicationDebug("integreFichiers - #### conformité avec XSD ");
                     List<Ret> rets = new ArrayList<Ret>();
                     LogService.getService(DropperService.class)
                             .logApplicationDebug("integreFichiers - parsing du fichier - " + fichier.getPath());
-//                        final Ops ops = XmlReader.parse(fichier.getPath());
 
                     final Ops ops = unmarshal(fichier);
 
@@ -218,7 +189,6 @@ public class DropperService extends ErsMainService {
                     LogService.getService(DropperService.class)
                             .logApplicationDebug("integreFichiers - ops " + ops);
 
-//                        ops.setOpsVersionErsLb("V3");
                     if (ops == null) {
                         // La transformation du flux XML en Ops a échoué
                         LogService.getService(DropperService.class)
@@ -251,53 +221,8 @@ public class DropperService extends ErsMainService {
                         }
                     }
 
-//                        if (ops.getEmav() != null) {
-//                            LogService.getService(DropperService.class)
-//                                    .logApplicationDebug("integreFichiers - ops.getEmav() != null");
-//                            EmavDAO emavdao = new EmavDAO();
-//                            ops.getEmav().setOperateur(emavdao.findOperateurByIr(ops.getEmav().getEmavIrLb()));
-//                        } else {
-//                            OperateurDAO dao = new OperateurDAO();
-//                            ops.setOperateur(dao.findByOperatorCode(ops.getOpsFrLb()));
-//                        }
-//                        LogService.getService(DropperService.class)
-//                                .logApplicationDebug("integreFichiers - validate - rets");
-//                        rets = OpsValidationService.getService().validate(ops, fichier);
-//
-//                        if (ops.getDAT() != null) {
-//                            LogService.getService(DropperService.class)
-//                                    .logApplicationDebug(
-//                                            "RN = "
-//                                            + ops.getDAT().getERS()
-//                                                    .getRN());
-//                        }
-                    // cca 21/12/2010 : correction controle de RET non
-                    // pris en compte
-                    // Si les contrôles de validité du message reçu
-                    // montrent que le message n'est pas valide, on ne
-                    // l'insère pas en base, on déplace le fichier dans
-                    // le répertoire des messages traités, et on passe
-                    // au message suivant
-//                        if (containsErrorsOrTransfertAcquittement(rets)) {
-//                            // MSGR04 et RET04 :génération accusé de traitement sauf
-//                            // si on a reçu 1 RET ou 1 RSP
-//                            //Desactivé dans le module IRD
-////                            if (ops.getRet() == null
-////                                    && ops.getRsp() == null) {
-////                                generationService.acknoledge(ops, rets, properties, fichier);
-////                            }
-//
-//                            // Messages d'erreur donc ops non enregistré en
-//                            // base => ops =null
-//                            moveFileToTreatedDirectory(null, fichier);
-//
-//                            continue;
-//                        }
-//                    }
                 }
             } catch (Exception e) {
-
-//                moveFileToErrors(e, opsForException, fichier, journalService);
                 moveFileToErrorDirectory(receivedOps, fichier);
                 LogService.getService(DropperService.class)
                         .logApplicationError(
@@ -309,52 +234,7 @@ public class DropperService extends ErsMainService {
         }
     }
 
-    /**
-     * Call thetr stored procudure and the message transfert module
-     *
-     * @param opsAccuseTraitementTrans
-     * @param ops
-     * @param fichier
-     * @param listSentOps
-     * @return
-     * @throws SQLException * private boolean callTransfertModule(Ops
-     * opsAccuseTraitementTrans, Ops ops, File fichier, List<Ops> listSentOps)
-     * throws SQLException{ boolean procedureOK = callStoredProcedure(ops);
-     * if(opsAccuseTraitementTrans!=null){ procedureOK =
-     * callStoredProcedure(opsAccuseTraitementTrans); } for(Ops opsSent :
-     * listSentOps){ if(opsSent!=null){ procedureOK =
-     * callStoredProcedure(opsSent); } } if(procedureOK){ Transaction
-     * transaction = null; Session sessionProc = null; try{ Configuration cfg =
-     * new Configuration(); cfg.configure();
-     *
-     * SessionFactory factory = cfg.buildSessionFactory(); sessionProc =
-     * factory.openSession(); transaction = sessionProc.beginTransaction();
-     * //Connection connection = sessionProc.connection();
-     * callMessageTransferModule(fichier, ops); transaction.commit(); }finally{
-     * sessionProc.flush(); sessionProc.close(); } } return procedureOK; }
-     */
-    /**
-     * Module de transfert des messages ERS intégrés avec succès en base par le
-     * module de traitement. Les messages à transférer sont identifiés par des
-     * attributs spécifiques qui sont mis à jour lors de leur transfert, ou
-     * lorsqu’il faut re-transférer les messages.
-     *
-     * @param fichier
-     * @param ops
-     *
-     * private void callMessageTransferModule(File fichier, Ops ops){ try{
-     * MessageTransferModule messageTransferModule = MessageTransferModule
-     * .getService(); if(ops.getIdXmlf()!=null){
-     * messageTransferModule.transfer(ops, (XmlFile)session.load(XmlFile.class,
-     * ops.getIdXmlf())); } }catch(Exception ex){
-     *
-     * LogService.getService(this.getClass()).logApplicationError( "Une
-     * exception a été levée pendant le traitement du fichier =" +
-     * fichier.getName(), ex); }
-     *
-     * }
-     */
-    /**
+      /**
      * Tri des fichiers du plus ancien au plus récent puis sur le nom de fichier
      * par ordre alphabétique
      *
@@ -377,51 +257,6 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * MAJ d'ERS à supprimer pour le DEL du Ops
-     *
-     * @param ops
-     */
-//    private void setErsForDel(Ops ops) {
-//        if (ops.getDEL() != null) {
-//            ErsDAO ersDao = new ErsDAO();
-//            Ers ersDeleted = ersDao.findByFrenchRecordNumber(ops.getDEL().getRN());
-//            ops.getDEL().setErs(ersDeleted);
-//
-//        }
-//    }
-    /**
-     * Efectue le transfert du message si nécessaire.
-     *
-     * @param fichier fichier reçu
-     * @param ops Ops contenu dans le fichier
-     * @throws Exception en cas d'erreur
-     */
-//    private List<Ops> transfereMessage(File fichier, Ops ops) throws Exception {
-//        List<Ops> listSentOps = new ArrayList<Ops>();
-//        if (ops.getDAT() != null) {
-//            // Transfert d'un XML contenant 1 DAT
-//            DatTransfertRulesService datTransfertRulesService = new DatTransfertRulesService();
-//            listSentOps.addAll(datTransfertRulesService.transfer(ops, fichier));
-//        } else if (ops.getDEL() != null) {
-//            // Transfert d'un XML contenant 1 DEL
-//            DelTransfertRulesService delTransfertRulesService = new DelTransfertRulesService();
-//            listSentOps.addAll(delTransfertRulesService.transfer(ops, fichier));
-//        } else if (ops.getCOR() != null) {
-//            // Transfert d'un XML contenant 1 COR
-//            CorTransfertRulesService corTransfertRulesService = new CorTransfertRulesService();
-//            listSentOps.addAll(corTransfertRulesService.transfer(ops, fichier));
-//        } else if (ops.getRsp() != null) {
-//            // Transfert d'un XML contenant 1 RSP
-//            RspTransfertRulesService rspTransfertRulesService = new RspTransfertRulesService();
-//            listSentOps.addAll(rspTransfertRulesService.transfer(ops, fichier));
-//        } else if (ops.getRet() != null) {
-//            // Transfert d'un XML contenant 1 RET
-//            RetTransfertRulesService retTransfertRulesService = new RetTransfertRulesService();
-//            listSentOps.addAll(retTransfertRulesService.transfer(ops, fichier));
-//        }
-//        return listSentOps;
-//    }
-    /**
      * Indique si une liste de Rets renvoyés par la procédure de validation
      * contient au moins un RET qui indique que la requête est au format V1;
      *
@@ -433,27 +268,6 @@ public class DropperService extends ErsMainService {
         return false;
     }
 
-    /**
-     * Indique si une liste de Rets renvoyés par la procédure de validation
-     * contient au moins une erreur ou un transfert d'acquittement;
-     *
-     * @param rets
-     * @return
-     */
-//    public static boolean containsErrorsOrTransfertAcquittement(List<Ret> rets) {
-//        if (rets == null || rets.isEmpty()) {
-//            return false;
-//        }
-//
-//        for (Ret ret : rets) {
-//            if (ret.isTransfertAcquittement()
-//                    || !"000".equals(ret.getRetRsLb())) {
-//                return true;
-//            }
-//        }
-//
-//        return false;
-//    }
     /**
      * Déplace le fichier dans le répertoire des fichiers traités.
      *
@@ -538,57 +352,6 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Deplacer le fichier dans le repioire erreurs si besoin
-     *
-     * @param exception
-     * @param opsForException
-     * @param fichier
-     * @param journalService
-     */
-//    private void moveFileToErrors(Exception exception, Ops opsForException,
-//            final File fichier, JournalService journalService) {
-//        if (exception instanceof ERSDriverException) {
-//            ERSDriverException gex = (ERSDriverException) exception;
-//            //date befoe 1753 exception
-//            if ("JZ0SU".equalsIgnoreCase(gex.getSQLException().getSQLState())) {
-//                ///todo move file
-//                // Génération accusé de réception
-//                try {
-//                    String message = gex.getSQLException().getMessage();
-//                    String[] messages = message.split(":");
-//                    List<Ret> rets = validateMGEN05(journalService, opsForException, fichier, getDATe(messages[1]));
-//                    //List<Ret> rets = validateMGEN05(journalService, opsForException, fichier, new Date());
-//                    if (opsForException.getRet() == null
-//                            && opsForException.getRsp() == null) {
-//                        generationService.acknoledge(opsForException, rets,
-//                                session, properties, fichier);
-//                    }
-//
-//                    // Messages d'erreur donc ops non enregistré en
-//                    // base => ops =null
-//                    moveFileToTreatedDirectory(null, fichier, journalService);
-//                } catch (Exception ex) {
-//                    //what to do in this case
-//                   LogService.getService(this.getClass()).logApplicationError(
-//                            "Le fichier " + fichier.getAbsolutePath()
-//                            + " n'a pas pu être déplacé.", ex);
-//                    exitCode = 4;
-//                }
-//            }
-//        }
-//        //duplicate key exception
-//        if (exception instanceof ConstraintViolationException) {
-//            moveFileToErrorDirectory(opsForException, fichier, journalService);
-//        }
-//        //Matcher exception
-//        if (exception instanceof IllegalStateException) {
-//            IllegalStateException iex = (IllegalStateException) exception;
-//            if ("No match found".equalsIgnoreCase(exception.getMessage())) {
-//                moveFileToErrorDirectory(opsForException, fichier, journalService);
-//            }
-//        }
-//    }
-    /**
      * Coppier le fichier dans les repitoires erreurs
      *
      * @param ops
@@ -612,12 +375,7 @@ public class DropperService extends ErsMainService {
                 exitCode = 4;
 
             }
-            /*if (ops != null) {
-             journalService.insertMSG04(fichier);
-             } else {
-             journalService.insertMSG04(fichier);
-             }*/
-        } catch (SecurityException e) {
+         } catch (SecurityException e) {
             LogService.getService(this.getClass()).logApplicationError(
                     "Le fichier " + fichier.getAbsolutePath()
                     + " n'a pas pu être déplacé." + e);
@@ -697,16 +455,16 @@ public class DropperService extends ErsMainService {
             if (ers.getLOG().getEOF() != null) {
                 LogService.getService(this.getClass()).logApplicationDebug("## " + trip);
                 Eof eof = ers.getLOG().getEOF();
-                if (trip != null && trip.getDateOfDep() == null) {
-//                    exitCode = 3;
-                    throw new DropperException("La fin de pêche n'est pas assiocée à une marée existante en base(Marée num: " + longTripNumber + ", Message num : " + ers.getRN() + ")");
-                }
-                EndOFishing endOFishing = new EndOFishing();
-                endOFishing.setDateMessageERS(dateMessageERS);
-                endOFishing.setDateEof(DateTimeUtils.createDateTime(eof.getDaDt(), eof.getTiLb()).toDate());
-                endOFishing.setRnMessageERS(ers.getRN());
-                endOFishing.setRnMessageERSToCorrect(rnMessageERSToCorrect);
-                trip.setEof(endOFishing);
+//                 if (trip != null && trip.getDateOfDep() == null) {
+// //                    exitCode = 3;
+//                     throw new DropperException("La fin de pêche n'est pas assiocée à une marée existante en base(Marée num: " + longTripNumber + ", Message num : " + ers.getRN() + ")");
+//                 }
+                EndOfFishing endOfFishing = new EndOfFishing();
+                endOfFishing.setDateMessageERS(dateMessageERS);
+                endOfFishing.setDateEof(DateTimeUtils.createDateTime(eof.getDaDt(), eof.getTiLb()).toDate());
+                endOfFishing.setRnMessageERS(ers.getRN());
+                endOfFishing.setRnMessageERSToCorrect(rnMessageERSToCorrect);
+                trip.setEof(endOfFishing);
                 return trip;
             }
             LogService.getService(this.getClass()).logApplicationDebug("Création du trip faite.");
@@ -775,6 +533,14 @@ public class DropperService extends ErsMainService {
                     new FishingActivityDAO().delete(a);
                 }
             }
+            // for (Iterator<EndOFishing> iterator = trip.getEof().iterator(); iterator.hasNext();) {
+            //     EndOFishing a = iterator.next();
+            //     if (a.getRnMessageERS() == null ? rnMessageERS == null : a.getRnMessageERS().equals(rnMessageERS)) {
+            //         LogService.getService(this.getClass()).logApplicationDebug("Suppression de " + a);
+            //         iterator.remove();
+            //         new EndOFishingDAO().delete(a);
+            //     }
+            // }
         }
         return trip;
     }
@@ -857,117 +623,14 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Create a Trip from the vessel cfr and the trip number. The trip number
-     * format must be form to CFR code and 8 digit, ie FRA000911313-20130004.
-     *
-     * @param vesselCFR the CFR code
-     * @param tripNumber the long format of trip number
-     * @param complete true if the trip is created with all data
-     * @return a trip
-     * @throws DropperException
-     */
-//    private Trip factory(String vesselCFR, String tripNumber, boolean complete) throws DropperException {
-//        LogService.getService(DropperService.class).logApplicationDebug("CFR: " + vesselCFR + ", TN: " + tripNumber);
-//        Log log = (new LogDAO()).findFirstLogOfTrip(vesselCFR, tripNumber);
-//        LogService.getService(DropperService.class).logApplicationDebug("LOG: " + log);
-//        List<Dep> deps = (new DepDAO()).findDepsOfTrip(vesselCFR, tripNumber);
-//        if (DEBUG) {
-//            LogService.getService(DropperService.class).logApplicationDebug("DEPs " + deps.size() + " - " + deps);
-//        }
-//        List<Far> fars = (new FarDAO()).findUniqueFarsOfTripIncludindCor(vesselCFR, tripNumber);
-//        if (DEBUG) {
-//            LogService.getService(DropperService.class).logApplicationDebug("FARs " + fars.size() + " - " + fars);
-//        }
-//        List<Rtp> rtps = (new RtpDAO()).findRtpsOfTrip(vesselCFR, tripNumber);
-//        if (DEBUG) {
-//            LogService.getService(DropperService.class).logApplicationDebug("RTPs " + rtps.size() + " - " + rtps);
-//        }
-//        List<Eof> eofs = (new EofDAO()).findEofOfTrip(vesselCFR, tripNumber);
-//        Eof endOfFishing = null;
-//        if (DEBUG) {
-//            LogService.getService(DropperService.class).logApplicationDebug("EOFs " + eofs.size() + " - " + eofs);
-//        }
-//        if (eofs.size() > 1) {
-//            throw new DropperException("Il y a plusieurs messages de fin de pêche.");
-//
-//        } else if (!eofs.isEmpty()) {
-//            endOfFishing = eofs.get(0);
-//        }
-//        List<Lan> landings = (new LanDAO()).findLansByTripNumber(vesselCFR, tripNumber);
-//        if (DEBUG) {
-//            LogService.getService(DropperService.class).logApplicationDebug("LANs " + landings.size() + " - " + landings);
-//        }
-//
-//        List<Dis> discards = (new DisDAO()).findDiscardsOfTrip(vesselCFR, tripNumber);
-//        if (DEBUG) {
-//            LogService.getService(DropperService.class).logApplicationDebug("DISs " + discards.size() + " - " + discards);
-//        }
-//
-//        return factory(log, deps, fars, rtps, endOfFishing, landings, discards, complete);
-//    }
-    /**
-     * Construit une marée avec les éléments de bases: date de départ et de
-     * retour...
-     *
-     * @param logbook un log ERS
-     * @param departure un dep ERS
-     * @param returnToPort un rtp ERS
-     * @param isComplete true if the trip is created with all data
-     * @return the trip
-     */
-//    private Trip factory(Log logbook, Dep departure, Rtp returnToPort, boolean isComplete) {
-//
-//        DateTime dateOfDep = DateTimeUtils.createDateTime(departure.getDEPDaDt(), departure.getDEPTiLb());
-//        DateTime dateOfRtp = null;
-//        if (returnToPort != null) {
-//            dateOfRtp = DateTimeUtils.createDateTime(returnToPort.getRTPDaDt(), returnToPort.getTi());
-//        }
-//        LogService.getService(DropperService.class).logApplicationDebug("dateOfRtp + isComplete : " + dateOfRtp + " - " + isComplete);
-//        Trip trip = new Trip(dateOfDep, dateOfRtp);
-//
-//        trip.setMasterName(logbook.getLOGMaLb());
-//        trip.setMasterAdress(logbook.getLOGMdLb());
-//        trip.setTripNumber(logbook.getElog().getElogTnLb());
-//
-//        trip.setVessel(factoryVessel(logbook));
-//
-//        trip.setPortOfDep(departure.getDEPPoLb());
-//        if (returnToPort != null) {
-//            trip.setPortOfRtp(returnToPort.getPO());
-//        }
-//
-//        if (isComplete && departure.getEdep() != null && returnToPort != null && returnToPort.getERTP() != null) {
-//            LogService.getService(DropperService.class).logApplicationDebug("###############");
-//            LogService.getService(DropperService.class).logApplicationDebug("T: " + trip);
-//            LogService.getService(DropperService.class).logApplicationDebug("RTP: " + returnToPort);
-//            LogService.getService(DropperService.class).logApplicationDebug("ERTP: " + returnToPort.getERTP());
-//            LogService.getService(DropperService.class).logApplicationDebug("ErtpNdNb: " + returnToPort.getERTP().getND());
-//            LogService.getService(DropperService.class).logApplicationDebug("D: " + departure);
-//            LogService.getService(DropperService.class).logApplicationDebug("EDEP: " + departure.getEdep());
-//            LogService.getService(DropperService.class).logApplicationDebug("EdepNdNb: " + departure.getEdep().getND());
-//            LogService.getService(DropperService.class).logApplicationDebug("###############");
-//            Double ertpNdNb = 0d;
-//            Double edepNdNb = 0d;
-//            if (departure.getEdep().getND() != null) {
-//                edepNdNb = departure.getEdep().getND();
-//            }
-//            if (returnToPort.getERTP().getND() != null) {
-//                ertpNdNb = returnToPort.getERTP().getND();
-//            }
-//            trip.setNauticalDistance((int) Math.round(ertpNdNb - edepNdNb));
-//
-//        }
-//        LogService.getService(DropperService.class).logApplicationDebug("--> " + trip);
-//        return trip;
-//    }
-    /**
      * Créér les activités associées à une marée.
      *
      * @param trip la marée
      * @param evenementDePecheList liste evenement de pêche ERS
-     * @param endOfFishing un message de fin de pêche
-     * @return la liste des activités de pêche
-     * @throws fr.ird.eva.core.exception.EVADriverException
+     * @param rnMessageERS
+     * @param dateMessage
+     * @param rnMessageERSToCorrect
+     * @throws fr.ird.eva.core.exception.DropperException
      */
     private void factoryFishingEvents(Trip trip, List<EvenementDePeche> evenementDePecheList, String rnMessageERS, Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
         LogService.getService(this.getClass()).logApplicationDebug("factoryFishingEvents");

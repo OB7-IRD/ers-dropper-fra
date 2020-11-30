@@ -32,6 +32,7 @@ public class ErsMainService {
         EvaDriverService.getService().init("eva", properties);
 
         // Initialisation du parser XML
+        LogService.getService().logApplicationInfo("Initialisation du parser XML");
         JAXBContext jaxbContext = JAXBContext.newInstance(Ops.class);
         jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
