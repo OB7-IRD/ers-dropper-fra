@@ -944,9 +944,14 @@ public class DropperService extends ErsMainService {
         }
         if (activity.getOperation() != null && activity.getOperation().equals("COUP INCONNU")) {
             LogService.getService(DropperService.class).logApplicationDebug("COUP INCONNU");
+            LogService.getService(DropperService.class).logApplicationDebug(activity.getOperation());
             if (far != null && far.getEFAR() != null && far.getEFAR().getEPFA() != null && far.getEFAR().getEPFA().getEFAD() != null) {
+                LogService.getService(DropperService.class).logApplicationDebug("EFAD " + far.getEFAR().getEPFA().getEFAD());
                 if (!far.getEFAR().getEPFA().getEFAD().isEmpty()) {
+                    // Cela mérite une révision car peu pertinent
+                    if(far.getEFAR().getEPFA().getEFAD().get(0).getIF()!= null ){
                     activity.setOperation(far.getEFAR().getEPFA().getEFAD().get(0).getIF());
+                    }
                 }
                 if (activity.getOperation().equals("")) {
                     activity.setOperation("COUP INCONNU");
@@ -1039,16 +1044,21 @@ public class DropperService extends ErsMainService {
         if (fishingActivity == null) {
             return fishingEvents;
         }
+
+        LogService.getService(DropperService.class).logApplicationDebug("Trip " + trip);
+
         FADActivity activity;
         for (FishingContext fishingContext : fishingActivity.getFishingContexts()) {
             if (fishingContext != null) {
-
+                
                 for (Fad fad : fishingContext.getFads()) {
 
                     activity = new FADActivity();
 //                    activity.setIndexOfFishingEvent(activityNumber);
 
                     //La liste de FAD associée au FC doit être toujours vide.
+
+                    LogService.getService(DropperService.class).logApplicationDebug("FA " + fishingActivity);
                     activity.addFishingContext(new FishingContext(true, fishingContext.getFishingContextType()));
                     activity.setDateOfFishingEvent(fishingActivity.getDateOfFishingEvent());
 
@@ -1073,16 +1083,20 @@ public class DropperService extends ErsMainService {
                     }
 
                     //Gestion des FADs et des bouées associées
-                    activity.setOperation(fad.getFadComment());
+                    activity.setOperation(fishingActivity.getOperation());
                     activity.setFad(fad);
-
+                    LogService.getService(DropperService.class).logApplicationDebug("- 6 -");
+                    LogService.getService(DropperService.class).logApplicationDebug(" activity "+activity);
                     if (!activity.getOperation().equals("")) {
+                        LogService.getService(DropperService.class).logApplicationDebug("- 7 -");
                         trip.addFADActivity(activity);
+                        LogService.getService(DropperService.class).logApplicationDebug("- 8 -");
                         fishingEvents.add(activity);
                     }
                 }
             }
         }
+        LogService.getService(DropperService.class).logApplicationDebug("Return " + fishingEvents);
         return fishingEvents;
     }
 
@@ -1241,7 +1255,9 @@ public class DropperService extends ErsMainService {
             fad.setFadType(efad.getTF());
             fad.setFadComment(efad.getIF());
             if (fad.isHasBuoy()) {
+                LogService.getService(this.getClass()).logApplicationDebug("Has buoy -> True");
                 for (Etdd etdd : efad.getETDD()) {
+                    LogService.getService(this.getClass()).logApplicationDebug("Etdd " + etdd);
                     fad.addBuoy(etdd.getGT(), etdd.getGI(), etdd.getGO());
                 }
             }
