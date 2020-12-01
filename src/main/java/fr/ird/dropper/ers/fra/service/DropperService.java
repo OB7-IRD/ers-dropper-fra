@@ -1247,21 +1247,23 @@ public class DropperService extends ErsMainService {
         FishingContext context = new FishingContext();
         context.setPrimary(true);
         context.setFishingContextType(epfa.getPF().value());
-        LogService.getService(this.getClass()).logApplicationDebug("context " + context);
-        for (Far.EFAR.EPFA.EFAD efad : epfa.getEFAD()) {
-            LogService.getService(this.getClass()).logApplicationDebug("Efad " + efad);
-            Fad fad = new Fad();
-            fad.setHasBuoy(efad.getTP().equals("presence"));
-            fad.setFadType(efad.getTF());
-            fad.setFadComment(efad.getIF());
-            if (fad.isHasBuoy()) {
-                LogService.getService(this.getClass()).logApplicationDebug("Has buoy -> True");
-                for (Etdd etdd : efad.getETDD()) {
-                    LogService.getService(this.getClass()).logApplicationDebug("Etdd " + etdd);
-                    fad.addBuoy(etdd.getGT(), etdd.getGI(), etdd.getGO());
+        if(context.getFishingContextType().equals("FA")){
+            LogService.getService(this.getClass()).logApplicationDebug("context " + context);
+            for (Far.EFAR.EPFA.EFAD efad : epfa.getEFAD()) {
+                LogService.getService(this.getClass()).logApplicationDebug("Efad " + efad);
+                Fad fad = new Fad();
+                fad.setHasBuoy(efad.getTP().equals("presence"));
+                fad.setFadType(efad.getTF());
+                fad.setFadComment(efad.getIF());
+                if (fad.isHasBuoy()) {
+                    LogService.getService(this.getClass()).logApplicationDebug("Has buoy -> True");
+                    for (Etdd etdd : efad.getETDD()) {
+                        LogService.getService(this.getClass()).logApplicationDebug("Etdd " + etdd);
+                        fad.addBuoy(etdd.getGT(), etdd.getGI(), etdd.getGO());
+                    }
                 }
+                context.addFad(fad);
             }
-            context.addFad(fad);
         }
         return context;
     }
