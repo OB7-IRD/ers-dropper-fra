@@ -5,3 +5,5 @@
 /docs/_build/
 /docs/.vscode
 /src/main/java/fr/ird/dropper/ers/fra/business2/
+*.code-workspace
+.nosync
