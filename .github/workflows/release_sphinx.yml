@@ -1,4 +1,4 @@
-name: release_sphinx
+name: release Sphinx docs
 
 on:
   push:
