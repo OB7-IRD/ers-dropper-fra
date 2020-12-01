@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Install ERS Dropper &mdash; ERS Dropper for French 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Development" href="development.html" />
+    <link rel="prev" title="Release notes" href="whatsnew.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> ERS Dropper for French
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whatsnew.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Install <strong>ERS Dropper</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-ers-system-user">Create ERS system user</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-ers-dropper">Download ERS Dropper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-the-database">Create the database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-the-software">Configure the software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#running-the-application">Running the application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ERS Dropper for French</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>How to Install <strong>ERS Dropper</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-install-ers-dropper">
+<h1>How to Install <strong>ERS Dropper</strong><a class="headerlink" href="#how-to-install-ers-dropper" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>ERS Dropper requires to install <a class="reference external" href="http://www.python.org/">Python 3</a>, <a class="reference external" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java</a> and the <a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a>’s relational database management system. Moreover the user you are logging in as must have sudo privileges.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-ers-system-user">
+<h3>Create ERS system user<a class="headerlink" href="#create-ers-system-user" title="Permalink to this headline">¶</a></h3>
+<p>Running ERS Dropper as the root user is a security risk and not considered best practice. We will create a new system user and group with home directory :code:’/opt/ers-dropper’ that will run the ERS Dropper service:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo useradd -m -U -d /opt/ers-dropper -s /bin/false ers
+</pre></div>
+</div>
+</div>
+<div class="section" id="download-ers-dropper">
+<h3>Download ERS Dropper<a class="headerlink" href="#download-ers-dropper" title="Permalink to this headline">¶</a></h3>
+<p>In purpose to faciltate the deployement, there is ready-to-install repository which is available at <a class="reference external" href="https://github.com/OB7-IRD/ers-fra-processing-module">https://github.com/OB7-IRD/ers-fra-processing-module</a>. So you must download the latest archive on you server and unarchive it with the command line below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> /tmp
+<span class="gp">$</span> wget https://github.com/OB7-IRD/ers-fra-processing-module/archive/v1.0.0.tar.gz
+<span class="gp">$</span> tar -xzvf v1.0.0.tar.gz
+</pre></div>
+</div>
+<p>Move the source files to it to the ‘’’/opt/ers-dropper’’’ directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo mv v1.0.0 /opt/ers-dropper
+</pre></div>
+</div>
+<p>The ers user that we previously set up needs to have access to the ers-dropper installation directory.</p>
+<p>Run the following command to change the directory ownership to user and group ers:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo chown -R ers: /opt/ers-dropper
+</pre></div>
+</div>
+<p>Make the scripts inside the bin directory executable by issuing the following chmod command: :</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo sh -c <span class="s1">&#39;chmod +x /opt/ers-dropper/apps/bin/*&#39;</span>
+</pre></div>
+</div>
+<p>Both scripts requires somes Python packages, you install it whith :</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> pip3 install pysftp
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Now the application is installed, you will need to create the database and configure the application.</p>
+<div class="section" id="create-the-database">
+<h3>Create the database<a class="headerlink" href="#create-the-database" title="Permalink to this headline">¶</a></h3>
+<p>First step, we create an user for the database and assign a password immediately:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> createuser -P -s -e dbaers
+<span class="go">Enter password for new role: &lt;your-password&gt;</span>
+<span class="go">Enter it again: &lt;your-password&gt;</span>
+<span class="go">CREATE ROLE dbaers PASSWORD &#39;md5b5f5ba1a423792b526f799ae4eb3d59e&#39; SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;</span>
+</pre></div>
+</div>
+<p>Second step, we create the database :</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">createdb -O dbaers eva_prod</span>
+</pre></div>
+</div>
+<p>You can also create the database with the SQL instruction below:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">eva_prod</span> <span class="k">OWNER</span> <span class="n">dbaers</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>You need to execute the SQL script which contains the instructions to create the table:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">psql -U dbaers -d eva_prod -a -f /opt/ers-dropper/scripts/create_db_ers.sql</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-the-software">
+<h3>Configure the software<a class="headerlink" href="#configure-the-software" title="Permalink to this headline">¶</a></h3>
+<p>To configure the application, we need to log with the <em>ers</em> user:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> su - ers
+</pre></div>
+</div>
+<p>We need to and an environment variable, which are used by the application’s scripts, in the user profile .</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> nano ~/.bash_profile
+<span class="go">export ERS_HOME=/opt/ers-dropper/apps</span>
+<span class="go">export ERS_DATA_HOME=/home/ers/ers_data_fra</span>
+</pre></div>
+</div>
+<p>Now we create the configuration directory and copy the default configuration file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir -p /home/ers/.config/ers-dropper-fra
+<span class="gp">$</span> cp -fr <span class="nv">$ERS_HOME</span>/conf/ers-dropper-fra-config.xml /home/ers/.config/ers-dropper-fra/
+</pre></div>
+</div>
+<p>The configuration file contains the properties below. You have just write the user password of the database.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE properties SYSTEM &quot;http://java.sun.com/dtd/properties.dtd&quot;&gt;</span>
+<span class="nt">&lt;properties&gt;</span>
+    <span class="nt">&lt;comment&gt;</span>ERS Dropper FRA Service configuration&#39;s properties<span class="nt">&lt;/comment&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;repertoire_depot&quot;</span><span class="nt">&gt;</span>/home/ers/ers_data_fra/depot<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;repertoire_traites&quot;</span><span class="nt">&gt;</span>/home/ers/ers_data_fra/traites<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;repertoire_erreur&quot;</span><span class="nt">&gt;</span>/home/ers/ers_data_fra/erreur<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;repertoire_envoi&quot;</span><span class="nt">&gt;</span>/home/ers/ers_data_fra/envoi<span class="nt">&lt;/entry&gt;</span>
+
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;formatage_xml_ers&quot;</span><span class="nt">&gt;</span>/v3/ers-3.xsd<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;formatageEuropeen_xml&quot;</span><span class="nt">&gt;</span>/v3Europeen/ersComplet3.xsd<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;formatage_xml_valeurs&quot;</span><span class="nt">&gt;</span>/v3/ers-codes-3.xsd<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;formatage_xml&quot;</span><span class="nt">&gt;</span>/v3/ersComplet3.xsd<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;formatage_xml_ops&quot;</span><span class="nt">&gt;</span>/v3/ers-operations-3.xsd<span class="nt">&lt;/entry&gt;</span>
+
+
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;jdbc_driver&quot;</span><span class="nt">&gt;</span>org.postgresql.Driver<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;jdbc_url&quot;</span><span class="nt">&gt;</span>jdbc:postgresql://localhost:5432/eva_prod<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;jdbc_username&quot;</span><span class="nt">&gt;</span>dbaers<span class="nt">&lt;/entry&gt;</span>
+    <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;jdbc_password&quot;</span><span class="nt">&gt;</span>your-password<span class="nt">&lt;/entry&gt;</span>
+<span class="nt">&lt;/properties&gt;</span>
+</pre></div>
+</div>
+<p>You can edit the configuration file the command :</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> nano /home/ers/.config/ers-dropper-fra/ers-dropper-fra-config.xml
+</pre></div>
+</div>
+<p>You need also to create the repositories which will contains your ERS message from the <strong>CERIT</strong>. It’s corredponding to first four parameters of the configuration file. The commands belows create the repositories:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> mkdir -p <span class="nv">$ERS_DATA_HOME</span>/depot
+<span class="gp">$</span> mkdir -p <span class="nv">$ERS_DATA_HOME</span>/traites
+<span class="gp">$</span> mkdir -p <span class="nv">$ERS_DATA_HOME</span>/erreur
+<span class="gp">$</span> mkdir -p <span class="nv">$ERS_DATA_HOME</span>/envoi
+<span class="gp">$</span> mkdir -p <span class="nv">$ERS_DATA_HOME</span>/archives
+</pre></div>
+</div>
+<p>Note: The archives directory is needed by one script in purpose to</p>
+<p>To check that the repositories are created:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ls -l  <span class="nv">$ERS_DATA_HOME</span>
+<span class="go">total 5</span>
+<span class="go">drwxrwxr-x 2 ers ers 1024 15 nov.  11:45 archives</span>
+<span class="go">drwxrwxr-x 2 ers ers 1024 14 nov.  13:09 depot</span>
+<span class="go">drwxrwxr-x 2 ers ers 1024 14 nov.  13:09 envoi</span>
+<span class="go">drwxrwxr-x 2 ers ers 1024 14 nov.  13:09 erreur</span>
+<span class="go">drwxrwxr-x 2 ers ers 1024 14 nov.  13:09 traites</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="running-the-application">
+<h1>Running the application<a class="headerlink" href="#running-the-application" title="Permalink to this headline">¶</a></h1>
+<p>Once the application is installed and configured, you have two options to run the ERS Dropper.
+But previously, you need get the ERS messages from CERIT server:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> /opt/ers-dropper/apps/bin/get_message.py
+</pre></div>
+</div>
+<p>After you can run manually the injector via a specified script with the command below :</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sh /opt/ers-dropper/apps/bin/dropper.sh &gt; /opt/ers-dropper/apps/log/ers.log
+</pre></div>
+</div>
+<p>Or you can configure the script as service. The configuration depends of your operating system.
+For Linux OS, you will need to add the script at crontab. You can edit the crontab with <cite>crontab -e</cite> and you add the instructions belows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">##### ERS software</span>
+<span class="c1"># Dropper run every day at 0730</span>
+<span class="m">30</span> <span class="m">7</span> * * * <span class="nb">export</span> <span class="nv">ERS_HOME</span><span class="o">=</span>/opt/ers-dropper/apps/<span class="p">;</span>bash /opt/ers-dropper/apps/bin/dropper.sh &gt; <span class="nv">$ERS_HOME</span>/logs/ers.log
+<span class="c1"># Copy the ERS messages, every day at 7:00</span>
+<span class="m">0</span> <span class="m">7</span> * * * /opt/ers-dropper/apps/bin/get_message.py &gt;&gt; /opt/ers-dropper/apps/logs/sftp_ers_cerit.log
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="development.html" class="btn btn-neutral float-right" title="Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="whatsnew.html" class="btn btn-neutral float-left" title="Release notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Julien Lebranchu &lt;julien.lebranchu@ird.fr&gt;
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
