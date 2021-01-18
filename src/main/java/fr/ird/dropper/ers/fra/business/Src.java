@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -15,14 +13,18 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * Sub-declaration containing details of the source document for the consignment sold . Flag state authorities shall trace back the source document based on the vessel's logbook and landing data.
- * 
- * <p>Classe Java pour Src complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Sub-declaration containing details of the source document for the consignment
+ * sold . Flag state authorities shall trace back the source document based on
+ * the vessel's logbook and landing data.
+ *
+ * <p>
+ * Classe Java pour Src complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Src"&gt;
  *   &lt;complexContent&gt;
@@ -33,8 +35,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SrcDeclarationType")
@@ -50,11 +52,9 @@ public class Src {
 
     /**
      * Obtient la valeur de la propriété dl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getDL() {
@@ -63,11 +63,9 @@ public class Src {
 
     /**
      * Définit la valeur de la propriété dl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDL(XMLGregorianCalendar value) {
@@ -76,11 +74,9 @@ public class Src {
 
     /**
      * Obtient la valeur de la propriété po.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getPO() {
@@ -89,11 +85,9 @@ public class Src {
 
     /**
      * Définit la valeur de la propriété po.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPO(String value) {

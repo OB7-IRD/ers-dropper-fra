@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -15,14 +13,16 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
  * Species sub-declaration.
- * 
- * <p>Classe Java pour Spe complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Spe complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Spe"&gt;
  *   &lt;complexContent&gt;
@@ -46,8 +46,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SpeDeclarationType", propOrder = {
@@ -106,11 +106,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété siz.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Siz }
-     *     
+     *
+     * @return possible object is {@link Siz }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Siz getSIZ() {
@@ -119,11 +117,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété siz.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Siz }
-     *     
+     *
+     * @param value allowed object is {@link Siz }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSIZ(Siz value) {
@@ -132,11 +128,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété ras.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Ras }
-     *     
+     *
+     * @return possible object is {@link Ras }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Ras getRAS() {
@@ -145,11 +139,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété ras.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ras }
-     *     
+     *
+     * @param value allowed object is {@link Ras }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setRAS(Ras value) {
@@ -158,11 +150,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété pro.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Pro }
-     *     
+     *
+     * @return possible object is {@link Pro }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Pro getPRO() {
@@ -171,11 +161,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété pro.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Pro }
-     *     
+     *
+     * @param value allowed object is {@link Pro }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPRO(Pro value) {
@@ -184,11 +172,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété espe.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Espe }
-     *     
+     *
+     * @return possible object is {@link Espe }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Espe getESPE() {
@@ -197,11 +183,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété espe.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Espe }
-     *     
+     *
+     * @param value allowed object is {@link Espe }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setESPE(Espe value) {
@@ -210,11 +194,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété sn.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSN() {
@@ -223,11 +205,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété sn.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSN(String value) {
@@ -236,11 +216,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété wt.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     *
+     * @return possible object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Double getWT() {
@@ -249,11 +227,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété wt.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     *
+     * @param value allowed object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setWT(Double value) {
@@ -262,11 +238,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété nf.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getNF() {
@@ -275,11 +249,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété nf.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNF(Integer value) {
@@ -288,11 +260,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété wl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     *
+     * @return possible object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Double getWL() {
@@ -301,11 +271,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété wl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     *
+     * @param value allowed object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setWL(Double value) {
@@ -314,11 +282,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété fl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getFL() {
@@ -327,11 +293,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété fl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFL(Integer value) {
@@ -340,11 +304,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété nq.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     *
+     * @return possible object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Double getNQ() {
@@ -353,11 +315,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété nq.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     *
+     * @param value allowed object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNQ(Double value) {
@@ -366,11 +326,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété nb.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getNB() {
@@ -379,11 +337,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété nb.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNB(Integer value) {
@@ -392,11 +348,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété ge.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getGE() {
@@ -405,11 +359,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété ge.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setGE(String value) {
@@ -418,11 +370,9 @@ public class Spe {
 
     /**
      * Obtient la valeur de la propriété mm.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getMM() {
@@ -431,11 +381,9 @@ public class Spe {
 
     /**
      * Définit la valeur de la propriété mm.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setMM(String value) {

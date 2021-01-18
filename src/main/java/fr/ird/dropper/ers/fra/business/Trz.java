@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -14,14 +12,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
  * Trans-Zonal fishing effort declaration.
- * 
- * <p>Classe Java pour Trz complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Trz complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Trz"&gt;
  *   &lt;complexContent&gt;
@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TrzDeclarationType", propOrder = {
@@ -54,11 +54,9 @@ public class Trz {
 
     /**
      * Obtient la valeur de la propriété coe.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Coe }
-     *     
+     *
+     * @return possible object is {@link Coe }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Coe getCOE() {
@@ -67,11 +65,9 @@ public class Trz {
 
     /**
      * Définit la valeur de la propriété coe.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Coe }
-     *     
+     *
+     * @param value allowed object is {@link Coe }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setCOE(Coe value) {
@@ -80,11 +76,9 @@ public class Trz {
 
     /**
      * Obtient la valeur de la propriété cox.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Cox }
-     *     
+     *
+     * @return possible object is {@link Cox }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Cox getCOX() {
@@ -93,11 +87,9 @@ public class Trz {
 
     /**
      * Définit la valeur de la propriété cox.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Cox }
-     *     
+     *
+     * @param value allowed object is {@link Cox }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setCOX(Cox value) {

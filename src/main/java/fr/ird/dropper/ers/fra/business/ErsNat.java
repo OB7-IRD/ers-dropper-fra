@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -13,20 +11,23 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java pour ErsNatElementType.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * <p>
- * <pre>
+ * Classe Java pour ErsNatElementType.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ * <p>
+ * <
+ * pre>
  * &lt;simpleType name="ErsNat"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *     &lt;enumeration value="nat"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
- * 
+ *
  */
 @XmlType(name = "ErsNatElementType")
 @XmlEnum
@@ -46,7 +47,7 @@ public enum ErsNat {
     }
 
     public static ErsNat fromValue(String v) {
-        for (ErsNat c: ErsNat.values()) {
+        for (ErsNat c : ErsNat.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

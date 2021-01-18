@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -14,14 +12,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
  * Message, autre qu’un accusé de réception envoyé,au navire
- * 
- * <p>Classe Java pour Emav complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Emav complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Emav"&gt;
  *   &lt;complexContent&gt;
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EMavType")
@@ -79,11 +79,9 @@ public class Emav {
 
     /**
      * Obtient la valeur de la propriété type.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @return possible object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ErsNat getType() {
@@ -92,11 +90,9 @@ public class Emav {
 
     /**
      * Définit la valeur de la propriété type.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @param value allowed object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setType(ErsNat value) {
@@ -105,11 +101,9 @@ public class Emav {
 
     /**
      * Obtient la valeur de la propriété ir.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getIR() {
@@ -118,11 +112,9 @@ public class Emav {
 
     /**
      * Définit la valeur de la propriété ir.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIR(String value) {
@@ -131,11 +123,9 @@ public class Emav {
 
     /**
      * Obtient la valeur de la propriété rs.
-     * 
-     * @return
-     *     possible object is
-     *     {@link MessageType }
-     *     
+     *
+     * @return possible object is {@link MessageType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public MessageType getRS() {
@@ -144,11 +134,9 @@ public class Emav {
 
     /**
      * Définit la valeur de la propriété rs.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MessageType }
-     *     
+     *
+     * @param value allowed object is {@link MessageType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setRS(MessageType value) {
@@ -157,11 +145,9 @@ public class Emav {
 
     /**
      * Obtient la valeur de la propriété on.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getON() {
@@ -170,11 +156,9 @@ public class Emav {
 
     /**
      * Définit la valeur de la propriété on.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setON(String value) {
@@ -183,11 +167,9 @@ public class Emav {
 
     /**
      * Obtient la valeur de la propriété mc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getMC() {
@@ -196,11 +178,9 @@ public class Emav {
 
     /**
      * Définit la valeur de la propriété mc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setMC(String value) {

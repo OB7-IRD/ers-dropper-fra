@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -15,15 +13,17 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * Query (Pull) for ERS data
- *  1.1-2.0: changed the way historical vessel queries are made.
- * 
- * <p>Classe Java pour Que complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Query (Pull) for ERS data 1.1-2.0: changed the way historical vessel queries
+ * are made.
+ *
+ * <p>
+ * Classe Java pour Que complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Que"&gt;
  *   &lt;complexContent&gt;
@@ -53,8 +53,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "QueElementType")
@@ -79,11 +79,9 @@ public class Que {
 
     /**
      * Obtient la valeur de la propriété cd.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getCD() {
@@ -92,11 +90,9 @@ public class Que {
 
     /**
      * Définit la valeur de la propriété cd.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setCD(String value) {
@@ -105,11 +101,9 @@ public class Que {
 
     /**
      * Obtient la valeur de la propriété id.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getID() {
@@ -118,11 +112,9 @@ public class Que {
 
     /**
      * Définit la valeur de la propriété id.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setID(String value) {
@@ -131,11 +123,9 @@ public class Que {
 
     /**
      * Obtient la valeur de la propriété iv.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getIV() {
@@ -144,11 +134,9 @@ public class Que {
 
     /**
      * Définit la valeur de la propriété iv.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIV(String value) {
@@ -157,11 +145,9 @@ public class Que {
 
     /**
      * Obtient la valeur de la propriété sd.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getSD() {
@@ -170,11 +156,9 @@ public class Que {
 
     /**
      * Définit la valeur de la propriété sd.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSD(XMLGregorianCalendar value) {
@@ -183,11 +167,9 @@ public class Que {
 
     /**
      * Obtient la valeur de la propriété ed.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getED() {
@@ -196,11 +178,9 @@ public class Que {
 
     /**
      * Définit la valeur de la propriété ed.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setED(XMLGregorianCalendar value) {

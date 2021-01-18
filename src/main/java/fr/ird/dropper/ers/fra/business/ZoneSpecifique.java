@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -13,13 +11,16 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java pour zone_specifique.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * <p>
- * <pre>
+ * Classe Java pour zone_specifique.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ * <p>
+ * <
+ * pre>
  * &lt;simpleType name="zone_specifique"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *     &lt;enumeration value="lingue bleue / Plateau continental écossais"/&gt;
@@ -33,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
- * 
+ *
  */
 @XmlType(name = "zone_specifique")
 @XmlEnum
@@ -67,7 +68,7 @@ public enum ZoneSpecifique {
     }
 
     public static ZoneSpecifique fromValue(String v) {
-        for (ZoneSpecifique c: ZoneSpecifique.values()) {
+        for (ZoneSpecifique c : ZoneSpecifique.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

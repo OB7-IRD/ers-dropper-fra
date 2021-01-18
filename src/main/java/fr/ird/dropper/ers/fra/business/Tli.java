@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import java.util.ArrayList;
@@ -18,14 +16,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
  * Take-over declaration.
- * 
- * <p>Classe Java pour Tli complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Tli complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Tli"&gt;
  *   &lt;complexContent&gt;
@@ -46,8 +46,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TliDeclarationType", propOrder = {
@@ -91,11 +91,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété src.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Src }
-     *     
+     *
+     * @return possible object is {@link Src }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Src getSRC() {
@@ -104,11 +102,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété src.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Src }
-     *     
+     *
+     * @param value allowed object is {@link Src }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSRC(Src value) {
@@ -117,25 +113,24 @@ public class Tli {
 
     /**
      * Gets the value of the cst property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cst property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the cst property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getCST().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Cst }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Cst }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Cst> getCST() {
@@ -147,11 +142,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété etli.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Etli }
-     *     
+     *
+     * @return possible object is {@link Etli }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Etli getETLI() {
@@ -160,11 +153,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété etli.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Etli }
-     *     
+     *
+     * @param value allowed object is {@link Etli }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setETLI(Etli value) {
@@ -173,11 +164,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété da.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getDA() {
@@ -186,11 +175,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété da.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDA(XMLGregorianCalendar value) {
@@ -199,11 +186,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété sc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSC() {
@@ -212,11 +197,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété sc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSC(String value) {
@@ -225,11 +208,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété sl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSL() {
@@ -238,11 +219,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété sl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSL(String value) {
@@ -251,11 +230,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété nt.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNT() {
@@ -264,11 +241,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété nt.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNT(String value) {
@@ -277,11 +252,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété nf.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNF() {
@@ -290,11 +263,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété nf.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNF(String value) {
@@ -303,11 +274,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété af.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getAF() {
@@ -316,11 +285,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété af.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setAF(String value) {
@@ -329,11 +296,9 @@ public class Tli {
 
     /**
      * Obtient la valeur de la propriété tr.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTR() {
@@ -342,11 +307,9 @@ public class Tli {
 
     /**
      * Définit la valeur de la propriété tr.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTR(String value) {

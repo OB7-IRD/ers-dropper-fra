@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -15,14 +13,17 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * Consignment taken over sub-declaration (containing detail line for each species taken over).
- * 
- * <p>Classe Java pour Cst complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Consignment taken over sub-declaration (containing detail line for each
+ * species taken over).
+ *
+ * <p>
+ * Classe Java pour Cst complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Cst"&gt;
  *   &lt;complexContent&gt;
@@ -36,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CstDeclarationType", propOrder = {
@@ -59,11 +60,9 @@ public class Cst {
 
     /**
      * Obtient la valeur de la propriété spe.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Spe }
-     *     
+     *
+     * @return possible object is {@link Spe }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Spe getSPE() {
@@ -72,11 +71,9 @@ public class Cst {
 
     /**
      * Définit la valeur de la propriété spe.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Spe }
-     *     
+     *
+     * @param value allowed object is {@link Spe }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSPE(Spe value) {
@@ -85,11 +82,9 @@ public class Cst {
 
     /**
      * Obtient la valeur de la propriété ecst.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Ecst }
-     *     
+     *
+     * @return possible object is {@link Ecst }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Ecst getECST() {
@@ -98,11 +93,9 @@ public class Cst {
 
     /**
      * Définit la valeur de la propriété ecst.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ecst }
-     *     
+     *
+     * @param value allowed object is {@link Ecst }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setECST(Ecst value) {
@@ -111,11 +104,9 @@ public class Cst {
 
     /**
      * Obtient la valeur de la propriété sf.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSF() {
@@ -124,11 +115,9 @@ public class Cst {
 
     /**
      * Définit la valeur de la propriété sf.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSF(String value) {

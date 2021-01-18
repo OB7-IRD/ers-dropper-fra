@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import java.util.ArrayList;
@@ -18,14 +16,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
  * Sales note record.
- * 
- * <p>Classe Java pour Sal complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Sal complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Sal"&gt;
  *   &lt;complexContent&gt;
@@ -48,8 +48,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SalDeclarationType", propOrder = {
@@ -99,25 +99,24 @@ public class Sal {
 
     /**
      * Gets the value of the sli property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sli property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the sli property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getSLI().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Sli }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Sli }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Sli> getSLI() {
@@ -129,25 +128,24 @@ public class Sal {
 
     /**
      * Gets the value of the tli property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the tli property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the tli property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getTLI().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Tli }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Tli }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Tli> getTLI() {
@@ -159,11 +157,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété esal.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Esal }
-     *     
+     *
+     * @return possible object is {@link Esal }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Esal getESAL() {
@@ -172,11 +168,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété esal.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Esal }
-     *     
+     *
+     * @param value allowed object is {@link Esal }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setESAL(Esal value) {
@@ -185,11 +179,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété ir.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getIR() {
@@ -198,11 +190,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété ir.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIR(String value) {
@@ -211,11 +201,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété rc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getRC() {
@@ -224,11 +212,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété rc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setRC(String value) {
@@ -237,11 +223,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété xr.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getXR() {
@@ -250,11 +234,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété xr.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setXR(String value) {
@@ -263,11 +245,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété fs.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getFS() {
@@ -276,11 +256,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété fs.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFS(String value) {
@@ -289,11 +267,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété na.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNA() {
@@ -302,11 +278,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété na.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNA(String value) {
@@ -315,11 +289,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété nr.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNR() {
@@ -328,11 +300,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété nr.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNR(String value) {
@@ -341,11 +311,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété nd.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getND() {
@@ -354,11 +322,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété nd.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setND(XMLGregorianCalendar value) {
@@ -367,11 +333,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété cn.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getCN() {
@@ -380,11 +344,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété cn.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setCN(String value) {
@@ -393,11 +355,9 @@ public class Sal {
 
     /**
      * Obtient la valeur de la propriété tr.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTR() {
@@ -406,11 +366,9 @@ public class Sal {
 
     /**
      * Définit la valeur de la propriété tr.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTR(String value) {

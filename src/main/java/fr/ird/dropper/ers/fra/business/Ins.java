@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -16,14 +14,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * Inspection declaration, to be provided by the authorities, not the master. Not the same as 1224/2009 Art 76.
- * 
- * <p>Classe Java pour Ins complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Inspection declaration, to be provided by the authorities, not the master.
+ * Not the same as 1224/2009 Art 76.
+ *
+ * <p>
+ * Classe Java pour Ins complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Ins"&gt;
  *   &lt;complexContent&gt;
@@ -41,8 +42,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InsDeclarationType", propOrder = {
@@ -75,11 +76,9 @@ public class Ins {
 
     /**
      * Obtient la valeur de la propriété pos.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Pos }
-     *     
+     *
+     * @return possible object is {@link Pos }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Pos getPOS() {
@@ -88,11 +87,9 @@ public class Ins {
 
     /**
      * Définit la valeur de la propriété pos.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Pos }
-     *     
+     *
+     * @param value allowed object is {@link Pos }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPOS(Pos value) {
@@ -101,11 +98,9 @@ public class Ins {
 
     /**
      * Obtient la valeur de la propriété ic.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getIC() {
@@ -114,11 +109,9 @@ public class Ins {
 
     /**
      * Définit la valeur de la propriété ic.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIC(String value) {
@@ -127,11 +120,9 @@ public class Ins {
 
     /**
      * Obtient la valeur de la propriété ia.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getIA() {
@@ -140,11 +131,9 @@ public class Ins {
 
     /**
      * Définit la valeur de la propriété ia.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIA(String value) {
@@ -153,11 +142,9 @@ public class Ins {
 
     /**
      * Obtient la valeur de la propriété sc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSC() {
@@ -166,11 +153,9 @@ public class Ins {
 
     /**
      * Définit la valeur de la propriété sc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSC(String value) {
@@ -179,11 +164,9 @@ public class Ins {
 
     /**
      * Obtient la valeur de la propriété da.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getDA() {
@@ -192,11 +175,9 @@ public class Ins {
 
     /**
      * Définit la valeur de la propriété da.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDA(XMLGregorianCalendar value) {
@@ -205,11 +186,9 @@ public class Ins {
 
     /**
      * Obtient la valeur de la propriété ti.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTI() {
@@ -218,11 +197,9 @@ public class Ins {
 
     /**
      * Définit la valeur de la propriété ti.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTI(String value) {
@@ -231,11 +208,9 @@ public class Ins {
 
     /**
      * Obtient la valeur de la propriété po.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getPO() {
@@ -244,11 +219,9 @@ public class Ins {
 
     /**
      * Définit la valeur de la propriété po.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPO(String value) {

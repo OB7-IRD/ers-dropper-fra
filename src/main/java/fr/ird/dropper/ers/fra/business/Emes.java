@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -14,14 +12,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
  * Additional subdeclaration under LOG
- * 
- * <p>Classe Java pour Emes complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Emes complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Emes"&gt;
  *   &lt;complexContent&gt;
@@ -33,8 +33,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EMesType")
@@ -53,11 +53,9 @@ public class Emes {
 
     /**
      * Obtient la valeur de la propriété type.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @return possible object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ErsNat getType() {
@@ -66,11 +64,9 @@ public class Emes {
 
     /**
      * Définit la valeur de la propriété type.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @param value allowed object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setType(ErsNat value) {
@@ -79,11 +75,9 @@ public class Emes {
 
     /**
      * Obtient la valeur de la propriété ms.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getMS() {
@@ -92,11 +86,9 @@ public class Emes {
 
     /**
      * Définit la valeur de la propriété ms.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setMS(String value) {
@@ -105,11 +97,9 @@ public class Emes {
 
     /**
      * Obtient la valeur de la propriété or.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getOR() {
@@ -118,11 +108,9 @@ public class Emes {
 
     /**
      * Définit la valeur de la propriété or.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setOR(String value) {

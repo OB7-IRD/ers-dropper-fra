@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import java.util.ArrayList;
@@ -18,14 +16,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
  * Transhipment declaration.
- * 
- * <p>Classe Java pour Tra complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Tra complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Tra"&gt;
  *   &lt;complexContent&gt;
@@ -48,8 +48,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TraDeclarationType", propOrder = {
@@ -99,11 +99,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété ras.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Ras }
-     *     
+     *
+     * @return possible object is {@link Ras }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Ras getRAS() {
@@ -112,11 +110,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété ras.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ras }
-     *     
+     *
+     * @param value allowed object is {@link Ras }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setRAS(Ras value) {
@@ -125,11 +121,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété pos.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Pos }
-     *     
+     *
+     * @return possible object is {@link Pos }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Pos getPOS() {
@@ -138,11 +132,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété pos.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Pos }
-     *     
+     *
+     * @param value allowed object is {@link Pos }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPOS(Pos value) {
@@ -151,25 +143,24 @@ public class Tra {
 
     /**
      * Gets the value of the spe property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the spe property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the spe property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getSPE().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Spe }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Spe }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Spe> getSPE() {
@@ -181,11 +172,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété da.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getDA() {
@@ -194,11 +183,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété da.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDA(XMLGregorianCalendar value) {
@@ -207,11 +194,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété ti.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTI() {
@@ -220,11 +205,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété ti.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTI(String value) {
@@ -233,11 +216,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété po.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getPO() {
@@ -246,11 +227,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété po.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPO(String value) {
@@ -259,11 +238,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété ir.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getIR() {
@@ -272,11 +249,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété ir.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIR(String value) {
@@ -285,11 +260,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété tt.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTT() {
@@ -298,11 +271,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété tt.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTT(String value) {
@@ -311,11 +282,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété tc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTC() {
@@ -324,11 +293,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété tc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTC(String value) {
@@ -337,11 +304,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété rf.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getRF() {
@@ -350,11 +315,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété rf.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setRF(String value) {
@@ -363,11 +326,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété tf.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTF() {
@@ -376,11 +337,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété tf.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTF(String value) {
@@ -389,11 +348,9 @@ public class Tra {
 
     /**
      * Obtient la valeur de la propriété fc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getFC() {
@@ -402,11 +359,9 @@ public class Tra {
 
     /**
      * Définit la valeur de la propriété fc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFC(String value) {

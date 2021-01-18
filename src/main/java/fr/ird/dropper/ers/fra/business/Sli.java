@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import java.util.ArrayList;
@@ -18,14 +16,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
  * Sales Line declaration containing details of a consignment sale.
- * 
- * <p>Classe Java pour Sli complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Sli complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Sli"&gt;
  *   &lt;complexContent&gt;
@@ -47,8 +47,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SliDeclarationType", propOrder = {
@@ -95,11 +95,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété src.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Src }
-     *     
+     *
+     * @return possible object is {@link Src }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Src getSRC() {
@@ -108,11 +106,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété src.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Src }
-     *     
+     *
+     * @param value allowed object is {@link Src }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSRC(Src value) {
@@ -121,25 +117,24 @@ public class Sli {
 
     /**
      * Gets the value of the css property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the css property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the css property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getCSS().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Css }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Css }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Css> getCSS() {
@@ -151,11 +146,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété esli.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Esli }
-     *     
+     *
+     * @return possible object is {@link Esli }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Esli getESLI() {
@@ -164,11 +157,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété esli.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Esli }
-     *     
+     *
+     * @param value allowed object is {@link Esli }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setESLI(Esli value) {
@@ -177,11 +168,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété da.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getDA() {
@@ -190,11 +179,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété da.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDA(XMLGregorianCalendar value) {
@@ -203,11 +190,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété sc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSC() {
@@ -216,11 +201,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété sc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSC(String value) {
@@ -229,11 +212,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété sl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSL() {
@@ -242,11 +223,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété sl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSL(String value) {
@@ -255,11 +234,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété ns.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNS() {
@@ -268,11 +245,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété ns.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNS(String value) {
@@ -281,11 +256,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété nb.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNB() {
@@ -294,11 +267,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété nb.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNB(String value) {
@@ -307,11 +278,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété vn.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getVN() {
@@ -320,11 +289,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété vn.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setVN(String value) {
@@ -333,11 +300,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété cn.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getCN() {
@@ -346,11 +311,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété cn.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setCN(String value) {
@@ -359,11 +322,9 @@ public class Sli {
 
     /**
      * Obtient la valeur de la propriété bc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getBC() {
@@ -372,11 +333,9 @@ public class Sli {
 
     /**
      * Définit la valeur de la propriété bc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setBC(String value) {

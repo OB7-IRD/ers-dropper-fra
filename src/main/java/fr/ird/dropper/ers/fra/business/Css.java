@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -15,14 +13,16 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
  * Consignment Sold sub-declaration.
- * 
- * <p>Classe Java pour Css complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Css complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Css"&gt;
  *   &lt;complexContent&gt;
@@ -42,8 +42,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CssDeclarationType", propOrder = {
@@ -83,11 +83,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété spe.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Spe }
-     *     
+     *
+     * @return possible object is {@link Spe }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Spe getSPE() {
@@ -96,11 +94,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété spe.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Spe }
-     *     
+     *
+     * @param value allowed object is {@link Spe }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSPE(Spe value) {
@@ -109,11 +105,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété ecss.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Ecss }
-     *     
+     *
+     * @return possible object is {@link Ecss }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Ecss getECSS() {
@@ -122,11 +116,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété ecss.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ecss }
-     *     
+     *
+     * @param value allowed object is {@link Ecss }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setECSS(Ecss value) {
@@ -135,11 +127,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété fp.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     *
+     * @return possible object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Double getFP() {
@@ -148,11 +138,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété fp.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     *
+     * @param value allowed object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFP(Double value) {
@@ -161,11 +149,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété tp.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
+     *
+     * @return possible object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Double getTP() {
@@ -174,11 +160,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété tp.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
+     *
+     * @param value allowed object is {@link Double }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTP(Double value) {
@@ -187,11 +171,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété cr.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getCR() {
@@ -200,11 +182,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété cr.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setCR(String value) {
@@ -213,11 +193,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété sf.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSF() {
@@ -226,11 +204,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété sf.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSF(String value) {
@@ -239,11 +215,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété pp.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getPP() {
@@ -252,11 +226,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété pp.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPP(String value) {
@@ -265,11 +237,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété wd.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getWD() {
@@ -278,11 +248,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété wd.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setWD(String value) {
@@ -291,11 +259,9 @@ public class Css {
 
     /**
      * Obtient la valeur de la propriété op.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getOP() {
@@ -304,11 +270,9 @@ public class Css {
 
     /**
      * Définit la valeur de la propriété op.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setOP(String value) {

@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -16,14 +14,17 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * Tag including the Prior Notification of transfer declaration. To be used under BFT rules
- * 
- * <p>Classe Java pour Epnt complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Tag including the Prior Notification of transfer declaration. To be used
+ * under BFT rules
+ *
+ * <p>
+ * Classe Java pour Epnt complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Epnt"&gt;
  *   &lt;complexContent&gt;
@@ -38,8 +39,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EPntType")
@@ -69,11 +70,9 @@ public class Epnt {
 
     /**
      * Obtient la valeur de la propriété type.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @return possible object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ErsNat getType() {
@@ -82,11 +81,9 @@ public class Epnt {
 
     /**
      * Définit la valeur de la propriété type.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @param value allowed object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setType(ErsNat value) {
@@ -95,11 +92,9 @@ public class Epnt {
 
     /**
      * Obtient la valeur de la propriété da.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getDA() {
@@ -108,11 +103,9 @@ public class Epnt {
 
     /**
      * Définit la valeur de la propriété da.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDA(XMLGregorianCalendar value) {
@@ -121,11 +114,9 @@ public class Epnt {
 
     /**
      * Obtient la valeur de la propriété ti.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getTI() {
@@ -134,11 +125,9 @@ public class Epnt {
 
     /**
      * Définit la valeur de la propriété ti.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTI(XMLGregorianCalendar value) {
@@ -147,11 +136,9 @@ public class Epnt {
 
     /**
      * Obtient la valeur de la propriété na.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNA() {
@@ -160,11 +147,9 @@ public class Epnt {
 
     /**
      * Définit la valeur de la propriété na.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNA(String value) {
@@ -173,11 +158,9 @@ public class Epnt {
 
     /**
      * Obtient la valeur de la propriété in.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getIN() {
@@ -186,11 +169,9 @@ public class Epnt {
 
     /**
      * Définit la valeur de la propriété in.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIN(String value) {
@@ -199,11 +180,9 @@ public class Epnt {
 
     /**
      * Obtient la valeur de la propriété nt.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNT() {
@@ -212,11 +191,9 @@ public class Epnt {
 
     /**
      * Définit la valeur de la propriété nt.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNT(String value) {

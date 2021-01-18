@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -15,14 +13,16 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
  * GEA: gear deployment sub-declaration.
- * 
- * <p>Classe Java pour Gea complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ *
+ * <p>
+ * Classe Java pour Gea complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Gea"&gt;
  *   &lt;complexContent&gt;
@@ -47,8 +47,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "GeaDeclarationType", propOrder = {
@@ -104,11 +104,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété ges.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Ges }
-     *     
+     *
+     * @return possible object is {@link Ges }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Ges getGES() {
@@ -117,11 +115,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété ges.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ges }
-     *     
+     *
+     * @param value allowed object is {@link Ges }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setGES(Ges value) {
@@ -130,11 +126,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété ger.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Ger }
-     *     
+     *
+     * @return possible object is {@link Ger }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Ger getGER() {
@@ -143,11 +137,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété ger.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ger }
-     *     
+     *
+     * @param value allowed object is {@link Ger }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setGER(Ger value) {
@@ -156,11 +148,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété gil.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Gil }
-     *     
+     *
+     * @return possible object is {@link Gil }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Gil getGIL() {
@@ -169,11 +159,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété gil.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Gil }
-     *     
+     *
+     * @param value allowed object is {@link Gil }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setGIL(Gil value) {
@@ -182,11 +170,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété ge.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getGE() {
@@ -195,11 +181,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété ge.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setGE(String value) {
@@ -208,11 +192,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété me.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getME() {
@@ -221,11 +203,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété me.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setME(Integer value) {
@@ -234,11 +214,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété gc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getGC() {
@@ -247,11 +225,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété gc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setGC(String value) {
@@ -260,11 +236,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété fo.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getFO() {
@@ -273,11 +247,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété fo.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFO(Integer value) {
@@ -286,11 +258,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété du.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getDU() {
@@ -299,11 +269,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété du.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDU(Integer value) {
@@ -312,11 +280,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété fd.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getFD() {
@@ -325,11 +291,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété fd.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFD(Integer value) {
@@ -338,11 +302,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété nh.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getNH() {
@@ -351,11 +313,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété nh.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNH(Integer value) {
@@ -364,11 +324,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété gl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getGL() {
@@ -377,11 +335,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété gl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setGL(Integer value) {
@@ -390,11 +346,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété gd.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getGD() {
@@ -403,11 +357,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété gd.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setGD(Integer value) {
@@ -416,11 +368,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété qg.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getQG() {
@@ -429,11 +379,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété qg.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setQG(Integer value) {
@@ -442,11 +390,9 @@ public class Gea {
 
     /**
      * Obtient la valeur de la propriété tl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getTL() {
@@ -455,11 +401,9 @@ public class Gea {
 
     /**
      * Définit la valeur de la propriété tl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTL(Integer value) {

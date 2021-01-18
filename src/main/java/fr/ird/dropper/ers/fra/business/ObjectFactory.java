@@ -4,41 +4,35 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
-
 /**
- * This object contains factory methods for each 
- * Java content interface and Java element interface 
- * generated in the fr.ird.dropper.ers.fra.business package. 
- * <p>An ObjectFactory allows you to programatically 
- * construct new instances of the Java representation 
- * for XML content. The Java representation of XML 
- * content can consist of schema derived interfaces 
- * and classes representing the binding of schema 
- * type definitions, element declarations and model 
- * groups.  Factory methods for each of these are 
- * provided in this class.
- * 
+ * This object contains factory methods for each Java content interface and Java
+ * element interface generated in the fr.ird.dropper.ers.fra.business package.
+ * <p>
+ * An ObjectFactory allows you to programatically construct new instances of the
+ * Java representation for XML content. The Java representation of XML content
+ * can consist of schema derived interfaces and classes representing the binding
+ * of schema type definitions, element declarations and model groups. Factory
+ * methods for each of these are provided in this class.
+ *
  */
 @XmlRegistry
 public class ObjectFactory {
 
-
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: fr.ird.dropper.ers.fra.business
-     * 
+     * Create a new ObjectFactory that can be used to create new instances of
+     * schema derived classes for package: fr.ird.dropper.ers.fra.business
+     *
      */
     public ObjectFactory() {
     }
 
     /**
      * Create an instance of {@link Ops }
-     * 
+     *
      */
     public Ops createOPS() {
         return new Ops();
@@ -46,7 +40,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Far }
-     * 
+     *
      */
     public Far createFarDeclarationType() {
         return new Far();
@@ -54,7 +48,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link FarDeclarationType.EFAR }
-     * 
+     *
      */
     public Far.EFAR createFarDeclarationTypeEFAR() {
         return new Far.EFAR();
@@ -62,7 +56,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link FarDeclarationType.EFAR.EPFA }
-     * 
+     *
      */
     public Far.EFAR.EPFA createFarDeclarationTypeEFAREPFA() {
         return new Far.EFAR.EPFA();
@@ -70,7 +64,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Log }
-     * 
+     *
      */
     public Log createLogDeclarationType() {
         return new Log();
@@ -78,7 +72,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link LogDeclarationType.ELOG }
-     * 
+     *
      */
     public Log.ELOG createLogDeclarationTypeELOG() {
         return new Log.ELOG();
@@ -86,7 +80,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link LogDeclarationType.ELOG.ECPS }
-     * 
+     *
      */
     public Log.ELOG.ECPS createLogDeclarationTypeELOGECPS() {
         return new Log.ELOG.ECPS();
@@ -94,7 +88,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ers }
-     * 
+     *
      */
     public Ers createERS() {
         return new Ers();
@@ -102,7 +96,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Sal }
-     * 
+     *
      */
     public Sal createSalDeclarationType() {
         return new Sal();
@@ -110,7 +104,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Trn }
-     * 
+     *
      */
     public Trn createTrnDeclarationType() {
         return new Trn();
@@ -118,7 +112,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Dat }
-     * 
+     *
      */
     public Dat createDatElementType() {
         return new Dat();
@@ -126,7 +120,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ret }
-     * 
+     *
      */
     public Ret createRetElementType() {
         return new Ret();
@@ -134,7 +128,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Del }
-     * 
+     *
      */
     public Del createDelElementType() {
         return new Del();
@@ -142,7 +136,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Cor }
-     * 
+     *
      */
     public Cor createCorElementType() {
         return new Cor();
@@ -150,7 +144,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Que }
-     * 
+     *
      */
     public Que createQueElementType() {
         return new Que();
@@ -158,7 +152,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Rsp }
-     * 
+     *
      */
     public Rsp createRspElementType() {
         return new Rsp();
@@ -166,7 +160,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link OPS.EMAV }
-     * 
+     *
      */
     public Ops.EMAV createOPSEMAV() {
         return new Ops.EMAV();
@@ -174,7 +168,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link OPS.EVZO }
-     * 
+     *
      */
     public Ops.EVZO createOPSEVZO() {
         return new Ops.EVZO();
@@ -182,7 +176,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Dep }
-     * 
+     *
      */
     public Dep createDepDeclarationType() {
         return new Dep();
@@ -190,7 +184,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Gea }
-     * 
+     *
      */
     public Gea createGeaDeclarationType() {
         return new Gea();
@@ -198,7 +192,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Rlc }
-     * 
+     *
      */
     public Rlc createRlcDeclarationType() {
         return new Rlc();
@@ -206,7 +200,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Tra }
-     * 
+     *
      */
     public Tra createTraDeclarationType() {
         return new Tra();
@@ -214,7 +208,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Coe }
-     * 
+     *
      */
     public Coe createCoeDeclarationType() {
         return new Coe();
@@ -222,7 +216,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Cox }
-     * 
+     *
      */
     public Cox createCoxDeclarationType() {
         return new Cox();
@@ -230,7 +224,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Cro }
-     * 
+     *
      */
     public Cro createCroDeclarationType() {
         return new Cro();
@@ -238,7 +232,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Trz }
-     * 
+     *
      */
     public Trz createTrzDeclarationType() {
         return new Trz();
@@ -246,7 +240,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ins }
-     * 
+     *
      */
     public Ins createInsDeclarationType() {
         return new Ins();
@@ -254,7 +248,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Dis }
-     * 
+     *
      */
     public Dis createDisDeclarationType() {
         return new Dis();
@@ -262,7 +256,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Pno }
-     * 
+     *
      */
     public Pno createPnoDeclarationType() {
         return new Pno();
@@ -270,7 +264,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Pnt }
-     * 
+     *
      */
     public Pnt createPntDeclarationType() {
         return new Pnt();
@@ -278,7 +272,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Eof }
-     * 
+     *
      */
     public Eof createEofDeclarationType() {
         return new Eof();
@@ -286,7 +280,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Rtp }
-     * 
+     *
      */
     public Rtp createRtpDeclarationType() {
         return new Rtp();
@@ -294,7 +288,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Lan }
-     * 
+     *
      */
     public Lan createLanDeclarationType() {
         return new Lan();
@@ -302,7 +296,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Pos }
-     * 
+     *
      */
     public Pos createPosDeclarationType() {
         return new Pos();
@@ -310,7 +304,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ges }
-     * 
+     *
      */
     public Ges createGesDeclarationType() {
         return new Ges();
@@ -318,7 +312,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ger }
-     * 
+     *
      */
     public Ger createGerDeclarationType() {
         return new Ger();
@@ -326,7 +320,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Gil }
-     * 
+     *
      */
     public Gil createGilDeclarationType() {
         return new Gil();
@@ -334,7 +328,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Gls }
-     * 
+     *
      */
     public Gls createGlsDeclarationType() {
         return new Gls();
@@ -342,7 +336,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ras }
-     * 
+     *
      */
     public Ras createRasDeclarationType() {
         return new Ras();
@@ -350,7 +344,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Spe }
-     * 
+     *
      */
     public Spe createSpeDeclarationType() {
         return new Spe();
@@ -358,7 +352,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Pro }
-     * 
+     *
      */
     public Pro createProDeclarationType() {
         return new Pro();
@@ -366,7 +360,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Cvt }
-     * 
+     *
      */
     public Cvt createCvtDeclarationType() {
         return new Cvt();
@@ -374,7 +368,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Cvo }
-     * 
+     *
      */
     public Cvo createCvoDeclarationType() {
         return new Cvo();
@@ -382,7 +376,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Jci }
-     * 
+     *
      */
     public Jci createJciDeclarationType() {
         return new Jci();
@@ -390,7 +384,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Bti }
-     * 
+     *
      */
     public Bti createBtiDeclarationType() {
         return new Bti();
@@ -398,7 +392,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Siz }
-     * 
+     *
      */
     public Siz createSizDeclarationType() {
         return new Siz();
@@ -406,7 +400,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Rec }
-     * 
+     *
      */
     public Rec createRecDeclarationType() {
         return new Rec();
@@ -414,7 +408,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Don }
-     * 
+     *
      */
     public Don createDonDeclarationType() {
         return new Don();
@@ -422,7 +416,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Pfp }
-     * 
+     *
      */
     public Pfp createPfpDeclarationType() {
         return new Pfp();
@@ -430,7 +424,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Sli }
-     * 
+     *
      */
     public Sli createSliDeclarationType() {
         return new Sli();
@@ -438,7 +432,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Src }
-     * 
+     *
      */
     public Src createSrcDeclarationType() {
         return new Src();
@@ -446,7 +440,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Css }
-     * 
+     *
      */
     public Css createCssDeclarationType() {
         return new Css();
@@ -454,7 +448,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Tli }
-     * 
+     *
      */
     public Tli createTliDeclarationType() {
         return new Tli();
@@ -462,7 +456,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Cst }
-     * 
+     *
      */
     public Cst createCstDeclarationType() {
         return new Cst();
@@ -470,7 +464,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ecss }
-     * 
+     *
      */
     public Ecss createECssType() {
         return new Ecss();
@@ -478,7 +472,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Esli }
-     * 
+     *
      */
     public Esli createESliType() {
         return new Esli();
@@ -486,7 +480,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Etli }
-     * 
+     *
      */
     public Etli createETliType() {
         return new Etli();
@@ -494,7 +488,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ecst }
-     * 
+     *
      */
     public Ecst createECstType() {
         return new Ecst();
@@ -502,7 +496,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Eras }
-     * 
+     *
      */
     public Eras createERasType() {
         return new Eras();
@@ -510,7 +504,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Esal }
-     * 
+     *
      */
     public Esal createESalType() {
         return new Esal();
@@ -518,7 +512,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Etts }
-     * 
+     *
      */
     public Etts createETtsType() {
         return new Etts();
@@ -526,7 +520,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Elog }
-     * 
+     *
      */
     public Elog createELogType() {
         return new Elog();
@@ -534,7 +528,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Edep }
-     * 
+     *
      */
     public Edep createEDepType() {
         return new Edep();
@@ -542,7 +536,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Egar }
-     * 
+     *
      */
     public Egar createEGerType() {
         return new Egar();
@@ -550,7 +544,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Espe }
-     * 
+     *
      */
     public Espe createESpeType() {
         return new Espe();
@@ -558,7 +552,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Efar }
-     * 
+     *
      */
     public Efar createEFarType() {
         return new Efar();
@@ -566,7 +560,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Emes }
-     * 
+     *
      */
     public Emes createEMesType() {
         return new Emes();
@@ -574,7 +568,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Emss }
-     * 
+     *
      */
     public Emss createEMssType() {
         return new Emss();
@@ -582,7 +576,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ertp }
-     * 
+     *
      */
     public Ertp createERtpType() {
         return new Ertp();
@@ -590,7 +584,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Epos }
-     * 
+     *
      */
     public Epos createEPosType() {
         return new Epos();
@@ -598,7 +592,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Etrn }
-     * 
+     *
      */
     public Etrn createETrnType() {
         return new Etrn();
@@ -606,7 +600,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Epfa }
-     * 
+     *
      */
     public Epfa createEPfaType() {
         return new Epfa();
@@ -614,7 +608,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Efad }
-     * 
+     *
      */
     public Efad createEFadType() {
         return new Efad();
@@ -622,7 +616,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Etdd }
-     * 
+     *
      */
     public Etdd createETddType() {
         return new Etdd();
@@ -630,7 +624,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Etrc }
-     * 
+     *
      */
     public Etrc createETrcType() {
         return new Etrc();
@@ -638,7 +632,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Emav }
-     * 
+     *
      */
     public Emav createEMavType() {
         return new Emav();
@@ -646,7 +640,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Evzo }
-     * 
+     *
      */
     public Evzo createEVzoType() {
         return new Evzo();
@@ -654,7 +648,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Eops }
-     * 
+     *
      */
     public Eops createEOpsType() {
         return new Eops();
@@ -662,7 +656,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Epnt }
-     * 
+     *
      */
     public Epnt createEPntType() {
         return new Epnt();
@@ -670,7 +664,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Ecps }
-     * 
+     *
      */
     public Ecps createECpsType() {
         return new Ecps();
@@ -678,7 +672,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link Edci }
-     * 
+     *
      */
     public Edci createEDciType() {
         return new Edci();
@@ -686,7 +680,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link FarDeclarationType.EFAR.EPFA.EFAD }
-     * 
+     *
      */
     public Far.EFAR.EPFA.EFAD createFarDeclarationTypeEFAREPFAEFAD() {
         return new Far.EFAR.EPFA.EFAD();
@@ -694,7 +688,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link LogDeclarationType.ELOG.ETRC }
-     * 
+     *
      */
     public Log.ELOG.ETRC createLogDeclarationTypeELOGETRC() {
         return new Log.ELOG.ETRC();
@@ -702,7 +696,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link LogDeclarationType.ELOG.ECPS.EDCI }
-     * 
+     *
      */
     public Log.ELOG.ECPS.EDCI createLogDeclarationTypeELOGECPSEDCI() {
         return new Log.ELOG.ECPS.EDCI();

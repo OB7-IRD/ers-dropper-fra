@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -15,14 +13,18 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * Relevant area depending on the relevant reporting requirement – at least one field should be filled in. If FA is given, SA, ID and SD are expected (except if reporting COD in the Baltic).
- * 
- * <p>Classe Java pour Ras complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Relevant area depending on the relevant reporting requirement – at least one
+ * field should be filled in. If FA is given, SA, ID and SD are expected (except
+ * if reporting COD in the Baltic).
+ *
+ * <p>
+ * Classe Java pour Ras complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Ras"&gt;
  *   &lt;complexContent&gt;
@@ -42,8 +44,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RasDeclarationType", propOrder = {
@@ -82,11 +84,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété eras.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Eras }
-     *     
+     *
+     * @return possible object is {@link Eras }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Eras getERAS() {
@@ -95,11 +95,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété eras.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Eras }
-     *     
+     *
+     * @param value allowed object is {@link Eras }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setERAS(Eras value) {
@@ -108,11 +106,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété fa.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getFA() {
@@ -121,11 +117,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété fa.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFA(String value) {
@@ -134,11 +128,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété sa.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSA() {
@@ -147,11 +139,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété sa.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSA(String value) {
@@ -160,11 +150,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété id.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getID() {
@@ -173,11 +161,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété id.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setID(String value) {
@@ -186,11 +172,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété sd.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSD() {
@@ -199,11 +183,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété sd.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSD(String value) {
@@ -212,11 +194,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété ui.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getUI() {
@@ -225,11 +205,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété ui.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setUI(String value) {
@@ -238,11 +216,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété ez.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getEZ() {
@@ -251,11 +227,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété ez.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setEZ(String value) {
@@ -264,11 +238,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété sr.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getSR() {
@@ -277,11 +249,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété sr.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSR(String value) {
@@ -290,11 +260,9 @@ public class Ras {
 
     /**
      * Obtient la valeur de la propriété fe.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getFE() {
@@ -303,11 +271,9 @@ public class Ras {
 
     /**
      * Définit la valeur de la propriété fe.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFE(String value) {

@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import java.util.ArrayList;
@@ -18,15 +16,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * Transport Sub-declaration: Transport document may be transmitted electronically before the transport of fish begins.
- *  1.1-2.0: added.
- * 
- * <p>Classe Java pour Trn complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Transport Sub-declaration: Transport document may be transmitted
+ * electronically before the transport of fish begins. 1.1-2.0: added.
+ *
+ * <p>
+ * Classe Java pour Trn complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Trn"&gt;
  *   &lt;complexContent&gt;
@@ -48,8 +48,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TrnDeclarationType", propOrder = {
@@ -95,25 +95,24 @@ public class Trn {
 
     /**
      * Gets the value of the spe property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the spe property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the spe property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getSPE().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Spe }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Spe }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Spe> getSPE() {
@@ -125,11 +124,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété etrn.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Etrn }
-     *     
+     *
+     * @return possible object is {@link Etrn }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Etrn getETRN() {
@@ -138,11 +135,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété etrn.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Etrn }
-     *     
+     *
+     * @param value allowed object is {@link Etrn }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setETRN(Etrn value) {
@@ -151,11 +146,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété dc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getDC() {
@@ -164,11 +157,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété dc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDC(String value) {
@@ -177,11 +168,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété lp.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getLP() {
@@ -190,11 +179,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété lp.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setLP(String value) {
@@ -203,11 +190,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété xr.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getXR() {
@@ -216,11 +201,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété xr.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setXR(String value) {
@@ -229,11 +212,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété na.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNA() {
@@ -242,11 +223,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété na.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNA(String value) {
@@ -255,11 +234,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété pl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getPL() {
@@ -268,11 +245,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété pl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPL(String value) {
@@ -281,11 +256,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété dl.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getDL() {
@@ -294,11 +267,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété dl.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDL(XMLGregorianCalendar value) {
@@ -307,11 +278,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété nc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNC() {
@@ -320,11 +289,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété nc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNC(String value) {
@@ -333,11 +300,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété ac.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getAC() {
@@ -346,11 +311,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété ac.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setAC(String value) {
@@ -359,11 +322,9 @@ public class Trn {
 
     /**
      * Obtient la valeur de la propriété tr.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTR() {
@@ -372,11 +333,9 @@ public class Trn {
 
     /**
      * Définit la valeur de la propriété tr.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTR(String value) {

@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -13,13 +11,16 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java pour degree_compass_rose.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * <p>
- * <pre>
+ * Classe Java pour degree_compass_rose.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ * <p>
+ * <
+ * pre>
  * &lt;simpleType name="degree_compass_rose"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *     &lt;enumeration value="N"/&gt;
@@ -57,7 +58,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
- * 
+ *
  */
 @XmlType(name = "degree_compass_rose")
 @XmlEnum
@@ -123,7 +124,7 @@ public enum DegreeCompassRose {
     }
 
     public static DegreeCompassRose fromValue(String v) {
-        for (DegreeCompassRose c: DegreeCompassRose.values()) {
+        for (DegreeCompassRose c : DegreeCompassRose.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

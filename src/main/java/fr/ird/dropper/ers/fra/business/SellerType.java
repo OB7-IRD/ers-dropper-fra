@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -13,13 +11,16 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java pour seller_type.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * <p>
- * <pre>
+ * Classe Java pour seller_type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ * <p>
+ * <
+ * pre>
  * &lt;simpleType name="seller_type"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *     &lt;enumeration value="HAM"/&gt;
@@ -27,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
- * 
+ *
  */
 @XmlType(name = "seller_type")
 @XmlEnum
@@ -48,7 +49,7 @@ public enum SellerType {
     }
 
     public static SellerType fromValue(String v) {
-        for (SellerType c: SellerType.values()) {
+        for (SellerType c : SellerType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

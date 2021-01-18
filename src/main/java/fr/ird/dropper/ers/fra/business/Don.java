@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -14,15 +12,19 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * Donor Vessel(s): Donor vessel(s) identification. For transfer under BFT rules, fill out BTI instead.
- *  1.1-2.0: Donor vessel(s). One of REC or DON must be referring to "this vessel", meaning the one identified in the LOG super-element. Required unless reporting under ICCAT BFT rules.
- * 
- * <p>Classe Java pour Don complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Donor Vessel(s): Donor vessel(s) identification. For transfer under BFT
+ * rules, fill out BTI instead. 1.1-2.0: Donor vessel(s). One of REC or DON must
+ * be referring to "this vessel", meaning the one identified in the LOG
+ * super-element. Required unless reporting under ICCAT BFT rules.
+ *
+ * <p>
+ * Classe Java pour Don complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Don"&gt;
  *   &lt;complexContent&gt;
@@ -34,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DonDeclarationType", propOrder = {
@@ -50,11 +52,9 @@ public class Don {
 
     /**
      * Obtient la valeur de la propriété pfp.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Pfp }
-     *     
+     *
+     * @return possible object is {@link Pfp }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Pfp getPFP() {
@@ -63,11 +63,9 @@ public class Don {
 
     /**
      * Définit la valeur de la propriété pfp.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Pfp }
-     *     
+     *
+     * @param value allowed object is {@link Pfp }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPFP(Pfp value) {

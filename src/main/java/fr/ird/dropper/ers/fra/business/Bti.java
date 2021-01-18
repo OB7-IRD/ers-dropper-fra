@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import java.util.ArrayList;
@@ -17,15 +15,18 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * BFT Transfer Information sub-declaration. Information about the transfer and transfer vessel related to the BFT transfer operation.
- *  2.0-3.0: JTI renamed to BTI
- * 
- * <p>Classe Java pour Bti complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * BFT Transfer Information sub-declaration. Information about the transfer and
+ * transfer vessel related to the BFT transfer operation. 2.0-3.0: JTI renamed
+ * to BTI
+ *
+ * <p>
+ * Classe Java pour Bti complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Bti"&gt;
  *   &lt;complexContent&gt;
@@ -43,8 +44,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BtiDeclarationType", propOrder = {
@@ -79,11 +80,9 @@ public class Bti {
 
     /**
      * Obtient la valeur de la propriété cvt.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Cvt }
-     *     
+     *
+     * @return possible object is {@link Cvt }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Cvt getCVT() {
@@ -92,11 +91,9 @@ public class Bti {
 
     /**
      * Définit la valeur de la propriété cvt.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Cvt }
-     *     
+     *
+     * @param value allowed object is {@link Cvt }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setCVT(Cvt value) {
@@ -105,11 +102,9 @@ public class Bti {
 
     /**
      * Obtient la valeur de la propriété pos.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Pos }
-     *     
+     *
+     * @return possible object is {@link Pos }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Pos getPOS() {
@@ -118,11 +113,9 @@ public class Bti {
 
     /**
      * Définit la valeur de la propriété pos.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Pos }
-     *     
+     *
+     * @param value allowed object is {@link Pos }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPOS(Pos value) {
@@ -131,25 +124,24 @@ public class Bti {
 
     /**
      * Gets the value of the spe property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the spe property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the spe property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getSPE().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Spe }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Spe }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Spe> getSPE() {
@@ -161,11 +153,9 @@ public class Bti {
 
     /**
      * Obtient la valeur de la propriété na.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getNA() {
@@ -174,11 +164,9 @@ public class Bti {
 
     /**
      * Définit la valeur de la propriété na.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setNA(String value) {
@@ -187,11 +175,9 @@ public class Bti {
 
     /**
      * Obtient la valeur de la propriété in.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getIN() {
@@ -200,11 +186,9 @@ public class Bti {
 
     /**
      * Définit la valeur de la propriété in.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIN(String value) {
@@ -213,11 +197,9 @@ public class Bti {
 
     /**
      * Obtient la valeur de la propriété fn.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getFN() {
@@ -226,11 +208,9 @@ public class Bti {
 
     /**
      * Définit la valeur de la propriété fn.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFN(String value) {
@@ -239,11 +219,9 @@ public class Bti {
 
     /**
      * Obtient la valeur de la propriété fi.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getFI() {
@@ -252,11 +230,9 @@ public class Bti {
 
     /**
      * Définit la valeur de la propriété fi.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setFI(String value) {

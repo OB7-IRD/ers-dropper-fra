@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import java.math.BigInteger;
@@ -15,12 +13,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java pour ESliType complex type.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * <p>
+ * Classe Java pour ESliType complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Esli"&gt;
  *   &lt;complexContent&gt;
@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ESliType")
@@ -68,11 +68,9 @@ public class Esli {
 
     /**
      * Obtient la valeur de la propriété type.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @return possible object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ErsNat getType() {
@@ -81,11 +79,9 @@ public class Esli {
 
     /**
      * Définit la valeur de la propriété type.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @param value allowed object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setType(ErsNat value) {
@@ -94,11 +90,9 @@ public class Esli {
 
     /**
      * Obtient la valeur de la propriété bi.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getBI() {
@@ -107,11 +101,9 @@ public class Esli {
 
     /**
      * Définit la valeur de la propriété bi.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setBI(String value) {
@@ -120,11 +112,9 @@ public class Esli {
 
     /**
      * Obtient la valeur de la propriété by.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BuyerType }
-     *     
+     *
+     * @return possible object is {@link BuyerType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public BuyerType getBY() {
@@ -133,11 +123,9 @@ public class Esli {
 
     /**
      * Définit la valeur de la propriété by.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BuyerType }
-     *     
+     *
+     * @param value allowed object is {@link BuyerType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setBY(BuyerType value) {
@@ -146,11 +134,9 @@ public class Esli {
 
     /**
      * Obtient la valeur de la propriété si.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Ham }
-     *     
+     *
+     * @return possible object is {@link Ham }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Ham getSI() {
@@ -159,11 +145,9 @@ public class Esli {
 
     /**
      * Définit la valeur de la propriété si.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ham }
-     *     
+     *
+     * @param value allowed object is {@link Ham }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSI(Ham value) {
@@ -172,11 +156,9 @@ public class Esli {
 
     /**
      * Obtient la valeur de la propriété sy.
-     * 
-     * @return
-     *     possible object is
-     *     {@link SellerType }
-     *     
+     *
+     * @return possible object is {@link SellerType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public SellerType getSY() {
@@ -185,11 +167,9 @@ public class Esli {
 
     /**
      * Définit la valeur de la propriété sy.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SellerType }
-     *     
+     *
+     * @param value allowed object is {@link SellerType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setSY(SellerType value) {
@@ -198,11 +178,9 @@ public class Esli {
 
     /**
      * Obtient la valeur de la propriété ti.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTI() {
@@ -211,11 +189,9 @@ public class Esli {
 
     /**
      * Définit la valeur de la propriété ti.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTI(String value) {
@@ -224,11 +200,9 @@ public class Esli {
 
     /**
      * Obtient la valeur de la propriété lo.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Integer getLO() {
@@ -237,11 +211,9 @@ public class Esli {
 
     /**
      * Définit la valeur de la propriété lo.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is {@link Integer }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setLO(Integer value) {

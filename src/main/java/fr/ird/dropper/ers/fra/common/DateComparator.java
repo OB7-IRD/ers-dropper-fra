@@ -16,7 +16,6 @@
  */
 package fr.ird.dropper.ers.fra.common;
 
-
 import fr.ird.dropper.ers.fra.business.*;
 import org.apache.commons.lang.StringUtils;
 
@@ -52,7 +51,6 @@ public class DateComparator implements Comparator<Date> {
 //            return e1.getOpsOdotDt().compareTo(e2.getOpsOdotDt());
 //        }
 //    };
-
     /**
      * Comparateur permettant de trier des événements de pêche par ordre
      * croissant de date/heure (ou seulement date si l'un des événements n'a pas
@@ -100,7 +98,6 @@ public class DateComparator implements Comparator<Date> {
 //            }
 //        }
 //    };
-
     /**
      * Comparateur permettant de trier des marées par ordre décroissant de
      * date/heure (ou seulement date si le journal de bord n'a pas l'heure

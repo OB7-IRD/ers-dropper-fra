@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -14,12 +12,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java pour ETliType complex type.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * <p>
+ * Classe Java pour ETliType complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Etli"&gt;
  *   &lt;complexContent&gt;
@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ETliType")
@@ -63,11 +63,9 @@ public class Etli {
 
     /**
      * Obtient la valeur de la propriété type.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @return possible object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ErsNat getType() {
@@ -76,11 +74,9 @@ public class Etli {
 
     /**
      * Définit la valeur de la propriété type.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @param value allowed object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setType(ErsNat value) {
@@ -89,11 +85,9 @@ public class Etli {
 
     /**
      * Obtient la valeur de la propriété oy.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CodeReceiverType }
-     *     
+     *
+     * @return possible object is {@link CodeReceiverType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public CodeReceiverType getOY() {
@@ -102,11 +96,9 @@ public class Etli {
 
     /**
      * Définit la valeur de la propriété oy.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CodeReceiverType }
-     *     
+     *
+     * @param value allowed object is {@link CodeReceiverType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setOY(CodeReceiverType value) {
@@ -115,11 +107,9 @@ public class Etli {
 
     /**
      * Obtient la valeur de la propriété oi.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Ham }
-     *     
+     *
+     * @return possible object is {@link Ham }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Ham getOI() {
@@ -128,11 +118,9 @@ public class Etli {
 
     /**
      * Définit la valeur de la propriété oi.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Ham }
-     *     
+     *
+     * @param value allowed object is {@link Ham }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setOI(Ham value) {
@@ -141,11 +129,9 @@ public class Etli {
 
     /**
      * Obtient la valeur de la propriété iy.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CodeStorageType }
-     *     
+     *
+     * @return possible object is {@link CodeStorageType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public CodeStorageType getIY() {
@@ -154,11 +140,9 @@ public class Etli {
 
     /**
      * Définit la valeur de la propriété iy.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CodeStorageType }
-     *     
+     *
+     * @param value allowed object is {@link CodeStorageType }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setIY(CodeStorageType value) {
@@ -167,11 +151,9 @@ public class Etli {
 
     /**
      * Obtient la valeur de la propriété ii.
-     * 
-     * @return
-     *     possible object is
-     *     {@link IdStorage }
-     *     
+     *
+     * @return possible object is {@link IdStorage }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public IdStorage getII() {
@@ -180,11 +162,9 @@ public class Etli {
 
     /**
      * Définit la valeur de la propriété ii.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link IdStorage }
-     *     
+     *
+     * @param value allowed object is {@link IdStorage }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setII(IdStorage value) {
@@ -193,11 +173,9 @@ public class Etli {
 
     /**
      * Obtient la valeur de la propriété ti.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTI() {
@@ -206,11 +184,9 @@ public class Etli {
 
     /**
      * Définit la valeur de la propriété ti.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTI(String value) {

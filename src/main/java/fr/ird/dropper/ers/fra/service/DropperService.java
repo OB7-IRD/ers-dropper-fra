@@ -80,7 +80,7 @@ public class DropperService extends ErsMainService {
             LogService.getService(DropperService.class).logFilePropertiesNotFound();
             System.exit(2);
         } catch (Exception e) {
-            LogService.getService(DropperService.class).logApplicationError(""+ e);
+            LogService.getService(DropperService.class).logApplicationError("" + e);
             System.exit(1);
         }
         System.exit(exitCode);
@@ -220,8 +220,8 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Tri des fichiers du plus ancien au plus récent puis sur le nom de fichier par
-     * ordre alphabétique
+     * Tri des fichiers du plus ancien au plus récent puis sur le nom de fichier
+     * par ordre alphabétique
      *
      * @param fichiers
      */
@@ -242,8 +242,8 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Indique si une liste de Rets renvoyés par la procédure de validation contient
-     * au moins un RET qui indique que la requête est au format V1;
+     * Indique si une liste de Rets renvoyés par la procédure de validation
+     * contient au moins un RET qui indique que la requête est au format V1;
      *
      * @param rets
      * @return
@@ -256,8 +256,9 @@ public class DropperService extends ErsMainService {
     /**
      * Déplace le fichier dans le répertoire des fichiers traités.
      *
-     * @param fichier        le fichier
-     * @param journalService le service permettant de tracer l'injection de fichiers
+     * @param fichier le fichier
+     * @param journalService le service permettant de tracer l'injection de
+     * fichiers
      */
     private void moveFileToTreatedDirectory(File fichier) {
         // MSGR07 : on déplace le fichier et on insère une ligne dans le
@@ -283,9 +284,10 @@ public class DropperService extends ErsMainService {
     /**
      * Déplace le fichier dans le répertoire des fichiers traités.
      *
-     * @param ops            l'opération
-     * @param fichier        le fichier
-     * @param journalService le service permettant de tracer l'injection de fichiers
+     * @param ops l'opération
+     * @param fichier le fichier
+     * @param journalService le service permettant de tracer l'injection de
+     * fichiers
      */
     private void moveFileToTreatedDirectory(Ops ops, File fichier) {
         // MSGR07 : on déplace le fichier et on insère une ligne dans le
@@ -525,8 +527,8 @@ public class DropperService extends ErsMainService {
      * Construit une marée avec les éléments de bases: date de départ et de
      * retour...
      *
-     * @param logbook      un log ERS
-     * @param departure    un dep ERS
+     * @param logbook un log ERS
+     * @param departure un dep ERS
      * @param returnToPort un rtp ERS
      * @return the trip
      */
@@ -560,7 +562,7 @@ public class DropperService extends ErsMainService {
         } else {
             if (trip.getDateOfDep() == null && departure != null) {
                 trip.setDateOfDep(DateTimeUtils.createDateTime(departure.getDaDt(), departure.getTi()).toDate());
-                    LogService.getService(this.getClass()).logApplicationDebug("## " + dateOfDep);
+                LogService.getService(this.getClass()).logApplicationDebug("## " + dateOfDep);
             }
             if (trip.getMasterName() == null) {
                 trip.setMasterName(logbook.getMA());
@@ -607,8 +609,8 @@ public class DropperService extends ErsMainService {
     /**
      * Créér les activités associées à une marée.
      *
-     * @param trip                  la marée
-     * @param evenementDePecheList  liste evenement de pêche ERS
+     * @param trip la marée
+     * @param evenementDePecheList liste evenement de pêche ERS
      * @param rnMessageERS
      * @param dateMessage
      * @param rnMessageERSToCorrect
@@ -676,10 +678,10 @@ public class DropperService extends ErsMainService {
                             .addAll(factoryFADActivity(trip, far, rnMessageERS, dateMessage, rnMessageERSToCorrect));
                     // activityNumber += fishingEventSet.size();
                 } else {// if (far.getGEA() != null || (far.getRAS() != null && far.getGEA() == null &&
-                        // far.getGls() == null)) {
+                    // far.getGls() == null)) {
                     /**
-                     * Traite une calée, si il y a présence de DCP, elle sera traitée de manière
-                     * interne.
+                     * Traite une calée, si il y a présence de DCP, elle sera
+                     * traitée de manière interne.
                      */
                     if (DEBUG) {
                         LogService.getService(DropperService.class)
@@ -716,11 +718,11 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Convertit une activité départ de port associées à une marée dans le modèle
-     * EvA.
+     * Convertit une activité départ de port associées à une marée dans le
+     * modèle EvA.
      *
-     * @param trip                la marée
-     * @param dep                 le depart ERS
+     * @param trip la marée
+     * @param dep le depart ERS
      * @param indexOfFishingEvent le numéro de l'activité
      * @return l'activité de depart au port
      * @throws fr.ird.eva.core.exception.EVADriverException
@@ -735,14 +737,14 @@ public class DropperService extends ErsMainService {
 
         LogService.getService(DropperService.class).logApplicationDebug(
                 "La date de l'activité est le " + activityDepartureToPort.getDateOfFishingEvent().toString());// + " --
-                                                                                                              // " +
-                                                                                                              // far.getFarDaDt()
-                                                                                                              // + " --
-                                                                                                              // " +
-                                                                                                              // far.getFarDatiDt()
-                                                                                                              // + "--"
-                                                                                                              // +
-                                                                                                              // far.getFarTiLb());
+        // " +
+        // far.getFarDaDt()
+        // + " --
+        // " +
+        // far.getFarDatiDt()
+        // + "--"
+        // +
+        // far.getFarTiLb());
 
         activityDepartureToPort.setPortOfDeparture(new HarbourDAO().findHarbour(dep.getPO()));
         LogService.getService(DropperService.class).logApplicationDebug("AA " + dep.getAA());
@@ -807,11 +809,11 @@ public class DropperService extends ErsMainService {
     //
 
     /**
-     * Convertit une activité retour au port associées à une marée dans le modèle
-     * EvA.
+     * Convertit une activité retour au port associées à une marée dans le
+     * modèle EvA.
      *
-     * @param trip           la marée
-     * @param rtp            le retour au port ERS
+     * @param trip la marée
+     * @param rtp le retour au port ERS
      * @param activityNumber le numéro de l'activité
      * @return l'activité de retour au port
      * @throws DropperException
@@ -861,8 +863,8 @@ public class DropperService extends ErsMainService {
     /**
      * Convertit une activité de pêche associées à une marée dans le modèle EvA.
      *
-     * @param trip           la marée
-     * @param far            le far ERS
+     * @param trip la marée
+     * @param far le far ERS
      * @param activityNumber le numéro de l'activité
      * @return l'activité de pêche
      * @throws DropperException
@@ -877,21 +879,21 @@ public class DropperService extends ErsMainService {
         LogService.getService(DropperService.class).logApplicationDebug("Ceci est le FAR numéro " + far.toString());
         LogService.getService(DropperService.class)
                 .logApplicationDebug("La date de l'activité est le " + activity.getDateOfFishingEvent().toString());// +
-                                                                                                                    // "
-                                                                                                                    // --
-                                                                                                                    // "
-                                                                                                                    // +
-                                                                                                                    // far.getFarDaDt()
-                                                                                                                    // +
-                                                                                                                    // "
-                                                                                                                    // --
-                                                                                                                    // "
-                                                                                                                    // +
-                                                                                                                    // far.getFarDatiDt()
-                                                                                                                    // +
-                                                                                                                    // "--"
-                                                                                                                    // +
-                                                                                                                    // far.getFarTiLb());
+        // "
+        // --
+        // "
+        // +
+        // far.getFarDaDt()
+        // +
+        // "
+        // --
+        // "
+        // +
+        // far.getFarDatiDt()
+        // +
+        // "--"
+        // +
+        // far.getFarTiLb());
 
         if (far.getPOS() != null) {
             activity.setPosition(new Position(far.getPOS().getLT(), far.getPOS().getLG()));
@@ -1064,11 +1066,11 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Convertit les activités de DCP dans le modèle EvA. Fonction a revoir selon
-     * les pratiques des pecheurs.
+     * Convertit les activités de DCP dans le modèle EvA. Fonction a revoir
+     * selon les pratiques des pecheurs.
      *
      * @param fishingActivity une activitié de pêche
-     * @param activityNumber  le numéro de l'activité
+     * @param activityNumber le numéro de l'activité
      * @return la liste des activités de pêche
      * @throws DropperException
      */
@@ -1092,7 +1094,6 @@ public class DropperService extends ErsMainService {
                     // activity.setIndexOfFishingEvent(activityNumber);
 
                     // La liste de FAD associée au FC doit être toujours vide.
-
                     LogService.getService(DropperService.class).logApplicationDebug("FA " + fishingActivity);
                     activity.addFishingContext(new FishingContext(true, fishingContext.getFishingContextType()));
                     activity.setDateOfFishingEvent(fishingActivity.getDateOfFishingEvent());
@@ -1136,11 +1137,11 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Convertit les activités de DCP dans le modèle EvA. Note: Fonction a revoir
-     * selon les pratiques des pêcheurs.
+     * Convertit les activités de DCP dans le modèle EvA. Note: Fonction a
+     * revoir selon les pratiques des pêcheurs.
      *
-     * @param trip           la marée
-     * @param far            le far ERS
+     * @param trip la marée
+     * @param far le far ERS
      * @param activityNumber le numéro de l'activité
      * @return la liste des activités de pêche
      * @throws DropperException
@@ -1190,21 +1191,21 @@ public class DropperService extends ErsMainService {
 
             LogService.getService(DropperService.class)
                     .logApplicationDebug("La date de l'activité est le " + activity.getDateOfFishingEvent().toString());// +
-                                                                                                                        // "
-                                                                                                                        // --
-                                                                                                                        // "
-                                                                                                                        // +
-                                                                                                                        // far.getFarDaDt()
-                                                                                                                        // +
-                                                                                                                        // "
-                                                                                                                        // --
-                                                                                                                        // "
-                                                                                                                        // +
-                                                                                                                        // far.getFarDatiDt()
-                                                                                                                        // +
-                                                                                                                        // "--"
-                                                                                                                        // +
-                                                                                                                        // far.getFarTiLb());
+            // "
+            // --
+            // "
+            // +
+            // far.getFarDaDt()
+            // +
+            // "
+            // --
+            // "
+            // +
+            // far.getFarDatiDt()
+            // +
+            // "--"
+            // +
+            // far.getFarTiLb());
 
             if (far.getPOS() != null) {
                 activity.setPosition(new Position(far.getPOS().getLT(), far.getPOS().getLG()));
@@ -1238,8 +1239,9 @@ public class DropperService extends ErsMainService {
                 activity.setComment(etts.getCM());
                 LogService.getService(DropperService.class).logApplicationDebug("-- 2 --");
                 activity.setSchoolSizeInfomartion(etts.getSO());
-                if (etts.getMP() != null)
+                if (etts.getMP() != null) {
                     activity.setMiscProblems(etts.getMP().toString());
+                }
                 LogService.getService(DropperService.class).logApplicationDebug("-- 3 --");
                 // Gestion des FADs et des bouées associées
                 activity.setOperation(efad.getIF());
@@ -1277,7 +1279,7 @@ public class DropperService extends ErsMainService {
      * Convertit les captures associés à l'ERS dans le modèle EvA.
      *
      * @param fishingActivity l'activité de pêche associée à la capture ERS
-     * @param specie          l'espèce capturée ERS
+     * @param specie l'espèce capturée ERS
      * @return la capture
      * @throws DropperException
      */
@@ -1344,7 +1346,8 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Convertit les engins de type "retrait" associés à l'ERS dans le modèle EvA.
+     * Convertit les engins de type "retrait" associés à l'ERS dans le modèle
+     * EvA.
      *
      * @param ges une activité de mise à l'eau de l'engin ERS
      * @return une activité liée à l'engin
@@ -1363,8 +1366,8 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Convertit les engins de type "mise à l'eau" associés à l'ERS dans le modèle
-     * EvA.
+     * Convertit les engins de type "mise à l'eau" associés à l'ERS dans le
+     * modèle EvA.
      *
      * @param ger une activité de retrait de l'engin ERS
      * @return une activité liée à l'engin

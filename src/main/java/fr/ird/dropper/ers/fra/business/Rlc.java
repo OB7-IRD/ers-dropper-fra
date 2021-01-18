@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import java.util.ArrayList;
@@ -18,16 +16,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
 /**
- * Relocation declaration
- *  2.0-3.0: JTI renamed to BTI
- *  1.1-2.0: Moved IR/TT/TC to REC, moved RF/TF/RC to DON. Added JTI: ICCAT reporting features.
- * 
- * <p>Classe Java pour Rlc complex type.
- 
- <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * Relocation declaration 2.0-3.0: JTI renamed to BTI 1.1-2.0: Moved IR/TT/TC to
+ * REC, moved RF/TF/RC to DON. Added JTI: ICCAT reporting features.
+ *
+ * <p>
+ * Classe Java pour Rlc complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Rlc"&gt;
  *   &lt;complexContent&gt;
@@ -46,8 +45,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RlcDeclarationType", propOrder = {
@@ -87,11 +86,9 @@ public class Rlc {
 
     /**
      * Obtient la valeur de la propriété rec.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Rec }
-     *     
+     *
+     * @return possible object is {@link Rec }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Rec getREC() {
@@ -100,11 +97,9 @@ public class Rlc {
 
     /**
      * Définit la valeur de la propriété rec.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Rec }
-     *     
+     *
+     * @param value allowed object is {@link Rec }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setREC(Rec value) {
@@ -113,25 +108,24 @@ public class Rlc {
 
     /**
      * Gets the value of the don property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the don property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the don property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getDON().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Don }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Don }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Don> getDON() {
@@ -143,11 +137,9 @@ public class Rlc {
 
     /**
      * Obtient la valeur de la propriété pos.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Pos }
-     *     
+     *
+     * @return possible object is {@link Pos }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Pos getPOS() {
@@ -156,11 +148,9 @@ public class Rlc {
 
     /**
      * Définit la valeur de la propriété pos.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Pos }
-     *     
+     *
+     * @param value allowed object is {@link Pos }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setPOS(Pos value) {
@@ -169,25 +159,24 @@ public class Rlc {
 
     /**
      * Gets the value of the spe property.
-     * 
+     *
      * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the spe property.
-     * 
+     * This accessor method returns a reference to the live list, not a
+     * snapshot. Therefore any modification you make to the returned list will
+     * be present inside the JAXB object. This is why there is not a
+     * <CODE>set</CODE> method for the spe property.
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getSPE().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Spe }
-     * 
-     * 
+     * Objects of the following type(s) are allowed in the list {@link Spe }
+     *
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public List<Spe> getSPE() {
@@ -199,11 +188,9 @@ public class Rlc {
 
     /**
      * Obtient la valeur de la propriété bti.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Bti }
-     *     
+     *
+     * @return possible object is {@link Bti }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public Bti getBTI() {
@@ -212,11 +199,9 @@ public class Rlc {
 
     /**
      * Définit la valeur de la propriété bti.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Bti }
-     *     
+     *
+     * @param value allowed object is {@link Bti }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setBTI(Bti value) {
@@ -225,11 +210,9 @@ public class Rlc {
 
     /**
      * Obtient la valeur de la propriété da.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public XMLGregorianCalendar getDA() {
@@ -238,11 +221,9 @@ public class Rlc {
 
     /**
      * Définit la valeur de la propriété da.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is {@link XMLGregorianCalendar }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setDA(XMLGregorianCalendar value) {
@@ -251,11 +232,9 @@ public class Rlc {
 
     /**
      * Obtient la valeur de la propriété ti.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getTI() {
@@ -264,11 +243,9 @@ public class Rlc {
 
     /**
      * Définit la valeur de la propriété ti.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setTI(String value) {
@@ -277,11 +254,9 @@ public class Rlc {
 
     /**
      * Obtient la valeur de la propriété rt.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getRT() {
@@ -290,11 +265,9 @@ public class Rlc {
 
     /**
      * Définit la valeur de la propriété rt.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setRT(String value) {

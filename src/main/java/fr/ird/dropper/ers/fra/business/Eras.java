@@ -4,8 +4,6 @@
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
 // Généré le : 2019.11.21 à 01:58:47 PM MUT 
 //
-
-
 package fr.ird.dropper.ers.fra.business;
 
 import javax.annotation.Generated;
@@ -14,12 +12,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java pour ERasType complex type.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
- * 
+ * <p>
+ * Classe Java pour ERasType complex type.
+ *
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ *
  * <pre>
  * &lt;complexType name="Eras"&gt;
  *   &lt;complexContent&gt;
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ERasType")
@@ -75,11 +75,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété type.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @return possible object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ErsNat getType() {
@@ -88,11 +86,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété type.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ErsNat }
-     *     
+     *
+     * @param value allowed object is {@link ErsNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setType(ErsNat value) {
@@ -101,11 +97,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété vg.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ValorizationGeographicalCode }
-     *     
+     *
+     * @return possible object is {@link ValorizationGeographicalCode }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ValorizationGeographicalCode getVG() {
@@ -114,11 +108,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété vg.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ValorizationGeographicalCode }
-     *     
+     *
+     * @param value allowed object is {@link ValorizationGeographicalCode }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setVG(ValorizationGeographicalCode value) {
@@ -127,11 +119,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété zc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getZC() {
@@ -140,11 +130,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété zc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setZC(String value) {
@@ -153,11 +141,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété zu.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ZoneUga }
-     *     
+     *
+     * @return possible object is {@link ZoneUga }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ZoneUga getZU() {
@@ -166,11 +152,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété zu.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ZoneUga }
-     *     
+     *
+     * @param value allowed object is {@link ZoneUga }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setZU(ZoneUga value) {
@@ -179,11 +163,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété zg.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getZG() {
@@ -192,11 +174,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété zg.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setZG(String value) {
@@ -205,11 +185,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété zn.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getZN() {
@@ -218,11 +196,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété zn.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setZN(String value) {
@@ -231,11 +207,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété rm.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public String getRM() {
@@ -244,11 +218,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété rm.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is {@link String }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setRM(String value) {
@@ -257,11 +229,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété za.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ZeeNat }
-     *     
+     *
+     * @return possible object is {@link ZeeNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ZeeNat getZA() {
@@ -270,11 +240,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété za.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ZeeNat }
-     *     
+     *
+     * @param value allowed object is {@link ZeeNat }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setZA(ZeeNat value) {
@@ -283,11 +251,9 @@ public class Eras {
 
     /**
      * Obtient la valeur de la propriété zs.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ZoneSpecifique }
-     *     
+     *
+     * @return possible object is {@link ZoneSpecifique }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public ZoneSpecifique getZS() {
@@ -296,11 +262,9 @@ public class Eras {
 
     /**
      * Définit la valeur de la propriété zs.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ZoneSpecifique }
-     *     
+     *
+     * @param value allowed object is {@link ZoneSpecifique }
+     *
      */
     @Generated(value = "com.sun.tools.xjc.Driver", date = "2019-11-21T01:58:47+04:00", comments = "JAXB RI v2.3.0")
     public void setZS(ZoneSpecifique value) {
