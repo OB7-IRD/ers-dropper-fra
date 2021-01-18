@@ -21,7 +21,6 @@ import fr.ird.driver.eva.business.Specie;
 import fr.ird.driver.eva.business.Trip;
 import fr.ird.driver.eva.dao.ActivityDepartureToPortDAO;
 import fr.ird.driver.eva.dao.ActivityReturnToPortDAO;
-import fr.ird.driver.eva.dao.EndOfFishingDAO;
 import fr.ird.driver.eva.dao.FADActivityDAO;
 import fr.ird.driver.eva.dao.FishingActivityDAO;
 import fr.ird.driver.eva.dao.HarbourDAO;
@@ -55,11 +54,6 @@ public class DropperService extends ErsMainService {
     private static int exitCode = 0;
     private TripDAO tripDAO;
     private boolean DEBUG = true;
-
-    private static Long currentFileId = null;
-
-    private static Long currentXMLFileId = null;
-
     private static Ops receivedOps = null;
 
     public static DropperService getService() {
@@ -77,7 +71,8 @@ public class DropperService extends ErsMainService {
         // shell unix
         DropperService dropperService = DropperService.getService();
         try {
-            LogService.getService(DropperService.class).logApplicationDebug("Init Dropper service");;
+            LogService.getService(DropperService.class).logApplicationDebug("Init Dropper service");
+            ;
             dropperService.init();
             dropperService.traiteFichiers();
 
@@ -85,14 +80,15 @@ public class DropperService extends ErsMainService {
             LogService.getService(DropperService.class).logFilePropertiesNotFound();
             System.exit(2);
         } catch (Exception e) {
-            LogService.getService(DropperService.class).logApplicationError(e.getMessage());
+            LogService.getService(DropperService.class).logApplicationError(""+ e);
             System.exit(1);
         }
         System.exit(exitCode);
     }
 
     private void traiteFichiers() throws Exception {
-        LogService.getService(DropperService.class).logApplicationDebug("Run traiteFichiers");;
+        LogService.getService(DropperService.class).logApplicationDebug("Run traiteFichiers");
+        ;
         integreFichiersDeRepertoire(ERSDropperProperties.MESSAGE_DIRECTORY);
     }
 
@@ -103,8 +99,7 @@ public class DropperService extends ErsMainService {
      * @param messageFormat
      */
     private void integreFichiersDeRepertoire(String repDepot) {
-        LogService.getService(DropperService.class)
-                .logApplicationDebug("integreFichiersDeRepertoire " + repDepot);
+        LogService.getService(DropperService.class).logApplicationDebug("integreFichiersDeRepertoire " + repDepot);
         File repertoireDepot = new File(repDepot);
         // Récupération des fichiers à traiter
         // cca 25/4/13 : recupere uniquement les fichiers d'extension xml
@@ -118,13 +113,12 @@ public class DropperService extends ErsMainService {
             }
         };
         File[] fichiers = repertoireDepot.listFiles(xmlFilesFilter);
-        LogService.getService(DropperService.class)
-                .logApplicationDebug("Nombre de fichiers " + fichiers.length);
+        LogService.getService(DropperService.class).logApplicationDebug("Nombre de fichiers " + fichiers.length);
 
         // Controle que la recherche des fichiers a pu etre realisee
         if (fichiers == null) {
-            LogService.getService(DropperService.class)
-                    .logApplicationError(repDepot + " Erreur de recherche des fichiers à intégrer. Vérifiez les fichiers de configuration.");
+            LogService.getService(DropperService.class).logApplicationError(
+                    repDepot + " Erreur de recherche des fichiers à intégrer. Vérifiez les fichiers de configuration.");
             exitCode = 4;
         } else if (fichiers.length > 0) {
             integreFichiers(fichiers);
@@ -139,8 +133,7 @@ public class DropperService extends ErsMainService {
      * @param messageFormat
      */
     private void integreFichiers(File[] fichiers) {
-        LogService.getService(DropperService.class)
-                .logApplicationDebug("integreFichiers ");
+        LogService.getService(DropperService.class).logApplicationDebug("integreFichiers ");
         // Tri des fichiers du plus ancien au plus récent puis sur le nom de
         // fichier par ordre alphabétique
         Arrays.sort(fichiers, (File o1, File o2) -> {
@@ -159,11 +152,9 @@ public class DropperService extends ErsMainService {
 
         Trip trip;
 
-        LogService.getService(DropperService.class)
-                .logApplicationDebug("integreFichiers - sortFilesOldestToNewest ");
+        LogService.getService(DropperService.class).logApplicationDebug("integreFichiers - sortFilesOldestToNewest ");
         sortFilesOldestToNewest(fichiers);
-        LogService.getService(DropperService.class)
-                .logApplicationDebug("integreFichiers - parcours des fichiers ");
+        LogService.getService(DropperService.class).logApplicationDebug("integreFichiers - parcours des fichiers ");
         // Parcours du répertoire de dépôt
         for (final File fichier : fichiers) {
             Ops opsForException = null;
@@ -174,8 +165,7 @@ public class DropperService extends ErsMainService {
                         .logApplicationDebug("integreFichiers - getName  " + fichier.getName());
                 setReceivedOps(null);
                 if (fichier.isDirectory() == false) {
-                    LogService.getService(DropperService.class)
-                            .logApplicationDebug("integreFichiers - notDirectory");
+                    LogService.getService(DropperService.class).logApplicationDebug("integreFichiers - notDirectory");
 
                     LogService.getService(DropperService.class)
                             .logApplicationDebug("integreFichiers - #### conformité avec XSD ");
@@ -186,14 +176,12 @@ public class DropperService extends ErsMainService {
                     final Ops ops = unmarshal(fichier);
 
                     opsForException = ops;
-                    LogService.getService(DropperService.class)
-                            .logApplicationDebug("integreFichiers - ops " + ops);
+                    LogService.getService(DropperService.class).logApplicationDebug("integreFichiers - ops " + ops);
 
                     if (ops == null) {
                         // La transformation du flux XML en Ops a échoué
                         LogService.getService(DropperService.class)
-                                .logApplicationError(
-                                        "L'objet OPS n'a pas été créé. Vérifiez le mapping.");
+                                .logApplicationError("L'objet OPS n'a pas été créé. Vérifiez le mapping.");
                         exitCode = 4;
                         // On laisse le fichier pour qu'il soit traité
                         // de nouveau
@@ -213,8 +201,7 @@ public class DropperService extends ErsMainService {
                             // On laisse le fichier pour qu'il soit traité
                             // de nouveau
                             LogService.getService(DropperService.class)
-                                    .logApplicationError(
-                                            "L'objet Trip n'a pas pu être sauvegardé en base.");
+                                    .logApplicationError("L'objet Trip n'a pas pu être sauvegardé en base.");
                             moveFileToErrorDirectory(ops, fichier);
                         } else {
                             moveFileToTreatedDirectory(ops, fichier);
@@ -224,19 +211,17 @@ public class DropperService extends ErsMainService {
                 }
             } catch (Exception e) {
                 moveFileToErrorDirectory(receivedOps, fichier);
-                LogService.getService(DropperService.class)
-                        .logApplicationError(
-                                "Une exception a été levée pendant le traitement du fichier ="
-                                + fichier.getName() + "\n" + e);
+                LogService.getService(DropperService.class).logApplicationError(
+                        "Une exception a été levée pendant le traitement du fichier =" + fichier.getName() + "\n" + e);
                 exitCode = 4;
                 break;
             }
         }
     }
 
-      /**
-     * Tri des fichiers du plus ancien au plus récent puis sur le nom de fichier
-     * par ordre alphabétique
+    /**
+     * Tri des fichiers du plus ancien au plus récent puis sur le nom de fichier par
+     * ordre alphabétique
      *
      * @param fichiers
      */
@@ -257,8 +242,8 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Indique si une liste de Rets renvoyés par la procédure de validation
-     * contient au moins un RET qui indique que la requête est au format V1;
+     * Indique si une liste de Rets renvoyés par la procédure de validation contient
+     * au moins un RET qui indique que la requête est au format V1;
      *
      * @param rets
      * @return
@@ -271,32 +256,26 @@ public class DropperService extends ErsMainService {
     /**
      * Déplace le fichier dans le répertoire des fichiers traités.
      *
-     * @param fichier le fichier
-     * @param journalService le service permettant de tracer l'injection de
-     * fichiers
+     * @param fichier        le fichier
+     * @param journalService le service permettant de tracer l'injection de fichiers
      */
     private void moveFileToTreatedDirectory(File fichier) {
         // MSGR07 : on déplace le fichier et on insère une ligne dans le
         // journal
-        File fichierTraite = new File(
-                ERSDropperProperties.PROCESSED_DIRECTORY
-                + "/" + fichier.getName());
+        File fichierTraite = new File(ERSDropperProperties.PROCESSED_DIRECTORY + "/" + fichier.getName());
 
         try {
             fichierTraite.delete();
             fichier.renameTo(fichierTraite);
-            LogService.getService(this.getClass()).logApplicationInfo(
-                    "Le fichier " + fichier.getAbsolutePath()
-                    + " a pu être déplacé.\n");
+            LogService.getService(this.getClass())
+                    .logApplicationInfo("Le fichier " + fichier.getAbsolutePath() + " a pu être déplacé.\n");
         } catch (SecurityException e) {
-            LogService.getService(this.getClass()).logApplicationError(
-                    "Le fichier " + fichier.getAbsolutePath()
-                    + " n'a pas pu être déplacé.\n" + e);
+            LogService.getService(this.getClass())
+                    .logApplicationError("Le fichier " + fichier.getAbsolutePath() + " n'a pas pu être déplacé.\n" + e);
             exitCode = 4;
         } catch (NullPointerException e) {
-            LogService.getService(this.getClass()).logApplicationError(
-                    "Le fichier " + fichier.getAbsolutePath()
-                    + " n'a pas pu être déplacé.\n" + e);
+            LogService.getService(this.getClass())
+                    .logApplicationError("Le fichier " + fichier.getAbsolutePath() + " n'a pas pu être déplacé.\n" + e);
             exitCode = 4;
         }
     }
@@ -304,16 +283,14 @@ public class DropperService extends ErsMainService {
     /**
      * Déplace le fichier dans le répertoire des fichiers traités.
      *
-     * @param ops l'opération
-     * @param fichier le fichier
-     * @param journalService le service permettant de tracer l'injection de
-     * fichiers
+     * @param ops            l'opération
+     * @param fichier        le fichier
+     * @param journalService le service permettant de tracer l'injection de fichiers
      */
     private void moveFileToTreatedDirectory(Ops ops, File fichier) {
         // MSGR07 : on déplace le fichier et on insère une ligne dans le
         // journal
-        File fichierTraite = new File(ERSDropperProperties.PROCESSED_DIRECTORY
-                + "/" + fichier.getName());
+        File fichierTraite = new File(ERSDropperProperties.PROCESSED_DIRECTORY + "/" + fichier.getName());
 
         // cca 23/11/2010 : ajout de la référence à l'operation en base du
         // message traité pour les lignes de messages MSG04
@@ -321,14 +298,12 @@ public class DropperService extends ErsMainService {
             fichierTraite.delete();
             fichier.renameTo(fichierTraite);
         } catch (SecurityException e) {
-            LogService.getService(this.getClass()).logApplicationError(
-                    "Le fichier " + fichier.getAbsolutePath()
-                    + " n'a pas pu être déplacé.\n" + e);
+            LogService.getService(this.getClass())
+                    .logApplicationError("Le fichier " + fichier.getAbsolutePath() + " n'a pas pu être déplacé.\n" + e);
             exitCode = 4;
         } catch (NullPointerException e) {
-            LogService.getService(this.getClass()).logApplicationError(
-                    "Le fichier " + fichier.getAbsolutePath()
-                    + " n'a pas pu être déplacé.\n" + e);
+            LogService.getService(this.getClass())
+                    .logApplicationError("Le fichier " + fichier.getAbsolutePath() + " n'a pas pu être déplacé.\n" + e);
             exitCode = 4;
         } catch (Exception e) {
             LogService.getService(this.getClass()).logApplicationError(
@@ -361,34 +336,29 @@ public class DropperService extends ErsMainService {
     private void moveFileToErrorDirectory(Ops ops, File fichier) {
         // MSGR07 : on déplace le fichier et on insère une ligne dans le
         // journal
-        File fichierTraite = new File(ERSDropperProperties.ERROR_DIRECTORY
-                + "/" + fichier.getName());
+        File fichierTraite = new File(ERSDropperProperties.ERROR_DIRECTORY + "/" + fichier.getName());
 
         // cca 23/11/2010 : ajout de la référence à l'operation en base du
         // message traité pour les lignes de messages MSG04
         try {
             fichierTraite.delete();
             if (!fichier.renameTo(fichierTraite)) {
-                LogService.getService(this.getClass()).logApplicationError(
-                        "Le fichier " + fichier.getAbsolutePath()
+                LogService.getService(this.getClass()).logApplicationError("Le fichier " + fichier.getAbsolutePath()
                         + " n'a pas pu être déplacé dans " + fichierTraite.getAbsolutePath());
                 exitCode = 4;
 
             }
-         } catch (SecurityException e) {
-            LogService.getService(this.getClass()).logApplicationError(
-                    "Le fichier " + fichier.getAbsolutePath()
-                    + " n'a pas pu être déplacé." + e);
+        } catch (SecurityException e) {
+            LogService.getService(this.getClass())
+                    .logApplicationError("Le fichier " + fichier.getAbsolutePath() + " n'a pas pu être déplacé." + e);
             exitCode = 4;
         } catch (NullPointerException e) {
-            LogService.getService(this.getClass()).logApplicationError(
-                    "Le fichier " + fichier.getAbsolutePath()
-                    + " n'a pas pu être déplacé." + e);
+            LogService.getService(this.getClass())
+                    .logApplicationError("Le fichier " + fichier.getAbsolutePath() + " n'a pas pu être déplacé." + e);
             exitCode = 4;
         } catch (Exception e) {
             LogService.getService(this.getClass()).logApplicationError(
-                    "Le fichier message applicatif n'a pas pu être inséré en base de données."
-                    + e);
+                    "Le fichier message applicatif n'a pas pu être inséré en base de données." + e);
             exitCode = 4;
         }
 
@@ -405,7 +375,8 @@ public class DropperService extends ErsMainService {
         if (ops.getCOR() != null) {
 
             Ers ers = ops.getCOR().getERS();
-            LogService.getService(this.getClass()).logApplicationDebug("Message de modification " + ops.getCOR().getRN());
+            LogService.getService(this.getClass())
+                    .logApplicationDebug("Message de modification " + ops.getCOR().getRN());
             if (ers != null) {
                 trip = factory(ers, ops.getCOR().getRN());
             } else {
@@ -417,8 +388,7 @@ public class DropperService extends ErsMainService {
             trip = delete(rnMessageERS);
         }
 
-        if (ops.getDAT() != null
-                && ops.getDAT().getERS() != null) {
+        if (ops.getDAT() != null && ops.getDAT().getERS() != null) {
             Ers ers = ops.getDAT().getERS();
             trip = factory(ers, null);
         }
@@ -455,10 +425,12 @@ public class DropperService extends ErsMainService {
             if (ers.getLOG().getEOF() != null) {
                 LogService.getService(this.getClass()).logApplicationDebug("## " + trip);
                 Eof eof = ers.getLOG().getEOF();
-//                 if (trip != null && trip.getDateOfDep() == null) {
-// //                    exitCode = 3;
-//                     throw new DropperException("La fin de pêche n'est pas assiocée à une marée existante en base(Marée num: " + longTripNumber + ", Message num : " + ers.getRN() + ")");
-//                 }
+                // if (trip != null && trip.getDateOfDep() == null) {
+                // // exitCode = 3;
+                // throw new DropperException("La fin de pêche n'est pas assiocée à une marée
+                // existante en base(Marée num: " + longTripNumber + ", Message num : " +
+                // ers.getRN() + ")");
+                // }
                 EndOfFishing endOfFishing = new EndOfFishing();
                 endOfFishing.setDateMessageERS(dateMessageERS);
                 endOfFishing.setDateEof(DateTimeUtils.createDateTime(eof.getDaDt(), eof.getTiLb()).toDate());
@@ -492,7 +464,8 @@ public class DropperService extends ErsMainService {
             LogService.getService(this.getClass()).logApplicationDebug("SAVE -> TRIP ");// + trip.toString());
 
         } else {
-            throw new DropperException("Erreur dans les valeurs du numéro de marée (" + longTripNumber + ") ou de l'identifant du navire (" + vesselNumber + ").");
+            throw new DropperException("Erreur dans les valeurs du numéro de marée (" + longTripNumber
+                    + ") ou de l'identifant du navire (" + vesselNumber + ").");
         }
         return trip;
     }
@@ -533,13 +506,16 @@ public class DropperService extends ErsMainService {
                     new FishingActivityDAO().delete(a);
                 }
             }
-            // for (Iterator<EndOFishing> iterator = trip.getEof().iterator(); iterator.hasNext();) {
-            //     EndOFishing a = iterator.next();
-            //     if (a.getRnMessageERS() == null ? rnMessageERS == null : a.getRnMessageERS().equals(rnMessageERS)) {
-            //         LogService.getService(this.getClass()).logApplicationDebug("Suppression de " + a);
-            //         iterator.remove();
-            //         new EndOFishingDAO().delete(a);
-            //     }
+            // for (Iterator<EndOFishing> iterator = trip.getEof().iterator();
+            // iterator.hasNext();) {
+            // EndOFishing a = iterator.next();
+            // if (a.getRnMessageERS() == null ? rnMessageERS == null :
+            // a.getRnMessageERS().equals(rnMessageERS)) {
+            // LogService.getService(this.getClass()).logApplicationDebug("Suppression de "
+            // + a);
+            // iterator.remove();
+            // new EndOFishingDAO().delete(a);
+            // }
             // }
         }
         return trip;
@@ -549,8 +525,8 @@ public class DropperService extends ErsMainService {
      * Construit une marée avec les éléments de bases: date de départ et de
      * retour...
      *
-     * @param logbook un log ERS
-     * @param departure un dep ERS
+     * @param logbook      un log ERS
+     * @param departure    un dep ERS
      * @param returnToPort un rtp ERS
      * @return the trip
      */
@@ -582,6 +558,10 @@ public class DropperService extends ErsMainService {
                 LogService.getService(this.getClass()).logApplicationDebug("## " + trip);
             }
         } else {
+            if (trip.getDateOfDep() == null && departure != null) {
+                trip.setDateOfDep(DateTimeUtils.createDateTime(departure.getDaDt(), departure.getTi()).toDate());
+                    LogService.getService(this.getClass()).logApplicationDebug("## " + dateOfDep);
+            }
             if (trip.getMasterName() == null) {
                 trip.setMasterName(logbook.getMA());
             }
@@ -596,12 +576,14 @@ public class DropperService extends ErsMainService {
             trip.setDateOfRtp(dateOfRtp);
         }
         LogService.getService(this.getClass()).logApplicationDebug("4");
-        if (departure != null && departure.getEdep() != null && returnToPort != null && returnToPort.getERTP() != null) {
+        if (departure != null && departure.getEdep() != null && returnToPort != null
+                && returnToPort.getERTP() != null) {
             LogService.getService(DropperService.class).logApplicationDebug("###############");
             LogService.getService(DropperService.class).logApplicationDebug("T: " + trip);
             LogService.getService(DropperService.class).logApplicationDebug("RTP: " + returnToPort);
             LogService.getService(DropperService.class).logApplicationDebug("ERTP: " + returnToPort.getERTP());
-            LogService.getService(DropperService.class).logApplicationDebug("ErtpNdNb: " + returnToPort.getERTP().getND());
+            LogService.getService(DropperService.class)
+                    .logApplicationDebug("ErtpNdNb: " + returnToPort.getERTP().getND());
             LogService.getService(DropperService.class).logApplicationDebug("D: " + departure);
             LogService.getService(DropperService.class).logApplicationDebug("EDEP: " + departure.getEdep());
             LogService.getService(DropperService.class).logApplicationDebug("EdepNdNb: " + departure.getEdep().getND());
@@ -625,117 +607,142 @@ public class DropperService extends ErsMainService {
     /**
      * Créér les activités associées à une marée.
      *
-     * @param trip la marée
-     * @param evenementDePecheList liste evenement de pêche ERS
+     * @param trip                  la marée
+     * @param evenementDePecheList  liste evenement de pêche ERS
      * @param rnMessageERS
      * @param dateMessage
      * @param rnMessageERSToCorrect
      * @throws fr.ird.eva.core.exception.DropperException
      */
-    private void factoryFishingEvents(Trip trip, List<EvenementDePeche> evenementDePecheList, String rnMessageERS, Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
+    private void factoryFishingEvents(Trip trip, List<EvenementDePeche> evenementDePecheList, String rnMessageERS,
+            Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
         LogService.getService(this.getClass()).logApplicationDebug("factoryFishingEvents");
-//        List<FishingEvent> fishingEvents = new ArrayList<>();
+        // List<FishingEvent> fishingEvents = new ArrayList<>();
 
-//        int activityNumber = 1;
-//        DateTime current = null;
-//        HashSet<FishingEvent> fishingEventOfDay = new HashSet<>();
+        // int activityNumber = 1;
+        // DateTime current = null;
+        // HashSet<FishingEvent> fishingEventOfDay = new HashSet<>();
         for (EvenementDePeche evenementDePeche : evenementDePecheList) {
-            LogService.getService(this.getClass()).logApplicationDebug("Evt Peche " + evenementDePeche + " " + evenementDePeche.getDatiDt() + " " + evenementDePeche.getTiLb());
-            DateTime dateEventOfFishing = DateTimeUtils.createDateTime(evenementDePeche.getDatiDt(), evenementDePeche.getTiLb());
-//
-//            if (current != null && !DateTimeUtils.dateEqual(dateEventOfFishing, current)) {
-//                fishingEvents.addAll(fishingEventOfDay);
-//
-//                //Initialisation pour une nouvelle itération
-//                activityNumber = 1;
-//                fishingEventOfDay = new HashSet<>();
-//            }
+            LogService.getService(this.getClass()).logApplicationDebug("Evt Peche " + evenementDePeche + " "
+                    + evenementDePeche.getDatiDt() + " " + evenementDePeche.getTiLb());
+            DateTime dateEventOfFishing = DateTimeUtils.createDateTime(evenementDePeche.getDatiDt(),
+                    evenementDePeche.getTiLb());
+            //
+            // if (current != null && !DateTimeUtils.dateEqual(dateEventOfFishing, current))
+            // {
+            // fishingEvents.addAll(fishingEventOfDay);
+            //
+            // //Initialisation pour une nouvelle itération
+            // activityNumber = 1;
+            // fishingEventOfDay = new HashSet<>();
+            // }
 
             if (evenementDePeche instanceof Dep) {
                 Dep dep = (Dep) evenementDePeche;
-                FishingEvent fishingEvent = factoryActivityDepartureToPort(trip, dep, rnMessageERS, dateMessage, rnMessageERSToCorrect);
+                FishingEvent fishingEvent = factoryActivityDepartureToPort(trip, dep, rnMessageERS, dateMessage,
+                        rnMessageERSToCorrect);
 
-//                fishingEventOfDay.add(fishingEvent);
+                // fishingEventOfDay.add(fishingEvent);
                 if (dep.getTiLb() == null) {
-                    LogService.getService(DropperService.class).logApplicationInfo("Pour l'activité suivante, le champs heure n'est pas renseigné " + fishingEvent.toString());
+                    LogService.getService(DropperService.class).logApplicationInfo(
+                            "Pour l'activité suivante, le champs heure n'est pas renseigné " + fishingEvent.toString());
                 }
-//                current = DateTimeUtils.convertDate(dep.getDEPDaDt());
+                // current = DateTimeUtils.convertDate(dep.getDEPDaDt());
             } else if (evenementDePeche instanceof Rtp) {
                 Rtp rtp = (Rtp) evenementDePeche;
 
-                FishingEvent fishingEvent = factoryActivityReturnToPort(trip, rtp, rnMessageERS, dateMessage, rnMessageERSToCorrect);
-//                activityNumber += 1;
-//                fishingEventOfDay.add(fishingEvent);
+                FishingEvent fishingEvent = factoryActivityReturnToPort(trip, rtp, rnMessageERS, dateMessage,
+                        rnMessageERSToCorrect);
+                // activityNumber += 1;
+                // fishingEventOfDay.add(fishingEvent);
                 if (rtp.getTiLb() == null) {
-                    LogService.getService(DropperService.class).logApplicationInfo("Pour l'activité suivante, le champs heure n'est pas renseigné " + fishingEvent.toString());
+                    LogService.getService(DropperService.class).logApplicationInfo(
+                            "Pour l'activité suivante, le champs heure n'est pas renseigné " + fishingEvent.toString());
                 }
-//                current = DateTimeUtils.convertDate(rtp.getRTPDaDt());
+                // current = DateTimeUtils.convertDate(rtp.getRTPDaDt());
             } else if (evenementDePeche instanceof Far) {
                 Far far = (Far) evenementDePeche;
                 HashSet<FishingEvent> fishingEventSet = new HashSet<>();
-                if (far.getGEA() == null
-                        && far.getEFAR() != null
-                        && far.getEFAR().getEPFA() != null
-                        && far.getEFAR().getEPFA().getEFAD() != null
-                        && !far.getEFAR().getEPFA().getEFAD().isEmpty()) {
+                if (far.getGEA() == null && far.getEFAR() != null && far.getEFAR().getEPFA() != null
+                        && far.getEFAR().getEPFA().getEFAD() != null && !far.getEFAR().getEPFA().getEFAD().isEmpty()) {
                     /**
                      * Traite les DCPs de l'activité
                      */
-//                    if (DEBUG) {
-                    LogService.getService(DropperService.class).logApplicationDebug("Traite les DCPs de l'activité " + far);
-//                    }
-                    fishingEventSet.addAll(factoryFADActivity(trip, far, rnMessageERS, dateMessage, rnMessageERSToCorrect));
-//                    activityNumber += fishingEventSet.size();
-                } else {//if (far.getGEA() != null || (far.getRAS() != null && far.getGEA() == null && far.getGls() == null)) {
+                    // if (DEBUG) {
+                    LogService.getService(DropperService.class)
+                            .logApplicationDebug("Traite les DCPs de l'activité " + far);
+                    // }
+                    fishingEventSet
+                            .addAll(factoryFADActivity(trip, far, rnMessageERS, dateMessage, rnMessageERSToCorrect));
+                    // activityNumber += fishingEventSet.size();
+                } else {// if (far.getGEA() != null || (far.getRAS() != null && far.getGEA() == null &&
+                        // far.getGls() == null)) {
                     /**
-                     * Traite une calée, si il y a présence de DCP, elle sera
-                     * traitée de manière interne.
+                     * Traite une calée, si il y a présence de DCP, elle sera traitée de manière
+                     * interne.
                      */
                     if (DEBUG) {
-                        LogService.getService(DropperService.class).logApplicationDebug("Traite les activités de calées avec DCP ou sans");
+                        LogService.getService(DropperService.class)
+                                .logApplicationDebug("Traite les activités de calées avec DCP ou sans");
                     }
-                    fishingEventSet.addAll(factoryFishingActivity(trip, far, rnMessageERS, dateMessage, rnMessageERSToCorrect));
-//                    activityNumber += fishingEventSet.size();
+                    fishingEventSet.addAll(
+                            factoryFishingActivity(trip, far, rnMessageERS, dateMessage, rnMessageERSToCorrect));
+                    // activityNumber += fishingEventSet.size();
                 }
-//                else {
-//                    LogService.getService(DropperService.class).logApplicationError("L'activité n'a pas été traitée!!! FAR=" + far);
-//                    throw new DropperException("L'activité n'a pas été traitée!!! FAR =" + far);
-//                }
-//                fishingEventOfDay.addAll(fishingEventSet);
+                // else {
+                // LogService.getService(DropperService.class).logApplicationError("L'activité
+                // n'a pas été traitée!!! FAR=" + far);
+                // throw new DropperException("L'activité n'a pas été traitée!!! FAR =" + far);
+                // }
+                // fishingEventOfDay.addAll(fishingEventSet);
 
                 if (far.getTiLb() == null) {
-                    LogService.getService(DropperService.class).logApplicationInfo("Pour l'activité suivante, le champs heure n'est pas renseigné " + fishingEventSet.toString());
+                    LogService.getService(DropperService.class)
+                            .logApplicationInfo("Pour l'activité suivante, le champs heure n'est pas renseigné "
+                                    + fishingEventSet.toString());
                 }
-//                current = DateTimeUtils.convertDate(far.getFarDaDt());
+                // current = DateTimeUtils.convertDate(far.getFarDaDt());
             }
         }
 
-//        if (fishingEventOfDay.size() > 0) {
-//            fishingEvents.addAll(fishingEventOfDay);
-//        }
-//        if (DEBUG) {
-//            LogService.getService(DropperService.class).logApplicationDebug("Le nombre d'activités trouvées, au sens AVDTH, est de " + fishingEvents.size());
-//        }
-//        return fishingEvents;
+        // if (fishingEventOfDay.size() > 0) {
+        // fishingEvents.addAll(fishingEventOfDay);
+        // }
+        // if (DEBUG) {
+        // LogService.getService(DropperService.class).logApplicationDebug("Le nombre
+        // d'activités trouvées, au sens AVDTH, est de " + fishingEvents.size());
+        // }
+        // return fishingEvents;
     }
 
     /**
-     * Convertit une activité départ de port associées à une marée dans le
-     * modèle EvA.
+     * Convertit une activité départ de port associées à une marée dans le modèle
+     * EvA.
      *
-     * @param trip la marée
-     * @param dep le depart ERS
+     * @param trip                la marée
+     * @param dep                 le depart ERS
      * @param indexOfFishingEvent le numéro de l'activité
      * @return l'activité de depart au port
      * @throws fr.ird.eva.core.exception.EVADriverException
      */
-    private ActivityDepartureToPort factoryActivityDepartureToPort(Trip trip, Dep dep, String rnMessageERS, Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
+    private ActivityDepartureToPort factoryActivityDepartureToPort(Trip trip, Dep dep, String rnMessageERS,
+            Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
         LogService.getService(DropperService.class).logApplicationDebug("factoryActivityDepartureToPort");
         ActivityDepartureToPort activityDepartureToPort = new ActivityDepartureToPort();
-//        activityDepartureToPort.setIndexOfFishingEvent(indexOfFishingEvent);
-        activityDepartureToPort.setDateOfFishingEvent(DateTimeUtils.createDateTime(dep.getDaDt(), dep.getTiLb()).toDate());
+        // activityDepartureToPort.setIndexOfFishingEvent(indexOfFishingEvent);
+        activityDepartureToPort
+                .setDateOfFishingEvent(DateTimeUtils.createDateTime(dep.getDaDt(), dep.getTiLb()).toDate());
 
-        LogService.getService(DropperService.class).logApplicationDebug("La date de l'activité est le " + activityDepartureToPort.getDateOfFishingEvent().toString());// +  " -- " + far.getFarDaDt() + " -- " + far.getFarDatiDt() + "--" + far.getFarTiLb());
+        LogService.getService(DropperService.class).logApplicationDebug(
+                "La date de l'activité est le " + activityDepartureToPort.getDateOfFishingEvent().toString());// + " --
+                                                                                                              // " +
+                                                                                                              // far.getFarDaDt()
+                                                                                                              // + " --
+                                                                                                              // " +
+                                                                                                              // far.getFarDatiDt()
+                                                                                                              // + "--"
+                                                                                                              // +
+                                                                                                              // far.getFarTiLb());
 
         activityDepartureToPort.setPortOfDeparture(new HarbourDAO().findHarbour(dep.getPO()));
         LogService.getService(DropperService.class).logApplicationDebug("AA " + dep.getAA());
@@ -759,7 +766,7 @@ public class DropperService extends ErsMainService {
                 trip.addGearOnBoard(gear);
             }
 
-//            activityDepartureToPort.addGearOnBoard(gear);
+            // activityDepartureToPort.addGearOnBoard(gear);
         }
 
         LogService.getService(DropperService.class).logApplicationDebug("PartialLanding...");
@@ -797,19 +804,20 @@ public class DropperService extends ErsMainService {
         trip.addActivityDepartureToPort(activityDepartureToPort);
         return activityDepartureToPort;
     }
-//
+    //
 
     /**
-     * Convertit une activité retour au port associées à une marée dans le
-     * modèle EvA.
+     * Convertit une activité retour au port associées à une marée dans le modèle
+     * EvA.
      *
-     * @param trip la marée
-     * @param rtp le retour au port ERS
+     * @param trip           la marée
+     * @param rtp            le retour au port ERS
      * @param activityNumber le numéro de l'activité
      * @return l'activité de retour au port
-     * @throws fr.ird.eva.core.exception.EVADriverException
+     * @throws DropperException
      */
-    private ActivityReturnToPort factoryActivityReturnToPort(Trip trip, Rtp rtp, String rnMessageERS, Date dateMessageERS, String rnMessageERSToCorrect) throws DropperException {
+    private ActivityReturnToPort factoryActivityReturnToPort(Trip trip, Rtp rtp, String rnMessageERS,
+            Date dateMessageERS, String rnMessageERSToCorrect) throws DropperException {
         LogService.getService(this.getClass()).logApplicationDebug("factoryActivityReturnToPort");
         ActivityReturnToPort activityReturnToPort = new ActivityReturnToPort();
         activityReturnToPort.setDateOfFishingEvent(DateTimeUtils.createDateTime(rtp.getDaDt(), rtp.getTI()).toDate());
@@ -818,6 +826,9 @@ public class DropperService extends ErsMainService {
         LogService.getService(DropperService.class).logApplicationDebug(this.getClass().getName() + " " + rtp.getPO());
 
         activityReturnToPort.setPortOfReturn(new HarbourDAO().findHarbour(rtp.getPO()));
+        if (activityReturnToPort.getPortOfReturn() == null) {
+            throw new DropperException("Not find " + rtp.getPO() + "harbour. Update your referential.");
+        }
         LogService.getService(this.getClass()).logApplicationDebug("" + activityReturnToPort);
         for (Gea gea : rtp.getGEA()) {
             Gear gear = new Gear();
@@ -833,7 +844,7 @@ public class DropperService extends ErsMainService {
             if (!trip.hasGear(gear)) {
                 trip.addGearOnBoard(gear);
             }
-//            activityReturnToPort.addGearOnBoard(gear);
+            // activityReturnToPort.addGearOnBoard(gear);
         }
         LogService.getService(this.getClass()).logApplicationDebug("------");
 
@@ -850,20 +861,37 @@ public class DropperService extends ErsMainService {
     /**
      * Convertit une activité de pêche associées à une marée dans le modèle EvA.
      *
-     * @param trip la marée
-     * @param far le far ERS
+     * @param trip           la marée
+     * @param far            le far ERS
      * @param activityNumber le numéro de l'activité
      * @return l'activité de pêche
      * @throws DropperException
      */
-    private HashSet<FishingEvent> factoryFishingActivity(Trip trip, Far far, String rnMessageERS, Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
+    private HashSet<FishingEvent> factoryFishingActivity(Trip trip, Far far, String rnMessageERS, Date dateMessage,
+            String rnMessageERSToCorrect) throws DropperException {
         LogService.getService(this.getClass()).logApplicationDebug("factoryFishingActivity\n" + trip);
         HashSet<FishingEvent> fishingEvents = new HashSet<>();
         FishingActivity activity = new FishingActivity();
         activity.setDateOfFishingEvent(DateTimeUtils.createDateTime(far.getDaDt(), far.getTiLb()).toDate());
-//        activity.setIndexOfFishingEvent(activityNumber);
+        // activity.setIndexOfFishingEvent(activityNumber);
         LogService.getService(DropperService.class).logApplicationDebug("Ceci est le FAR numéro " + far.toString());
-        LogService.getService(DropperService.class).logApplicationDebug("La date de l'activité est le " + activity.getDateOfFishingEvent().toString());// +  " -- " + far.getFarDaDt() + " -- " + far.getFarDatiDt() + "--" + far.getFarTiLb());
+        LogService.getService(DropperService.class)
+                .logApplicationDebug("La date de l'activité est le " + activity.getDateOfFishingEvent().toString());// +
+                                                                                                                    // "
+                                                                                                                    // --
+                                                                                                                    // "
+                                                                                                                    // +
+                                                                                                                    // far.getFarDaDt()
+                                                                                                                    // +
+                                                                                                                    // "
+                                                                                                                    // --
+                                                                                                                    // "
+                                                                                                                    // +
+                                                                                                                    // far.getFarDatiDt()
+                                                                                                                    // +
+                                                                                                                    // "--"
+                                                                                                                    // +
+                                                                                                                    // far.getFarTiLb());
 
         if (far.getPOS() != null) {
             activity.setPosition(new Position(far.getPOS().getLT(), far.getPOS().getLG()));
@@ -908,14 +936,14 @@ public class DropperService extends ErsMainService {
 
             if (gea.getGES() != null) {
                 GearActivity ger = factoryGearShotActivity(gea.getGES());
-//                ger.setRnMessageERS(rnMessageERS);
+                // ger.setRnMessageERS(rnMessageERS);
                 activity.addGearActivity(ger);
                 activity.setPosition(ger.getPosition());
 
             }
             if (gea.getGER() != null) {
                 GearActivity ges = factoryGearRetrieveActivity(gea.getGER());
-//                ges.setRnMessageERS(rnMessageERS);
+                // ges.setRnMessageERS(rnMessageERS);
                 activity.addGearActivity(ges);
                 activity.setPosition(ges.getPosition());
                 if (ges.isSuccessfulCatch() != null) {
@@ -934,10 +962,9 @@ public class DropperService extends ErsMainService {
         }
         if (far.getEFAR() != null) {
             LogService.getService(DropperService.class).logApplicationDebug("far.getEFAR != null #1");
-            //Primary fishing association
+            // Primary fishing association
             if (far.getEFAR().getEPFA() != null) {
-                activity.addFishingContext(
-                        factoryPrimaryFishingContext(far.getEFAR().getEPFA()));
+                activity.addFishingContext(factoryPrimaryFishingContext(far.getEFAR().getEPFA()));
             }
 
             // le commentaire de Efad donne l'operation si coup inconnu
@@ -945,12 +972,14 @@ public class DropperService extends ErsMainService {
         if (activity.getOperation() != null && activity.getOperation().equals("COUP INCONNU")) {
             LogService.getService(DropperService.class).logApplicationDebug("COUP INCONNU");
             LogService.getService(DropperService.class).logApplicationDebug(activity.getOperation());
-            if (far != null && far.getEFAR() != null && far.getEFAR().getEPFA() != null && far.getEFAR().getEPFA().getEFAD() != null) {
-                LogService.getService(DropperService.class).logApplicationDebug("EFAD " + far.getEFAR().getEPFA().getEFAD());
+            if (far != null && far.getEFAR() != null && far.getEFAR().getEPFA() != null
+                    && far.getEFAR().getEPFA().getEFAD() != null) {
+                LogService.getService(DropperService.class)
+                        .logApplicationDebug("EFAD " + far.getEFAR().getEPFA().getEFAD());
                 if (!far.getEFAR().getEPFA().getEFAD().isEmpty()) {
                     // Cela mérite une révision car peu pertinent
-                    if(far.getEFAR().getEPFA().getEFAD().get(0).getIF()!= null ){
-                    activity.setOperation(far.getEFAR().getEPFA().getEFAD().get(0).getIF());
+                    if (far.getEFAR().getEPFA().getEFAD().get(0).getIF() != null) {
+                        activity.setOperation(far.getEFAR().getEPFA().getEFAD().get(0).getIF());
                     }
                 }
                 if (activity.getOperation().equals("")) {
@@ -963,10 +992,12 @@ public class DropperService extends ErsMainService {
             // Additional subdeclaration under PS tropical tuna fishing
             Etts etts = far.getEFAR().getETTS();
             if (etts == null) {
-                LogService.getService(DropperService.class).logApplicationInfo("Les informations additionnelles telles que la direction et la vitesse "
-                        + "du vent ne sont pas renseignées.");
+                LogService.getService(DropperService.class)
+                        .logApplicationInfo("Les informations additionnelles telles que la direction et la vitesse "
+                                + "du vent ne sont pas renseignées.");
             } else {
                 LogService.getService(DropperService.class).logApplicationDebug("ETTS non null");
+                LogService.getService(DropperService.class).logApplicationDebug("" + etts);
 
                 /**
                  * Élément lié au coup de pêche.
@@ -984,8 +1015,7 @@ public class DropperService extends ErsMainService {
                     LogService.getService(DropperService.class).logApplicationDebug("--- 4");
                     if ("RECHERCHE".equals(activity.getComment())) {
                         activity.setOperation("RECHERCHE");
-                    } else if (far.getEFAR() != null
-                            && far.getEFAR().getEPFA() != null
+                    } else if (far.getEFAR() != null && far.getEFAR().getEPFA() != null
                             && far.getEFAR().getEPFA().getEFAD() != null
                             && far.getEFAR().getEPFA().getEFAD().size() > 0) {
                         LogService.getService(DropperService.class).logApplicationDebug("--- 5");
@@ -997,7 +1027,9 @@ public class DropperService extends ErsMainService {
                 }
                 LogService.getService(DropperService.class).logApplicationDebug("--- 7");
                 activity.setSchoolSizeInfomartion(etts.getSO());
-                activity.setMiscProblems(etts.getMP().toString());
+                if (etts.getMP() != null) {
+                    activity.setMiscProblems(etts.getMP().toString());
+                }
                 if (etts.getFA() != null) {
                     LogService.getService(DropperService.class).logApplicationDebug("--- 8");
                     for (String fa : etts.getFA().value().split(" ")) {
@@ -1013,7 +1045,8 @@ public class DropperService extends ErsMainService {
             LogService.getService(DropperService.class).logApplicationDebug("capture " + capture);
             LogService.getService(DropperService.class).logApplicationDebug("activity " + activity);
             activity.addElementaryCapture(capture);
-            if (activity.getOperation() == null || "".equals(activity.getOperation()) || "RECHERCHE".equals(activity.getOperation())) {
+            if (activity.getOperation() == null || "".equals(activity.getOperation())
+                    || "RECHERCHE".equals(activity.getOperation())) {
                 activity.setOperation("COUP POSITIF");
             }
         }
@@ -1021,24 +1054,26 @@ public class DropperService extends ErsMainService {
         trip.addFishingActivity(activity);
         fishingEvents.add(activity);
 
-//        for (FADActivity fADActivity : factoryFADActivity(trip, activity, rnMessageERS, dateMessage, rnMessageERSToCorrect)) {
-//            trip.addFADActivity(fADActivity);
-//        }
+        // for (FADActivity fADActivity : factoryFADActivity(trip, activity,
+        // rnMessageERS, dateMessage, rnMessageERSToCorrect)) {
+        // trip.addFADActivity(fADActivity);
+        // }
         fishingEvents.addAll(factoryFADActivity(trip, activity, rnMessageERS, dateMessage, rnMessageERSToCorrect));
 
         return fishingEvents;
     }
 
     /**
-     * Convertit les activités de DCP dans le modèle EvA. Fonction a revoir
-     * selon les pratiques des pecheurs.
+     * Convertit les activités de DCP dans le modèle EvA. Fonction a revoir selon
+     * les pratiques des pecheurs.
      *
      * @param fishingActivity une activitié de pêche
-     * @param activityNumber le numéro de l'activité
+     * @param activityNumber  le numéro de l'activité
      * @return la liste des activités de pêche
      * @throws DropperException
      */
-    private HashSet<FADActivity> factoryFADActivity(Trip trip, FishingActivity fishingActivity, String rnMessageERS, Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
+    private HashSet<FADActivity> factoryFADActivity(Trip trip, FishingActivity fishingActivity, String rnMessageERS,
+            Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
         LogService.getService(DropperService.class).logApplicationDebug("factoryFADActivity");
         HashSet<FADActivity> fishingEvents = new HashSet<FADActivity>();
         if (fishingActivity == null) {
@@ -1050,13 +1085,13 @@ public class DropperService extends ErsMainService {
         FADActivity activity;
         for (FishingContext fishingContext : fishingActivity.getFishingContexts()) {
             if (fishingContext != null) {
-                
+
                 for (Fad fad : fishingContext.getFads()) {
 
                     activity = new FADActivity();
-//                    activity.setIndexOfFishingEvent(activityNumber);
+                    // activity.setIndexOfFishingEvent(activityNumber);
 
-                    //La liste de FAD associée au FC doit être toujours vide.
+                    // La liste de FAD associée au FC doit être toujours vide.
 
                     LogService.getService(DropperService.class).logApplicationDebug("FA " + fishingActivity);
                     activity.addFishingContext(new FishingContext(true, fishingContext.getFishingContextType()));
@@ -1082,11 +1117,11 @@ public class DropperService extends ErsMainService {
                         activity.setRnMessageERSToCorrect(rnMessageERSToCorrect);
                     }
 
-                    //Gestion des FADs et des bouées associées
+                    // Gestion des FADs et des bouées associées
                     activity.setOperation(fishingActivity.getOperation());
                     activity.setFad(fad);
                     LogService.getService(DropperService.class).logApplicationDebug("- 6 -");
-                    LogService.getService(DropperService.class).logApplicationDebug(" activity "+activity);
+                    LogService.getService(DropperService.class).logApplicationDebug(" activity " + activity);
                     if (!activity.getOperation().equals("")) {
                         LogService.getService(DropperService.class).logApplicationDebug("- 7 -");
                         trip.addFADActivity(activity);
@@ -1101,16 +1136,17 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Convertit les activités de DCP dans le modèle EvA. Note: Fonction a
-     * revoir selon les pratiques des pêcheurs.
+     * Convertit les activités de DCP dans le modèle EvA. Note: Fonction a revoir
+     * selon les pratiques des pêcheurs.
      *
-     * @param trip la marée
-     * @param far le far ERS
+     * @param trip           la marée
+     * @param far            le far ERS
      * @param activityNumber le numéro de l'activité
      * @return la liste des activités de pêche
      * @throws DropperException
      */
-    private HashSet<FishingEvent> factoryFADActivity(Trip trip, Far far, String rnMessageERS, Date dateMessage, String rnMessageERSToCorrect) throws DropperException {
+    private HashSet<FishingEvent> factoryFADActivity(Trip trip, Far far, String rnMessageERS, Date dateMessage,
+            String rnMessageERSToCorrect) throws DropperException {
         LogService.getService(this.getClass()).logApplicationDebug("factoryFADActivity");
         HashSet<FishingEvent> fishingEvents = new HashSet<>();
         if (far == null) {
@@ -1132,7 +1168,8 @@ public class DropperService extends ErsMainService {
             LogService.getService(DropperService.class).logApplicationDebug("EFAD " + efad);
             LogService.getService(DropperService.class).logApplicationDebug("rnMessageERS " + rnMessageERS);
             LogService.getService(DropperService.class).logApplicationDebug("dateMessage " + dateMessage);
-            LogService.getService(DropperService.class).logApplicationDebug("rnMessageERSToCorrect " + rnMessageERSToCorrect);
+            LogService.getService(DropperService.class)
+                    .logApplicationDebug("rnMessageERSToCorrect " + rnMessageERSToCorrect);
 
             activity = new FADActivity();
             activity.setRnMessageERS(rnMessageERS);
@@ -1142,14 +1179,32 @@ public class DropperService extends ErsMainService {
                 activity.setRnMessageERSToCorrect(rnMessageERSToCorrect);
             }
 
-//            activity.setIndexOfFishingEvent(activityNumber);
-            //La liste de FAD associé au FC doit être toujours vide.
+            // activity.setIndexOfFishingEvent(activityNumber);
+            // La liste de FAD associé au FC doit être toujours vide.
             activity.addFishingContext(context);
 
             activity.setDateOfFishingEvent(DateTimeUtils.createDateTime(far.getDaDt(), far.getTiLb()).toDate());
             LogService.getService(DropperService.class).logApplicationDebug("Ceci est le FAR numéro " + far.toString());
+            LogService.getService(DropperService.class)
+                    .logApplicationDebug("Ceci est le EFAR numéro " + far.getEFAR().toString());
 
-            LogService.getService(DropperService.class).logApplicationDebug("La date de l'activité est le " + activity.getDateOfFishingEvent().toString());// +  " -- " + far.getFarDaDt() + " -- " + far.getFarDatiDt() + "--" + far.getFarTiLb());
+            LogService.getService(DropperService.class)
+                    .logApplicationDebug("La date de l'activité est le " + activity.getDateOfFishingEvent().toString());// +
+                                                                                                                        // "
+                                                                                                                        // --
+                                                                                                                        // "
+                                                                                                                        // +
+                                                                                                                        // far.getFarDaDt()
+                                                                                                                        // +
+                                                                                                                        // "
+                                                                                                                        // --
+                                                                                                                        // "
+                                                                                                                        // +
+                                                                                                                        // far.getFarDatiDt()
+                                                                                                                        // +
+                                                                                                                        // "--"
+                                                                                                                        // +
+                                                                                                                        // far.getFarTiLb());
 
             if (far.getPOS() != null) {
                 activity.setPosition(new Position(far.getPOS().getLT(), far.getPOS().getLG()));
@@ -1163,13 +1218,16 @@ public class DropperService extends ErsMainService {
 
             // Additional subdeclaration under tropical tuna fishing
             Etts etts = far.getEFAR().getETTS();
+            LogService.getService(DropperService.class).logApplicationDebug(etts.toString());
             if (etts == null) {
-                LogService.getService(DropperService.class).logApplicationInfo("Les informations additionnelles telles que la direction et la vitesse "
-                        + "du vent ne sont pas renseignées.");
+                LogService.getService(DropperService.class)
+                        .logApplicationInfo("Les informations additionnelles telles que la direction et la vitesse "
+                                + "du vent ne sont pas renseignées.");
             } else {
                 /**
                  * Élément lié au coup de pêche.
                  */
+                LogService.getService(DropperService.class).logApplicationDebug("-- 1 --");
                 activity.setHoldNumber(etts.getHN().toString());
                 activity.setSeaState(etts.getSS().toString());
                 activity.setSeaSurfaceTemperature(etts.getST());
@@ -1178,34 +1236,37 @@ public class DropperService extends ErsMainService {
                 activity.setDegreeOfWind(etts.getWD().value());
                 activity.setSpeedOfWind(etts.getWS());
                 activity.setComment(etts.getCM());
-
+                LogService.getService(DropperService.class).logApplicationDebug("-- 2 --");
                 activity.setSchoolSizeInfomartion(etts.getSO());
-                activity.setMiscProblems(etts.getMP().toString());
-
-                //Gestion des FADs et des bouées associées
+                if (etts.getMP() != null)
+                    activity.setMiscProblems(etts.getMP().toString());
+                LogService.getService(DropperService.class).logApplicationDebug("-- 3 --");
+                // Gestion des FADs et des bouées associées
                 activity.setOperation(efad.getIF());
-
+                LogService.getService(DropperService.class).logApplicationDebug("-- 4 --");
                 Fad fad = new Fad();
                 fad.setHasBuoy(efad.getTP().equals("presence"));
                 fad.setFadType(efad.getTF());
                 fad.setFadComment(efad.getIF());
-//                fad.setRnMessageERS(rnMessageERS);
+                // fad.setRnMessageERS(rnMessageERS);
                 if (fad.isHasBuoy()) {
                     for (Etdd etdd : efad.getETDD()) {
                         fad.addBuoy(etdd.getGT(), etdd.getGI(), etdd.getGO());
                     }
                 }
+                LogService.getService(DropperService.class).logApplicationDebug("-- 5 --");
                 activity.setFad(fad);
+                LogService.getService(DropperService.class).logApplicationDebug("-- 6 --");
 
                 if (etts.getFA() != null) {
                     for (String fa : etts.getFA().value().split(" ")) {
                         FishingContext fc = factoryFishingContext(fa);
-//                        fc.setRnMessageERS(rnMessageERS);
+                        // fc.setRnMessageERS(rnMessageERS);
                         activity.addFishingContext(fc);
                     }
                 }
             }
-
+            LogService.getService(DropperService.class).logApplicationDebug("-- 7 --");
             trip.addFADActivity(activity);
             fishingEvents.add(activity);
         }
@@ -1216,7 +1277,7 @@ public class DropperService extends ErsMainService {
      * Convertit les captures associés à l'ERS dans le modèle EvA.
      *
      * @param fishingActivity l'activité de pêche associée à la capture ERS
-     * @param specie l'espèce capturée ERS
+     * @param specie          l'espèce capturée ERS
      * @return la capture
      * @throws DropperException
      */
@@ -1247,7 +1308,7 @@ public class DropperService extends ErsMainService {
         FishingContext context = new FishingContext();
         context.setPrimary(true);
         context.setFishingContextType(epfa.getPF().value());
-        if(context.getFishingContextType().equals("FA")){
+        if (context.getFishingContextType().equals("FA")) {
             LogService.getService(this.getClass()).logApplicationDebug("context " + context);
             for (Far.EFAR.EPFA.EFAD efad : epfa.getEFAD()) {
                 LogService.getService(this.getClass()).logApplicationDebug("Efad " + efad);
@@ -1283,8 +1344,7 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Convertit les engins de type "retrait" associés à l'ERS dans le modèle
-     * EvA.
+     * Convertit les engins de type "retrait" associés à l'ERS dans le modèle EvA.
      *
      * @param ges une activité de mise à l'eau de l'engin ERS
      * @return une activité liée à l'engin
@@ -1303,8 +1363,8 @@ public class DropperService extends ErsMainService {
     }
 
     /**
-     * Convertit les engins de type "mise à l'eau" associés à l'ERS dans le
-     * modèle EvA.
+     * Convertit les engins de type "mise à l'eau" associés à l'ERS dans le modèle
+     * EvA.
      *
      * @param ger une activité de retrait de l'engin ERS
      * @return une activité liée à l'engin
@@ -1422,44 +1482,44 @@ public class DropperService extends ErsMainService {
         return discards;
     }
 
-//    /**
-//     * Creates only the trip object associated with the trip number. All related
-//     * objects, like activity or landing, are not created.
-//     *
-//     * @param longTripNumber the trip number with the long format
-//     * @return the trip or null
-//     */
-//    public Trip getTrip(String longTripNumber) {
-//
-//        if (OTUtils.validFormatLongTripNumber(longTripNumber)) {
-//            String cfr = OTUtils.splitLongTripNumber(longTripNumber)[0];
-//            try {
-//                return factory(cfr, longTripNumber, false);
-//            } catch (DropperException ex) {
-//                LogService.getService(DropperService.class).logApplicationError(ex.getMessage());
-//            }
-//        }
-//        return null;
-//
-//    }
-//    /**
-//     * Creates the trip object associated with the trip number. All related
-//     * objects, like activity or landing, are created.
-//     *
-//     * @param longTripNumber the trip number with the long format
-//     * @return the trip or null
-//     */
-//    public Trip getFullTrip(String longTripNumber) {
-//
-//        if (OTUtils.validFormatLongTripNumber(longTripNumber)) {
-//            String cfr = OTUtils.splitLongTripNumber(longTripNumber)[0];
-//            try {
-//                return factory(cfr, longTripNumber, true);
-//            } catch (DropperException ex) {
-//                LogService.getService(DropperService.class).logApplicationError(ex.getMessage());
-//            }
-//        }
-//        return null;
-//
-//    }
+    // /**
+    // * Creates only the trip object associated with the trip number. All related
+    // * objects, like activity or landing, are not created.
+    // *
+    // * @param longTripNumber the trip number with the long format
+    // * @return the trip or null
+    // */
+    // public Trip getTrip(String longTripNumber) {
+    //
+    // if (OTUtils.validFormatLongTripNumber(longTripNumber)) {
+    // String cfr = OTUtils.splitLongTripNumber(longTripNumber)[0];
+    // try {
+    // return factory(cfr, longTripNumber, false);
+    // } catch (DropperException ex) {
+    // LogService.getService(DropperService.class).logApplicationError(ex.getMessage());
+    // }
+    // }
+    // return null;
+    //
+    // }
+    // /**
+    // * Creates the trip object associated with the trip number. All related
+    // * objects, like activity or landing, are created.
+    // *
+    // * @param longTripNumber the trip number with the long format
+    // * @return the trip or null
+    // */
+    // public Trip getFullTrip(String longTripNumber) {
+    //
+    // if (OTUtils.validFormatLongTripNumber(longTripNumber)) {
+    // String cfr = OTUtils.splitLongTripNumber(longTripNumber)[0];
+    // try {
+    // return factory(cfr, longTripNumber, true);
+    // } catch (DropperException ex) {
+    // LogService.getService(DropperService.class).logApplicationError(ex.getMessage());
+    // }
+    // }
+    // return null;
+    //
+    // }
 }
